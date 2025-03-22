@@ -5,17 +5,11 @@ using UnityEngine;
 
 public class DataManager : Singleton<DataManager>
 {
-    public Dictionary<string, List<object>> DataDics { get; private set; } = new(); //Resources/Json으로부터 자동 로딩
+    private Dictionary<string, string> dataDics = new(); //Resources/Json으로부터 자동로드.
 
-    [SerializeField] private List<Sprite> thumbnails; //StartScene에서 수동캐싱
-    [SerializeField] private List<Sprite> standUIs; //StartScene에서 수동캐싱
-    [SerializeField] private List<string> characterSheetPaths; //StartScene에서 수동캐싱
-    [SerializeField] private List<string> damageVFXPaths; //StartScene에서 수동캐싱
-
-    protected override void Awake()
+    #region Unity Life Cycles
+    public void Init()
     {
-        base.Awake();
-
         TextAsset[] jsonFiles = Resources.LoadAll<TextAsset>("Json");
         foreach (var jsonFile in jsonFiles)
         {
@@ -25,18 +19,7 @@ public class DataManager : Singleton<DataManager>
             Type classType = Type.GetType(fileName);
             if (classType != null)
             {
-                var jsonObject = JsonConvert.DeserializeObject(jsonData, typeof(List<>).MakeGenericType(classType));
-                if (jsonObject is IEnumerable<object> objectList)
-                {
-                    foreach (var obj in objectList)
-                    {
-                        if (!DataDics.ContainsKey(fileName))
-                        {
-                            DataDics[fileName] = new List<object>();
-                        }
-                        DataDics[fileName].Add(obj);
-                    }
-                }
+                dataDics[fileName] = jsonData;
             }
             else
             {
@@ -44,43 +27,116 @@ public class DataManager : Singleton<DataManager>
             }
         }
     }
+    #endregion
 
-    public T GetData<T>(string className, int index)
+    #region Main Methods
+    /// <summary><typeparamref name="T"/>의 데이터를 object로 parsing 후 반환</summary>
+    public T GetObj<T>(string className) where T : class, new()
     {
-        return (T)DataDics[className][index];
+        if (dataDics.ContainsKey(className))
+        {
+            return ConvertToObj<T>(className);
+        }
+        else
+        {
+            return new T();
+        }
     }
 
-    public List<T> GetDataList<T> (string key) where T : class
+    /// <summary><typeparamref name="T"/>의 데이터를 object로 parsing 후 반환</summary>
+    public List<T> GetObjList<T> (string className) where T : class
     {
-        if (!DataDics.TryGetValue(key, out var objectList))
+        if (dataDics.ContainsKey(className))
         {
-            Debug.LogWarning($"{key} 클래스 존재하지 않음.");
-            return new List<T>();
+            return ConvertToList<T>(className);
+        }
+        else
+        {
+            Debug.LogWarning($"{className}은 DataDics에 존재하지 않습니다.");
+            return null;
+        }
+    }
+
+    /// <summary>데이터를 string으로 반환</summary>
+    public string GetRawDataList(string className)
+    {
+        if (dataDics.ContainsKey(className))
+        {
+            return dataDics[className];
+        }
+        else
+        {
+            Debug.LogWarning($"{className}은 DataDics에 존재하지 않습니다.");
+            return null;
+        }
+    }
+    #endregion
+
+    #region Sub Methods
+    private T ConvertToObj<T>(string className) where T : class
+    {
+        Type classType = Type.GetType(className);
+
+        if (classType == null)
+        {
+            Debug.LogError($"'{className}'에 해당하는 클래스를 찾을 수 없습니다.");
+            return null;
         }
 
-        var dataList = new List<T>();
-        foreach (var obj in objectList)
+        string jsonData = dataDics[className];
+        try
         {
-            if (obj is T data) dataList.Add(data);
-            else Debug.LogWarning($"객체를 {typeof(T)}로 변환 불가.");
+            T obj = JsonConvert.DeserializeObject<T>(jsonData);
+
+            if (obj != null)
+            {
+                return obj;
+            }
+            else
+            {
+                Debug.LogError($"'{className}'의 데이터가 예상한 형식이 아닙니다.");
+                return null;
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"'{className}'의 JSON 데이터 변환 중 오류 발생: {ex.Message}");
+            return null;
+        }
+    }
+
+    private List<T> ConvertToList<T>(string className) where T : class
+    {
+        Type classType = Type.GetType(className);
+       
+        if (classType == null)
+        {
+            Debug.LogError($"'{className}'에 해당하는 클래스를 찾을 수 없습니다.");
+            return null;
         }
 
-        return dataList;
-    }
+        var objectList = new List<T>();
+        string jsonData = dataDics[className];
+        try
+        {
+            var jsonObject = JsonConvert.DeserializeObject(jsonData, typeof(List<>).MakeGenericType(classType));
 
-    public Sprite GetSprites(bool isStand, int idx)
-    {
-        if (isStand) return standUIs[idx];
-        else return thumbnails[idx];
+            if (jsonObject is IEnumerable<T> objectListEnumerable)
+            {
+                objectList.AddRange(objectListEnumerable);
+                return objectList;
+            }
+            else
+            {
+                Debug.LogError($"'{className}'의 데이터가 예상한 형식의 List<T>가 아닙니다.");
+                return null;
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"'{className}'의 JSON 데이터 변환 중 오류 발생: {ex.Message}");
+            return null;
+        }
     }
-
-    public string GetCharacterSheetPath(int idx)
-    {
-        return characterSheetPaths[idx];
-    }
-
-    public string GetDamageVFXPath(int idx)
-    {
-        return damageVFXPaths[idx];
-    }
+    #endregion
 }
