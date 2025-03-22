@@ -46,7 +46,13 @@ public class GameManager : Singleton<GameManager>
     public bool FirstQuest { get; set; }
 
     public int[] TodayQuests { get; private set; } = new int[4];
-    
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+    }
+
     private void Start()
     {
         Init();
@@ -165,7 +171,7 @@ public class GameManager : Singleton<GameManager>
 
             curDiff = Mathf.Clamp(curDiff, 1, 10);
 
-            var filteredQuests = DataManager.Instance.GetDataList<QuestData>("QuestData")
+            var filteredQuests = DataManager.Instance.GetObjList<QuestData>("QuestData")
                 .Where(q => q.difficulty == curDiff && !selectedQuestIds.Contains(q.id)) // 중복 방지 조건 추가
                 .ToList();
 
