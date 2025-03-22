@@ -7,13 +7,10 @@ public class QuestData
     public int difficulty;
     public string description;
     public string target;
-    public string rewardType;
-    public string rewardValue;
-    public string needSpec;
+    public string[] rewardTypes;
+    public int[] rewardValues;
+    public int[] needSpecs;
     public int needTime;
 
     public string QuestName => description.Replace("N", target);
-    public string[] rewardTypes => rewardType.Split('|');
-    public int[] rewardValues => Array.ConvertAll(rewardValue.Split('|'), int.Parse);
-    public int[] needSpecs => Array.ConvertAll(needSpec.Split('|'), int.Parse);
 }
