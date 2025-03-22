@@ -1,0 +1,88 @@
+using UnityEngine;
+using System;
+using Newtonsoft.Json;
+using System.IO;
+using System.Collections;
+
+public class SaveManager : Singleton<SaveManager>
+{
+    private SaveData saveData;
+    public SaveData MySaveData { get { return saveData; } }
+
+    private readonly string savePath = Path.Combine(Application.persistentDataPath, nameof(SaveData));
+
+    bool isDirty;
+
+    #region Unity Life Cycles
+    public void Init()
+    {
+        Load();
+        isDirty = false;
+    }
+    #endregion
+
+    //TODO : dirty pattern
+    //TODO : saveData의 내용 set.
+
+    #region Main Methods
+    public void Save()
+    {
+        string json = JsonConvert.SerializeObject(saveData, Formatting.Indented);
+        File.WriteAllText(savePath, json);
+    }
+
+    public void Load()
+    {
+        if (File.Exists(savePath))
+        {
+            string json = File.ReadAllText(savePath);
+            saveData = JsonConvert.DeserializeObject<SaveData>(json);
+        }
+        else
+        {
+            saveData = DataManager.Instance.GetObj<SaveData>(nameof(MySaveData));
+        }
+    }
+
+    /// <summary> 저장 데이터 할당 </summary>
+    /// <param name="field">SaveData의 필드명</param>
+    /// <param name="value">field의 자료형에 해당하는 덮어쓰기 값</param>
+    /// <param name="indexOrKey"></param>
+    public void SetSaveData(string field, object value, object indexOrKey = null)
+    {
+        var fieldInfo = saveData.GetType().GetField(field);
+        if (fieldInfo == null)
+        {
+            Debug.LogError($"'{field}' 필드를 찾을 수 없습니다.");
+            return;
+        }
+
+        if (indexOrKey == null)
+        {
+            fieldInfo.SetValue(saveData, value);
+        }
+        else
+        {
+            var fieldValue = fieldInfo.GetValue(saveData);
+        }
+
+        isDirty = true;
+    }
+    #endregion
+
+    #region Sub Methods
+    public IEnumerator AutoSave()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(600f);
+
+            if (isDirty)
+            {
+                Save();
+                isDirty = false;
+            }
+        }
+    }
+    #endregion
+}
