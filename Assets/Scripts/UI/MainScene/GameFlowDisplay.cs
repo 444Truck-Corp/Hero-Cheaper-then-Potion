@@ -97,7 +97,7 @@ public class GameFlowDisplay : MonoBehaviour
         queue.Enqueue(new GameFlowEvent(GameFlowEventType.GetExp, message));
     }
 
-    private void OnHeroStatUp(HeroData hero, Status status)
+    private void OnHeroStatUp(HeroData hero, StatusData status)
     {
         string message = $"\"{hero.name}\"의 ";
 

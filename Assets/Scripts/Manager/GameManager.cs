@@ -23,7 +23,7 @@ public class GameManager : Singleton<GameManager>
 
     public Action<HeroData, int> OnGetExpEvent;
     public Action<HeroData, int> OnHeroLevelUpEvent;
-    public Action<HeroData, Status> OnHeroStatUpEvent;
+    public Action<HeroData, StatusData> OnHeroStatUpEvent;
     public Action<IEnumerable<HeroData>, QuestData, bool> OnQuestEndEvent;
     public Action<IEnumerable<HeroData>, QuestData> OnQuestStartEvent;
     public Action<HeroData> OnHeroDeadEvent;
@@ -39,37 +39,26 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private GameObject popupWarning;
     [SerializeField] private GameObject popupDialog;
 
-    public int Day { get; private set; }
-    public int Gold { get; private set; }
-    public int[] Potions { get; private set; } = new int[4];
-    public eEnding Ending { get; set; } = 0;
-    public bool FirstQuest { get; set; }
-
-    public int[] TodayQuests { get; private set; } = new int[4];
-
+    #region Unity Life Cycles
     protected override void Awake()
     {
         base.Awake();
-
+        InitManagers();
     }
+    #endregion
 
-    private void Start()
+    #region Main Methods
+    #endregion
+
+    #region Sub Methods
+    private void InitManagers()
     {
-        Init();
+        ResourceManager.Instance.Init();
+        DataManager.Instance.Init();
+        SaveManager.Instance.Init();
+        SpawnManager.Instance.Init();  
     }
-
-    public void Init()
-    {
-        Day = -100;
-        Gold = 0;
-
-        for (int i = 0; i < Potions.Length; i++)
-        {
-            Potions[i] = 5;
-        }
-
-        FirstQuest = false;
-    }
+    #endregion
 
     #region event invoker
     public void OnHeroSelectEvent(int idx)

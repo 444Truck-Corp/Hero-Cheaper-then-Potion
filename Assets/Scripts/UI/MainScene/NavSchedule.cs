@@ -38,16 +38,16 @@ public class NavSchedule : MonoBehaviour
         scheduledQuestSlot.InitSlot();
         isSelected[3] = false;
 
-        for (int i = 0; i < GameManager.Instance.TodayQuests.Length; i++)
-        {
-            QuestSlotIdx[i] = GameManager.Instance.TodayQuests[i];
-        }
+        //for (int i = 0; i < GameManager.Instance.TodayQuests.Length; i++)
+        //{
+        //    QuestSlotIdx[i] = GameManager.Instance.TodayQuests[i];
+        //}
 
-        if (!GameManager.Instance.FirstQuest)
-        {
-            Debug.Log("지원금 수령 퀘");
-            QuestSlotIdx[0] = 0;
-        }
+        //if (!GameManager.Instance.FirstQuest)
+        //{
+        //    Debug.Log("지원금 수령 퀘");
+        //    QuestSlotIdx[0] = 0;
+        //}
 
         StartCoroutine(EnableQuestStart());
     }
