@@ -79,7 +79,7 @@ public class TrainingRoomUI : MonoBehaviour
         UpdateUIs();
 
         hero = HeroManager.Instance.GetHero(id);
-        string heroPath = DataManager.Instance.GetCharacterSheetPath(hero.spriteIdx);
+        string heroPath = ResourceManager.Instance.GetCharacterSheetPath(hero.spriteIdx);
         string vfxPath = DataManager.Instance.GetDamageVFXPath(hero.spriteIdx);
         heroPresenter.Initialize(heroPath + "_Attack", () => dummyPresenter.SetPlaying(true));
         dummyDamageVFXPresenter.Initialize(vfxPath, null);

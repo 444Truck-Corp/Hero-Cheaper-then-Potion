@@ -23,7 +23,7 @@ public class GameManager : Singleton<GameManager>
 
     public Action<HeroData, int> OnGetExpEvent;
     public Action<HeroData, int> OnHeroLevelUpEvent;
-    public Action<HeroData, Status> OnHeroStatUpEvent;
+    public Action<HeroData, StatusData> OnHeroStatUpEvent;
     public Action<IEnumerable<HeroData>, QuestData, bool> OnQuestEndEvent;
     public Action<IEnumerable<HeroData>, QuestData> OnQuestStartEvent;
     public Action<HeroData> OnHeroDeadEvent;
@@ -39,31 +39,26 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private GameObject popupWarning;
     [SerializeField] private GameObject popupDialog;
 
-    public int Day { get; private set; }
-    public int Gold { get; private set; }
-    public int[] Potions { get; private set; } = new int[4];
-    public eEnding Ending { get; set; } = 0;
-    public bool FirstQuest { get; set; }
-
-    public int[] TodayQuests { get; private set; } = new int[4];
-    
-    private void Start()
+    #region Unity Life Cycles
+    protected override void Awake()
     {
-        Init();
+        base.Awake();
+        InitManagers();
     }
+    #endregion
 
-    public void Init()
+    #region Main Methods
+    #endregion
+
+    #region Sub Methods
+    private void InitManagers()
     {
-        Day = -100;
-        Gold = 0;
-
-        for (int i = 0; i < Potions.Length; i++)
-        {
-            Potions[i] = 5;
-        }
-
-        FirstQuest = false;
+        ResourceManager.Instance.Init();
+        DataManager.Instance.Init();
+        SaveManager.Instance.Init();
+        SpawnManager.Instance.Init();  
     }
+    #endregion
 
     #region event invoker
     public void OnHeroSelectEvent(int idx)
@@ -165,7 +160,7 @@ public class GameManager : Singleton<GameManager>
 
             curDiff = Mathf.Clamp(curDiff, 1, 10);
 
-            var filteredQuests = DataManager.Instance.GetDataList<QuestData>("QuestData")
+            var filteredQuests = DataManager.Instance.GetObjList<QuestData>("QuestData")
                 .Where(q => q.difficulty == curDiff && !selectedQuestIds.Contains(q.id)) // 중복 방지 조건 추가
                 .ToList();
 

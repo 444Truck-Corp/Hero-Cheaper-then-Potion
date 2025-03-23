@@ -736,6 +736,118 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popupWarning: {fileID: 8526253656191586614, guid: f182b092d77f3c147903a630ea9bfb65, type: 3}
   popupDialog: {fileID: 1094599017116188844, guid: d16597692efdf4a45a22dc4389b5bc70, type: 3}
+--- !u!1 &896089401
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 896089402}
+  - component: {fileID: 896089403}
+  m_Layer: 0
+  m_Name: ResourceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &896089402
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896089401}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &896089403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896089401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe0910573a5fd6449802628cb2b9e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thumbnails:
+  - {fileID: 8987520638928282823, guid: b4c746a4da6da324a8a9ba6231a44bed, type: 3}
+  - {fileID: -7588895859739141084, guid: 6012c96912bbfa14e8c7687bcebd431e, type: 3}
+  - {fileID: -5451840873958125992, guid: c67bcb9ca91f6cb4a9b581fa6fdc83ca, type: 3}
+  - {fileID: -5451840873958125992, guid: b769e9521e9c7ee41b11e88afe0df16f, type: 3}
+  - {fileID: 4179667406692428921, guid: 002fd8146f9f5124fac3cb2cbc0514d8, type: 3}
+  - {fileID: 4179667406692428921, guid: 165cf3c848645a34bb5828efd2b1960f, type: 3}
+  - {fileID: 4179667406692428921, guid: 80b3a1f00ad00eb47a8036c10275eea0, type: 3}
+  - {fileID: -5451840873958125992, guid: 68c132dab40e8ec4bb8147fe35e55f16, type: 3}
+  - {fileID: -5451840873958125992, guid: ee667ff5ad253744f827fa8ed14c360c, type: 3}
+  - {fileID: -5451840873958125992, guid: 5162745ba796c6d4f94b83c346971342, type: 3}
+  - {fileID: 4179667406692428921, guid: 96f34327dd52bbe4497813856e1c4d28, type: 3}
+  - {fileID: -5451840873958125992, guid: 8e1b6eaa81287dc4b9bf3f589fcbbaeb, type: 3}
+  - {fileID: -5451840873958125992, guid: 4ecbdfe4eef01254eb637b85f34c9439, type: 3}
+  - {fileID: -5451840873958125992, guid: 93c51e6dc5a982f49a519743e1536d11, type: 3}
+  - {fileID: -5451840873958125992, guid: 71158893a7254dd43823910084cdef62, type: 3}
+  - {fileID: -5451840873958125992, guid: 8423653843b4f254f8d942583f69d536, type: 3}
+  standUIs:
+  - {fileID: 1536894475739009350, guid: 2cb0e24a3f262de43a5cde5019e92371, type: 3}
+  - {fileID: -2701272435505640833, guid: 891e187e57ae4804593ecdf4f8c08913, type: 3}
+  - {fileID: -2701272435505640833, guid: 70113da35e43a504fa71bbe0a884f591, type: 3}
+  - {fileID: -2701272435505640833, guid: db1b66911958eee4bb2dd77e21e6bb07, type: 3}
+  - {fileID: -2701272435505640833, guid: 7936d4137e08f654182a9f6ed08e92cb, type: 3}
+  - {fileID: -2701272435505640833, guid: 2e91c424a8a680f47a8dec1d29dffddb, type: 3}
+  - {fileID: -2701272435505640833, guid: c1803405fe7e9ff468b7199e81f0138a, type: 3}
+  - {fileID: -2701272435505640833, guid: b9b500d516c2f6c4f934dc723c0a9c12, type: 3}
+  - {fileID: -2701272435505640833, guid: 1082705a9e3c46a4e88df45d7fca560b, type: 3}
+  - {fileID: -2701272435505640833, guid: 827def7539c47af459e4562e7b80f388, type: 3}
+  - {fileID: -2701272435505640833, guid: fcaee0db741e2a34d8f6ed05d0140c74, type: 3}
+  - {fileID: -2701272435505640833, guid: 421c6de69069ce845a860b064677ab0c, type: 3}
+  - {fileID: -2701272435505640833, guid: 02a038c294aebdf42bf84128a8ff855f, type: 3}
+  - {fileID: -2701272435505640833, guid: f9e65a1ba4ecda94c92eb97406f0c1ee, type: 3}
+  - {fileID: -2701272435505640833, guid: 6ea8b6632d1bc6d428d63a059f97a727, type: 3}
+  - {fileID: -2701272435505640833, guid: 784d7f4035b5708408036d0500e8547c, type: 3}
+  characterSheetPaths:
+  - "Textures/CharacterSheet/\uAD81\uC0AC1"
+  - "Textures/CharacterSheet/\uAD81\uC0AC2"
+  - "Textures/CharacterSheet/\uAE30\uC0AC1"
+  - "Textures/CharacterSheet/\uAE30\uC0AC2"
+  - "Textures/CharacterSheet/\uB3C4\uC8011"
+  - "Textures/CharacterSheet/\uB3C4\uC8012"
+  - "Textures/CharacterSheet/\uB9C8\uBC95\uC0AC1"
+  - "Textures/CharacterSheet/\uB9C8\uBC95\uC0AC2"
+  - "Textures/CharacterSheet/\uC131\uC9C1\uC7901"
+  - "Textures/CharacterSheet/\uC131\uC9C1\uC7902"
+  - "Textures/CharacterSheet/\uC6D0\uC18C\uC220\uC0AC1"
+  - "Textures/CharacterSheet/\uC6D0\uC18C\uC220\uC0AC2"
+  - "Textures/CharacterSheet/\uC804\uC0AC1"
+  - "Textures/CharacterSheet/\uC804\uC0AC2"
+  - "Textures/CharacterSheet/\uCD1D\uC0AC1"
+  - "Textures/CharacterSheet/\uCD1D\uC0AC2"
+  damageVFXPaths:
+  - Textures/MadangVFX/DotEffectPack/Arrow01
+  - Textures/MadangVFX/DotEffectPack/Arrow01
+  - Textures/MadangVFX/DotEffectPack/Slash01
+  - Textures/MadangVFX/DotEffectPack/Slash01
+  - Textures/MadangVFX/DotEffectPack/Slash01
+  - Textures/MadangVFX/DotEffectPack/Slash01
+  - Textures/MadangVFX/DotEffectPack/Magic03
+  - Textures/MadangVFX/DotEffectPack/Magic04
+  - Textures/MadangVFX/DotEffectPack/Magic02
+  - Textures/MadangVFX/DotEffectPack/Magic02
+  - Textures/MadangVFX/DotEffectPack/Magic01
+  - Textures/MadangVFX/DotEffectPack/Magic01
+  - Textures/MadangVFX/DotEffectPack/Slash02
+  - Textures/MadangVFX/DotEffectPack/Slash02
+  - Textures/MadangVFX/DotEffectPack/Projectile01
+  - Textures/MadangVFX/DotEffectPack/Projectile01
 --- !u!1 &924644482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1569,3 +1681,4 @@ SceneRoots:
   - {fileID: 840996559}
   - {fileID: 924644484}
   - {fileID: 643046684}
+  - {fileID: 896089402}

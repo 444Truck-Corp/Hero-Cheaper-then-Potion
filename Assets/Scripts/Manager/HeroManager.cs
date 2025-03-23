@@ -34,7 +34,8 @@ public class HeroManager : Singleton<HeroManager>
     public HeroData MakeNewHero()
     {
         HeroData data = new();
-        data.Initialize(heroCount++);
+        //TODO : SpawnManager에서.
+        //data.Initialize(heroCount++);
         heroList.Add(data);
         heroStates.Add(eHeroState.FREE);
         GameManager.Instance.OnFoodChangeEvent();
@@ -94,12 +95,12 @@ public class HeroManager : Singleton<HeroManager>
     }
 
 
-    private readonly (string StatName, Action<Status, int> IncreaseMethod)[] statusTuple =
+    private readonly (string StatName, Action<StatusData, int> IncreaseMethod)[] statusTuple =
     {
-        ("STR", (Status status, int value) => { status.STR += value; }),
-        ("DEX", (Status status, int value) => { status.DEX += value; }),
-        ("INT", (Status status, int value) => { status.INT += value; }),
-        ("LUK", (Status status, int value) => { status.LUK += value; }),
+        ("STR", (StatusData status, int value) => { status.STR += value; }),
+        ("DEX", (StatusData status, int value) => { status.DEX += value; }),
+        ("INT", (StatusData status, int value) => { status.INT += value; }),
+        ("LUK", (StatusData status, int value) => { status.LUK += value; }),
     };
 
     public void CheckScheduleDone(int skipDay)
@@ -112,11 +113,15 @@ public class HeroManager : Singleton<HeroManager>
             {
                 var hero = heroList[schedule.heroIdxs[0]];
                 int roomId = schedule.successRate;
-                int remainDay = hero.remainDay[roomId];
+
+                int remainDay = 0; 
+                //TODO : SaveManager
+                //remainDay = hero.remainDay[roomId];
                 int dayDifference = remainDay + GameManager.Instance.Day - schedule.dDay;
                 int count = dayDifference / 5; // 5일당 3스탯씩 상승
 
-                hero.remainDay[roomId] = dayDifference - count * 5;
+                //TODO : 저장 쪽에서 불러오기
+                //hero.remainDay[roomId] = dayDifference - count * 5;
                 statusTuple[roomId].IncreaseMethod(hero.status, count * 3);
 
                 if (count > 0)
@@ -128,7 +133,7 @@ public class HeroManager : Singleton<HeroManager>
             else if (schedule.dDay <= GameManager.Instance.Day)
             {
                 bool isSuccess = UnityEngine.Random.Range(0, 100) < schedule.successRate; // 성공 여부
-                QuestData q = DataManager.Instance.GetData<QuestData>(nameof(QuestData), schedule.scheduleType);
+                //QuestData q = DataManager.Instance.GetData<QuestData>(nameof(QuestData), schedule.scheduleType); 분리.
 
                 // 스케쥴 삭제
                 scheduleList.RemoveAt(index);
@@ -141,7 +146,7 @@ public class HeroManager : Singleton<HeroManager>
                     GameManager.Instance.OnGoldChangeEvent(q.rewardValues[0]);
                     for (int i = 0; i < schedule.heroIdxs.Count; i++)
                     {
-                        heroList[schedule.heroIdxs[i]].GetExp(q.rewardValues[1]);
+                        //heroList[schedule.heroIdxs[i]].GetExp(q.rewardValues[1]);
                     }
                 }
                 else

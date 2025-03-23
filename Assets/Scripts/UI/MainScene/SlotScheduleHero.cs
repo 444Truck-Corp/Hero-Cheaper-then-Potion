@@ -25,7 +25,7 @@ public class SlotScheduleHero : MonoBehaviour
         nullBtn.SetActive(false);
         info.SetActive(true);
 
-        img.sprite = DataManager.Instance.GetSprites(true, hero.spriteIdx);
+        //img.sprite = DataManager.Instance.GetSprites(true, hero.spriteIdx);
         heroName.text = hero.name;
         strTxt.text = $"<color=#FF4C4C><size=14>STR</size></color>\n{hero.status.STR}";
         dexTxt.text = $"<color=#4CAF50><size=14>DEX</size></color>\n{hero.status.DEX}";
