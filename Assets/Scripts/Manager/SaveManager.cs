@@ -1,5 +1,4 @@
 using UnityEngine;
-using System;
 using Newtonsoft.Json;
 using System.IO;
 using System.Collections;
@@ -7,9 +6,12 @@ using System.Collections;
 public class SaveManager : Singleton<SaveManager>
 {
     private SaveData saveData;
-    public SaveData MySaveData { get { return saveData; } }
+    public SaveData MySaveData => saveData;
 
     private readonly string savePath = Path.Combine(Application.persistentDataPath, nameof(SaveData));
+
+    private WaitForSeconds autoSaveInterval = new (600f);
+    private Coroutine autoSaveCoroutine;
 
     bool isDirty;
 
@@ -17,12 +19,16 @@ public class SaveManager : Singleton<SaveManager>
     public void Init()
     {
         Load();
+        autoSaveCoroutine = StartCoroutine(AutoSave());
         isDirty = false;
     }
-    #endregion
 
-    //TODO : dirty pattern
-    //TODO : saveData의 내용 set.
+    private void OnApplicationQuit()
+    {
+        Save();
+        if (autoSaveCoroutine != null) StopCoroutine(autoSaveCoroutine);
+    }
+    #endregion
 
     #region Main Methods
     public void Save()
@@ -40,7 +46,7 @@ public class SaveManager : Singleton<SaveManager>
         }
         else
         {
-            saveData = DataManager.Instance.GetObj<SaveData>(nameof(MySaveData));
+            saveData = DataManager.Instance.GetObj<SaveData>(nameof(SaveData));
         }
     }
 
@@ -57,13 +63,26 @@ public class SaveManager : Singleton<SaveManager>
             return;
         }
 
+        var fieldValue = fieldInfo.GetValue(saveData);
         if (indexOrKey == null)
         {
             fieldInfo.SetValue(saveData, value);
         }
+        else if (fieldValue is IList list && indexOrKey is int idx)
+        {
+            if (idx >= 0 && idx < list.Count)
+                list[idx] = value;
+            else
+                Debug.LogError($"[SaveManager] 인덱스 범위 초과: {idx}");
+        }
+        else if (fieldValue is IDictionary dict)
+        {
+            dict[indexOrKey] = value;
+        }
         else
         {
-            var fieldValue = fieldInfo.GetValue(saveData);
+            Debug.LogError($"[SaveManager] 컬렉션이 아닌 필드에 indexOrKey를 사용할 수 없습니다.");
+            return;
         }
 
         isDirty = true;
@@ -75,7 +94,7 @@ public class SaveManager : Singleton<SaveManager>
     {
         while (true)
         {
-            yield return new WaitForSeconds(600f);
+            yield return autoSaveInterval;
 
             if (isDirty)
             {

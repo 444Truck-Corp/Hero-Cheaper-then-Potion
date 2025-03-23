@@ -19,6 +19,6 @@ public class ClassData
     public int incInt;
     public int incLuk;
 
-    public Status BaseStat => new(baseStr, baseDex, baseInt, baseLuk);
-    public Status IncStat => new(incStr, incDex, incInt, incLuk);
+    public StatusData BaseStat => new(baseStr, baseDex, baseInt, baseLuk);
+    public StatusData IncStat => new(incStr, incDex, incInt, incLuk);
 }

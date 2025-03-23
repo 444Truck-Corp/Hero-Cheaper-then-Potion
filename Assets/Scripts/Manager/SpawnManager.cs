@@ -11,6 +11,7 @@ public class SpawnManager : Singleton<SpawnManager>
 
 
     #region Unity Life Cycles
+    /// <summary> Awake 대용 : Manager 실행순서 관리하기 위함. </summary>
     public void Init()
     {
         //이름 데이터 Caching
@@ -20,7 +21,6 @@ public class SpawnManager : Singleton<SpawnManager>
         //직업 데이터 Caching
         classLists = DataManager.Instance.GetObjList<ClassData>(nameof(ClassData));
     }
-
 
     #endregion
 
