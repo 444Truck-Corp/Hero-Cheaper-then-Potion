@@ -1,7 +1,7 @@
-using Newtonsoft.Json;
+using UnityEngine;
 using System;
 using System.Collections.Generic;
-using UnityEngine;
+using Newtonsoft.Json;
 
 public class DataManager : Singleton<DataManager>
 {
