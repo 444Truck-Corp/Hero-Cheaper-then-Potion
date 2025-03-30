@@ -36,16 +36,16 @@ public class SlotScheduleQuest : MonoBehaviour
 
     public void HeroSelected(int idx, HeroData hero)
     { //스케줄표에 선택된 히어로 정보 저장.
-        if (!info.activeSelf)
-            nullBtn.SetActive(true);
+        //if (!info.activeSelf)
+        //    nullBtn.SetActive(true);
         
-        if (selectedHero[idx] != null)
-        {//현재 스케줄에서 선택된 캐릭터 풀어주기
-            HeroManager.Instance.heroStates[selectedHero[idx].id] = eHeroState.FREE;
-        }
+        //if (selectedHero[idx] != null)
+        //{//현재 스케줄에서 선택된 캐릭터 풀어주기
+        //    HeroManager.Instance.heroStates[selectedHero[idx].id] = eHeroState.FREE;
+        //}
         
-        selectedHero[idx] = hero;
-        HeroManager.Instance.heroStates[selectedHero[idx].id] = eHeroState.QUEST;
+        //selectedHero[idx] = hero;
+        //HeroManager.Instance.heroStates[selectedHero[idx].id] = eHeroState.QUEST;
     }
 
     public void SetScheduleSlot(QuestData quest)
@@ -155,7 +155,7 @@ public class SlotScheduleQuest : MonoBehaviour
         {
             if (selectedHero[i] != null)
             {
-                HeroManager.Instance.heroStates[selectedHero[i].id] = eHeroState.FREE;
+                //HeroManager.Instance.heroStates[selectedHero[i].id] = eHeroState.FREE;
             }
         }
     }

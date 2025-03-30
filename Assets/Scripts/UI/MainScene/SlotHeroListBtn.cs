@@ -23,25 +23,25 @@ public class SlotHeroListBtn : MonoBehaviour
 
     public void SetHeroSlot(HeroData hero, ref bool isEnd)
     {
-        if (myBtn != null)
-        {
-            if (HeroManager.Instance.heroStates[hero.id] != eHeroState.FREE)
-                myBtn.interactable = false;
-            else
-            {
-                myBtn.interactable = true;
-                isEnd = true;
-            }
-        }
-        else isEnd = true;
+        //if (myBtn != null)
+        //{
+        //    if (HeroManager.Instance.heroStates[hero.id] != eHeroState.FREE)
+        //        myBtn.interactable = false;
+        //    else
+        //    {
+        //        myBtn.interactable = true;
+        //        isEnd = true;
+        //    }
+        //}
+        //else isEnd = true;
         
-        /*ui info*/
-        thumbnail.sprite = DataManager.Instance.GetSprites(false, hero.spriteIdx);
-        nameTxt.text = hero.name;
-        strTxt.text = $"STR : {hero.status.STR}";
-        dexTxt.text = $"DEX : {hero.status.DEX}";
-        intTxt.text = $"INT : {hero.status.INT}";
-        lukTxt.text = $"LUK : {hero.status.LUK}";
+        ///*ui info*/
+        //thumbnail.sprite = DataManager.Instance.GetSprites(false, hero.spriteIdx);
+        //nameTxt.text = hero.name;
+        //strTxt.text = $"STR : {hero.status.STR}";
+        //dexTxt.text = $"DEX : {hero.status.DEX}";
+        //intTxt.text = $"INT : {hero.status.INT}";
+        //lukTxt.text = $"LUK : {hero.status.LUK}";
     }
 
     public void OnSlotClicked()

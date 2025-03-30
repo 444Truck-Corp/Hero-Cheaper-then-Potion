@@ -95,11 +95,6 @@ public class UIManager : Singleton<UIManager>
         fadeBG.DOFade(1f, 1f).SetUpdate(true);
     }
 
-    public void ToHalfTransparent()
-    {
-        fadeBG.DOFade(200 / 255f, 1f).SetUpdate(true);
-    }
-
     public void ToTransparent()
     {
         fadeBG.DOFade(0f, 1f).SetUpdate(true);
