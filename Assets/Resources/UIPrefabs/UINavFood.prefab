@@ -410,8 +410,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2922307081515330726}
   m_HandleRect: {fileID: 5281431212103187410}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.62857145
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -824,19 +824,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7439567642674672354}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -68540106451026960}
-        m_TargetAssemblyTypeName: UINavHero, Assembly-CSharp
-        m_MethodName: OnSummonHeroClicked
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &6170468630356986001
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,8 +834,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2620255109372354020}
+  - component: {fileID: 9058344532013347196}
   - component: {fileID: 2265745177029628044}
-  - component: {fileID: 7749049680679110971}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -874,6 +862,32 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &9058344532013347196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6170468630356986001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!114 &2265745177029628044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -888,30 +902,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
---- !u!114 &7749049680679110971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6170468630356986001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 0
-  m_StartCorner: 0
-  m_StartAxis: 0
-  m_CellSize: {x: 430, y: 100}
-  m_Spacing: {x: 0, y: 0}
-  m_Constraint: 0
-  m_ConstraintCount: 2
 --- !u!1 &6628771076007906260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,9 +1139,9 @@ GameObject:
   - component: {fileID: 3874481876849091153}
   - component: {fileID: 8757977589712051611}
   - component: {fileID: 4571864998775702660}
-  - component: {fileID: -68540106451026960}
+  - component: {fileID: -3655893671443576273}
   m_Layer: 5
-  m_Name: UINavHero
+  m_Name: UINavFood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1215,7 +1205,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-68540106451026960
+--- !u!114 &-3655893671443576273
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1224,14 +1214,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7747458953558085733}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65a7455b391921d4fa622c11c56a8b5d, type: 3}
+  m_Script: {fileID: 11500000, guid: fa227e3eed63aab41aabab66552defbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isActiveInCreated: 1
-  isDestroyAtClosed: 0
-  uiPosition: 1
-  ListParent: {fileID: 2620255109372354020}
-  ListPrefab: {fileID: 2759166941528039947, guid: dd9f670ea0fda3348acef5c725fef0fe, type: 3}
+  isDestroyAtClosed: 1
+  uiPosition: 0
 --- !u!1 &7828378854818060017
 GameObject:
   m_ObjectHideFlags: 0
