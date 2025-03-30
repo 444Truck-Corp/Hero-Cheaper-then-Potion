@@ -40,26 +40,26 @@ public class HeroPresenter : Poolable
 
     public void Clear()
     {
-        direction = DirectionType.Down;
-        targetStepPosition = transform.localPosition;
-        if (targetLocation != null) TileMapManager.Instance.ReturnLocation(targetLocation);
-        targetLocation = null;
-        moveCommand = null;
-        movementProgress = 0.0f;
-        animator.SetPlaying(false);
-        UpdateAnimation();
+        //direction = DirectionType.Down;
+        //targetStepPosition = transform.localPosition;
+        //if (targetLocation != null) TileMapManager.Instance.ReturnLocation(targetLocation);
+        //targetLocation = null;
+        //moveCommand = null;
+        //movementProgress = 0.0f;
+        //animator.SetPlaying(false);
+        //UpdateAnimation();
     }
 
     public void SetMoveCommand(List<Vector2Int> route, Action onMoveComplete = null)
     {
-        if (targetLocation != null)
-        {
-            TileMapManager.Instance.ReturnLocation(targetLocation);
-            targetLocation = null;
-        }
-        moveCommand = route;
-        time = movementFrequency;
-        this.onMoveComplete = onMoveComplete;
+        //if (targetLocation != null)
+        //{
+        //    TileMapManager.Instance.ReturnLocation(targetLocation);
+        //    targetLocation = null;
+        //}
+        //moveCommand = route;
+        //time = movementFrequency;
+        //this.onMoveComplete = onMoveComplete;
     }
 
     private void FixedUpdate()
