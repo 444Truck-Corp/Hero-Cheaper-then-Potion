@@ -54,26 +54,32 @@ public class SaveManager : Singleton<SaveManager>
     /// <param name="field">SaveData의 필드명</param>
     /// <param name="value">field의 자료형에 해당하는 덮어쓰기 값</param>
     /// <param name="indexOrKey"></param>
-    public void SetSaveData(string field, object value, object indexOrKey = null)
+    public object SetSaveData(string field, object value, object indexOrKey = null)
     {
         var fieldInfo = saveData.GetType().GetField(field);
         if (fieldInfo == null)
         {
             Debug.LogError($"'{field}' 필드를 찾을 수 없습니다.");
-            return;
+            return null;
         }
 
         var fieldValue = fieldInfo.GetValue(saveData);
         if (indexOrKey == null)
         {
             fieldInfo.SetValue(saveData, value);
+            return value;
         }
         else if (fieldValue is IList list && indexOrKey is int idx)
         {
             if (idx >= 0 && idx < list.Count)
+            {
                 list[idx] = value;
+            }
             else
+            {
                 Debug.LogError($"[SaveManager] 인덱스 범위 초과: {idx}");
+                return null;
+            }
         }
         else if (fieldValue is IDictionary dict)
         {
@@ -82,10 +88,11 @@ public class SaveManager : Singleton<SaveManager>
         else
         {
             Debug.LogError($"[SaveManager] 컬렉션이 아닌 필드에 indexOrKey를 사용할 수 없습니다.");
-            return;
+            return null;
         }
 
         isDirty = true;
+        return null;
     }
     #endregion
 
