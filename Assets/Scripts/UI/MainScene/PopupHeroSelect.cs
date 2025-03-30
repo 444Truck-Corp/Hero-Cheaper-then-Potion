@@ -7,7 +7,7 @@ public class PopupHeroSelect : MonoBehaviour
     [SerializeField] private Transform ListParent;
     [SerializeField] private GameObject ListPrefab;
 
-    public List<SlotHeroListBtn> HeroSlots { get; private set; } = new();//영웅 슬롯 캐싱.
+    public List<SlotHeroList> HeroSlots { get; private set; } = new();//영웅 슬롯 캐싱.
     private bool isEnabled; //남은 영웅 찾기
 
     private void OnEnable()
