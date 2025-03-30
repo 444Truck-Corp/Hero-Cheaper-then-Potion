@@ -1,10 +1,11 @@
 using System;
 
 public enum eEquipType{
-    Weapon,
     Helmet,
-    ChestArmor,
-    PantsArmor
+    Chest,
+    Pants,
+    Deco,
+    Weapon,
 }
 
 [Serializable]

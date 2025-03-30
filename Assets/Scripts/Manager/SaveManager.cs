@@ -8,7 +8,13 @@ public class SaveManager : Singleton<SaveManager>
     private SaveData saveData;
     public SaveData MySaveData => saveData;
 
-    private readonly string savePath = Path.Combine(Application.persistentDataPath, nameof(SaveData));
+    #region paths
+    private string autoPath;
+    private readonly string autoSave = "auto";
+    private readonly string saveSlot1 = "slot1";
+    private readonly string saveSlot2 = "slot2";
+    private readonly string saveSlot3 = "slot3";
+    #endregion
 
     private WaitForSeconds autoSaveInterval = new (600f);
     private Coroutine autoSaveCoroutine;
@@ -18,36 +24,51 @@ public class SaveManager : Singleton<SaveManager>
     #region Unity Life Cycles
     public void Init()
     {
-        Load();
+        autoPath = Path.Combine(Application.persistentDataPath, autoSave);
+        //TODO : 시작화면에서 원하는 세이브파일 로드하도록 바꾸기.
+        LoadAuto();
         autoSaveCoroutine = StartCoroutine(AutoSave());
         isDirty = false;
     }
 
     private void OnApplicationQuit()
     {
-        Save();
+        SaveAuto();
         if (autoSaveCoroutine != null) StopCoroutine(autoSaveCoroutine);
     }
     #endregion
 
     #region Main Methods
-    public void Save()
+    public void SaveAuto()
     {
         string json = JsonConvert.SerializeObject(saveData, Formatting.Indented);
-        File.WriteAllText(savePath, json);
+        File.WriteAllText(autoPath, json);
     }
 
-    public void Load()
+    public void SaveSlot(int slot)
     {
-        if (File.Exists(savePath))
+        string path = GetSlotPath(slot);
+        string json = JsonConvert.SerializeObject(saveData, Formatting.Indented);
+        File.WriteAllText(path, json);
+    }
+
+    public void LoadAuto()
+    {
+        if (File.Exists(autoPath))
         {
-            string json = File.ReadAllText(savePath);
+            string json = File.ReadAllText(autoPath);
             saveData = JsonConvert.DeserializeObject<SaveData>(json);
         }
         else
         {
             saveData = DataManager.Instance.GetObj<SaveData>(nameof(SaveData));
         }
+    }
+
+    public void LoadSlot(int slot)
+    {
+        string path = GetSlotPath(slot);
+        saveData = JsonConvert.DeserializeObject<SaveData>(File.ReadAllText(path));
     }
 
     /// <summary> 저장 데이터 할당 </summary>
@@ -105,10 +126,31 @@ public class SaveManager : Singleton<SaveManager>
 
             if (isDirty)
             {
-                Save();
+                SaveAuto();
                 isDirty = false;
             }
         }
+    }
+
+    private string GetSlotPath(int slot)
+    {
+        string path = Application.persistentDataPath;
+        switch (slot)
+        {
+            case 1:
+                Path.Combine(path, saveSlot1);
+                break;
+            case 2:
+                Path.Combine(path, saveSlot2);
+                break;
+            case 3:
+                Path.Combine(path, saveSlot3);
+                break;
+            default:
+                Debug.LogError("잘못된 저장 경로입니다.");
+                return null;
+        }
+        return path;
     }
     #endregion
 }

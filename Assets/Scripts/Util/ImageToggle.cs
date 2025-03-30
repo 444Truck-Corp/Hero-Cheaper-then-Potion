@@ -37,13 +37,13 @@ public class ImageToggle : MonoBehaviour
 
     public void Toggle()
     {
-        if (GameManager.Instance.Potions[idx] > 0)
-        {
-            isOn = !isOn;
-            UpdateImage();
-            p.OnToggleClicked(idx);
-            q.CalculateSuccessRate();
-        }
+        //if (GameManager.Instance.Potions[idx] > 0)
+        //{
+        //    isOn = !isOn;
+        //    UpdateImage();
+        //    p.OnToggleClicked(idx);
+        //    q.CalculateSuccessRate();
+        //}
     }
 
     private void UpdateImage()

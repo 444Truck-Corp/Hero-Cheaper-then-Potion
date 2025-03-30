@@ -45,7 +45,7 @@ public class SlotQuestSelect : MonoBehaviour
     {
         if (popupQuest != null)
         {
-            popupQuest.OnSelectSlot(myIdx);
+            //popupQuest.OnSelectSlot(myIdx);
         }
     }
 }

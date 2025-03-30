@@ -11,10 +11,10 @@ public class PotionToggleGroup : MonoBehaviour
     {
         for (int i = 0; i < toggles.Count; i++)
         {
-            if (GameManager.Instance.Potions[i] == 0)
-            {
-                toggles[i].transform.parent.gameObject.SetActive(false);
-            }
+            //if (GameManager.Instance.Potions[i] == 0)
+            //{
+            //    toggles[i].transform.parent.gameObject.SetActive(false);
+            //}
         }
     }
 
