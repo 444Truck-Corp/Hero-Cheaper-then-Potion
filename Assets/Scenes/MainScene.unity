@@ -7545,9 +7545,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 779b42b6ca3380547af21ccff440a758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toastParent: {fileID: 1280715585}
-  screenCover: {fileID: 728804224}
-  uiMain: {fileID: 0}
 --- !u!114 &1224744840
 MonoBehaviour:
   m_ObjectHideFlags: 0
