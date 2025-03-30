@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public enum eUIPosition
 {
-    Background,
+    Main,
     Navigator,
     Popup,
     Override
@@ -38,9 +38,14 @@ public class UIManager : Singleton<UIManager>
         if (ui == null)
         {
             var prefab = ResourceManager.Instance.LoadAsset<T>(resourceFolder, uiName);
+            if (prefab == null)
+            {
+                Debug.LogError($"[UIManager] {uiName} 프리팹을 찾을 수 없습니다.");
+                return null;
+            }
+
             ui = Instantiate(prefab, Instance.parents[(int)prefab.uiPosition]);
             ui.name = uiName;
-
             Instance.uiList.Add(ui);
         }
         ui.opened.Invoke(param);
