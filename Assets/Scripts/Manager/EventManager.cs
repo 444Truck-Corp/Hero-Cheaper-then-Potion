@@ -37,7 +37,9 @@ public class EventManager : Singleton<EventManager>
 
     public void OnGoldChangeEvent(int delta)
     {
-        int newValue = (int)SaveManager.Instance.SetSaveData("gold", delta);
+        int gold = SaveManager.Instance.MySaveData.gold;
+        int newValue = gold + delta;
+        SaveManager.Instance.SetSaveData(nameof(SaveData.gold), newValue);
         GoldChangeAction?.Invoke(newValue);
     }
 
@@ -48,7 +50,9 @@ public class EventManager : Singleton<EventManager>
 
     public void OnDayChangeEvent(int delta)
     {
-        int newValue = (int)SaveManager.Instance.SetSaveData("day", delta);
+        int day = SaveManager.Instance.MySaveData.day;
+        int newValue = day + delta;
+        SaveManager.Instance.SetSaveData(nameof(SaveData.day), newValue);
         DayChangeAction?.Invoke(newValue);
 
         if (newValue == 0)
