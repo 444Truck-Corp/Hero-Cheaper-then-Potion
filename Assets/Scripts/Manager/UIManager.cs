@@ -92,6 +92,14 @@ public class UIManager : Singleton<UIManager>
     {
         return Instance.uiList.Exists(obj => obj.name == typeof(T).ToString());
     }
+
+    /// <summary>
+    /// 특정 UI가 활성화된 상태인지 확인
+    /// </summary>
+    public static bool IsActive<T>() where T : UIBase
+    {
+        return Instance.uiList.Exists(obj => obj.name == typeof(T).ToString() && obj.gameObject.activeSelf);
+    }
     #endregion
 
     #region fades
