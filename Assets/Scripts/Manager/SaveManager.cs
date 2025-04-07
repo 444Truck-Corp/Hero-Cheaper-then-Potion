@@ -2,11 +2,14 @@ using UnityEngine;
 using Newtonsoft.Json;
 using System.IO;
 using System.Collections;
+using System.Collections.Generic;
+using System.Reflection;
 
 public class SaveManager : Singleton<SaveManager>
 {
     private SaveData saveData;
     public SaveData MySaveData => saveData;
+    private Dictionary<string, FieldInfo> fieldCache = new();
 
     #region paths
     private string autoPath;
@@ -27,6 +30,13 @@ public class SaveManager : Singleton<SaveManager>
         autoPath = Path.Combine(Application.persistentDataPath, autoSave);
         //TODO : 시작화면에서 원하는 세이브파일 로드하도록 바꾸기.
         LoadAuto();
+
+        var fields = typeof(SaveData).GetFields(BindingFlags.Public | BindingFlags.Instance);
+        foreach (var field in fields)
+        {
+            fieldCache.Add(field.Name, field);
+        }
+
         autoSaveCoroutine = StartCoroutine(AutoSave());
         isDirty = false;
     }
@@ -75,20 +85,19 @@ public class SaveManager : Singleton<SaveManager>
     /// <param name="field">SaveData의 필드명</param>
     /// <param name="value">field의 자료형에 해당하는 덮어쓰기 값</param>
     /// <param name="indexOrKey"></param>
-    public object SetSaveData(string field, object value, object indexOrKey = null)
+    public void SetSaveData(string field, object value, object indexOrKey = null)
     {
-        var fieldInfo = saveData.GetType().GetField(field);
-        if (fieldInfo == null)
+        if (!fieldCache.TryGetValue(field, out var fieldInfo))
         {
-            Debug.LogError($"'{field}' 필드를 찾을 수 없습니다.");
-            return null;
+            Debug.LogError($"{field} 필드를 찾을 수 없습니다.");
+            return;
         }
 
         var fieldValue = fieldInfo.GetValue(saveData);
+
         if (indexOrKey == null)
         {
             fieldInfo.SetValue(saveData, value);
-            return value;
         }
         else if (fieldValue is IList list && indexOrKey is int idx)
         {
@@ -98,8 +107,8 @@ public class SaveManager : Singleton<SaveManager>
             }
             else
             {
-                Debug.LogError($"[SaveManager] 인덱스 범위 초과: {idx}");
-                return null;
+                Debug.LogError($"인덱스 범위 초과: {idx}");
+                return;
             }
         }
         else if (fieldValue is IDictionary dict)
@@ -108,13 +117,13 @@ public class SaveManager : Singleton<SaveManager>
         }
         else
         {
-            Debug.LogError($"[SaveManager] 컬렉션이 아닌 필드에 indexOrKey를 사용할 수 없습니다.");
-            return null;
+            Debug.LogError($"컬렉션이 아닌 필드에 indexOrKey를 사용할 수 없습니다.");
+            return;
         }
 
         isDirty = true;
-        return null;
     }
+
     #endregion
 
     #region Sub Methods
