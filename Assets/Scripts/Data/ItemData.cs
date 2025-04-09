@@ -1,6 +1,6 @@
 using System;
 
-public enum eItemEffect
+public enum EItemEffect
 {
     Default
 }
@@ -11,6 +11,6 @@ public class ItemData
     public int id;
     public int name;
     public string description;
-    public eItemEffect effect;
+    public EItemEffect effect;
     //TODO : 전체 적용여부
 }

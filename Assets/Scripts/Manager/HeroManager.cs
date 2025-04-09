@@ -1,8 +1,6 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 
-public enum eHeroState
+public enum EHeroState
 {
     FREE,
     QUEST,
@@ -19,11 +17,18 @@ public class HeroManager : Singleton<HeroManager>
     //    public int successRate;
     //}
 
-    //public List<HeroData> heroList = new();
+    private readonly List<HeroData> _heroList = new();
+    private readonly Dictionary<int, HeroData> _heroes = new();
+    private int _count;
+
+    public HeroData CreateNewHero()
+    {
+        HeroData hero = new HeroData();
+        return hero;
+    }
+
     //public List<eHeroState> heroStates = new();
     //private List<Schedule> scheduleList = new();
-
-    //private int heroCount = 0;
 
     //protected override void Awake()
     //{

@@ -1,6 +1,6 @@
 using System;
 
-public enum eEquipType{
+public enum EEquipType{
     Helmet,
     Chest,
     Pants,
@@ -13,5 +13,5 @@ public class EquipData : ItemData
 {
     //장착하고 있는 영웅 idx : -1이면 미장착.
     public int equippedHero = -1; 
-    public eEquipType equipType;
+    public EEquipType equipType;
 }

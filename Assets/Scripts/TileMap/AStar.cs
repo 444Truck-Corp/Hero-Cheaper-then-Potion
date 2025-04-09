@@ -1,61 +1,11 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
-public class Node
-{
-    public int X;
-    public int Y;
-    public int G; // 이동 비용
-    public int H; // 휴리스틱(목적지까지 예상 비용)
-    public int F => G + H; // 총 비용
-    public bool IsWall;
-    public Node Parent;
-
-    public Node(bool isWall, int x, int y)
-    {
-        IsWall = isWall;
-        X = x;
-        Y = y;
-    }
-
-    public override bool Equals(object obj)
-    {
-        if (obj is Node other)
-        {
-            return X == other.X && Y == other.Y;
-        }
-        return false;
-    }
-
-    public override int GetHashCode()
-    {
-        return X.GetHashCode() ^ Y.GetHashCode();
-    }
-}
-
-public enum DirectionType
-{
-    Up,
-    Down,
-    Left,
-    Right
-}
-
 public class AStar
 {
-    private static readonly Vector2Int[] DIRECTIONS =
-    {
-        new Vector2Int(0, 1),  // 위
-        new Vector2Int(0, -1), // 아래
-        new Vector2Int(-1, 0),  // 왼쪽
-        new Vector2Int(1, 0)  // 오른쪽
-    };
-
     private bool[,] tiles;
-    private List<Node> openList = new List<Node>();
-    private HashSet<Node> closedList = new HashSet<Node>();
+    private readonly List<Node> openList = new();
+    private readonly HashSet<Node> closedList = new();
 
     public void SetTiles(bool[,] tiles)
     {
@@ -64,8 +14,8 @@ public class AStar
 
     public List<Node> Find(Vector2Int start, Vector2Int end)
     {
-        Node startNode = new Node(false, start.x, start.y);
-        Node endNode = new Node(false, end.x, end.y);
+        Node startNode = new(false, start.x, start.y);
+        Node endNode = new(false, end.x, end.y);
 
         openList.Clear();
         closedList.Clear();
@@ -112,8 +62,8 @@ public class AStar
 
     private Node GetNodeWithLowestF(List<Node> openList)
     {
-        Node lowestFNode = openList[0];
-        foreach (Node node in openList)
+        var lowestFNode = openList[0];
+        foreach (var node in openList)
         {
             if (node.F < lowestFNode.F)
             {
@@ -125,12 +75,12 @@ public class AStar
 
     private List<Node> GetNeighbors(Node currentNode)
     {
-        List<Node> neighbors = new List<Node>();
+        List<Node> neighbors = new();
 
-        foreach (Vector2Int dir in DIRECTIONS)
+        foreach (var direction in Direction.VECTORS)
         {
-            int x = currentNode.X + dir.x;
-            int y = currentNode.Y + dir.y;
+            int x = currentNode.X + direction.x;
+            int y = currentNode.Y + direction.y;
 
             // 경계 밖이면 무시
             if (x < 0 || y < 0 || x >= tiles.GetLength(0) || y >= tiles.GetLength(1))
@@ -146,10 +96,10 @@ public class AStar
 
     private List<Node> RetracePath(Node endNode)
     {
-        List<Node> path = new List<Node>();
-        Node currentNode = endNode;
+        List<Node> path = new();
+        var currentNode = endNode;
 
-        // 부모 노드를 따라 경로를 역추적
+        // 경로를 역추적
         while (currentNode != null)
         {
             path.Add(currentNode);
@@ -163,16 +113,8 @@ public class AStar
 
     public List<Vector2Int> GetRouteMovementValue(Vector2Int start, Vector2Int end)
     {
-        List<Node> route = Find(start, end);
-        //Debug.Log($"{start.x}, {start.y} => {end.x}, {end.y}의 루트를 탐색합니다.");
-        //Debug.Log($"루트의 길이는 {route.Count}");
-        //string routeString = "";
-        //for (int index = 0; index < route.Count; index++)
-        //{
-        //    routeString += $"{route[index].X}, {route[index].Y} => ";
-        //}
-        //Debug.Log(routeString);
-        List<Vector2Int> routeMovement = new List<Vector2Int>();
+        var route = Find(start, end);
+        List<Vector2Int> routeMovement = new();
         for (int index = 1; index < route.Count; index++)
         {
             int x = route[index].X - route[index - 1].X;

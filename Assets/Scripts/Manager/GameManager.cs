@@ -1,5 +1,5 @@
 //TODO : 수정 필요할듯
-public enum eEnding 
+public enum EEnding
 {
     Bankrupt,
     Lose,
@@ -25,7 +25,7 @@ public class GameManager : Singleton<GameManager>
         ResourceManager.Instance.Init();
         DataManager.Instance.Init();
         SaveManager.Instance.Init();
-        SpawnManager.Instance.Init();  
+        SpawnManager.Instance.Init();
     }
     #endregion
 }

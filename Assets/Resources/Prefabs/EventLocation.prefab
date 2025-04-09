@@ -13,7 +13,7 @@ GameObject:
   m_Layer: 0
   m_Name: EventLocation
   m_TagString: Untagged
-  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c38bbe10a3a92ee419c0fe34229547fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 0
-  eventType: 0
+  Direction:
+    Forward: 0
+  EventType: 0

@@ -1,87 +1,77 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
 public class CustomAnimator
 {
-    private static readonly Dictionary<DirectionType, int> directionDictionary = new Dictionary<DirectionType, int>()
-    {
-        { DirectionType.Up, 0 },
-        { DirectionType.Left, 1 },
-        { DirectionType.Down, 2 },
-        { DirectionType.Right, 3 },
-    };
-
-    [SerializeField] private bool isPlaying;
-    [SerializeField] private bool isLooping;
-    [SerializeField] private int direction;
-    [SerializeField] private int currentFrame;
-    [SerializeField] private float frameDuration;
-    [SerializeField] private float framePerSecond;
-    [SerializeField] private float currentDuration;
-    [SerializeField] private Action onEndAnimation;
-
-    [SerializeField] private Sprite[] sprites;
-    [SerializeField] private int maxFrame;
+    [SerializeField] private bool _isPlaying;
+    [SerializeField] private bool _isLooping;
+    [SerializeField] private int _currentFrame;
+    [SerializeField] private int _maxFrame;
+    [SerializeField] private Direction _direction;
+    [SerializeField] private float _frameDuration;
+    [SerializeField] private float _framePerSecond;
+    [SerializeField] private float _currentDuration;
+    [SerializeField] private Action _onEndAnimation;
+    [SerializeField] private Sprite[] _sprites;
 
     public CustomAnimator(string path, int framePerSecond, bool isDirectional, bool isLooping, Action onEndAnimation)
     {
-        this.framePerSecond = framePerSecond;
-        this.isLooping = isLooping;
-        this.onEndAnimation = onEndAnimation;
-        frameDuration = 1.0f / framePerSecond;
-        direction = 0;
-        sprites = Resources.LoadAll<Sprite>(path);
-        if (sprites == null) return;
-        maxFrame = isDirectional ? (sprites.Length >> 2) : sprites.Length;
+        _framePerSecond = framePerSecond;
+        _isLooping = isLooping;
+        _onEndAnimation = onEndAnimation;
+        _frameDuration = 1.0f / framePerSecond;
+        _direction = new Direction(0);
+        _sprites = Resources.LoadAll<Sprite>(path);
+        if (_sprites == null) return;
+        _maxFrame = isDirectional ? (_sprites.Length >> 2) : _sprites.Length;
     }
 
     public void SetOnEndAnimation(Action action)
     {
-        onEndAnimation = action;
+        _onEndAnimation = action;
     }
 
-    public void SetDirection(DirectionType directionType)
+    public void SetDirection(Direction direction)
     {
-        direction = directionDictionary[directionType];
+        _direction.Forward = direction.Forward;
     }
 
     public void SetPlaying(bool value)
     {
-        if (isPlaying != value)
+        if (_isPlaying != value)
         {
-            currentFrame = 0;
-            currentDuration = 0;
+            _currentFrame = 0;
+            _currentDuration = 0;
         }
-        isPlaying = value;
+        _isPlaying = value;
     }
 
     public Sprite GetSprite(float deltaTime)
     {
-        if (sprites == null) return null;
+        if (_sprites == null) return null;
 
-        currentDuration += deltaTime;
-        int addFrame = (int)(currentDuration * framePerSecond);
+        _currentDuration += deltaTime;
+        int addFrame = (int)(_currentDuration * _framePerSecond);
         if (addFrame > 0)
         {
-            currentFrame += addFrame;
-            if (currentFrame >= maxFrame)
+            _currentFrame += addFrame;
+            if (_currentFrame >= _maxFrame)
             {
-                onEndAnimation?.Invoke();
-                if (isLooping)
+                _onEndAnimation?.Invoke();
+                if (_isLooping)
                 {
-                    currentFrame %= maxFrame;
+                    _currentFrame %= _maxFrame;
                 }
                 else
                 {
-                    currentFrame = 0;
-                    isPlaying = false;
+                    _currentFrame = 0;
+                    _isPlaying = false;
                 }
             }
-            currentDuration -= addFrame * frameDuration;
+            _currentDuration -= addFrame * _frameDuration;
         }
-        currentFrame = (isPlaying) ? currentFrame : 0;
-        return sprites[direction * maxFrame + currentFrame];
+        _currentFrame = (_isPlaying) ? _currentFrame : 0;
+        return _sprites[_direction.Forward * _maxFrame + _currentFrame];
     }
 }
