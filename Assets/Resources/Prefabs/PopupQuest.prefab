@@ -1592,12 +1592,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cad7e53e88a9654589aa10f50857bc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navSchedule: {fileID: 0}
-  QuestSlots:
-  - {fileID: 7516115095362091869}
-  - {fileID: 8935281196002402111}
-  - {fileID: 9171632129508237284}
-  - {fileID: 4161026327148043579}
 --- !u!1 &3929223679745290763
 GameObject:
   m_ObjectHideFlags: 0
