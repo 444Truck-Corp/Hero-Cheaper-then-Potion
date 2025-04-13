@@ -4,6 +4,15 @@ using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using System;
+
+public enum eSaveSlot
+{
+    Auto = 0,
+    Slot1 = 1,
+    Slot2 = 2,
+    Slot3 = 3
+}
 
 public class SaveManager : Singleton<SaveManager>
 {
@@ -11,37 +20,36 @@ public class SaveManager : Singleton<SaveManager>
     public SaveData MySaveData => saveData;
     private Dictionary<string, FieldInfo> fieldCache = new();
 
-    #region paths
-    private string autoPath;
-    private readonly string autoSave = "auto";
-    private readonly string saveSlot1 = "slot1";
-    private readonly string saveSlot2 = "slot2";
-    private readonly string saveSlot3 = "slot3";
-    #endregion
-
-    private WaitForSeconds autoSaveInterval = new (600f);
-    private Coroutine autoSaveCoroutine;
-
-    bool isDirty;
+    private bool isAutoDirty;
+    private string dir;
 
     #region Unity Life Cycles
     public void Init()
     {
-        autoPath = Path.Combine(Application.persistentDataPath, autoSave);
-        
+        dir = Path.Combine(Application.persistentDataPath, "Save");
+
+        if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
+
         var fields = typeof(SaveData).GetFields(BindingFlags.Public | BindingFlags.Instance);
         foreach (var field in fields)
         {
-            fieldCache.Add(field.Name, field);
+            if (!fieldCache.ContainsKey(field.Name))
+                fieldCache.Add(field.Name, field);
         }
         
-        isDirty = false;
+        isAutoDirty = false;
     }
 
     private void OnApplicationQuit()
     {
-        SaveSlot(0);
-        if (autoSaveCoroutine != null) StopCoroutine(autoSaveCoroutine);
+        try
+        {
+            SaveSlot(0);
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"[SaveManager] 종료 저장 실패: {e.Message}");
+        }
     }
     #endregion
 
@@ -49,20 +57,40 @@ public class SaveManager : Singleton<SaveManager>
     public void CreateSaveData()
     {
         saveData = new();
-        autoSaveCoroutine ??= StartCoroutine(AutoSave());
+        string path = GetSlotPath(0);
+        string json = JsonConvert.SerializeObject(saveData, Formatting.Indented);
+        File.WriteAllText(path, json);
     }
 
-    public void SaveSlot(int slot)
+    public void SaveSlot(eSaveSlot slot)
     {
+        if (slot == 0 && !isAutoDirty) return;
+        SetSaveData(nameof(SaveData.lastSaveTime), DateTime.Now.Ticks);
         string path = GetSlotPath(slot);
         string json = JsonConvert.SerializeObject(saveData, Formatting.Indented);
         File.WriteAllText(path, json);
     }
 
-    public void LoadSlot(int slot)
+    public void LoadSlot(eSaveSlot slot)
     {
         string path = GetSlotPath(slot);
-        saveData = JsonConvert.DeserializeObject<SaveData>(File.ReadAllText(path));
+        if (!File.Exists(path))
+        {
+            Debug.LogWarning($"파일 없음: {path}");
+            saveData = new SaveData();
+            return;
+        }
+
+        try
+        {
+            string json = File.ReadAllText(path);
+            saveData = JsonConvert.DeserializeObject<SaveData>(json);
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"로딩 실패: {e.Message}");
+            saveData = new SaveData();
+        }
     }
 
     /// <summary> 저장 데이터 할당 </summary>
@@ -105,48 +133,16 @@ public class SaveManager : Singleton<SaveManager>
             return;
         }
 
-        isDirty = true;
+        isAutoDirty = true;
     }
 
     #endregion
 
     #region Sub Methods
-    public IEnumerator AutoSave()
+    private string GetSlotPath(eSaveSlot slot)
     {
-        while (true)
-        {
-            yield return autoSaveInterval;
-
-            if (isDirty)
-            {
-                SaveSlot(0);
-                isDirty = false;
-            }
-        }
+        return Path.Combine(dir, $"{slot}.json");
     }
 
-    private string GetSlotPath(int slot)
-    {
-        string path = Application.persistentDataPath;
-        switch (slot)
-        {
-            case 0:
-                Path.Combine(path, autoSave);
-                break;
-            case 1:
-                Path.Combine(path, saveSlot1);
-                break;
-            case 2:
-                Path.Combine(path, saveSlot2);
-                break;
-            case 3:
-                Path.Combine(path, saveSlot3);
-                break;
-            default:
-                Debug.LogError("잘못된 저장 경로입니다.");
-                return null;
-        }
-        return path;
-    }
     #endregion
 }
