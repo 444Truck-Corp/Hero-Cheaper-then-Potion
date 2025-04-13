@@ -1,4 +1,8 @@
 //TODO : 수정 필요할듯
+using System.Threading.Tasks;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public enum EEnding
 {
     Bankrupt,
@@ -17,6 +21,18 @@ public class GameManager : Singleton<GameManager>
     #endregion
 
     #region Main Methods
+    public async void StartGame()
+    {
+        UIManager.Instance.ToBlack();
+        await Task.Delay(1000);
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("MainScene");
+        while (!asyncLoad.isDone) await Task.Yield();
+
+        await Task.Delay(1000);
+        UIManager.Instance.ToTransparent();
+    }
+
     #endregion
 
     #region Sub Methods

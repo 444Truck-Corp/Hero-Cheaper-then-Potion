@@ -28,31 +28,28 @@ public class SaveManager : Singleton<SaveManager>
     public void Init()
     {
         autoPath = Path.Combine(Application.persistentDataPath, autoSave);
-        //TODO : 시작화면에서 원하는 세이브파일 로드하도록 바꾸기.
-        LoadAuto();
-
+        
         var fields = typeof(SaveData).GetFields(BindingFlags.Public | BindingFlags.Instance);
         foreach (var field in fields)
         {
             fieldCache.Add(field.Name, field);
         }
-
-        autoSaveCoroutine = StartCoroutine(AutoSave());
+        
         isDirty = false;
     }
 
     private void OnApplicationQuit()
     {
-        SaveAuto();
+        SaveSlot(0);
         if (autoSaveCoroutine != null) StopCoroutine(autoSaveCoroutine);
     }
     #endregion
 
     #region Main Methods
-    public void SaveAuto()
+    public void CreateSaveData()
     {
-        string json = JsonConvert.SerializeObject(saveData, Formatting.Indented);
-        File.WriteAllText(autoPath, json);
+        saveData = new();
+        autoSaveCoroutine ??= StartCoroutine(AutoSave());
     }
 
     public void SaveSlot(int slot)
@@ -60,19 +57,6 @@ public class SaveManager : Singleton<SaveManager>
         string path = GetSlotPath(slot);
         string json = JsonConvert.SerializeObject(saveData, Formatting.Indented);
         File.WriteAllText(path, json);
-    }
-
-    public void LoadAuto()
-    {
-        if (File.Exists(autoPath))
-        {
-            string json = File.ReadAllText(autoPath);
-            saveData = JsonConvert.DeserializeObject<SaveData>(json);
-        }
-        else
-        {
-            saveData = DataManager.Instance.GetObj<SaveData>(nameof(SaveData));
-        }
     }
 
     public void LoadSlot(int slot)
@@ -135,7 +119,7 @@ public class SaveManager : Singleton<SaveManager>
 
             if (isDirty)
             {
-                SaveAuto();
+                SaveSlot(0);
                 isDirty = false;
             }
         }
@@ -146,6 +130,9 @@ public class SaveManager : Singleton<SaveManager>
         string path = Application.persistentDataPath;
         switch (slot)
         {
+            case 0:
+                Path.Combine(path, autoSave);
+                break;
             case 1:
                 Path.Combine(path, saveSlot1);
                 break;
