@@ -1,8 +1,6 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class StartSceneBtns : MonoBehaviour
+public class BtnsStartScene : MonoBehaviour
 {
     public void OnStartBtnClicked()
     {
