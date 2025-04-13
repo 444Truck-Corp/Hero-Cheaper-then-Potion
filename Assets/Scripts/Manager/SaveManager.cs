@@ -134,6 +134,7 @@ public class SaveManager : Singleton<SaveManager>
         }
 
         isAutoDirty = true;
+        EventManager.Instance.InvokeSaveDataChanged(field);
     }
 
     #endregion
