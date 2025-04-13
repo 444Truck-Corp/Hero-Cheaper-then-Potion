@@ -15,9 +15,10 @@ public class UIBase : MonoBehaviour
         closed += Closed;
     }
 
-    public void SetActive(bool isActive)
+    public void SetActive<T>(bool isActive) where T : UIBase
     {
-        gameObject.SetActive(isActive);
+        if (isActive) UIManager.Show<T>();
+        else UIManager.Hide<T>();
     }
 
     public virtual void Opened(object[] param) { }
