@@ -23,6 +23,7 @@ public class UIManager : Singleton<UIManager>
     #region static methods
     public static void SetParents(List<Transform> parents)
     {
+        Instance.uiList.RemoveAll(obj => obj == null || obj.gameObject == null);
         Instance.parents = parents;
         Instance.parents.Add(Instance.transform);
     }
@@ -81,7 +82,7 @@ public class UIManager : Singleton<UIManager>
             }
             else
             {
-                ui.SetActive(false);
+                ui.gameObject.SetActive(false);
             }
         }
     }
