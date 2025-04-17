@@ -14,7 +14,7 @@ public class UIMainClock : MonoBehaviour
     private float time;
     private float lastSavedTime = -1f;
     private const float saveThreshold = 0.1f;
-    private const float maxTime = 60f * 3; //3분.
+    private float maxTime => SaveManager.Instance.MySaveData.maxTime;
 
     #region Unity Life Cycle
     private void Awake()
