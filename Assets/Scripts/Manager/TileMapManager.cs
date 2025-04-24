@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class TileMapManager : Singleton<TileMapManager>
 {
-    [SerializeField] private TileMapData _wallTileMap;
-    [SerializeField] private Transform _heroParent;
-    [SerializeField] private List<EventLocation> _locations;
-
-    public bool[,] Tiles => _wallTileMap.Tiles;
-
-    private Vector2Int _entranceTilePosition;
-    private Vector3 _entranceWorldPosition;
+    private const string TileMapCharacterPrefabPath = "Prefabs/TileMapCharacter";
 
     private readonly AStar _astar = new();
     private readonly Dictionary<int, TileMapCharacter> _heroes = new();
     private readonly Dictionary<int, TileMapCharacter> _npcs = new();
-    private const string TileMapCharacterPrefabPath = "Prefabs/TileMapCharacter";
+    
+    [SerializeField] private TileMapData _wallTileMap;
+    [SerializeField] private Transform _heroParent;
+    [SerializeField] private List<EventLocation> _locations;
+
+    private Vector2Int _entranceTilePosition;
+    private Vector3 _entranceWorldPosition;
+
+    public bool[,] Tiles => _wallTileMap.Tiles;
 
     protected override void Awake()
     {
@@ -93,7 +94,7 @@ public class TileMapManager : Singleton<TileMapManager>
 
     private void CreateTileMapHeroCharacter(HeroData heroData)
     {
-        _heroes[heroData.id] = CreateTileMapCharacter(heroData.classData.className);
+        _heroes[heroData.id] = CreateTileMapCharacter(heroData.classData.className + "1");
     }
 
     private void CreateTileMapNPCCharacter()
@@ -126,6 +127,12 @@ public class TileMapManager : Singleton<TileMapManager>
         hero.transform.localPosition = _entranceWorldPosition;
         hero.Clear();
         hero.gameObject.SetActive(true);
+    }
+
+    public void SpawnHero(HeroData heroData)
+    {
+        CreateTileMapHeroCharacter(heroData);
+        OnHeroEntered(heroData);
     }
 
     private void OnHeroExit(HeroData heroData)

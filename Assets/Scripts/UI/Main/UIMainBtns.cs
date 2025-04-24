@@ -40,7 +40,7 @@ public class UIMainBtns : MonoBehaviour
             { NavUI.Inven, btnInven }
         };
 
-        currentOpenUI =NavUI.None;
+        currentOpenUI = NavUI.None;
         UpdateButtonColor(currentOpenUI);
     }
 
@@ -88,7 +88,8 @@ public class UIMainBtns : MonoBehaviour
                 case NavUI.Quest: UIManager.Hide<UINavQuest>(); break;
                 case NavUI.Inven: UIManager.Hide<UINavInven>(); break;
             }
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             Debug.LogError($"Hide 실패: {e.Message}");
         }

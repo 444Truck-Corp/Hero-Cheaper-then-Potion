@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 public enum EHeroState
@@ -9,21 +10,41 @@ public enum EHeroState
 
 public class HeroManager : Singleton<HeroManager>
 {
-    //private struct Schedule
-    //{
-    //    public int scheduleType; // -1이면 Training, 0 이상 : QuestIdx.
-    //    public List<int> heroIdxs;
-    //    public int dDay;
-    //    public int successRate;
-    //}
-
     private readonly List<HeroData> _heroList = new();
     private readonly Dictionary<int, HeroData> _heroes = new();
-    private int _count;
+    private readonly Dictionary<EHeroState, int> _stateDict = new();
+    private List<ClassData> classList;
+
+    public static int HeroCount;
+    private static int _idCount;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        // 상태 맵 초기화
+        foreach (EHeroState state in Enum.GetValues(typeof(EHeroState)))
+        {
+            _stateDict[state] = 0;
+        }
+    }
 
     public HeroData CreateNewHero()
     {
-        HeroData hero = new HeroData();
+        // 직업 데이터 Caching
+        classList = DataManager.Instance.GetObjList<ClassData>("ClassData");
+
+        HeroData hero = new();
+        hero.id = _idCount++;
+        hero.classData = classList[UnityEngine.Random.Range(0, classList.Count)];
+        hero.status = hero.classData.BaseStat;
+
+        // TODO: 너무 하드코딩임
+        hero.spriteType = UnityEngine.Random.Range(0, 2) == 0;
+        hero.spriteIdx = hero.classData.id * 2;
+        hero.spriteIdx -= (hero.spriteType) ? 1 : 2;
+
+        HeroCount++;
+
         return hero;
     }
 

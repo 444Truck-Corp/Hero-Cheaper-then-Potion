@@ -17,10 +17,11 @@ public class SlotHeroList : MonoBehaviour
     {
         listKey = idx;
 
-        /*ui info*/
+        // UI 정보
+        // TODO: 경로 확인 필요
         string className = hero.classData.className;
-        thumbnail.sprite = ResourceManager.Instance.LoadAsset<Sprite>("Thumbnails", className);
-        nameTxt.text = hero.name;
+        //thumbnail.sprite = ResourceManager.Instance.LoadAsset<Sprite>("Thumbnails", className);
+        //nameTxt.text = hero.name;
         lvTxt.text = $"Lv : {hero.level}";
 
         //TODO : Localization 시 설정 필요
