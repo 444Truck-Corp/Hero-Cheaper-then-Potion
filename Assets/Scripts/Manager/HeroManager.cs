@@ -1,12 +1,6 @@
 using System;
 using System.Collections.Generic;
 
-public enum eHeroState
-{
-    FREE,
-    QUEST
-}
-
 public class HeroManager : Singleton<HeroManager>
 {
     private List<ClassData> classList;
@@ -28,11 +22,11 @@ public class HeroManager : Singleton<HeroManager>
     }
 
     #region Main Methods
-    public HeroData SpawnNewHero(int id)
+    public HeroData SpawnNewHero()
     {
         var heroData = CreateNewHero();
         TileMapManager.Instance.SpawnHero(heroData);
-        SaveManager.Instance.MySaveData.ownedHeros.Add(id, heroData);
+        SaveManager.Instance.MySaveData.ownedHeros.Add(heroData.id, heroData);
 
         return heroData;
     }
@@ -56,7 +50,24 @@ public class HeroManager : Singleton<HeroManager>
 
         hero.exp = 0;
 
+        hero.state = eHeroState.FREE;
+
         return hero;
+    }
+
+    private void TestPrintHero(HeroData newHero)
+    {
+        UnityEngine.Debug.Log($"=== New Hero Spawned ===");
+        UnityEngine.Debug.Log($"ID: {newHero.id}");
+        UnityEngine.Debug.Log($"Name: {newHero.name}");
+        UnityEngine.Debug.Log($"Class: {newHero.classData.className}"); // 필드명: className
+        UnityEngine.Debug.Log($"Level: {newHero.level}");
+        UnityEngine.Debug.Log($"EXP: {newHero.exp}");
+        UnityEngine.Debug.Log($"Status:");
+        UnityEngine.Debug.Log($" - STR: {newHero.status.STR}");
+        UnityEngine.Debug.Log($" - DEX: {newHero.status.DEX}");
+        UnityEngine.Debug.Log($" - INT: {newHero.status.INT}");
+        UnityEngine.Debug.Log($" - HP: {newHero.status.HP}");
     }
     #endregion
 }
