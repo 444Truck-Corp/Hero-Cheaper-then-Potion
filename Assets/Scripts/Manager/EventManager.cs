@@ -3,7 +3,32 @@ using UnityEngine.Events;
 
 public class EventManager : Singleton<EventManager>
 {
+    private Dictionary<string, UnityEvent> clickEvents = new();
     private Dictionary<string, UnityEvent> saveDataChangeEvents = new();
+
+    #region Click Events
+    public void AddClickListener(string eventKey, UnityAction action)
+    {
+        if (!clickEvents.ContainsKey(eventKey))
+            clickEvents[eventKey] = new UnityEvent();
+
+        clickEvents[eventKey].AddListener(action);
+    }
+
+    public void RemoveClickListener(string eventKey, UnityAction action)
+    {
+        if (clickEvents.ContainsKey(eventKey))
+            clickEvents[eventKey].RemoveListener(action);
+    }
+
+    public void InvokeClickEvent(string eventKey)
+    {
+        if (clickEvents.TryGetValue(eventKey, out var unityEvent))
+        {
+            unityEvent.Invoke();
+        }
+    }
+    #endregion
 
     #region SaveData Change Events
     public void AddSaveDataListener(string fieldName, UnityAction action)
