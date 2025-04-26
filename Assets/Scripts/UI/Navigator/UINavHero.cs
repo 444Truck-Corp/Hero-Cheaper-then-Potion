@@ -32,7 +32,7 @@ public class UINavHero : UIBase
         {
             gold -= summonPrice;
             SaveManager.Instance.SetSaveData(nameof(SaveManager.Instance.MySaveData.gold), gold);
-            HeroManager.Instance.SpawnNewHero(SaveManager.Instance.MySaveData.heroNum++);
+            HeroManager.Instance.SpawnNewHero();
             FetchHeroList();
         }
         else
