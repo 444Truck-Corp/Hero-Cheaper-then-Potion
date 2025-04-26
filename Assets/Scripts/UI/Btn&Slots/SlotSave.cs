@@ -31,7 +31,7 @@ public class SlotSave : MonoBehaviour
             playTime.text = formatted;
 
             leftDays.text = saveData.day.ToString();
-            guildLv.text = Utils.ChangeToRomanNumeral(saveData.guildLevel);
+            guildLv.text = Utils.ChangeToRomanNumeral(saveData.rank);
             gold.text = saveData.gold.ToString() + "P";
             heros.text = saveData.ownedHeros.Count.ToString();
         }
