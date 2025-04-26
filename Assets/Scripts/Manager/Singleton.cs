@@ -6,7 +6,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     private static readonly object lockObj = new();
 
     [Tooltip("Scene이동 true 파괴/ false 보호")]
-    [SerializeField] protected bool isDestroyOnLoad = false;
+    protected bool isDestroyOnLoad = false;
 
     public static T Instance
     {
@@ -14,15 +14,11 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         {
             if (instance == null)
             {
-                lock (lockObj)
-                {
-                    instance = FindFirstObjectByType<T>();
+                instance = FindFirstObjectByType<T>();
 
-                    if (instance == null)
-                    {
-                        GameObject go = new(typeof(T).Name);
-                        instance = go.AddComponent<T>();
-                    }
+                if (instance == null)
+                {
+                    Debug.LogError($"[Singleton] {typeof(T).Name}이(가) 씬에 존재하지 않습니다!");
                 }
             }
             return instance;

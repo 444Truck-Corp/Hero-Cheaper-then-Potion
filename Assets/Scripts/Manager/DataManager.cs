@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 public class DataManager : Singleton<DataManager>
 {
-    private readonly Dictionary<string, string> dataDics = new(); //Resources/Json으로부터 자동로드.
+    private Dictionary<string, string> dataDics = new(); //Resources/Json으로부터 자동로드.
 
     #region Unity Life Cycles
     public void Init()
@@ -15,16 +15,7 @@ public class DataManager : Singleton<DataManager>
         {
             string fileName = jsonFile.name;
             string jsonData = jsonFile.text;
-
-            Type classType = Type.GetType(fileName);
-            if (classType != null)
-            {
-                dataDics[fileName] = jsonData;
-            }
-            else
-            {
-                Debug.LogError($"'{fileName}'에 해당하는 클래스를 찾을 수 없습니다.");
-            }
+            dataDics[fileName] = jsonData;
         }
     }
     #endregion
