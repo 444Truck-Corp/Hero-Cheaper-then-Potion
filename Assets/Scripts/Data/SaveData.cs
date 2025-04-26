@@ -32,8 +32,9 @@ public class SaveData
     public List<EquipData> ownedEquips = new();
     #endregion
 
-    #region progress
-    public bool isFirstQuest = false;
+    #region quest
+    public List<QuestData> receivedQuests = new(); //수락한 퀘스트 목록.
+    public List<QuestProcessInfo> processingQuests = new(); //진행중인 퀘스트 목록.
     #endregion
 
     public SaveData() { }

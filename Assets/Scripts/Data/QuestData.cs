@@ -9,6 +9,14 @@ public class DropItemInfo
 }
 
 [Serializable]
+public class QuestProcessInfo
+{
+    public int questId; // 진행 중인 퀘스트 ID
+    public List<int> heroIds; // 참여 중인 용사 ID 리스트
+    public int returnDay;  //복귀 예정일
+}
+
+[Serializable]
 public class QuestData
 {
     public int id;
