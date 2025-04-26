@@ -24,7 +24,7 @@ public class SaveData
 
     #region hero 
     public int heroNum = 0; //Hero Id 매기는 변수.
-    public Dictionary<BigInteger, HeroData> ownedHeros = new(); //보유 Hero 목록.
+    public Dictionary<int, HeroData> ownedHeros = new(); //보유 Hero 목록.
     #endregion
 
     #region inventory

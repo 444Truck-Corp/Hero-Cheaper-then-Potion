@@ -17,18 +17,18 @@ public enum eSaveSlot
 public class SaveManager : Singleton<SaveManager>
 {
     private SaveData saveData;
-    public SaveData MySaveData => saveData;
+    public SaveData MySaveData { get { return saveData; } }
     private Dictionary<string, FieldInfo> fieldCache = new();
 
     private bool isAutoDirty;
-    private string dir;
+    private string directory;
 
     #region Unity Life Cycles
     public void Init()
     {
-        dir = Path.Combine(Application.persistentDataPath, "Save");
+        directory = Path.Combine(Application.persistentDataPath, "Save");
 
-        if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
+        if (!Directory.Exists(directory)) Directory.CreateDirectory(directory);
 
         var fields = typeof(SaveData).GetFields(BindingFlags.Public | BindingFlags.Instance);
         foreach (var field in fields)
@@ -142,7 +142,7 @@ public class SaveManager : Singleton<SaveManager>
     #region Sub Methods
     private string GetSlotPath(eSaveSlot slot)
     {
-        return Path.Combine(dir, $"{slot}.json");
+        return Path.Combine(directory, $"{slot}.json");
     }
 
     #endregion

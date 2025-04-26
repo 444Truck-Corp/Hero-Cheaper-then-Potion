@@ -3,6 +3,10 @@ using UnityEngine;
 public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T instance;
+    private static readonly object lockObj = new();
+
+    [Tooltip("Scene이동 true 파괴/ false 보호")]
+    [SerializeField] protected bool isDestroyOnLoad = false;
 
     public static T Instance
     {
@@ -10,14 +14,16 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         {
             if (instance == null)
             {
-                instance = FindAnyObjectByType<T>();
-
-                if (instance == null)
+                lock (lockObj)
                 {
-                    GameObject singletonObject = new GameObject(typeof(T).Name);
-                    instance = singletonObject.AddComponent<T>();
+                    instance = FindFirstObjectByType<T>();
+
+                    if (instance == null)
+                    {
+                        GameObject go = new(typeof(T).Name);
+                        instance = go.AddComponent<T>();
+                    }
                 }
-                DontDestroyOnLoad(instance);
             }
             return instance;
         }
@@ -25,14 +31,24 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
     protected virtual void Awake()
     {
-        if (instance == null)
+        lock (lockObj)
         {
-            instance = this as T;
-            DontDestroyOnLoad(gameObject);
+            if (instance == null)
+            {
+                instance = this as T;
+
+                if (!isDestroyOnLoad)
+                    DontDestroyOnLoad(gameObject);
+            }
+            else if (instance != this) Destroy(gameObject);
         }
-        else if (instance != this)
+    }
+
+    private void OnDestroy()
+    {
+        if (instance == this)
         {
-            Destroy(gameObject);
+            instance = null;
         }
     }
 }

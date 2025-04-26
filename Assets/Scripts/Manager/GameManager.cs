@@ -41,7 +41,6 @@ public class GameManager : Singleton<GameManager>
         ResourceManager.Instance.Init();
         DataManager.Instance.Init();
         SaveManager.Instance.Init();
-        SpawnManager.Instance.Init();
     }
     #endregion
 }
