@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 using UnityEngine;
 
 public class UINavHero : UIBase
@@ -9,8 +8,8 @@ public class UINavHero : UIBase
     [SerializeField] private Transform ListParent;
     [SerializeField] private GameObject ListPrefab;
 
-    private Dictionary<BigInteger, SlotHeroList> heroSlots = new();
-    private Dictionary<BigInteger, HeroData> heroInfos = new();
+    private Dictionary<int, SlotHeroList> heroSlots = new();
+    private Dictionary<int, HeroData> heroInfos = new();
 
     private readonly int summonPrice = 100;
 
@@ -19,7 +18,7 @@ public class UINavHero : UIBase
         FetchHeroList();
     }
 
-    public void OnHeroSlotSelected(BigInteger listIdx)
+    public void OnHeroSlotSelected(int listIdx)
     {
         UIManager.Show<UIPopupHeroDetail>(heroInfos[listIdx]);
     }
@@ -33,7 +32,7 @@ public class UINavHero : UIBase
         {
             gold -= summonPrice;
             SaveManager.Instance.SetSaveData(nameof(SaveManager.Instance.MySaveData.gold), gold);
-            SpawnManager.Instance.SpawnNewHero(SaveManager.Instance.MySaveData.heroNum++);
+            HeroManager.Instance.SpawnNewHero(SaveManager.Instance.MySaveData.heroNum++);
             FetchHeroList();
         }
         else
@@ -45,7 +44,7 @@ public class UINavHero : UIBase
     #region Sub Methods
     private void FetchHeroList()
     {
-        Dictionary<BigInteger, HeroData> heros = SaveManager.Instance.MySaveData.ownedHeros;
+        Dictionary<int, HeroData> heros = SaveManager.Instance.MySaveData.ownedHeros;
         if (!heroInfos.SequenceEqual(heros))
         {
             foreach (Transform child in ListParent)
