@@ -1,6 +1,13 @@
 using System;
 
 [Serializable]
+public struct LvData
+{
+    public int level;
+    public int exp;
+}
+
+[Serializable]
 public struct StatusData
 {
     public int STR; // 근력
