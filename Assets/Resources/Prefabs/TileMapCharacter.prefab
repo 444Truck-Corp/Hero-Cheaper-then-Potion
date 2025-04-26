@@ -184,12 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 745e629c5ceb00646b33280cc7a604a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onLeftClickEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  _onRightClickEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  clickType: 3
 --- !u!1 &4749666171806898204
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,12 +421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 745e629c5ceb00646b33280cc7a604a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onLeftClickEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  _onRightClickEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  clickType: 0
 --- !u!114 &6377030909298398733
 MonoBehaviour:
   m_ObjectHideFlags: 0

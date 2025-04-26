@@ -6,26 +6,23 @@ using UnityEngine.UI;
 public class SlotHeroList : MonoBehaviour
 {
     [SerializeField] private Button myBtn;
-    public BigInteger listKey;
+    public int listKey;
 
-    [SerializeField] private Image thumbnail;
     [SerializeField] private TextMeshProUGUI nameTxt;
     [SerializeField] private TextMeshProUGUI lvTxt;
     [SerializeField] private TextMeshProUGUI classTxt;
+    [SerializeField] private Image thumbnail;
 
-    public void InitHeroSlot(BigInteger idx, HeroData hero)
+    public void InitHeroSlot(int idx, HeroData hero)
     {
         listKey = idx;
 
-        // UI 정보
-        // TODO: 경로 확인 필요
-        string className = hero.classData.className;
-        //thumbnail.sprite = ResourceManager.Instance.LoadAsset<Sprite>("Thumbnails", className);
-        //nameTxt.text = hero.name;
+        nameTxt.text = hero.name;
         lvTxt.text = $"Lv : {hero.level}";
 
-        //TODO : Localization 시 설정 필요
-        classTxt.text = className.ToString();
+        ClassData classData = hero.classData;
+        classTxt.text = classData.className;
+        thumbnail.sprite = ResourceManager.Instance.LoadAsset<Sprite>("Thumbnails", classData.id.ToString());
     }
 
     public void OnSlotClicked()

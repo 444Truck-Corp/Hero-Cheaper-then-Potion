@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 public class DataManager : Singleton<DataManager>
 {
-    private readonly Dictionary<string, string> dataDics = new(); //Resources/Json으로부터 자동로드.
+    private Dictionary<string, string> dataDics = new(); //Resources/Json으로부터 자동로드.
 
     #region Unity Life Cycles
     public void Init()
@@ -15,126 +15,78 @@ public class DataManager : Singleton<DataManager>
         {
             string fileName = jsonFile.name;
             string jsonData = jsonFile.text;
-
-            Type classType = Type.GetType(fileName);
-            if (classType != null)
-            {
-                dataDics[fileName] = jsonData;
-            }
-            else
-            {
-                Debug.LogError($"'{fileName}'에 해당하는 클래스를 찾을 수 없습니다.");
-            }
+            dataDics[fileName] = jsonData;
         }
     }
     #endregion
 
     #region Main Methods
     /// <summary><typeparamref name="T"/>의 데이터를 object로 parsing 후 반환</summary>
-    public T GetObj<T>(string className) where T : class, new()
+    public T GetObj<T>(string key)
     {
-        if (dataDics.ContainsKey(className))
+        if (dataDics.TryGetValue(key, out var json))
         {
-            return ConvertToObj<T>(className);
+            return ConvertToObj<T>(json, key);
         }
         else
         {
-            return new T();
+            Debug.LogWarning($"{key}은 DataDics에 존재하지 않습니다.");
+            return default;
         }
     }
 
     /// <summary><typeparamref name="T"/>의 데이터를 object로 parsing 후 반환</summary>
-    public List<T> GetObjList<T> (string className) where T : class
+    public List<T> GetObjList<T> (string key)
     {
-        if (dataDics.ContainsKey(className))
+        if (dataDics.TryGetValue(key, out var json))
         {
-            return ConvertToList<T>(className);
+            return ConvertToList<T>(json, key);
         }
         else
         {
-            Debug.LogWarning($"{className}은 DataDics에 존재하지 않습니다.");
+            Debug.LogWarning($"{key}은 DataDics에 존재하지 않습니다.");
             return null;
         }
     }
 
     /// <summary>데이터를 string으로 반환</summary>
-    public string GetRawDataList(string className)
+    public string GetRawDataList(string key)
     {
-        if (dataDics.ContainsKey(className))
+        if (dataDics.TryGetValue(key, out var json))
         {
-            return dataDics[className];
+            return json;
         }
         else
         {
-            Debug.LogWarning($"{className}은 DataDics에 존재하지 않습니다.");
+            Debug.LogWarning($"{key}은 DataDics에 존재하지 않습니다.");
             return null;
         }
     }
     #endregion
 
     #region Sub Methods
-    private T ConvertToObj<T>(string className) where T : class
+    private T ConvertToObj<T>(string json, string key)
     {
-        Type classType = Type.GetType(className);
-
-        if (classType == null)
-        {
-            Debug.LogError($"'{className}'에 해당하는 클래스를 찾을 수 없습니다.");
-            return null;
-        }
-
-        string jsonData = dataDics[className];
         try
         {
-            T obj = JsonConvert.DeserializeObject<T>(jsonData);
-
-            if (obj != null)
-            {
-                return obj;
-            }
-            else
-            {
-                Debug.LogError($"'{className}'의 데이터가 예상한 형식이 아닙니다.");
-                return null;
-            }
+            return JsonConvert.DeserializeObject<T>(json);
         }
         catch (Exception ex)
         {
-            Debug.LogError($"'{className}'의 JSON 데이터 변환 중 오류 발생: {ex.Message}");
-            return null;
+            Debug.LogError($"'{key}'의 JSON 데이터 변환 중 오류 발생: {ex.Message}");
+            return default;
         }
     }
 
-    private List<T> ConvertToList<T>(string className) where T : class
+    private List<T> ConvertToList<T>(string jsonData, string keyName)
     {
-        Type classType = Type.GetType(className);
-       
-        if (classType == null)
-        {
-            Debug.LogError($"'{className}'에 해당하는 클래스를 찾을 수 없습니다.");
-            return null;
-        }
-
-        var objectList = new List<T>();
-        string jsonData = dataDics[className];
         try
         {
-            var jsonObject = JsonConvert.DeserializeObject(jsonData, typeof(List<>).MakeGenericType(classType));
-
-            if (jsonObject is IEnumerable<T> objectListEnumerable)
-            {
-                objectList.AddRange(objectListEnumerable);
-                return objectList;
-            }
-            else
-            {
-                Debug.LogError($"'{className}'의 데이터가 예상한 형식의 List<T>가 아닙니다.");
-                return null;
-            }
+            return JsonConvert.DeserializeObject<List<T>>(jsonData);
         }
         catch (Exception ex)
         {
-            Debug.LogError($"'{className}'의 JSON 데이터 변환 중 오류 발생: {ex.Message}");
+            Debug.LogError($"'{keyName}'의 JSON → List<{typeof(T).Name}> 변환 실패: {ex.Message}");
             return null;
         }
     }

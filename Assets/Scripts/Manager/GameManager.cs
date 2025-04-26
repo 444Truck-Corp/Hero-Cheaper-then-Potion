@@ -13,9 +13,8 @@ public enum EEnding
 public class GameManager : Singleton<GameManager>
 {
     #region Unity Life Cycles
-    protected override void Awake()
+    private void Start()
     {
-        base.Awake();
         InitManagers();
     }
     #endregion
@@ -41,7 +40,6 @@ public class GameManager : Singleton<GameManager>
         ResourceManager.Instance.Init();
         DataManager.Instance.Init();
         SaveManager.Instance.Init();
-        SpawnManager.Instance.Init();
     }
     #endregion
 }

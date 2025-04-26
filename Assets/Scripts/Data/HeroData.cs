@@ -1,28 +1,30 @@
 using System;
+using System.Collections.Generic;
+
+public enum eHeroState
+{
+    FREE,
+    QUEST
+}
 
 [Serializable]
 public class HeroData
 {
+    #region HeroManager 초기화 영역
     public int id;
     public string name;
-    public bool spriteType;
     public ClassData classData;
     public StatusData status;
     public int level;
     public int exp;
-    public int spriteIdx;
+    public eHeroState state;
+    #endregion
 
-    public EquipData[] equippedDatas; //현재 착용중인 장비.
+    public List<EquipData> equipList; //현재 착용중인 장비.
 
     public HeroData()
     {
-        id = 0;
-        name = "";
-        classData = null;
-        spriteType = false;
-        level = 0;
-        exp = 0;
-        spriteIdx = 0;
+        equipList = new();
     }
 
     //TODO : 위치 이동
