@@ -11,14 +11,14 @@ public class ClassData
     public int baseStr;
     public int baseDex;
     public int baseInt;
-    public int baseLuk;
+    public int baseHP;
 
     // 증가 스탯
     public int incStr;
     public int incDex;
     public int incInt;
-    public int incLuk;
+    public int incHP;
 
-    public StatusData BaseStat => new(baseStr, baseDex, baseInt, baseLuk);
-    public StatusData IncStat => new(incStr, incDex, incInt, incLuk);
+    public StatusData BaseStat => new(baseStr, baseDex, baseInt, baseHP);
+    public StatusData IncStat => new(incStr, incDex, incInt, incHP);
 }

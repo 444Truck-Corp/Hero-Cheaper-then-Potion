@@ -13,14 +13,14 @@ public struct StatusData
     public int STR; // 근력
     public int DEX; // 민첩
     public int INT; // 지능
-    public int LUK; // 행운
+    public int HP; // 행운
 
     public StatusData(int _str, int _dex, int _int, int _luk)
     {
         STR = _str;
         DEX = _dex;
         INT = _int;
-        LUK = _luk;
+        HP = _luk;
     }
 
     public StatusData SetStatus(int _str, int _dex, int _int, int _luk)
@@ -28,7 +28,7 @@ public struct StatusData
         STR = _str;
         DEX = _dex;
         INT = _int;
-        LUK = _luk;
+        HP = _luk;
         return this;
     }
 
@@ -38,7 +38,7 @@ public struct StatusData
             a.STR + b.STR,
             a.DEX + b.DEX,
             a.INT + b.INT,
-            a.LUK + b.LUK
+            a.HP + b.HP
         );
     }
 }
