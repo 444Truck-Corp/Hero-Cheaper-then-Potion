@@ -18,7 +18,7 @@ public class SaveData
     #endregion
 
     #region guild
-    public int guildLevel = 1; //길드 레벨
+    public int rank = 1; //길드 레벨
     
     #endregion
 
@@ -33,7 +33,7 @@ public class SaveData
     #endregion
 
     #region quest
-    public List<QuestData> receivedQuests = new(); //수락한 퀘스트 목록.
+    public List<int> receivedQuests = new(); //수락한 퀘스트 목록.
     public List<QuestProcessInfo> processingQuests = new(); //진행중인 퀘스트 목록.
     #endregion
 
