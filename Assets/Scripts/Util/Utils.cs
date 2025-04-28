@@ -8,4 +8,14 @@ public static class Utils
         string[] ones = { "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" };
         return thousands[number / 1000] + hundreds[(number % 1000) / 100] + tens[(number % 100) / 10] + ones[number % 10];
     }
+
+    public static string ChangeToStars(int number)
+    {
+        string stars = "";
+
+        for (int i = 0; i < number / 2; i++) stars += "★";
+        if (number % 2 == 1) stars += "☆";
+
+        return stars;
+    }
 }
