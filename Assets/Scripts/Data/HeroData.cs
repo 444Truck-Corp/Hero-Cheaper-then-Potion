@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-public enum eHeroState
+public enum EHeroState
 {
     FREE,
     QUEST
@@ -17,7 +17,7 @@ public class HeroData
     public StatusData status;
     public int level;
     public int exp;
-    public eHeroState state;
+    public EHeroState state;
     #endregion
 
     public List<EquipData> equipList; //현재 착용중인 장비.

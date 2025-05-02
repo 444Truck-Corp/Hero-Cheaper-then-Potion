@@ -5,73 +5,38 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class TileMapCharacter : Poolable
 {
-    [SerializeField] private SpriteRenderer _spriteRenderer;
-    [SerializeField] private float _movementFrequency;
-    [SerializeField] private float _movementSpeed = 5;
-    [SerializeField] private List<Vector2Int> _moveCommand;
-
-    [SerializeField] private bool _isMoving;
-    [SerializeField] private float _time;
-    [SerializeField] private string _texturePath;
-    [SerializeField] private CustomAnimator _animator;
-    [SerializeField] private Emotion _emotion;
-
     private const string PATH = "Textures/CharacterSheet/";
 
-    public Vector2Int Position => new((int)_targetStepPosition.x, (int)-_targetStepPosition.y);
+    [Header("Movement")]
+    [SerializeField] private bool _isMoving;
+    [SerializeField] private float _movementFrequency;
+    [SerializeField] private float _movementSpeed = 5;
+    [SerializeField] private float _time;
+    [SerializeField] private string _texturePath;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private CustomAnimator _animator;
+    [SerializeField] private Emotion _emotion;
 
     private float _movementProgress;
     private Direction _direction;
     private Vector3 _lastPosition;
     private Vector3 _targetStepPosition;
     private EventLocation _targetLocation;
+    private GuildLocationEventType _targetType;
     private Action _onMoveComplete;
+
+    private readonly Queue<Vector2Int> _moveCommand = new();
+
+    public Vector2Int Position => new((int)_targetStepPosition.x, (int)-_targetStepPosition.y);
 
     private void Reset()
     {
         _movementSpeed = 5;
     }
 
-    public void Initialize(string textureName)
-    {
-        _texturePath = textureName;
-        if (string.IsNullOrEmpty(_texturePath))
-        {
-            _texturePath = "궁사1";
-        }
-        _animator = new CustomAnimator(PATH + textureName, 9, true, true, null);
-        Clear();
-    }
-
-    public void Clear()
-    {
-        _direction = new Direction(2);
-        _targetStepPosition = transform.localPosition;
-        if (_targetLocation != null) TileMapManager.Instance.ReturnLocation(_targetLocation);
-        _targetLocation = null;
-        _moveCommand = null;
-        _movementProgress = 0.0f;
-        _animator.SetPlaying(false);
-        _emotion.gameObject.SetActive(false);
-        UpdateAnimation();
-    }
-
-    public void SetMoveCommand(List<Vector2Int> route, Action onMoveComplete = null)
-    {
-        if (_targetLocation != null)
-        {
-            TileMapManager.Instance.ReturnLocation(_targetLocation);
-            _targetLocation = null;
-        }
-        _moveCommand = route;
-        _time = _movementFrequency;
-        _onMoveComplete = onMoveComplete;
-    }
-
     private void FixedUpdate()
     {
-        _spriteRenderer.sortingOrder = -(int)transform.localPosition.y;
-
+        // 이동중일 때
         if (_isMoving)
         {
             _movementProgress += _movementSpeed * Time.fixedDeltaTime;
@@ -81,23 +46,23 @@ public class TileMapCharacter : Poolable
                 transform.localPosition = _targetStepPosition;
                 _movementProgress = 0.0f;
                 _isMoving = false;
-                if (_moveCommand != null && _moveCommand.Count == 0)
+                if (_moveCommand.Count == 0)
                 {
                     _onMoveComplete?.Invoke();
                     _time = UnityEngine.Random.Range(0.0f, 3.0f);
-                    TileMapManager.Instance.ReturnLocation(_targetLocation);
-                    _targetLocation = null;
+                    ReturnLocation();
                     _animator.SetPlaying(false);
                 }
             }
         }
+        // 이동하지 않을 때
         else
         {
-            if ((_moveCommand == null || _moveCommand.Count == 0) && _targetLocation == null)
+            if (_moveCommand.Count == 0 && _targetLocation == null)
             {
                 FindNewTargetLocation();
             }
-            else if (_moveCommand != null && _moveCommand.Count > 0)
+            else if (_moveCommand.Count > 0)
             {
                 UpdateStep();
             }
@@ -107,6 +72,51 @@ public class TileMapCharacter : Poolable
             }
         }
         UpdateAnimation();
+    }
+
+    public void Initialize(string textureName, GuildLocationEventType targetType)
+    {
+        _texturePath = textureName;
+        if (string.IsNullOrEmpty(_texturePath))
+        {
+            _texturePath = "궁사2";
+        }
+        _animator = new CustomAnimator(PATH + textureName, 9, true, true, null);
+        Clear();
+    }
+
+    public void Clear()
+    {
+        _direction = new Direction(2);
+        _targetStepPosition = transform.localPosition;
+        ReturnLocation();
+        _moveCommand.Clear();
+        _movementProgress = 0.0f;
+        _animator.SetPlaying(false);
+        _emotion.gameObject.SetActive(false);
+        UpdateAnimation();
+    }
+
+    private void ReturnLocation()
+    {
+        if (_targetLocation == null)
+        {
+            return;
+        }
+        TileMapManager.Instance.ReturnLocation(_targetLocation);
+        _targetLocation = null;
+    }
+
+    public void SetTargetTilePosition(Vector2Int position)
+    {
+        TileMapManager.Instance.GetRoute(Position, position, _moveCommand);
+    }
+
+    public void SetMoveCommand(Action onMoveComplete = null)
+    {
+        ReturnLocation();
+        _time = _movementFrequency;
+        _onMoveComplete = onMoveComplete;
     }
 
     private void UpdateStep()
@@ -120,9 +130,9 @@ public class TileMapCharacter : Poolable
         _time = _movementFrequency;
         _movementProgress = 0;
         _lastPosition = transform.localPosition;
-        _direction.Forward = Direction.VECTOR_INDEX_MAP[_moveCommand[0]];
-        _targetStepPosition = transform.localPosition + (Vector3)(Vector2)_moveCommand[0];
-        _moveCommand.RemoveAt(0);
+        Vector2Int currentCommand = _moveCommand.Dequeue();
+        _direction.Forward = Direction.VECTOR_INDEX_MAP[currentCommand];
+        _targetStepPosition = transform.localPosition + (Vector3)(Vector2)currentCommand;
         _isMoving = true;
         _animator.SetPlaying(true);
     }
@@ -135,12 +145,12 @@ public class TileMapCharacter : Poolable
             return;
         }
 
-        var target = TileMapManager.Instance.GetEmptyLocation();
+        EventLocation target = TileMapManager.Instance.GetEventLocation(_targetType);
         if (target != null)
         {
             Vector2Int position = new((int)target.transform.localPosition.x, -(int)target.transform.localPosition.y);
-            var route = TileMapManager.Instance.GetRoute(Position, position);
-            SetMoveCommand(route, OnMoveToTargetLocationComplete);
+            TileMapManager.Instance.GetRoute(Position, position, _moveCommand);
+            SetMoveCommand(OnMoveToTargetLocationComplete);
             _targetLocation = target;
         }
     }

@@ -63,7 +63,7 @@ public class AStar
     private Node GetNodeWithLowestF(List<Node> openList)
     {
         var lowestFNode = openList[0];
-        foreach (var node in openList)
+        foreach (Node node in openList)
         {
             if (node.F < lowestFNode.F)
             {
@@ -94,10 +94,12 @@ public class AStar
         return neighbors;
     }
 
+    private readonly List<Node> path = new();
+
     private List<Node> RetracePath(Node endNode)
     {
-        List<Node> path = new();
-        var currentNode = endNode;
+        path.Clear();
+        Node currentNode = endNode;
 
         // 경로를 역추적
         while (currentNode != null)
@@ -111,16 +113,14 @@ public class AStar
         return path;
     }
 
-    public List<Vector2Int> GetRouteMovementValue(Vector2Int start, Vector2Int end)
+    public void EnqueueRouteMovementValue(Vector2Int start, Vector2Int end, Queue<Vector2Int> route)
     {
-        var route = Find(start, end);
-        List<Vector2Int> routeMovement = new();
-        for (int index = 1; index < route.Count; index++)
+        List<Node> routeNodes = Find(start, end);
+        for (int index = 1; index < routeNodes.Count; index++)
         {
-            int x = route[index].X - route[index - 1].X;
-            int y = route[index].Y - route[index - 1].Y;
-            routeMovement.Add(new Vector2Int(x, -y));
+            int x = routeNodes[index].X - routeNodes[index - 1].X;
+            int y = routeNodes[index].Y - routeNodes[index - 1].Y;
+            route.Enqueue(new Vector2Int(x, -y));
         }
-        return routeMovement;
     }
 }

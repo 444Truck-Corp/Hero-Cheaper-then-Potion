@@ -354,7 +354,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f409f7ddee07fc4a845cfb9f0df20c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDestroyOnLoad: 0
 --- !u!4 &400615897
 Transform:
   m_ObjectHideFlags: 0
@@ -1331,7 +1330,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3517bc94b82b6c4e94c56b788dca8bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDestroyOnLoad: 0
 --- !u!4 &1291052779
 Transform:
   m_ObjectHideFlags: 0
@@ -1434,6 +1432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1575859493}
   - component: {fileID: 1575859492}
+  - component: {fileID: 1575859494}
   m_Layer: 0
   m_Name: TileMapManager
   m_TagString: Untagged
@@ -1453,10 +1452,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6be5766114c2d7479054cfddef13fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDestroyOnLoad: 0
   _wallTileMap: {fileID: 1335800588}
   _heroParent: {fileID: 1335800587}
-  _locations: []
 --- !u!4 &1575859493
 Transform:
   m_ObjectHideFlags: 0
@@ -1472,6 +1469,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1575859494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575859491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15af0a8c7741e7a42bb218ef11c414c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1626747914
 PrefabInstance:
   m_ObjectHideFlags: 0

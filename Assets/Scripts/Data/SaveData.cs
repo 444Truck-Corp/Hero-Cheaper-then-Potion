@@ -1,15 +1,14 @@
 using System;
 using System.Collections.Generic;
-using System.Numerics;
 
 [Serializable]
 public class SaveData
 {
     #region common
-    public long lastSaveTime = 0; 
+    public long lastSaveTime = 0;
     public int day = 100;
-    public float time = 0; //0은 0시, 3분은 24시 (저장 단위 : 초)
-    public readonly float maxTime = 180f;
+    public float time = 0; // 0은 0시, 3분은 24시 (저장 단위 : 초)
+    public const float maxTime = 180f;
     #endregion
 
     #region gold
@@ -19,7 +18,7 @@ public class SaveData
 
     #region guild
     public int rank = 1; //길드 레벨
-    
+
     #endregion
 
     #region hero 

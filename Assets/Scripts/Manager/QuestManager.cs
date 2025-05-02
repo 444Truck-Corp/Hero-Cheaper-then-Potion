@@ -63,7 +63,7 @@ public class QuestManager : Singleton<QuestManager>
         foreach (var heroId in heroIds)
         {
             if (SaveManager.Instance.MySaveData.ownedHeros.TryGetValue(heroId, out var hero))
-                hero.state = eHeroState.QUEST;
+                hero.state = EHeroState.QUEST;
             else
                 Debug.LogWarning($"존재하지 않는 용사 ID: {heroId}");
         }

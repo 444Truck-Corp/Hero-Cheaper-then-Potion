@@ -1,0 +1,95 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+public enum TileMapEventType
+{
+    Shop
+}
+
+public class TileMapEventController : MonoBehaviour
+{
+    // 게임 내 한 시간 (7.5s)
+    private static readonly float oneHourTime = SaveData.maxTime / 24;
+    // 게임 내 10분 (1.25s), 10분의 개수를 계산하기 위한 역수(0.8f)
+    private static readonly float tenMinutesTimeDivider = 1 / (oneHourTime / 6);
+    private static readonly float maxEnterTime = SaveData.maxTime - 20.0f;
+
+    private int _lastUpdatedDay;
+    private int _lastUpdatedTenMinutes;
+    private float _time;
+
+    // 10분마다 발생할 이벤트
+    private readonly SortedDictionary<int, Queue<TileMapEventType>> _eventQueueDictionary = new();
+
+    private void FixedUpdate()
+    {
+        // 날짜 변경 감지
+        if (_lastUpdatedDay > SaveManager.Instance.MySaveData.day)
+        {
+            InitializeDailyEvent();
+            _lastUpdatedDay = SaveManager.Instance.MySaveData.day;
+            _time = 0.0f;
+        }
+
+        // 게임 내 10분마다 이벤트를 진행
+        _time += Time.fixedDeltaTime;
+        int currentTenMinutesCount = (int)(_time * tenMinutesTimeDivider);
+        if (currentTenMinutesCount > _lastUpdatedTenMinutes)
+        {
+            // 이벤트 큐 처리
+            if (_eventQueueDictionary.TryGetValue(currentTenMinutesCount, out Queue<TileMapEventType> tilemapEvents))
+            {
+                while (tilemapEvents.Count > 0)
+                {
+                    TileMapEventType eventType = tilemapEvents.Dequeue();
+                    ProcessEvent(eventType);
+                }
+            }
+            _lastUpdatedTenMinutes = currentTenMinutesCount;
+        }
+    }
+
+    private void InitializeDailyEvent()
+    {
+        // 이벤트 초기화
+        foreach (var pair in _eventQueueDictionary)
+        {
+            pair.Value.Clear();
+        }
+
+        // 상점 방문 이벤트 추가
+        int randomTenMinutesCount = GetRandomTenMinutesCount(oneHourTime * 18, maxEnterTime);
+        AddEvent(randomTenMinutesCount, TileMapEventType.Shop);
+
+        int count = 10;
+        for (int index = 0; index < count; index++)
+        {
+            randomTenMinutesCount = GetRandomTenMinutesCount(0.0f, maxEnterTime);
+        }
+    }
+
+    private int GetRandomTenMinutesCount(float minTime, float maxTime)
+    {
+        float time = Random.Range(minTime, maxTime);
+        return (int)(time * tenMinutesTimeDivider);
+    }
+
+    private void AddEvent(int time, TileMapEventType type)
+    {
+        if (!_eventQueueDictionary.TryGetValue(time, out Queue<TileMapEventType> queue))
+        {
+            queue = new Queue<TileMapEventType>();
+            _eventQueueDictionary[time] = queue;
+        }
+
+        queue.Enqueue(type);
+    }
+
+    private void ProcessEvent(TileMapEventType type)
+    {
+        if (type == TileMapEventType.Shop)
+        {
+            TileMapManager.Instance.OnShopCharacterEntered();
+        }
+    }
+}
