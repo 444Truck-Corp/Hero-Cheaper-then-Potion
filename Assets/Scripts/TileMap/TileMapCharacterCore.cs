@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-public class TileMapCharacter : Poolable
+public class TileMapCharacterCore : Poolable
 {
     private const string PATH = "Textures/CharacterSheet/";
 
@@ -15,15 +15,17 @@ public class TileMapCharacter : Poolable
     [SerializeField] private string _texturePath;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private CustomAnimator _animator;
+    [SerializeField] private Direction _direction;
+    [SerializeField] private float _movementProgress;
+    
     [SerializeField] private Emotion _emotion;
 
-    private float _movementProgress;
-    private Direction _direction;
-    private Vector3 _lastPosition;
-    private Vector3 _targetStepPosition;
-    private EventLocation _targetLocation;
-    private GuildLocationEventType _targetType;
-    private Action _onMoveComplete;
+    [Header("AI")]
+    [SerializeField] private Vector3 _lastPosition;
+    [SerializeField] private Vector3 _targetStepPosition;
+    [SerializeField] private EventLocation _targetLocation;
+    [SerializeField] private GuildLocationEventType _targetType;
+    [SerializeField] private Action _onMoveComplete;
 
     private readonly Queue<Vector2Int> _moveCommand = new();
 
@@ -50,7 +52,6 @@ public class TileMapCharacter : Poolable
                 {
                     _onMoveComplete?.Invoke();
                     _time = UnityEngine.Random.Range(0.0f, 3.0f);
-                    ReturnLocation();
                     _animator.SetPlaying(false);
                 }
             }
@@ -58,8 +59,9 @@ public class TileMapCharacter : Poolable
         // 이동하지 않을 때
         else
         {
-            if (_moveCommand.Count == 0 && _targetLocation == null)
+            if (_moveCommand.Count == 0)
             {
+                ReturnLocation();
                 FindNewTargetLocation();
             }
             else if (_moveCommand.Count > 0)
@@ -74,7 +76,7 @@ public class TileMapCharacter : Poolable
         UpdateAnimation();
     }
 
-    public void Initialize(string textureName, GuildLocationEventType targetType)
+    public void Initialize(string textureName, GuildLocationEventType targetType = GuildLocationEventType.None, bool canAutoFinding = true)
     {
         _texturePath = textureName;
         if (string.IsNullOrEmpty(_texturePath))
@@ -82,6 +84,7 @@ public class TileMapCharacter : Poolable
             _texturePath = "궁사2";
         }
         _animator = new CustomAnimator(PATH + textureName, 9, true, true, null);
+        _targetType = targetType;
         Clear();
     }
 

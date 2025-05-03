@@ -2,17 +2,18 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class TileMapManager : Singleton<TileMapManager>
+public class TileMapManager : DestructibleSingleton<TileMapManager>
 {
     private const string TileMapCharacterPrefabPath = "Prefabs/TileMapCharacter";
 
     private readonly AStar _astar = new();
     private readonly TileMapEventLocationController _controller = new();
-    private readonly Dictionary<int, TileMapCharacter> _heroes = new();
-    private readonly Dictionary<int, TileMapCharacter> _npcs = new();
+    private readonly Dictionary<int, TileMapCharacterCore> _heroes = new();
+    private readonly Dictionary<int, TileMapCharacterCore> _npcs = new();
 
-    [SerializeField] private TileMapData _wallTileMap;
     [SerializeField] private Transform _heroParent;
+    [SerializeField] private TileMapData _wallTileMap;
+    [SerializeField] private TileMapCharacterCore _shopCharacter;
 
     private int npcCount = 0;
 
@@ -25,6 +26,7 @@ public class TileMapManager : Singleton<TileMapManager>
 
         // 이벤트 위치 설정
         List<EventLocation> eventLocations = FindObjectsByType<EventLocation>(FindObjectsSortMode.None).ToList();
+        Debug.Log($"Found EventLocation {eventLocations.Count}");
         _controller.Initialize(eventLocations);
 
         // 캐릭터 초기화
@@ -51,10 +53,9 @@ public class TileMapManager : Singleton<TileMapManager>
 
     public void GetRoute(Vector2Int start, Vector2Int end, Queue<Vector2Int> route)
     {
+        Debug.Log("루트를 가져옵니다.");
         _astar.EnqueueRouteMovementValue(start, end, route);
     }
-
-    private TileMapCharacter _shopCharacter;
 
     public void OnShopCharacterEntered()
     {
@@ -72,16 +73,15 @@ public class TileMapManager : Singleton<TileMapManager>
         }
     }
 
-    private TileMapCharacter CreateTileMapCharacter(string textureName, GuildLocationEventType type)
+    private TileMapCharacterCore CreateTileMapCharacter(string textureName, GuildLocationEventType type = )
     {
-        TileMapCharacter character = PoolManager.Instance.Get<TileMapCharacter>(TileMapCharacterPrefabPath, _heroParent, _controller.EntrancePosition);
+        TileMapCharacterCore character = PoolManager.Instance.Get<TileMapCharacterCore>(TileMapCharacterPrefabPath, _heroParent, _controller.EntrancePosition);
         character.Initialize(textureName, type);
         return character;
     }
 
     private void CreateTileMapHeroCharacter(HeroData heroData)
     {
-        //_heroes[heroData.id] = CreateTileMapCharacter(heroData.classData.className, GuildLocationEventType.QuestBoard);
         _heroes[heroData.id] = CreateTileMapCharacter("궁사2", GuildLocationEventType.QuestBoard);
     }
 

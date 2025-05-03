@@ -63,7 +63,7 @@ public class AStar
     private Node GetNodeWithLowestF(List<Node> openList)
     {
         var lowestFNode = openList[0];
-        foreach (Node node in openList)
+        foreach (var node in openList)
         {
             if (node.F < lowestFNode.F)
             {
@@ -94,12 +94,10 @@ public class AStar
         return neighbors;
     }
 
-    private readonly List<Node> path = new();
-
     private List<Node> RetracePath(Node endNode)
     {
-        path.Clear();
-        Node currentNode = endNode;
+        List<Node> path = new();
+        var currentNode = endNode;
 
         // 경로를 역추적
         while (currentNode != null)

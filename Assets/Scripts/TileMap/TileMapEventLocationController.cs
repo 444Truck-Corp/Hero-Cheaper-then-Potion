@@ -16,12 +16,14 @@ public class TileMapEventLocationController
             if (!_locations.TryGetValue(location.EventType, out List<EventLocation> list))
             {
                 list = new List<EventLocation>();
+                _locations[location.EventType] = list;
             }
             list.Add(location);
         }
         EventLocation entrance = locations.Find(location => location.EventType.Equals(GuildLocationEventType.Entrance));
         EntrancePosition = entrance.transform.localPosition;
         EntranceTilePosition = new Vector2Int((int)EntrancePosition.x, -(int)EntrancePosition.y);
+        DebugLocations();
     }
 
     public void Clear()
@@ -49,5 +51,19 @@ public class TileMapEventLocationController
     {
         _usingLocation.Remove(location);
         _locations[location.EventType].Add(location);
+    }
+
+    private void DebugLocations()
+    {
+        string str = "";
+        foreach (var location in _locations)
+        {
+            var list = location.Value;
+            foreach(var element in list)
+            {
+                str += $"{element.EventType} = {list.Count}개,\n";
+            }
+        }
+        Debug.Log(str);
     }
 }

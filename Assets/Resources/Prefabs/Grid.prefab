@@ -9630,9 +9630,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679aa28fec58cf34ba86236d88b5cdd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemap: {fileID: 5805855080988743435}
-  width: 24
-  height: 16
+  _tilemap: {fileID: 5805855080988743435}
+  _width: 24
+  _height: 16
 --- !u!1001 &57869459575517151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9647,7 +9647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -9729,7 +9729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -9811,7 +9811,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -9893,7 +9893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -9975,7 +9975,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -10057,7 +10057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -10139,7 +10139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -10221,7 +10221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -10303,7 +10303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -10385,7 +10385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -10467,7 +10467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -10549,7 +10549,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -10635,7 +10635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -10717,7 +10717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -10799,7 +10799,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 5
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: eventType
@@ -10881,7 +10881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -10963,7 +10963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -11049,7 +11049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -11279,7 +11279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -11361,7 +11361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -11443,7 +11443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -11599,7 +11599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -11681,7 +11681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -11767,7 +11767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -11849,7 +11849,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -12021,7 +12021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -12107,7 +12107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -12189,7 +12189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -12271,7 +12271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -12353,7 +12353,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -12435,7 +12435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
@@ -12517,7 +12517,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 5
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: eventType
@@ -12530,10 +12530,10 @@ PrefabInstance:
     - target: {fileID: 2236059382814118086, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 2236059382814118086, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: m_Name
-      value: Shop (1)
+      value: WaitingLine
       objectReference: {fileID: 0}
     - target: {fileID: 9052399346050357059, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12599,7 +12599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: EventType
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 412547207442653102, guid: 3dd1daf7c0b80074084d272e97a25526, type: 3}
       propertyPath: direction
