@@ -73,7 +73,7 @@ public class TileMapManager : DestructibleSingleton<TileMapManager>
         }
     }
 
-    private TileMapCharacterCore CreateTileMapCharacter(string textureName, GuildLocationEventType type = )
+    private TileMapCharacterCore CreateTileMapCharacter(string textureName, GuildLocationEventType type = GuildLocationEventType.None)
     {
         TileMapCharacterCore character = PoolManager.Instance.Get<TileMapCharacterCore>(TileMapCharacterPrefabPath, _heroParent, _controller.EntrancePosition);
         character.Initialize(textureName, type);
