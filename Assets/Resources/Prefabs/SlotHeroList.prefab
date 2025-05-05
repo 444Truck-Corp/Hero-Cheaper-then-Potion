@@ -460,6 +460,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myBtn: {fileID: 8797933309619135701}
   listKey: 0
+  nameTxt: {fileID: 2751271343784399592}
+  lvTxt: {fileID: 4870847863743741784}
   classTxt: {fileID: 4739924888904697727}
   thumbnail: {fileID: 601559473334645724}
 --- !u!114 &8797933309619135701
