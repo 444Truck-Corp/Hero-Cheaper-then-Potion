@@ -586,7 +586,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
  m_text: "\uC9C1\uC5C5 : "
-  m_text: "\uC9C1\uC5C5 : "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8d75316e435eeb24eaf1d0d0cce0fa0c, type: 2}
   m_sharedMaterial: {fileID: -4307079721867833646, guid: 8d75316e435eeb24eaf1d0d0cce0fa0c, type: 2}
