@@ -1,11 +1,14 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SlotHeroList : MonoBehaviour
 {
+    private Action onClickCallback;
+
     [SerializeField] private Button myBtn;
-    public int listKey;
+    [NonSerialized] public int listKey;
 
     [SerializeField] private TextMeshProUGUI nameTxt;
     [SerializeField] private TextMeshProUGUI lvTxt;
@@ -21,15 +24,17 @@ public class SlotHeroList : MonoBehaviour
 
         ClassData classData = hero.classData;
         classTxt.text = classData.className;
-        thumbnail.sprite = ResourceManager.Instance.LoadAsset<Sprite>("Thumbnails", classData.id.ToString());
+        thumbnail.sprite = ResourceManager.Instance.LoadAsset<Sprite>(ResourceManager.thumbnailDir, classData.id.ToString());
+    }
+
+    public void BindSelection(Action callback)
+    {
+        onClickCallback = callback;
     }
 
     public void OnSlotClicked()
     {
-        UINavHero ui = UIManager.Get<UINavHero>();
-        if (ui != null)
-        {
-            ui.OnHeroSlotSelected(listKey);
-        }
+        onClickCallback?.Invoke();
     }
+
 }

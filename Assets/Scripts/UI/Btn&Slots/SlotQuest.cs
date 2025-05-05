@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using System;
 
 public class SlotQuest : MonoBehaviour
 {
@@ -15,17 +17,28 @@ public class SlotQuest : MonoBehaviour
     [SerializeField] private TextMeshProUGUI rankTxt;
 
     [Header("용사 아이콘 영역")]
-    [SerializeField] private Image[] heroImgs;   // 직접 Image를 연결
-    [SerializeField] private Button[] heroBtns;  // 직접 Button을 연결
-    private List<int> heroIds = new List<int> { -1, -1, -1 };
+    [SerializeField] private Image[] heroImgs;
+    [SerializeField] private Button[] heroBtns;
+    private List<int> heroIds = new() { -1, -1, -1 };
 
     [Header("보내기 버튼")]
     [SerializeField] private GameObject sendBtnObj;
 
-    #region 초기화
+    private bool isInteractive;
+
+    private void Awake()
+    {
+        for (int i = 0; i < heroBtns.Length; i++)
+        {
+            int idx = i;
+            heroBtns[i].onClick.AddListener(() => { if (isInteractive) _ = OnHeroSlotClicked(idx); });
+        }
+    }
+
     public void SetData(QuestData questData, bool isPending = false)
     {
         questId = questData.id;
+        isInteractive = isPending;
 
         titleTxt.text = questData.title;
         timeTxt.text = $"{questData.time}일";
@@ -33,29 +46,43 @@ public class SlotQuest : MonoBehaviour
         rankTxt.text = Utils.ChangeToStars(questData.rank);
 
         sendBtnObj.SetActive(isPending);
+        SetHeroButtonsInteractable(isPending);
+
+        if (isPending)
+        {
+            heroIds = new() { -1, -1, -1 };
+        }
+
         ResetHeroIcons();
     }
-    #endregion
 
-    #region 상호작용
-    public void OnHeroSlotClicked(int slotIdx)
+    public void SetHeroes(List<int> ids)
     {
-        Debug.Log($"Hero Slot {slotIdx} 클릭됨");
+        for (int i = 0; i < heroIds.Count; i++)
+            heroIds[i] = (i < ids.Count) ? ids[i] : -1;
 
-        // TODO:
-        //Task 활용
-        // HeroList UI를 띄워 선택한 HeroId를 받아오고
-        // heroIds[slotIdx] = 선택된 HeroId
-        // heroImgs[slotIdx]의 Sprite를 변경
+        ResetHeroIcons();
+    }
+
+    private void SetHeroButtonsInteractable(bool interactable)
+    {
+        foreach (var btn in heroBtns)
+            btn.interactable = interactable;
+    }
+
+    private async Task OnHeroSlotClicked(int slotIdx)
+    {
+        int selectedId = await RequestHeroSelection();
+        heroIds[slotIdx] = selectedId;
+        ResetHeroIcons();
     }
 
     public void OnSendButtonClicked()
     {
-        List<int> selectedHeroIds = new List<int>();
+        List<int> selectedHeroIds = new();
         foreach (var id in heroIds)
         {
-            if (id != -1)
-                selectedHeroIds.Add(id);
+            if (id != -1) selectedHeroIds.Add(id);
         }
 
         if (selectedHeroIds.Count == 0)
@@ -65,12 +92,9 @@ public class SlotQuest : MonoBehaviour
         }
 
         QuestManager.Instance.SendQuest(questId, selectedHeroIds);
-
-        Destroy(gameObject); // 슬롯 삭제 (퀘스트가 진행중으로 이동했기 때문)
+        Destroy(gameObject); // 완료 후 제거
     }
-    #endregion
 
-    #region 보조 메서드
     private void ResetHeroIcons()
     {
         for (int i = 0; i < heroIds.Count; i++)
@@ -79,15 +103,23 @@ public class SlotQuest : MonoBehaviour
 
             if (id == -1)
             {
-                heroImgs[i].sprite = null; // 빈 슬롯
+                heroImgs[i].sprite = null;
             }
-            else
+            else if (SaveManager.Instance.MySaveData.ownedHeros.TryGetValue(id, out var heroData))
             {
-                var heroData = SaveManager.Instance.MySaveData.ownedHeros[id];
                 string spriteName = heroData.classData.id.ToString();
                 heroImgs[i].sprite = ResourceManager.Instance.LoadAsset<Sprite>(thumbnailPath, spriteName);
             }
         }
     }
-    #endregion
+
+    private Task<int> RequestHeroSelection()
+    {
+        var tcs = new TaskCompletionSource<int>();
+        UIManager.Show<UIPopupQuestHero>((Action<int>)((int selectedId) =>
+        {
+            tcs.SetResult(selectedId);
+        }));
+        return tcs.Task;
+    }
 }
