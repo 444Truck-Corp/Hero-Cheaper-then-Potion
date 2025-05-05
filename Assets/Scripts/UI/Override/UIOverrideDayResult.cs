@@ -37,7 +37,7 @@ public class UIOverrideDayResult : UIBase
             foreach (var heroId in completed.heroIds)
             {
                 var hero = SaveManager.Instance.MySaveData.ownedHeros[heroId];
-                hero.state = eHeroState.FREE;
+                hero.state = EHeroState.FREE;
             }
 
             //골드 지급

@@ -1,21 +1,19 @@
-using System;
 using System.Collections.Generic;
 
 public class HeroManager : Singleton<HeroManager>
 {
-    private List<ClassData> classList;
+    private const string nameData = "NameData";
 
-    private readonly string nameData = "NameData";  
     private List<string> nameList;
-    
-    public List<LvData> lvList { get; private set; }
-    
+    private List<ClassData> classList;
+    private List<LvData> lvList;
+
     protected override void Awake()
     {
         base.Awake();
         isDestroyOnLoad = true;
 
-        // 직업 데이터 Caching
+        // 직업 데이터 캐싱
         classList = DataManager.Instance.GetObjList<ClassData>(nameof(ClassData));
         nameList = DataManager.Instance.GetObjList<string>(nameData);
         lvList = DataManager.Instance.GetObjList<LvData>(nameof(LvData));
@@ -24,50 +22,50 @@ public class HeroManager : Singleton<HeroManager>
     #region Main Methods
     public HeroData SpawnNewHero()
     {
-        var heroData = CreateNewHero();
-        TileMapManager.Instance.SpawnHero(heroData);
-        SaveManager.Instance.MySaveData.ownedHeros.Add(heroData.id, heroData);
+        HeroData hero = CreateNewHero();
+        TileMapManager.Instance.SpawnHero(hero);
+        SaveManager.Instance.MySaveData.ownedHeros.Add(hero.id, hero);
 
-        return heroData;
+        return hero;
     }
     #endregion
 
     #region Sub Methods 
     private HeroData CreateNewHero()
     {
-        HeroData hero = new();
+        string name = nameList[UnityEngine.Random.Range(0, nameList.Count)];
+        ClassData classData = classList[UnityEngine.Random.Range(0, classList.Count)];
 
-        hero.id = SaveManager.Instance.MySaveData.heroNum;
+        HeroData hero = new()
+        {
+            id = SaveManager.Instance.MySaveData.heroNum,
+            name = name,
+            classData = classData,
+            status = classData.BaseStat,
+            level = 0,
+            exp = 0,
+            state = EHeroState.FREE
+        };
+
         SaveManager.Instance.SetSaveData(nameof(SaveManager.Instance.MySaveData.heroNum), hero.id + 1);
-
-        hero.name = nameList[UnityEngine.Random.Range(0, nameList.Count)];
-
-        hero.classData = classList[UnityEngine.Random.Range(0, classList.Count)];
-
-        hero.status = hero.classData.BaseStat;
-
-        hero.level = 0;
-
-        hero.exp = 0;
-
-        hero.state = eHeroState.FREE;
 
         return hero;
     }
 
     private void TestPrintHero(HeroData newHero)
     {
-        UnityEngine.Debug.Log($"=== New Hero Spawned ===");
-        UnityEngine.Debug.Log($"ID: {newHero.id}");
-        UnityEngine.Debug.Log($"Name: {newHero.name}");
-        UnityEngine.Debug.Log($"Class: {newHero.classData.className}"); // 필드명: className
-        UnityEngine.Debug.Log($"Level: {newHero.level}");
-        UnityEngine.Debug.Log($"EXP: {newHero.exp}");
-        UnityEngine.Debug.Log($"Status:");
-        UnityEngine.Debug.Log($" - STR: {newHero.status.STR}");
-        UnityEngine.Debug.Log($" - DEX: {newHero.status.DEX}");
-        UnityEngine.Debug.Log($" - INT: {newHero.status.INT}");
-        UnityEngine.Debug.Log($" - HP: {newHero.status.HP}");
+        UnityEngine.Debug.Log(
+            $"=== New Hero Spawned ===\n" +
+            $"ID: {newHero.id}\n" +
+            $"Name: {newHero.name}\n" +
+            $"Class: {newHero.classData.className}\n" + // 필드명: className
+            $"Level: {newHero.level}\n" +
+            $"EXP: {newHero.exp}\n" +
+            $"Status:\n" +
+            $" - STR: {newHero.status.STR}\n" +
+            $" - DEX: {newHero.status.DEX}\n" +
+            $" - INT: {newHero.status.INT}\n" +
+            $" - HP: {newHero.status.HP}\n");
     }
     #endregion
 }

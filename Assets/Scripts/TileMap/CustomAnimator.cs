@@ -17,9 +17,9 @@ public class CustomAnimator
 
     public CustomAnimator(string path, int framePerSecond, bool isDirectional, bool isLooping, Action onEndAnimation)
     {
-        _framePerSecond = framePerSecond;
         _isLooping = isLooping;
         _onEndAnimation = onEndAnimation;
+        _framePerSecond = framePerSecond;
         _frameDuration = 1.0f / framePerSecond;
         _direction = new Direction(0);
         _sprites = Resources.LoadAll<Sprite>(path);

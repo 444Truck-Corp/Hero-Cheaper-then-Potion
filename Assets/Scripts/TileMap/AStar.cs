@@ -111,16 +111,14 @@ public class AStar
         return path;
     }
 
-    public List<Vector2Int> GetRouteMovementValue(Vector2Int start, Vector2Int end)
+    public void EnqueueRouteMovementValue(Vector2Int start, Vector2Int end, Queue<Vector2Int> route)
     {
-        var route = Find(start, end);
-        List<Vector2Int> routeMovement = new();
-        for (int index = 1; index < route.Count; index++)
+        List<Node> routeNodes = Find(start, end);
+        for (int index = 1; index < routeNodes.Count; index++)
         {
-            int x = route[index].X - route[index - 1].X;
-            int y = route[index].Y - route[index - 1].Y;
-            routeMovement.Add(new Vector2Int(x, -y));
+            int x = routeNodes[index].X - routeNodes[index - 1].X;
+            int y = routeNodes[index].Y - routeNodes[index - 1].Y;
+            route.Enqueue(new Vector2Int(x, -y));
         }
-        return routeMovement;
     }
 }

@@ -12,9 +12,11 @@ public class MonoButtonHandler : MonoBehaviour
 
     private void Update()
     {
-        //UI 오브젝트 감지
+        // UI 오브젝트 감지
         if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+        {
             return;
+        }
 
         var worldPosition = _camera.ScreenToWorldPoint(Input.mousePosition);
 

@@ -320,13 +320,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 876e15391d1896e499fabad14cd6d893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myBtn: {fileID: 0}
-  thumbnail: {fileID: 0}
-  nameTxt: {fileID: 0}
-  lvTxt: {fileID: 0}
-  classTxt: {fileID: 0}
-  intTxt: {fileID: 0}
-  lukTxt: {fileID: 0}
+  myBtn: {fileID: 8797933309619135701}
+  listKey: 0
+  nameTxt: {fileID: 1039136853569983468}
+  lvTxt: {fileID: 3090818925862602994}
+  classTxt: {fileID: 4739924888904697727}
+  thumbnail: {fileID: 601559473334645724}
 --- !u!114 &8797933309619135701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,7 +447,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC9C1\uC5C5 : \uB124\uBAA8\uB124\uBAA8"
+  m_text: "\uC9C1\uC5C5 :"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8d75316e435eeb24eaf1d0d0cce0fa0c, type: 2}
   m_sharedMaterial: {fileID: -4307079721867833646, guid: 8d75316e435eeb24eaf1d0d0cce0fa0c, type: 2}

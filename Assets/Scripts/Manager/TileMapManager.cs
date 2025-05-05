@@ -2,33 +2,32 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class TileMapManager : Singleton<TileMapManager>
+public class TileMapManager : DestructibleSingleton<TileMapManager>
 {
     private const string TileMapCharacterPrefabPath = "Prefabs/TileMapCharacter";
 
     private readonly AStar _astar = new();
-    private readonly Dictionary<int, TileMapCharacter> _heroes = new();
-    private readonly Dictionary<int, TileMapCharacter> _npcs = new();
-    
-    [SerializeField] private TileMapData _wallTileMap;
-    [SerializeField] private Transform _heroParent;
-    [SerializeField] private List<EventLocation> _locations;
+    private readonly TileMapEventLocationController _controller = new();
+    private readonly Dictionary<int, TileMapCharacterCore> _heroes = new();
+    private readonly Dictionary<int, TileMapCharacterCore> _npcs = new();
 
-    private Vector2Int _entranceTilePosition;
-    private Vector3 _entranceWorldPosition;
+    [SerializeField] private Transform _heroParent;
+    [SerializeField] private TileMapData _wallTileMap;
+    [SerializeField] private TileMapCharacterCore _shopCharacter;
+
+    private int npcCount = 0;
 
     public bool[,] Tiles => _wallTileMap.Tiles;
 
     protected override void Awake()
     {
         base.Awake();
-        _locations = FindObjectsByType<EventLocation>(FindObjectsSortMode.None).ToList();
         _astar.SetTiles(_wallTileMap.Tiles);
 
-        // 입장 위치 설정
-        var entrance = _locations.Find(location => location.EventType.Equals(GuildLocationEventType.Entrance));
-        _entranceWorldPosition = entrance.transform.localPosition;
-        _entranceTilePosition = new Vector2Int((int)_entranceWorldPosition.x, -(int)_entranceWorldPosition.y);
+        // 이벤트 위치 설정
+        List<EventLocation> eventLocations = FindObjectsByType<EventLocation>(FindObjectsSortMode.None).ToList();
+        Debug.Log($"Found EventLocation {eventLocations.Count}");
+        _controller.Initialize(eventLocations);
 
         // 캐릭터 초기화
         foreach (var hero in _heroes)
@@ -40,41 +39,30 @@ public class TileMapManager : Singleton<TileMapManager>
         {
             npc.Value.Clear();
         }
-
-        // 이벤트 초기화
-        //GameManager.Instance.OnHeroSpawnEvent += OnHeroSpawn;
-        //GameManager.Instance.OnHeroDeadEvent += OnHeroDead;
-        //GameManager.Instance.OnQuestEndEvent += OnQuestEnd;
-        //GameManager.Instance.OnQuestStartEvent += OnQuestStart;
     }
 
-    public EventLocation GetEmptyLocation()
+    public EventLocation GetEventLocation(GuildLocationEventType type)
     {
-        
-        int count = _locations.Count;
-        if (count > 0)
-        {
-            int random = Random.Range(0, count);
-            EventLocation location = _locations[random];
-            _locations.RemoveAt(random);
-            return location;
-        }
-        return null;
+        return _controller.GetEmptyEventLocationByType(type);
     }
 
     public void ReturnLocation(EventLocation location)
     {
-        if (!_locations.Contains(location))
-        {
-            _locations.Add(location);
-        }
+        _controller.ReturnLocation(location);
     }
 
-    public List<Vector2Int> GetRoute(Vector2Int start, Vector2Int end)
+    public void GetRoute(Vector2Int start, Vector2Int end, Queue<Vector2Int> route)
     {
-        return _astar.GetRouteMovementValue(start, end);
+        Debug.Log("루트를 가져옵니다.");
+        _astar.EnqueueRouteMovementValue(start, end, route);
     }
 
+    public void OnShopCharacterEntered()
+    {
+        _shopCharacter = CreateTileMapCharacter("", GuildLocationEventType.Shop);
+    }
+
+    #region Hero
     private void OnHeroDead(HeroData heroData)
     {
         if (_heroes.TryGetValue(heroData.id, out var heroCharacter))
@@ -85,25 +73,23 @@ public class TileMapManager : Singleton<TileMapManager>
         }
     }
 
-    private TileMapCharacter CreateTileMapCharacter(string textureName)
+    private TileMapCharacterCore CreateTileMapCharacter(string textureName, GuildLocationEventType type = )
     {
-        var character = PoolManager.Instance.Get<TileMapCharacter>(TileMapCharacterPrefabPath, _heroParent, _entranceWorldPosition);
-        character.Initialize(textureName);
+        TileMapCharacterCore character = PoolManager.Instance.Get<TileMapCharacterCore>(TileMapCharacterPrefabPath, _heroParent, _controller.EntrancePosition);
+        character.Initialize(textureName, type);
         return character;
     }
 
     private void CreateTileMapHeroCharacter(HeroData heroData)
     {
-        _heroes[heroData.id] = CreateTileMapCharacter(heroData.classData.className + "1");
+        _heroes[heroData.id] = CreateTileMapCharacter("궁사2", GuildLocationEventType.QuestBoard);
     }
 
     private void CreateTileMapNPCCharacter()
     {
-        var textureName = "";
-        _npcs[npcCount++] = CreateTileMapCharacter(textureName);
+        string textureName = "";
+        _npcs[npcCount++] = CreateTileMapCharacter(textureName, GuildLocationEventType.QuestBoard);
     }
-
-    private int npcCount = 0;
 
     private void OnQuestStart(IEnumerable<HeroData> heroDatas, QuestData quest)
     {
@@ -124,7 +110,7 @@ public class TileMapManager : Singleton<TileMapManager>
     private void OnHeroEntered(HeroData heroData)
     {
         var hero = _heroes[heroData.id];
-        hero.transform.localPosition = _entranceWorldPosition;
+        hero.transform.localPosition = _controller.EntrancePosition;
         hero.Clear();
         hero.gameObject.SetActive(true);
     }
@@ -138,7 +124,8 @@ public class TileMapManager : Singleton<TileMapManager>
     private void OnHeroExit(HeroData heroData)
     {
         if (!_heroes.TryGetValue(heroData.id, out var hero)) return;
-        var route = _astar.GetRouteMovementValue(hero.Position, _entranceTilePosition);
-        hero.SetMoveCommand(route, () => hero.gameObject.SetActive(false));
+        hero.SetTargetTilePosition(_controller.EntranceTilePosition);
+        hero.SetMoveCommand(() => hero.gameObject.SetActive(false));
     }
+    #endregion
 }
