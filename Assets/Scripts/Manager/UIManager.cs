@@ -49,6 +49,18 @@ public class UIManager : Singleton<UIManager>
             ui.name = uiName;
             Instance.uiList.Add(ui);
         }
+
+        if (ui.uiPosition == eUIPosition.Navigator)
+        {
+            foreach (var opened in Instance.uiList)
+            {
+                if (opened.uiPosition == eUIPosition.Popup)
+                {
+                    opened.SetActive(false);
+                }
+            }
+        }
+
         ui.opened.Invoke(param);
         ui.gameObject.SetActive(ui.isActiveInCreated);
         ui.isActiveInCreated = true;
@@ -60,7 +72,7 @@ public class UIManager : Singleton<UIManager>
     /// <typeparam name="T">UIBase를 상속받은 클래스</typeparam>
     public static T Get<T>() where T : UIBase
     {
-        return (T)Instance.uiList.Find(obj => obj.name == typeof(T).ToString());
+        return (T)Instance.uiList.Find(obj => obj.name == typeof(T).Name);
     }
 
     /// <summary>
@@ -70,7 +82,7 @@ public class UIManager : Singleton<UIManager>
     /// <param name="param">원하는 변수를 원하는 개수만큼!</param>
     public static void Hide<T>(params object[] param) where T : UIBase
     {
-        var ui = Instance.uiList.Find(obj => obj.name == typeof(T).ToString());
+        var ui = Instance.uiList.Find(obj => obj.name == typeof(T).Name);
         if (ui != null)
         {
             ui.closed.Invoke(param);
@@ -91,7 +103,7 @@ public class UIManager : Singleton<UIManager>
     /// <typeparam name="T">UIBase를 상속받은 클래스명</typeparam>
     public static bool IsOpened<T>() where T : UIBase
     {
-        return Instance.uiList.Exists(obj => obj.name == typeof(T).ToString());
+        return Instance.uiList.Exists(obj => obj.name == typeof(T).Name);
     }
 
     /// <summary>
@@ -99,7 +111,12 @@ public class UIManager : Singleton<UIManager>
     /// </summary>
     public static bool IsActive<T>() where T : UIBase
     {
-        return Instance.uiList.Exists(obj => obj.name == typeof(T).ToString() && obj.gameObject.activeSelf);
+        return Instance.uiList.Exists(obj => obj.name == typeof(T).Name && obj.gameObject.activeSelf);
+    }
+
+    public static void RemoveUI(UIBase ui)
+    {
+        Instance.uiList.Remove(ui);
     }
     #endregion
 

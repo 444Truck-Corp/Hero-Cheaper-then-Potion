@@ -21,6 +21,32 @@ public class UIBase : MonoBehaviour
         else UIManager.Hide<T>();
     }
 
+    public void SetActive(bool isActive, params object[] param)
+    {
+        if (isActive)
+        {
+            opened?.Invoke(param);
+            gameObject.SetActive(true);
+        }
+        else
+        {
+            closed?.Invoke(param);
+
+            if (isDestroyAtClosed)
+            {
+                if (UIManager.Instance != null)
+                    UIManager.RemoveUI(this);
+
+                Destroy(gameObject);
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
+        }
+    }
+
+
     public virtual void Opened(object[] param) { }
     public virtual void Closed(object[] param) { }
 }

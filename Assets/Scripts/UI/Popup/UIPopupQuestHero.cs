@@ -30,7 +30,7 @@ public class UIPopupQuestHero : UIBase
 
         foreach (var (id, hero) in allHeros)
         {
-            if (hero.state != eHeroState.FREE) continue;
+            if (hero.state != EHeroState.FREE) continue;
 
             var go = Instantiate(slotPrefab, listParent);
             var slot = go.GetComponent<SlotHeroList>();
