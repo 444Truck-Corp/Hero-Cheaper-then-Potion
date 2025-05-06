@@ -3,8 +3,8 @@ using UnityEngine.Events;
 
 public class EventManager : Singleton<EventManager>
 {
-    private Dictionary<string, UnityEvent> clickEvents = new();
-    private Dictionary<string, UnityEvent> saveDataChangeEvents = new();
+    private readonly Dictionary<string, UnityEvent> clickEvents = new();
+    private readonly Dictionary<string, UnityEvent> saveDataChangeEvents = new();
 
     #region Click Events
     public void AddClickListener(string eventKey, UnityAction action)

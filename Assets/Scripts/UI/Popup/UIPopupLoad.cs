@@ -31,16 +31,16 @@ public class UIPopupLoad : UIBase
         switch (slotNum)
         {
             case 0:
-                SaveManager.Instance.LoadSlot(eSaveSlot.Auto);
+                SaveManager.Instance.LoadSlot(ESaveSlot.Auto);
                 break;
             case 1:
-                SaveManager.Instance.LoadSlot(eSaveSlot.Slot1);
+                SaveManager.Instance.LoadSlot(ESaveSlot.Slot1);
                 break;
             case 2:
-                SaveManager.Instance.LoadSlot(eSaveSlot.Slot2);
+                SaveManager.Instance.LoadSlot(ESaveSlot.Slot2);
                 break;
             case 3:
-                SaveManager.Instance.LoadSlot(eSaveSlot.Slot3);
+                SaveManager.Instance.LoadSlot(ESaveSlot.Slot3);
                 break;
             default:
                 Debug.LogError($"잘못된 슬롯 번호: {slotNum}");
@@ -74,19 +74,19 @@ public class UIPopupLoad : UIBase
             string fileName = Path.GetFileNameWithoutExtension(filePath);
             switch (fileName)
             {
-                case nameof(eSaveSlot.Auto):
+                case nameof(ESaveSlot.Auto):
                     saveSlots[0].SetSlotData(data);
                     saveBtns[0].interactable = true;
                     break;
-                case nameof(eSaveSlot.Slot1):
+                case nameof(ESaveSlot.Slot1):
                     saveSlots[1].SetSlotData(data);
                     saveBtns[1].interactable = true;
                     break;
-                case nameof(eSaveSlot.Slot2):
+                case nameof(ESaveSlot.Slot2):
                     saveSlots[2].SetSlotData(data);
                     saveBtns[2].interactable = true;
                     break;
-                case nameof(eSaveSlot.Slot3):
+                case nameof(ESaveSlot.Slot3):
                     saveSlots[3].SetSlotData(data);
                     saveBtns[3].interactable = true;
                     break;

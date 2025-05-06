@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class ResourceManager : Singleton<ResourceManager>
 {
-    private Dictionary<string, Object> assetPools = new();
+    private readonly Dictionary<string, Object> assetPools = new();
 
     /// <summary> 
     /// Awake 대용 : Manager 실행순서 관리하기 위함. 

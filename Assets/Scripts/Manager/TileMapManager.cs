@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class TileMapManager : DestructibleSingleton<TileMapManager>
+public class TileMapManager : Singleton<TileMapManager>
 {
     private const string TileMapCharacterPrefabPath = "Prefabs/TileMapCharacter";
 
@@ -15,18 +15,21 @@ public class TileMapManager : DestructibleSingleton<TileMapManager>
     [SerializeField] private TileMapData _wallTileMap;
     [SerializeField] private TileMapCharacterCore _shopCharacter;
 
+    private readonly Queue<TileMapCharacterCore> _waitingCharacters = new();
+
     private int npcCount = 0;
 
     public bool[,] Tiles => _wallTileMap.Tiles;
 
     protected override void Awake()
     {
+        isDestroyOnLoad = true;
         base.Awake();
+
         _astar.SetTiles(_wallTileMap.Tiles);
 
         // 이벤트 위치 설정
         List<EventLocation> eventLocations = FindObjectsByType<EventLocation>(FindObjectsSortMode.None).ToList();
-        Debug.Log($"Found EventLocation {eventLocations.Count}");
         _controller.Initialize(eventLocations);
 
         // 캐릭터 초기화
@@ -41,6 +44,11 @@ public class TileMapManager : DestructibleSingleton<TileMapManager>
         }
     }
 
+    private void FixedUpdate()
+    {
+        
+    }
+
     public EventLocation GetEventLocation(GuildLocationEventType type)
     {
         return _controller.GetEmptyEventLocationByType(type);
@@ -53,7 +61,6 @@ public class TileMapManager : DestructibleSingleton<TileMapManager>
 
     public void GetRoute(Vector2Int start, Vector2Int end, Queue<Vector2Int> route)
     {
-        Debug.Log("루트를 가져옵니다.");
         _astar.EnqueueRouteMovementValue(start, end, route);
     }
 
@@ -119,6 +126,18 @@ public class TileMapManager : DestructibleSingleton<TileMapManager>
     {
         CreateTileMapHeroCharacter(heroData);
         OnHeroEntered(heroData);
+    }
+
+    public void OnDinerCharacterEntered()
+    {
+        var dinerCharacter = CreateTileMapCharacter("");
+        var location = GetEventLocation(GuildLocationEventType.Food);
+        // 앉을 자리가 없다면
+        if (location == null)
+        {
+
+        }
+        //dinerCharacter.SetTargetTilePosition();
     }
 
     private void OnHeroExit(HeroData heroData)

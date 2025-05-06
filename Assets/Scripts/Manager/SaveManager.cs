@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System;
 
-public enum eSaveSlot
+public enum ESaveSlot
 {
     Auto = 0,
     Slot1 = 1,
@@ -18,7 +18,7 @@ public class SaveManager : Singleton<SaveManager>
 {
     private SaveData saveData;
     public SaveData MySaveData { get { return saveData; } }
-    private Dictionary<string, FieldInfo> fieldCache = new();
+    private readonly Dictionary<string, FieldInfo> fieldCache = new();
 
     private bool isAutoDirty;
     private string directory;
@@ -62,7 +62,7 @@ public class SaveManager : Singleton<SaveManager>
         File.WriteAllText(path, json);
     }
 
-    public void SaveSlot(eSaveSlot slot)
+    public void SaveSlot(ESaveSlot slot)
     {
         if (slot == 0 && !isAutoDirty) return;
         SetSaveData(nameof(SaveData.lastSaveTime), DateTime.Now.Ticks);
@@ -71,7 +71,7 @@ public class SaveManager : Singleton<SaveManager>
         File.WriteAllText(path, json);
     }
 
-    public void LoadSlot(eSaveSlot slot)
+    public void LoadSlot(ESaveSlot slot)
     {
         string path = GetSlotPath(slot);
         if (!File.Exists(path))
@@ -140,7 +140,7 @@ public class SaveManager : Singleton<SaveManager>
     #endregion
 
     #region Sub Methods
-    private string GetSlotPath(eSaveSlot slot)
+    private string GetSlotPath(ESaveSlot slot)
     {
         return Path.Combine(directory, $"{slot}.json");
     }

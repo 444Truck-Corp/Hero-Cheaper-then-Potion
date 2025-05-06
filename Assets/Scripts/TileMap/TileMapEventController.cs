@@ -3,7 +3,8 @@ using UnityEngine;
 
 public enum TileMapEventType
 {
-    Shop
+    Shop, // 상점 방문 이벤트
+    Diner // 식사하는 방문객
 }
 
 public class TileMapEventController : MonoBehaviour
@@ -14,7 +15,7 @@ public class TileMapEventController : MonoBehaviour
     private static readonly float tenMinutesTimeDivider = 1 / (oneHourTime / 6);
     private static readonly float maxEnterTime = SaveData.maxTime - 20.0f;
 
-    private int _lastUpdatedDay;
+    private int _lastUpdatedDay = int.MaxValue;
     private int _lastUpdatedTenMinutes;
     private float _time;
 
@@ -51,6 +52,7 @@ public class TileMapEventController : MonoBehaviour
 
     private void InitializeDailyEvent()
     {
+        string debugString = "일일 이벤트 초기화\n";
         // 이벤트 초기화
         foreach (var pair in _eventQueueDictionary)
         {
@@ -59,13 +61,18 @@ public class TileMapEventController : MonoBehaviour
 
         // 상점 방문 이벤트 추가
         int randomTenMinutesCount = GetRandomTenMinutesCount(oneHourTime * 18, maxEnterTime);
+        debugString += $"상인 방문 시간: {randomTenMinutesCount / 6.0f}시\n";
         AddEvent(randomTenMinutesCount, TileMapEventType.Shop);
 
         int count = 10;
+        debugString += $"식사 방문 예정 인원: {count}명\n";
         for (int index = 0; index < count; index++)
         {
             randomTenMinutesCount = GetRandomTenMinutesCount(0.0f, maxEnterTime);
+            AddEvent(randomTenMinutesCount, TileMapEventType.Diner);
+            debugString += $"{randomTenMinutesCount / 6.0f}시\n";
         }
+        Debug.Log(debugString);
     }
 
     private int GetRandomTenMinutesCount(float minTime, float maxTime)
@@ -90,6 +97,10 @@ public class TileMapEventController : MonoBehaviour
         if (type == TileMapEventType.Shop)
         {
             TileMapManager.Instance.OnShopCharacterEntered();
+        }
+        else
+        {
+            TileMapManager.Instance.OnDinerCharacterEntered();
         }
     }
 }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class QuestManager : Singleton<QuestManager>
 {
-    private Dictionary<int, QuestData> questDataDics = new();
+    private readonly Dictionary<int, QuestData> questDataDics = new();
 
     protected override void Awake()
     {
-        base.Awake();
         isDestroyOnLoad = true;
+        base.Awake();
 
         var list = DataManager.Instance.GetObjList<QuestData>("QuestData");
         foreach (var data in list)

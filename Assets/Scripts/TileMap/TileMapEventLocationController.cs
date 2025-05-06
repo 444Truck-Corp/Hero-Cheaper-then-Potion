@@ -23,7 +23,6 @@ public class TileMapEventLocationController
         EventLocation entrance = locations.Find(location => location.EventType.Equals(GuildLocationEventType.Entrance));
         EntrancePosition = entrance.transform.localPosition;
         EntranceTilePosition = new Vector2Int((int)EntrancePosition.x, -(int)EntrancePosition.y);
-        DebugLocations();
     }
 
     public void Clear()

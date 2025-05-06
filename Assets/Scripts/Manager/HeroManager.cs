@@ -10,8 +10,8 @@ public class HeroManager : Singleton<HeroManager>
 
     protected override void Awake()
     {
-        base.Awake();
         isDestroyOnLoad = true;
+        base.Awake();
 
         // 직업 데이터 캐싱
         classList = DataManager.Instance.GetObjList<ClassData>(nameof(ClassData));
