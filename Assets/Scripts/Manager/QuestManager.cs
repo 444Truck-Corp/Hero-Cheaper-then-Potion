@@ -21,6 +21,12 @@ public class QuestManager : Singleton<QuestManager>
         EventManager.Instance.AddClickListener(eClickEventType.Quest_Click.ToString() + "L", OnQuestClick);
     }
 
+    private void Start()
+    {
+        //테스트
+        EventManager.Instance.InvokeClickEvent(eClickEventType.Quest_Click.ToString() + "L");
+    }
+
     #region Main Methods
     public QuestData GetQuestData(int id)
     {
