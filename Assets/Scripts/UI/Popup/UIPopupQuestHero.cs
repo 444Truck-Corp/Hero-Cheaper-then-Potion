@@ -37,7 +37,7 @@ public class UIPopupQuestHero : UIBase
             slot.InitHeroSlot(id, hero);
             slot.BindSelection(() =>
             {
-                onSelected?.Invoke(hero.classData.id);
+                onSelected?.Invoke(hero.id);
                 SetActive<UIPopupQuestHero>(false);
             });
         }

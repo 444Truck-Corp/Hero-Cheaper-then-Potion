@@ -13,9 +13,20 @@ public class UINavHero : UIBase
 
     private readonly int summonPrice = 100;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        EventManager.Instance.AddSaveDataListener(nameof(SaveData.ownedHeros), FetchHeroList);
+    }
+
     public override void Opened(object[] param)
     {
         FetchHeroList();
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.Instance.RemoveSaveDataListener(nameof(SaveData.ownedHeros), FetchHeroList);
     }
 
     public void OnHeroSlotSelected(int listIdx)
@@ -45,21 +56,21 @@ public class UINavHero : UIBase
     private void FetchHeroList()
     {
         Dictionary<int, HeroData> heros = SaveManager.Instance.MySaveData.ownedHeros;
-        if (!heroInfos.SequenceEqual(heros))
+        heroInfos = new Dictionary<int, HeroData>(heros);
+
+        heroSlots.Clear();
+        foreach (Transform child in ListParent)
         {
-            foreach (Transform child in ListParent)
-            {
-                Destroy(child.gameObject); //List 초기화
-            }
+            Destroy(child.gameObject);
+        }
 
-            heroInfos = heros;
+        foreach (var (key, heroData) in heros)
+        {
+            var slotObj = Instantiate(ListPrefab, ListParent);
+            var slot = slotObj.GetComponent<SlotHeroList>();
 
-            foreach (var (key, heroData) in heros)
-            {
-                SlotHeroList newSlot = Instantiate(ListPrefab, ListParent).GetComponent<SlotHeroList>();
-                heroSlots.Add(key, newSlot);
-                newSlot.InitHeroSlot(key, heroData);
-            }
+            heroSlots.Add(key, slot);
+            slot.InitHeroSlot(key, heroData);
         }
     }
     #endregion

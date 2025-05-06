@@ -730,7 +730,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4926047963033181340}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5683918490293969400}
+        m_TargetAssemblyTypeName: UINavQuest, Assembly-CSharp
+        m_MethodName: OnClickTabOnboard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2755004947757377640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,7 +1115,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3173908157288235517}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5683918490293969400}
+        m_TargetAssemblyTypeName: UINavQuest, Assembly-CSharp
+        m_MethodName: OnClickTabAlways
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4092658897074002162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1922,7 +1946,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4191648862634305504}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5683918490293969400}
+        m_TargetAssemblyTypeName: UINavQuest, Assembly-CSharp
+        m_MethodName: OnClickTabAccepted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6391062409596242490
 GameObject:
   m_ObjectHideFlags: 0

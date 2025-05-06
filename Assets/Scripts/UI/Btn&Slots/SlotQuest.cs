@@ -103,14 +103,24 @@ public class SlotQuest : MonoBehaviour
 
             if (id == -1)
             {
-                heroImgs[i].sprite = null;
+                SetHeroImageVisible(i, false);
             }
             else if (SaveManager.Instance.MySaveData.ownedHeros.TryGetValue(id, out var heroData))
             {
                 string spriteName = heroData.classData.id.ToString();
                 heroImgs[i].sprite = ResourceManager.Instance.LoadAsset<Sprite>(thumbnailPath, spriteName);
+                SetHeroImageVisible(i, true);
             }
         }
+    }
+
+    private void SetHeroImageVisible(int idx, bool visible)
+    {
+        if (idx < 0 || idx >= heroImgs.Length) return;
+
+        Color c = heroImgs[idx].color;
+        c.a = visible ? 1f : 0f;
+        heroImgs[idx].color = c;
     }
 
     private Task<int> RequestHeroSelection()
