@@ -107,13 +107,12 @@ MonoBehaviour:
   PoolID: 0
   ResourcePath: 
   Pool: {fileID: 0}
-  _spriteRenderer: {fileID: 951718877623786749}
+  _isMoving: 0
   _movementFrequency: 0
   _movementSpeed: 5
-  _moveCommand: []
-  _isMoving: 0
   _time: 0
   _texturePath: 
+  _spriteRenderer: {fileID: 951718877623786749}
   _animator:
     _isPlaying: 0
     _isLooping: 0
@@ -125,7 +124,14 @@ MonoBehaviour:
     _framePerSecond: 0
     _currentDuration: 0
     _sprites: []
+  _direction:
+    Forward: 0
+  _movementProgress: 0
   _emotion: {fileID: 6377030909298398733}
+  _lastPosition: {x: 0, y: 0, z: 0}
+  _targetStepPosition: {x: 0, y: 0, z: 0}
+  _targetLocation: {fileID: 0}
+  _targetType: 0
 --- !u!61 &1022375880421305494
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -291,7 +297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &52134135725207466
 Transform:
   m_ObjectHideFlags: 0
@@ -352,7 +358,7 @@ SpriteRenderer:
   m_SortingLayerID: -2137339029
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -5177388603050735206, guid: 71ebafeef3c03457483266a33ab2b270, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -399,9 +405,9 @@ BoxCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0.25, y: 0.25, z: 0.25, w: 0.25}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.984375, y: 0.984375}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

@@ -7,7 +7,7 @@ public class MonoButtonHandler : MonoBehaviour
 
     private void Awake()
     {
-        _camera ??= Camera.main;
+        _camera = _camera == null ? Camera.main : _camera;
     }
 
     private void Update()

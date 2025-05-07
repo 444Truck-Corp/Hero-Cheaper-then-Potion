@@ -15,7 +15,7 @@ public class CustomAnimator
     [SerializeField] private Action _onEndAnimation;
     [SerializeField] private Sprite[] _sprites;
 
-    public CustomAnimator(string path, int framePerSecond, bool isDirectional, bool isLooping, Action onEndAnimation)
+    public CustomAnimator(string path, int framePerSecond, bool isDirectional, bool isLooping, Action onEndAnimation = null)
     {
         _isLooping = isLooping;
         _onEndAnimation = onEndAnimation;

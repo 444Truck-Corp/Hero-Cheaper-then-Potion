@@ -6,8 +6,7 @@ public class TileMapEventLocationController
     private readonly Dictionary<GuildLocationEventType, List<EventLocation>> _locations = new();
     private readonly List<EventLocation> _usingLocation = new();
 
-    public Vector2Int EntranceTilePosition { get; private set; }
-    public Vector3 EntrancePosition { get; private set; }
+    public EventLocation Entrance { get; private set; }
 
     public void Initialize(List<EventLocation> locations)
     {
@@ -20,29 +19,48 @@ public class TileMapEventLocationController
             }
             list.Add(location);
         }
-        EventLocation entrance = locations.Find(location => location.EventType.Equals(GuildLocationEventType.Entrance));
-        EntrancePosition = entrance.transform.localPosition;
-        EntranceTilePosition = new Vector2Int((int)EntrancePosition.x, -(int)EntrancePosition.y);
+        Entrance = locations.Find(location => location.EventType.Equals(GuildLocationEventType.Entrance));
     }
 
     public void Clear()
     {
     }
 
+    private readonly List<EventLocation> candidates = new();
+
     public EventLocation GetEmptyEventLocationByType(GuildLocationEventType type)
     {
-        if (_locations.TryGetValue(type, out var eventLocations))
+        candidates.Clear();
+        foreach (GuildLocationEventType key in _locations.Keys)
         {
-            int count = eventLocations.Count;
-            if (count > 0)
+            if (type.HasFlag(key))
             {
-                int random = Random.Range(0, count);
-                EventLocation location = eventLocations[random];
-                eventLocations.RemoveAt(random);
-                _usingLocation.Add(location);
-                return location;
+                var locations = _locations[key];
+                if (locations != null && locations.Count > 0)
+                {
+                    candidates.AddRange(locations);
+                }
             }
         }
+
+        if (candidates.Count > 0)
+        {
+            int index = Random.Range(0, candidates.Count);
+            EventLocation chosen = candidates[index];
+
+            // 해당 EventLocation이 속해 있는 key에서 제거
+            foreach (GuildLocationEventType key in _locations.Keys)
+            {
+                if (type.HasFlag(key) && _locations[key].Remove(chosen))
+                {
+                    break;
+                }
+            }
+
+            _usingLocation.Add(chosen);
+            return chosen;
+        }
+
         return null;
     }
 

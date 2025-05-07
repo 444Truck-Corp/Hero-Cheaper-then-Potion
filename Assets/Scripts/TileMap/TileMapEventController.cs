@@ -28,6 +28,7 @@ public class TileMapEventController : MonoBehaviour
         if (_lastUpdatedDay > SaveManager.Instance.MySaveData.day)
         {
             InitializeDailyEvent();
+            Debug.Log($"날짜 변경 {_lastUpdatedDay} => {SaveManager.Instance.MySaveData.day}");
             _lastUpdatedDay = SaveManager.Instance.MySaveData.day;
             _time = 0.0f;
         }
@@ -61,16 +62,16 @@ public class TileMapEventController : MonoBehaviour
 
         // 상점 방문 이벤트 추가
         int randomTenMinutesCount = GetRandomTenMinutesCount(oneHourTime * 18, maxEnterTime);
-        debugString += $"상인 방문 시간: {randomTenMinutesCount / 6.0f}시\n";
+        debugString += $"상인 방문 시간: {randomTenMinutesCount / 6:D2}시 {randomTenMinutesCount % 6 * 10:D2}분\n";
         AddEvent(randomTenMinutesCount, TileMapEventType.Shop);
 
         int count = 10;
         debugString += $"식사 방문 예정 인원: {count}명\n";
-        for (int index = 0; index < count; index++)
+        while (count-- > 0)
         {
             randomTenMinutesCount = GetRandomTenMinutesCount(0.0f, maxEnterTime);
             AddEvent(randomTenMinutesCount, TileMapEventType.Diner);
-            debugString += $"{randomTenMinutesCount / 6.0f}시\n";
+            debugString += $"{randomTenMinutesCount / 6:D2}시 {randomTenMinutesCount % 6 * 10:D2}분\n";
         }
         Debug.Log(debugString);
     }

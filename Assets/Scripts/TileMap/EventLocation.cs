@@ -16,4 +16,5 @@ public class EventLocation : MonoBehaviour
 {
     public Direction Direction;
     public GuildLocationEventType EventType;
+    public Vector2Int TilePosition => new((int)transform.localPosition.x, -(int)transform.localPosition.y);
 }

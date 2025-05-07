@@ -10,14 +10,11 @@ public class TileMapManager : Singleton<TileMapManager>
     private readonly TileMapEventLocationController _controller = new();
     private readonly Dictionary<int, TileMapCharacterCore> _heroes = new();
     private readonly Dictionary<int, TileMapCharacterCore> _npcs = new();
+    private readonly Queue<TileMapCharacterCore> _waitingCharacters = new();
 
     [SerializeField] private Transform _heroParent;
     [SerializeField] private TileMapData _wallTileMap;
     [SerializeField] private TileMapCharacterCore _shopCharacter;
-
-    private readonly Queue<TileMapCharacterCore> _waitingCharacters = new();
-
-    private int npcCount = 0;
 
     public bool[,] Tiles => _wallTileMap.Tiles;
 
@@ -46,7 +43,20 @@ public class TileMapManager : Singleton<TileMapManager>
 
     private void FixedUpdate()
     {
-        
+        int count = _waitingCharacters.Count;
+        if (count > 0)
+        {
+            var character = _waitingCharacters.Peek();
+            GuildLocationEventType type = character.TargetType;
+            EventLocation dinerLocation = GetEventLocation(type);
+            if (dinerLocation == null)
+            {
+                return;
+            }
+            _waitingCharacters.Dequeue();
+            character.SetTargetTilePosition(dinerLocation.TilePosition);
+            character.SetMoveCommand(character.SetOrder);
+        }
     }
 
     public EventLocation GetEventLocation(GuildLocationEventType type)
@@ -66,7 +76,10 @@ public class TileMapManager : Singleton<TileMapManager>
 
     public void OnShopCharacterEntered()
     {
-        _shopCharacter = CreateTileMapCharacter("", GuildLocationEventType.Shop);
+        _shopCharacter = CreateTileMapCharacter("도적1", GuildLocationEventType.Shop, false);
+        var location = GetEventLocation(GuildLocationEventType.Shop);
+        _shopCharacter.SetTargetTilePosition(location.TilePosition);
+        _shopCharacter.SetMoveCommand(_shopCharacter.SetOrder);
     }
 
     #region Hero
@@ -80,22 +93,17 @@ public class TileMapManager : Singleton<TileMapManager>
         }
     }
 
-    private TileMapCharacterCore CreateTileMapCharacter(string textureName, GuildLocationEventType type = GuildLocationEventType.None)
+    private TileMapCharacterCore CreateTileMapCharacter(string textureName, GuildLocationEventType type = GuildLocationEventType.None, bool canAutoFinding = true)
     {
-        TileMapCharacterCore character = PoolManager.Instance.Get<TileMapCharacterCore>(TileMapCharacterPrefabPath, _heroParent, _controller.EntrancePosition);
-        character.Initialize(textureName, type);
+        TileMapCharacterCore character = PoolManager.Instance.Get<TileMapCharacterCore>(TileMapCharacterPrefabPath, _heroParent, _controller.Entrance.transform.localPosition);
+        character.Initialize(textureName, type, canAutoFinding);
         return character;
     }
 
     private void CreateTileMapHeroCharacter(HeroData heroData)
     {
-        _heroes[heroData.id] = CreateTileMapCharacter("궁사2", GuildLocationEventType.QuestBoard);
-    }
-
-    private void CreateTileMapNPCCharacter()
-    {
-        string textureName = "";
-        _npcs[npcCount++] = CreateTileMapCharacter(textureName, GuildLocationEventType.QuestBoard);
+        // 캐릭터 스프라이트가 없는 관계로 궁사2로 통일
+        _heroes[heroData.id] = CreateTileMapCharacter("궁사2", GuildLocationEventType.QuestBoard | GuildLocationEventType.Food);
     }
 
     private void OnQuestStart(IEnumerable<HeroData> heroDatas, QuestData quest)
@@ -117,7 +125,7 @@ public class TileMapManager : Singleton<TileMapManager>
     private void OnHeroEntered(HeroData heroData)
     {
         var hero = _heroes[heroData.id];
-        hero.transform.localPosition = _controller.EntrancePosition;
+        hero.transform.localPosition = _controller.Entrance.transform.position;
         hero.Clear();
         hero.gameObject.SetActive(true);
     }
@@ -130,20 +138,26 @@ public class TileMapManager : Singleton<TileMapManager>
 
     public void OnDinerCharacterEntered()
     {
-        var dinerCharacter = CreateTileMapCharacter("");
-        var location = GetEventLocation(GuildLocationEventType.Food);
+        var dinerCharacter = CreateTileMapCharacter("도적2", GuildLocationEventType.Food | GuildLocationEventType.Chair, false);
+        var location = GetEventLocation(GuildLocationEventType.Food | GuildLocationEventType.Chair);
         // 앉을 자리가 없다면
         if (location == null)
         {
-
+            _waitingCharacters.Enqueue(dinerCharacter);
+            location = GetEventLocation(GuildLocationEventType.Waiting);
+            if (location == null)
+            {
+                return;
+            }
         }
-        //dinerCharacter.SetTargetTilePosition();
+        dinerCharacter.SetTargetTilePosition(location.TilePosition);
+        dinerCharacter.SetMoveCommand(dinerCharacter.SetOrder);
     }
 
     private void OnHeroExit(HeroData heroData)
     {
         if (!_heroes.TryGetValue(heroData.id, out var hero)) return;
-        hero.SetTargetTilePosition(_controller.EntranceTilePosition);
+        hero.SetTargetTilePosition(_controller.Entrance.TilePosition);
         hero.SetMoveCommand(() => hero.gameObject.SetActive(false));
     }
     #endregion
