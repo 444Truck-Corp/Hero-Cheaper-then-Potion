@@ -105,7 +105,7 @@ public class SlotQuest : MonoBehaviour
             {
                 SetHeroImageVisible(i, false);
             }
-            else if (SaveManager.Instance.MySaveData.ownedHeros.TryGetValue(id, out var heroData))
+            else if (SaveManager.Instance.MySaveData.ownedHeroes.TryGetValue(id, out var heroData))
             {
                 string spriteName = heroData.classData.id.ToString();
                 heroImgs[i].sprite = ResourceManager.Instance.LoadAsset<Sprite>(thumbnailPath, spriteName);

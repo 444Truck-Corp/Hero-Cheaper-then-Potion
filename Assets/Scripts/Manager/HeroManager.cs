@@ -24,7 +24,7 @@ public class HeroManager : Singleton<HeroManager>
     {
         HeroData hero = CreateNewHero();
         TileMapManager.Instance.SpawnHero(hero);
-        SaveManager.Instance.MySaveData.ownedHeros.Add(hero.id, hero);
+        SaveManager.Instance.MySaveData.ownedHeroes.Add(hero.id, hero);
 
         return hero;
     }

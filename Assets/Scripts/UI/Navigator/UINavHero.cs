@@ -16,7 +16,7 @@ public class UINavHero : UIBase
     protected override void Awake()
     {
         base.Awake();
-        EventManager.Instance.AddSaveDataListener(nameof(SaveData.ownedHeros), FetchHeroList);
+        EventManager.Instance.AddSaveDataListener(nameof(SaveData.ownedHeroes), FetchHeroList);
     }
 
     public override void Opened(object[] param)
@@ -26,7 +26,7 @@ public class UINavHero : UIBase
 
     private void OnDestroy()
     {
-        EventManager.Instance.RemoveSaveDataListener(nameof(SaveData.ownedHeros), FetchHeroList);
+        EventManager.Instance.RemoveSaveDataListener(nameof(SaveData.ownedHeroes), FetchHeroList);
     }
 
     public void OnHeroSlotSelected(int listIdx)
@@ -55,7 +55,7 @@ public class UINavHero : UIBase
     #region Sub Methods
     private void FetchHeroList()
     {
-        Dictionary<int, HeroData> heros = SaveManager.Instance.MySaveData.ownedHeros;
+        Dictionary<int, HeroData> heros = SaveManager.Instance.MySaveData.ownedHeroes;
         heroInfos = new Dictionary<int, HeroData>(heros);
 
         heroSlots.Clear();

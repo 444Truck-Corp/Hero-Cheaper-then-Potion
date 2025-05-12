@@ -36,7 +36,7 @@ public class UIOverrideDayResult : UIBase
             // 용사 복귀
             foreach (var heroId in completed.heroIds)
             {
-                var hero = SaveManager.Instance.MySaveData.ownedHeros[heroId];
+                var hero = SaveManager.Instance.MySaveData.ownedHeroes[heroId];
                 hero.state = EHeroState.FREE;
             }
 

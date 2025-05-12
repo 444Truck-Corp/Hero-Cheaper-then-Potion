@@ -26,7 +26,7 @@ public class UIPopupQuestHero : UIBase
         foreach (Transform child in listParent)
             Destroy(child.gameObject);
 
-        var allHeros = SaveManager.Instance.MySaveData.ownedHeros;
+        var allHeros = SaveManager.Instance.MySaveData.ownedHeroes;
 
         foreach (var (id, hero) in allHeros)
         {

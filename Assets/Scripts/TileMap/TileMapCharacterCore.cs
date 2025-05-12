@@ -187,6 +187,17 @@ public class TileMapCharacterCore : Poolable
         else
         {
             _emotion.SetIcon("Textures/Icon/PixelFood/11_bun");
+            _emotion.SetTimer(10.0f, OnFailed);
         }
+    }
+
+    private void OnFailed()
+    {
+        TileMapManager.Instance.OnDinerCharacterExited(this);
+    }
+
+    public void OnClickOrder()
+    {
+
     }
 }

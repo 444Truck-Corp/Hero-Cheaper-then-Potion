@@ -154,6 +154,12 @@ public class TileMapManager : Singleton<TileMapManager>
         dinerCharacter.SetMoveCommand(dinerCharacter.SetOrder);
     }
 
+    public void OnDinerCharacterExited(TileMapCharacterCore character)
+    {
+        character.SetTargetTilePosition(_controller.Entrance.TilePosition);
+        character.SetMoveCommand(() => character.gameObject.SetActive(false));
+    }
+
     private void OnHeroExit(HeroData heroData)
     {
         if (!_heroes.TryGetValue(heroData.id, out var hero)) return;

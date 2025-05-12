@@ -62,7 +62,7 @@ public class QuestManager : Singleton<QuestManager>
         // 용사 상태 변경
         foreach (var heroId in heroIds)
         {
-            if (SaveManager.Instance.MySaveData.ownedHeros.TryGetValue(heroId, out var hero))
+            if (SaveManager.Instance.MySaveData.ownedHeroes.TryGetValue(heroId, out var hero))
                 hero.state = EHeroState.QUEST;
             else
                 Debug.LogWarning($"존재하지 않는 용사 ID: {heroId}");

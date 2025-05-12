@@ -33,7 +33,7 @@ public class SlotSave : MonoBehaviour
             leftDays.text = saveData.day.ToString();
             guildLv.text = Utils.ChangeToRomanNumeral(saveData.rank);
             gold.text = saveData.gold.ToString() + "P";
-            heros.text = saveData.ownedHeros.Count.ToString();
+            heros.text = saveData.ownedHeroes.Count.ToString();
         }
     }
 }

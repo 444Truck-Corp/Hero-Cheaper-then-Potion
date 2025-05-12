@@ -17,13 +17,13 @@ public class SaveData
     #endregion
 
     #region guild
-    public int rank = 1; //길드 레벨
+    public int rank = 1; // 길드 레벨
 
     #endregion
 
     #region hero 
-    public int heroNum = 0; //Hero Id 매기는 변수.
-    public Dictionary<int, HeroData> ownedHeros = new(); //보유 Hero 목록.
+    public int heroNum = 0; // Hero Id 매기는 변수.
+    public Dictionary<int, HeroData> ownedHeroes = new(); // 보유 Hero 목록.
     #endregion
 
     #region inventory
@@ -32,8 +32,8 @@ public class SaveData
     #endregion
 
     #region quest
-    public List<int> receivedQuests = new(); //수락한 퀘스트 목록.
-    public List<QuestProcessInfo> processingQuests = new(); //진행중인 퀘스트 목록.
+    public List<int> receivedQuests = new(); // 수락한 퀘스트 목록.
+    public List<QuestProcessInfo> processingQuests = new(); // 진행중인 퀘스트 목록.
     #endregion
 
     public SaveData() { }
