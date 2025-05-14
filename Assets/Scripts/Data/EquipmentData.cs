@@ -9,7 +9,7 @@ public enum EEquipType{
 }
 
 [Serializable]
-public class EquipData : ItemData
+public class EquipmentData : ItemData
 {
     //장착하고 있는 영웅 idx : -1이면 미장착.
     public int equippedHero = -1; 
