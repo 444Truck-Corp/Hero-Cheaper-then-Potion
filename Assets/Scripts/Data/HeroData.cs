@@ -20,7 +20,7 @@ public class HeroData
     public EHeroState state;
     #endregion
 
-    public List<EquipData> equipList; //현재 착용중인 장비.
+    public List<EquipmentData> equipList; //현재 착용중인 장비.
 
     public HeroData()
     {

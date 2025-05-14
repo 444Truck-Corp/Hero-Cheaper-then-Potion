@@ -28,7 +28,7 @@ public class SaveData
 
     #region inventory
     public List<int> ownedReceipes = new();
-    public List<EquipData> ownedEquips = new();
+    public List<EquipmentData> ownedEquips = new();
     #endregion
 
     #region quest
