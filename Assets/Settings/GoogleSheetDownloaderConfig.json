@@ -1,0 +1,62 @@
+[
+  {
+    "Gid": "513224262",
+    "Selected": false,
+    "OutputFileName": "규칙.json"
+  },
+  {
+    "Gid": "1759952678",
+    "Selected": false,
+    "OutputFileName": "_ClassData.json"
+  },
+  {
+    "Gid": "658489092",
+    "Selected": false,
+    "OutputFileName": "ClassData.json"
+  },
+  {
+    "Gid": "87811400",
+    "Selected": false,
+    "OutputFileName": "NameData.json"
+  },
+  {
+    "Gid": "858707003",
+    "Selected": false,
+    "OutputFileName": "LvData.json"
+  },
+  {
+    "Gid": "0",
+    "Selected": true,
+    "OutputFileName": "QuestData.json"
+  },
+  {
+    "Gid": "2027353182",
+    "Selected": false,
+    "OutputFileName": "QuestData.json"
+  },
+  {
+    "Gid": "2123639975",
+    "Selected": false,
+    "OutputFileName": "RanktoQuest.json"
+  },
+  {
+    "Gid": "1776160018",
+    "Selected": false,
+    "OutputFileName": "RecipeData.json"
+  },
+  {
+    "Gid": "1195255719",
+    "Selected": true,
+    "OutputFileName": "RecipeData.json"
+  },
+  {
+    "Gid": "1738881584",
+    "Selected": true,
+    "OutputFileName": "ItemData.json"
+  },
+  {
+    "Gid": "685569327",
+    "Selected": true,
+    "OutputFileName": "EquipmentData.json"
+  }
+]

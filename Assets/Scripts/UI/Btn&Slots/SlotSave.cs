@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SlotSave : MonoBehaviour
 {
-
     [SerializeField] private GameObject fields;
     [SerializeField] private GameObject emptyTxt;
 
@@ -26,10 +25,9 @@ public class SlotSave : MonoBehaviour
             fields.SetActive(true);
             emptyTxt.SetActive(false);
 
-            DateTime time = new (saveData.lastSaveTime);
+            DateTime time = new(saveData.lastSaveTime);
             string formatted = time.ToString("yyyy-MM-dd HH:mm:ss");
             playTime.text = formatted;
-
             leftDays.text = saveData.day.ToString();
             guildLv.text = Utils.ChangeToRomanNumeral(saveData.rank);
             gold.text = saveData.gold.ToString() + "P";

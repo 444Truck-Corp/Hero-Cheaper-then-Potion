@@ -65,7 +65,7 @@ public class TileMapEventController : MonoBehaviour
         debugString += $"상인 방문 시간: {randomTenMinutesCount / 6:D2}시 {randomTenMinutesCount % 6 * 10:D2}분\n";
         AddEvent(randomTenMinutesCount, TileMapEventType.Shop);
 
-        int count = 10;
+        int count = 20;
         debugString += $"식사 방문 예정 인원: {count}명\n";
         while (count-- > 0)
         {

@@ -227,7 +227,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba101aac4491bda41b3a0645c4416822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDestroyOnLoad: 0
 --- !u!4 &334358819
 Transform:
   m_ObjectHideFlags: 0
@@ -237,7 +236,7 @@ Transform:
   m_GameObject: {fileID: 334358817}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -570,7 +569,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ad6a2c3aa87d0249941bf6202f5a95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDestroyOnLoad: 0
 --- !u!4 &643046684
 Transform:
   m_ObjectHideFlags: 0
@@ -997,7 +995,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e636b1dbf8fa9754089e7ef6bb7d1f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDestroyOnLoad: 0
 --- !u!1 &896089401
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,7 +1039,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe0910573a5fd6449802628cb2b9e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDestroyOnLoad: 0
 --- !u!1 &992182622
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,7 +1100,7 @@ Transform:
   m_GameObject: {fileID: 1034261754}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1122,7 +1118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552291d5738caac4c99b989df420b58a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDestroyOnLoad: 0
 --- !u!1 &1061539802
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,7 +1144,7 @@ Transform:
   m_GameObject: {fileID: 1061539802}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1168,7 +1163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be789e29c8e0cfb458c8379c69155688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDestroyOnLoad: 0
   parents: []
   uiList: []
   fadeBG: {fileID: 795370019}
@@ -2285,7 +2279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 947704dc097548c4ab44260cdf035782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDestroyOnLoad: 0
   myMixer: {fileID: 24100000, guid: 669907b0d926d5941babbcb54a2660c9, type: 2}
   bgmSource: {fileID: 1949745003}
   sfxSource: {fileID: 1949745004}
@@ -2528,7 +2521,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 133574fcbbe1a6343a131df1f4f6af6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDestroyOnLoad: 0
 --- !u!4 &2064686453
 Transform:
   m_ObjectHideFlags: 0

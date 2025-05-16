@@ -26,6 +26,8 @@ public class MonoButton : MonoBehaviour
         };
 
         if (!string.IsNullOrEmpty(eventKey))
+        {
             EventManager.Instance.InvokeClickEvent(eventKey);
+        }
     }
 }

@@ -24,8 +24,6 @@ public class MonoButtonHandler : MonoBehaviour
         var collider = Physics2D.OverlapPoint(worldPosition);
         if (collider != null && collider.TryGetComponent(out MonoButton button))
         {
-            Debug.Log(collider.gameObject.name);
-
             if (Input.GetMouseButtonDown(0))
             {
                 button.OnLeftClick();

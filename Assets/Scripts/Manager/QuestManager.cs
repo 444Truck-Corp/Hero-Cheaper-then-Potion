@@ -60,12 +60,16 @@ public class QuestManager : Singleton<QuestManager>
         SaveManager.Instance.SetSaveData(nameof(SaveData.processingQuests), processList);
 
         // 용사 상태 변경
-        foreach (var heroId in heroIds)
+        foreach (int heroId in heroIds)
         {
-            if (SaveManager.Instance.MySaveData.ownedHeroes.TryGetValue(heroId, out var hero))
+            if (SaveManager.Instance.MySaveData.ownedHeroes.TryGetValue(heroId, out HeroData hero))
+            {
                 hero.state = EHeroState.QUEST;
+            }
             else
+            {
                 Debug.LogWarning($"존재하지 않는 용사 ID: {heroId}");
+            }
         }
     }
     #endregion
@@ -89,7 +93,7 @@ public class QuestManager : Singleton<QuestManager>
 
     private int GetRandomQuest(int rank)
     {
-        var candidates = new List<QuestData>();
+        List<QuestData> candidates = new();
 
         foreach (var quest in questDataDics.Values)
         {

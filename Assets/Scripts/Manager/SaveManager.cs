@@ -34,7 +34,9 @@ public class SaveManager : Singleton<SaveManager>
         foreach (var field in fields)
         {
             if (!fieldCache.ContainsKey(field.Name))
+            {
                 fieldCache.Add(field.Name, field);
+            }
         }
         
         isAutoDirty = false;
@@ -57,6 +59,10 @@ public class SaveManager : Singleton<SaveManager>
     public void CreateSaveData()
     {
         saveData = new();
+
+        // 기본 정보 추가
+        saveData.ownedRecipes.Add(1);
+
         string path = GetSlotPath(0);
         string json = JsonConvert.SerializeObject(saveData, Formatting.Indented);
         File.WriteAllText(path, json);

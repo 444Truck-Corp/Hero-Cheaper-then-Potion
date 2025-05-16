@@ -1,0 +1,122 @@
+[
+  {
+    "id": "1",
+    "itemId": "1",
+    "name": "기본 레시피",
+    "rawIngredients": ""
+  },
+  {
+    "id": "2",
+    "itemId": "",
+    "name": "",
+    "rawIngredients": ""
+  },
+  {
+    "id": "3",
+    "itemId": "",
+    "name": "",
+    "rawIngredients": ""
+  },
+  {
+    "id": "4",
+    "itemId": "",
+    "name": "",
+    "rawIngredients": ""
+  },
+  {
+    "id": "5",
+    "itemId": "",
+    "name": "",
+    "rawIngredients": ""
+  },
+  {
+    "id": "6",
+    "itemId": "",
+    "name": "",
+    "rawIngredients": ""
+  },
+  {
+    "id": "7",
+    "itemId": "",
+    "name": "",
+    "rawIngredients": ""
+  },
+  {
+    "id": "8",
+    "itemId": "",
+    "name": "",
+    "rawIngredients": ""
+  },
+  {
+    "id": "9",
+    "itemId": "",
+    "name": "",
+    "rawIngredients": ""
+  },
+  {
+    "id": "10",
+    "itemId": "",
+    "name": "",
+    "rawIngredients": ""
+  },
+  {
+    "id": "11",
+    "itemId": "51",
+    "name": "랭크1",
+    "rawIngredients": "11:10, 21:5, 41:1"
+  },
+  {
+    "id": "12",
+    "itemId": "52",
+    "name": "랭크2",
+    "rawIngredients": "12:10, 22:5, 32:1"
+  },
+  {
+    "id": "13",
+    "itemId": "53",
+    "name": "랭크3",
+    "rawIngredients": "13:20, 22:10, 43:1"
+  },
+  {
+    "id": "14",
+    "itemId": "54",
+    "name": "랭크4",
+    "rawIngredients": "14:20, 24:10, 34:1"
+  },
+  {
+    "id": "15",
+    "itemId": "55",
+    "name": "랭크5",
+    "rawIngredients": "15:30, 25:15, 45:1"
+  },
+  {
+    "id": "16",
+    "itemId": "56",
+    "name": "랭크6",
+    "rawIngredients": "16:30, 26:15, 36:1"
+  },
+  {
+    "id": "17",
+    "itemId": "57",
+    "name": "랭크7",
+    "rawIngredients": "17:40, 27:20, 47:1"
+  },
+  {
+    "id": "18",
+    "itemId": "58",
+    "name": "랭크8",
+    "rawIngredients": "18:40, 28:20, 38:1"
+  },
+  {
+    "id": "19",
+    "itemId": "59",
+    "name": "랭크9",
+    "rawIngredients": "19:50, 29:25, 49:1"
+  },
+  {
+    "id": "20",
+    "itemId": "60",
+    "name": "랭크10",
+    "rawIngredients": "20:50, 30:25, 40:1"
+  }
+]

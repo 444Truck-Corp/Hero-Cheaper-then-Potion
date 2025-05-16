@@ -17,7 +17,7 @@ public class TileMapCharacterCore : Poolable
     [SerializeField] private CustomAnimator _animator;
     [SerializeField] private Direction _direction;
     [SerializeField] private float _movementProgress;
-    
+
     [SerializeField] private Emotion _emotion;
 
     [Header("AI")]
@@ -186,9 +186,21 @@ public class TileMapCharacterCore : Poolable
         }
         else
         {
+            SetFood();
             _emotion.SetIcon("Textures/Icon/PixelFood/11_bun");
             _emotion.SetTimer(10.0f, OnFailed);
         }
+    }
+
+    private void SetFood()
+    {
+        RecipeData recipe = RecipeManager.Instance.GetRandomOwnedRecipe();
+        _emotion.SetAction(() =>
+        {
+            // TODO
+        });
+        // TODO: Recipe에 맞는 아이콘 적용
+        //_emotion.SetIcon(recipe.name);
     }
 
     private void OnFailed()

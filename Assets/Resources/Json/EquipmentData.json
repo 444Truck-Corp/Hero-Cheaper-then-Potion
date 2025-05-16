@@ -1,0 +1,92 @@
+[
+  {
+    "id": "1",
+    "name": "아이템1",
+    "category": "Equipment",
+    "description": "",
+    "stats": "[1,1,1,1]",
+    "parts": "Head",
+    "value": "100"
+  },
+  {
+    "id": "2",
+    "name": "아이템2",
+    "category": "Equipment",
+    "description": "",
+    "stats": "[1,1,1,1]",
+    "parts": "Chest",
+    "value": "100"
+  },
+  {
+    "id": "3",
+    "name": "아이템3",
+    "category": "Equipment",
+    "description": "",
+    "stats": "[1,1,1,1]",
+    "parts": "Arm",
+    "value": "100"
+  },
+  {
+    "id": "4",
+    "name": "아이템4",
+    "category": "Equipment",
+    "description": "",
+    "stats": "[1,1,1,1]",
+    "parts": "Leg",
+    "value": "100"
+  },
+  {
+    "id": "5",
+    "name": "아이템5",
+    "category": "Equipment",
+    "description": "",
+    "stats": "[1,1,1,1]",
+    "parts": "Accessory",
+    "value": "100"
+  },
+  {
+    "id": "6",
+    "name": "아이템6",
+    "category": "Equipment",
+    "description": "",
+    "stats": "[1,1,1,1]",
+    "parts": "Head",
+    "value": "100"
+  },
+  {
+    "id": "7",
+    "name": "아이템7",
+    "category": "Equipment",
+    "description": "",
+    "stats": "",
+    "parts": "Weapon",
+    "value": ""
+  },
+  {
+    "id": "8",
+    "name": "아이템8",
+    "category": "Equipment",
+    "description": "",
+    "stats": "",
+    "parts": "Accessory",
+    "value": ""
+  },
+  {
+    "id": "9",
+    "name": "아이템9",
+    "category": "Equipment",
+    "description": "",
+    "stats": "",
+    "parts": "Accessory",
+    "value": ""
+  },
+  {
+    "id": "10",
+    "name": "아이템10",
+    "category": "Equipment",
+    "description": "",
+    "stats": "",
+    "parts": "Accessory",
+    "value": ""
+  }
+]

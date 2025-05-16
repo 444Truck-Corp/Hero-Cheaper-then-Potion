@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 public class DataManager : Singleton<DataManager>
 {
-    private Dictionary<string, string> dataDics = new(); //Resources/Json으로부터 자동로드.
+    private readonly Dictionary<string, string> dataDics = new(); //Resources/Json으로부터 자동로드.
 
     #region Unity Life Cycles
     public void Init()

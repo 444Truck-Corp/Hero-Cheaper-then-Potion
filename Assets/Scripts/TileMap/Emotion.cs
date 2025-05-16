@@ -55,4 +55,9 @@ public class Emotion : MonoBehaviour
         _action.Invoke();
         CancleTimer();
     }
+
+    public void SetAction(Action value)
+    {
+        
+    }
 }

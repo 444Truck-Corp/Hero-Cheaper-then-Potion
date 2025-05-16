@@ -1,10 +1,12 @@
 using System;
 
-public enum EEquipType{
-    Helmet,
+public enum EEquipType
+{
+    Head,
     Chest,
-    Pants,
-    Deco,
+    Arm,
+    Leg,
+    Accessory,
     Weapon,
 }
 
@@ -13,6 +15,6 @@ public class EquipmentData : ItemData
 {
     //장착하고 있는 영웅 idx : -1이면 미장착.
     public int equippedHero = -1; 
-    public EEquipType equipType;
+    public EEquipType parts;
     public bool isEquipped;
 }
