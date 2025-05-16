@@ -19,13 +19,14 @@ public class GoogleSheetDownloader : EditorWindow
     private static string ConfigPath => Path.Combine(Application.dataPath, "Settings/GoogleSheetDownloaderConfig.json");
 
     private bool _isSheetLoaded;
+    private bool _selectAll;
     private Vector2 _scrollPos;
 
-    private readonly List<SheetInfo> sheets = new();
+    private readonly List<SheetInfo> _sheets = new();
 
     private void SaveSheetSettings()
     {
-        var settings = sheets.Select(s => new SheetSettings
+        var settings = _sheets.Select(s => new SheetSettings
         {
             Gid = s.Gid,
             Selected = s.Selected,
@@ -44,7 +45,7 @@ public class GoogleSheetDownloader : EditorWindow
 
         foreach (var setting in settings)
         {
-            var sheet = sheets.FirstOrDefault(s => s.Gid == setting.Gid);
+            var sheet = _sheets.FirstOrDefault(s => s.Gid == setting.Gid);
             if (sheet != null)
             {
                 sheet.Selected = setting.Selected;
@@ -71,19 +72,42 @@ public class GoogleSheetDownloader : EditorWindow
             LoadSheetSettings();
         }
 
-        if (sheets.Count > 0)
+        if (_sheets.Count > 0)
         {
             EditorGUILayout.Space();
             EditorGUILayout.LabelField("변환할 시트 선택", EditorStyles.boldLabel);
             DefaultDownloadPath = EditorGUILayout.TextField("기본 저장 경로", DefaultDownloadPath);
 
             _scrollPos = EditorGUILayout.BeginScrollView(_scrollPos);
-            foreach (var sheet in sheets)
+
+            // 일괄 선택
+            EditorGUI.BeginChangeCheck();
+            bool newSelectAll = EditorGUILayout.ToggleLeft("일괄 선택", _selectAll);
+            if (EditorGUI.EndChangeCheck())
             {
+                _selectAll = newSelectAll;
+                foreach (var sheet in _sheets)
+                {
+                    sheet.Selected = _selectAll;
+                }
+            }
+
+            // _selectAll 갱신
+            bool allSelected = true;
+            foreach (var sheet in _sheets)
+            {
+                EditorGUI.BeginChangeCheck();
                 sheet.Selected = EditorGUILayout.ToggleLeft($"{sheet.Title} (GID: {sheet.Gid})", sheet.Selected);
                 sheet.OutputFileName = EditorGUILayout.TextField("→ 파일 이름", sheet.OutputFileName);
                 EditorGUILayout.Space();
+
+                if (!sheet.Selected)
+                {
+                    allSelected = false;
+                }
             }
+            _selectAll = allSelected;
+
             EditorGUILayout.EndScrollView();
 
             if (GUILayout.Button("선택한 시트들을 JSON으로 저장"))
@@ -101,7 +125,7 @@ public class GoogleSheetDownloader : EditorWindow
     private async Task LoadSheetListAsync()
     {
         _isSheetLoaded = false;
-        sheets.Clear();
+        _sheets.Clear();
 
         string url = $"https://sheets.googleapis.com/v4/spreadsheets/{SheetId}?key={APIKey}";
 
@@ -110,13 +134,13 @@ public class GoogleSheetDownloader : EditorWindow
             using HttpClient client = new();
             string response = await client.GetStringAsync(url);
 
-            var root = JsonUtility.FromJson<SheetMetadataWrapper>(response);
-            foreach (var sheet in root.sheets)
+            var wrapper = JsonUtility.FromJson<SheetMetadataWrapper>(response);
+            foreach (var sheet in wrapper.sheets)
             {
                 string title = sheet.properties.title;
                 int gid = sheet.properties.sheetId;
 
-                sheets.Add(new SheetInfo
+                _sheets.Add(new SheetInfo
                 {
                     Title = title,
                     Gid = gid.ToString(),
@@ -126,7 +150,7 @@ public class GoogleSheetDownloader : EditorWindow
             }
 
             _isSheetLoaded = true;
-            Debug.Log($"✅ 시트 {sheets.Count}개를 확인했습니다.");
+            Debug.Log($"✅ 시트 {_sheets.Count}개를 확인했습니다.");
         }
         catch (Exception e)
         {
@@ -137,7 +161,7 @@ public class GoogleSheetDownloader : EditorWindow
 
     private async Task DownloadSelectedSheetsAsync()
     {
-        foreach (var sheet in sheets)
+        foreach (SheetInfo sheet in _sheets)
         {
             if (!sheet.Selected) continue;
 
@@ -170,19 +194,19 @@ public class GoogleSheetDownloader : EditorWindow
 
     private static string ConvertCsvToJson(string csv)
     {
-        var rows = new List<Dictionary<string, string>>();
-        var lines = Regex.Split(csv.Trim(), "\r?\n");
+        List<Dictionary<string, string>> rows = new();
+        string[] lines = Regex.Split(csv.Trim(), "\r?\n");
 
         if (lines.Length < 2) return "[]";
 
-        var headers = ParseCsvLine(lines[0]);
+        List<string> headers = ParseCsvLine(lines[0]);
 
         for (int i = 1; i < lines.Length; i++)
         {
             if (string.IsNullOrWhiteSpace(lines[i])) continue;
 
             var values = ParseCsvLine(lines[i]);
-            var row = new Dictionary<string, string>();
+            Dictionary<string, string> row = new();
 
             for (int j = 0; j < headers.Count && j < values.Count; j++)
             {
@@ -230,12 +254,6 @@ public class GoogleSheetDownloader : EditorWindow
         public string Gid;
         public bool Selected;
         public string OutputFileName;
-    }
-
-    [Serializable]
-    private class Wrapper
-    {
-        public List<Dictionary<string, string>> items;
     }
 
     [Serializable]
