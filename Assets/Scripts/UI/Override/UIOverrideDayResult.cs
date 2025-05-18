@@ -8,6 +8,11 @@ public class UIOverrideDayResult : UIBase
         SetActive<UIOverrideDayResult>(false);
     }
 
+    public void OnBtnClicked()
+    {
+        SetActive<UIOverrideDayResult>(false);
+    }
+
     private void NextDayEvents()
     {
         int today = SaveManager.Instance.MySaveData.day;
