@@ -17,6 +17,7 @@ public class ItemData
 {
     public int id;
     public int value;
+    public int rank;
     public string name;
     public string description;
     public string icon;

@@ -22,7 +22,7 @@ public class QuestData
     public int id;
     public int rank;
     public string title;
-    public float reward;
+    public int reward;
     public string rawNeedSpecs; // "str, dex, int, hp"
     public int time; // 소요 일수
     public string rawDropItems; // "itemId:probability,itemId:probability,..."

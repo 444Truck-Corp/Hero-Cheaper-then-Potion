@@ -3,420 +3,540 @@
     "id": "1",
     "name": "아이템1",
     "category": "Potion",
-    "description": "",
-    "value": "0"
+    "description": "체력 25% 회복",
+    "value": "30",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "2",
     "name": "아이템2",
     "category": "Potion",
-    "description": "",
-    "value": "0"
+    "description": "체력 25% 회복",
+    "value": "40",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "3",
     "name": "아이템3",
     "category": "Potion",
-    "description": "",
-    "value": "0"
+    "description": "체력 25% 회복",
+    "value": "60",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "4",
     "name": "아이템4",
     "category": "Potion",
-    "description": "",
-    "value": "0"
+    "description": "체력 25% 회복",
+    "value": "70",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "5",
     "name": "아이템5",
     "category": "Potion",
-    "description": "",
-    "value": "0"
+    "description": "체력 25% 회복",
+    "value": "85",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "6",
     "name": "아이템6",
     "category": "Potion",
-    "description": "",
-    "value": "0"
+    "description": "체력 25% 회복",
+    "value": "120",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "7",
     "name": "아이템7",
     "category": "Potion",
-    "description": "",
-    "value": "0"
+    "description": "체력 25% 회복",
+    "value": "140",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "8",
     "name": "아이템8",
     "category": "Potion",
-    "description": "",
-    "value": "0"
+    "description": "체력 25% 회복",
+    "value": "160",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "9",
     "name": "아이템9",
     "category": "Potion",
-    "description": "",
-    "value": "0"
+    "description": "체력 50% 회복",
+    "value": "400",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "10",
     "name": "아이템10",
     "category": "Potion",
-    "description": "",
-    "value": "0"
+    "description": "완전 회복",
+    "value": "1000",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "11",
     "name": "재료1-1",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "12",
     "name": "재료1-2",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "13",
     "name": "재료1-3",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "14",
     "name": "재료1-4",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "15",
     "name": "재료1-5",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "16",
     "name": "재료1-6",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "17",
     "name": "재료1-7",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "18",
     "name": "재료1-8",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "19",
     "name": "재료1-9",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "20",
     "name": "재료1-10",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "21",
     "name": "재료2-1",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "22",
     "name": "재료2-2",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "23",
     "name": "재료2-3",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "24",
     "name": "재료2-4",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "25",
     "name": "재료2-5",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "26",
     "name": "재료2-6",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "27",
     "name": "재료2-7",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "28",
     "name": "재료2-8",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "29",
     "name": "재료2-9",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "30",
     "name": "재료2-10",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "31",
     "name": "재료3-1",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "32",
     "name": "재료3-2",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "33",
     "name": "재료3-3",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "34",
     "name": "재료3-4",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "35",
     "name": "재료3-5",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "36",
     "name": "재료3-6",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "37",
     "name": "재료3-7",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "38",
     "name": "재료3-8",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "39",
     "name": "재료3-9",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "40",
     "name": "재료3-10",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "41",
     "name": "상점 구매 재료 1",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "750",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "42",
     "name": "상점 구매 재료 2",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "2250",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "43",
     "name": "상점 구매 재료 3",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "6750",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "44",
     "name": "상점 구매 재료 4",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "16250",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "45",
     "name": "상점 구매 재료 5",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "35000",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "46",
     "name": "상점 구매 재료 6",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "57500",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "47",
     "name": "상점 구매 재료 7",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "85000",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "48",
     "name": "상점 구매 재료 8",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "120000",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "49",
     "name": "상점 구매 재료 9",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "160000",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "50",
     "name": "상점 구매 재료 10",
     "category": "Material",
     "description": "",
-    "value": "0"
+    "value": "212500",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "51",
     "name": "요리1",
     "category": "Potion",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "52",
     "name": "요리2",
     "category": "Potion",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "53",
     "name": "요리3",
     "category": "Potion",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "54",
     "name": "요리4",
     "category": "Potion",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "55",
     "name": "요리5",
     "category": "Potion",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "56",
     "name": "요리6",
     "category": "Potion",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "57",
     "name": "요리7",
     "category": "Potion",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "58",
     "name": "요리8",
     "category": "Potion",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "59",
     "name": "요리9",
     "category": "Potion",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   },
   {
     "id": "60",
     "name": "요리10",
     "category": "Potion",
     "description": "",
-    "value": "0"
+    "value": "0",
+    "rank": "1",
+    "icon": ""
   }
 ]

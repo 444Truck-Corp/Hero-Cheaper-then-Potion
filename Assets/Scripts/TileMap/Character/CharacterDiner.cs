@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class CharacterDiner : TileMapCharacterCore
 {
     public new GuildLocationEventType TargetType =
@@ -29,11 +27,17 @@ public class CharacterDiner : TileMapCharacterCore
 
     protected override void OnClickOrder()
     {
-        // 골드 증가
         // TODO: 주문 완료 저장 필요
         // 재화 획득하고 다시 불러와서 악용 가능
-        SaveManager.Instance.MySaveData.gold += ItemManager.Instance.ItemList[_recipeId].value;
-        SaveManager.Instance.SetSaveData(nameof(SaveManager.Instance.MySaveData.gold), SaveManager.Instance.MySaveData.gold);
+
+        // 골드 증가
+        int gold = SaveManager.Instance.MySaveData.gold += ItemManager.Instance.ItemList[_recipeId].rank * 7;
+        SaveManager.Instance.SetSaveData(nameof(SaveManager.Instance.MySaveData.gold), gold);
+
+        // 경험치 증가
+        int exp = SaveManager.Instance.MySaveData.exp += 1;
+        SaveManager.Instance.SetSaveData(nameof(SaveManager.Instance.MySaveData.exp), exp);
+
         TileMapManager.Instance.OnDinerCharacterExited(this);
         base.OnClickOrder();
     }

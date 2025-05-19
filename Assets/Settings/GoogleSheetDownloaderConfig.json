@@ -51,12 +51,12 @@
   },
   {
     "Gid": "1738881584",
-    "Selected": false,
+    "Selected": true,
     "OutputFileName": "ItemData.json"
   },
   {
     "Gid": "685569327",
-    "Selected": false,
+    "Selected": true,
     "OutputFileName": "EquipmentData.json"
   }
 ]
