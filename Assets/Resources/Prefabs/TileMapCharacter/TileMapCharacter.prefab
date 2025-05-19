@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 1628336719859222893}
   - component: {fileID: 951718877623786749}
   - component: {fileID: 294970148041401415}
+  - component: {fileID: -1245169998211009399}
   - component: {fileID: 1022375880421305494}
   - component: {fileID: 7708263680522737}
   m_Layer: 0
@@ -191,12 +192,27 @@ MonoBehaviour:
   PoolID: 0
   ResourcePath: 
   Pool: {fileID: 0}
+  _emotion: {fileID: 6377030909298398733}
+  _movement: {fileID: -1245169998211009399}
+--- !u!114 &-1245169998211009399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320068043087184913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e336d05c0f6ee645ae1d4d806072da3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _isMoving: 0
   _movementFrequency: 0
+  _movementProgress: 0
   _movementSpeed: 5
+  _direction:
+    Forward: 0
   _time: 0
-  _texturePath: 
-  _spriteRenderer: {fileID: 951718877623786749}
   _animator:
     _isPlaying: 0
     _isLooping: 0
@@ -208,13 +224,12 @@ MonoBehaviour:
     _framePerSecond: 0
     _currentDuration: 0
     _sprites: []
-  _direction:
-    Forward: 0
-  _movementProgress: 0
-  _emotion: {fileID: 6377030909298398733}
   _lastPosition: {x: 0, y: 0, z: 0}
   _targetStepPosition: {x: 0, y: 0, z: 0}
+  _texturePath: 
   _targetLocation: {fileID: 0}
+  _spriteRenderer: {fileID: 951718877623786749}
+  _canAutoFinding: 0
   _targetType: 0
 --- !u!61 &1022375880421305494
 BoxCollider2D:
@@ -275,6 +290,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickType: 3
+  _onLeftClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _onRightClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1343280614040378860
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,7 +469,6 @@ GameObject:
   - component: {fileID: 52134135725207466}
   - component: {fileID: 3967095749141457601}
   - component: {fileID: 8370825610011605166}
-  - component: {fileID: 3304205461370339570}
   - component: {fileID: 6377030909298398733}
   m_Layer: 0
   m_Name: Emotion
@@ -575,19 +595,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3304205461370339570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9148261885432524462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 745e629c5ceb00646b33280cc7a604a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clickType: 0
 --- !u!114 &6377030909298398733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -600,5 +607,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f9f3807fc44a6649bd49462009e0e67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickType: 0
+  _onLeftClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _onRightClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _iconSpriteRenderer: {fileID: 1072652124360902420}
   _progress: {fileID: 686156614171989897}

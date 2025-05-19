@@ -2,6 +2,9 @@ using System.Collections.Generic;
 
 public class ItemManager : Singleton<ItemManager>
 {
+    public Dictionary<int, ItemData> ItemList => _itemList; 
+    public Dictionary<int, EquipmentData> EquipmentList => _equipmentList; 
+
     private readonly Dictionary<int, ItemData> _itemList = new();
     private readonly Dictionary<int, EquipmentData> _equipmentList = new();
 

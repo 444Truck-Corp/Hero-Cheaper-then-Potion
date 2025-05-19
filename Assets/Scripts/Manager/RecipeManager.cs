@@ -36,7 +36,12 @@ public class RecipeManager : Singleton<RecipeManager>
         Debug.Log(debug);
     }
 
-    public RecipeData GetRandomOwnedRecipe()
+    public RecipeData GetRecipeById(int id)
+    {
+        return _recipes.TryGetValue(id, out RecipeData recipe) ? recipe : null;
+    }
+
+    public int GetRandomOwnedRecipeId()
     {
         //int rank = SaveManager.Instance.MySaveData.rank;
         int count = SaveManager.Instance.MySaveData.ownedRecipes.Count;
@@ -44,11 +49,11 @@ public class RecipeManager : Singleton<RecipeManager>
         // 보유 레시피가 없을 때
         if (count == 0)
         {
-            return null;
+            return -1;
         }
         int index = Random.Range(0, count);
         int recipeId = SaveManager.Instance.MySaveData.ownedRecipes[index];
-        return _recipes[recipeId];
+        return recipeId;
     }
 
     public bool TryCook(int recipeId)

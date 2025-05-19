@@ -16,8 +16,10 @@ public enum EItemCategory
 public class ItemData
 {
     public int id;
+    public int value;
     public string name;
     public string description;
+    public string icon;
     public EItemCategory category;
     public EItemEffect effect;
     //TODO : 전체 적용여부

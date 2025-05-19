@@ -2,42 +2,27 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
-public class TileMapCharacterCore : Poolable
+public class CharacterMovement : MonoBehaviour
 {
-    private const string PATH = "Textures/CharacterSheet/";
-
-    [Header("Movement")]
     [SerializeField] private bool _isMoving;
     [SerializeField] private float _movementFrequency;
-    [SerializeField] private float _movementSpeed = 5;
-    [SerializeField] private float _time;
-    [SerializeField] private string _texturePath;
-    [SerializeField] private SpriteRenderer _spriteRenderer;
-    [SerializeField] private CustomAnimator _animator;
-    [SerializeField] private Direction _direction;
     [SerializeField] private float _movementProgress;
-
-    [SerializeField] private Emotion _emotion;
-
-    [Header("AI")]
+    [SerializeField] private float _movementSpeed = 5;
+    [SerializeField] private Direction _direction;
+    [SerializeField] private float _time;
+    [SerializeField] private CustomAnimator _animator;
     [SerializeField] private Vector3 _lastPosition;
     [SerializeField] private Vector3 _targetStepPosition;
-    [SerializeField] private EventLocation _targetLocation;
-    [SerializeField] private GuildLocationEventType _targetType;
     [SerializeField] private Action _onMoveComplete;
+    [SerializeField] private string _texturePath;
+    [SerializeField] private EventLocation _targetLocation;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private bool _canAutoFinding;
+    [SerializeField] private GuildLocationEventType _targetType;
 
     private readonly Queue<Vector2Int> _moveCommand = new();
-    private bool _canAutoFinding;
 
     public Vector2Int Position => new((int)_targetStepPosition.x, (int)-_targetStepPosition.y);
-
-    public GuildLocationEventType TargetType => _targetType;
-
-    private void Reset()
-    {
-        _movementSpeed = 5;
-    }
 
     private void FixedUpdate()
     {
@@ -78,50 +63,25 @@ public class TileMapCharacterCore : Poolable
         UpdateAnimation();
     }
 
-    public void Initialize(string textureName, GuildLocationEventType targetType = GuildLocationEventType.None, bool canAutoFinding = true)
+    public void Initialize(string textureName, GuildLocationEventType targetType, bool canAutoFinding)
     {
-        _texturePath = string.IsNullOrEmpty(textureName) ? "궁사2" : textureName;
-        _animator = new CustomAnimator(PATH + textureName, 9, true, true);
+        _texturePath = PATH + (string.IsNullOrEmpty(textureName) ? "궁사2" : textureName);
+        _animator = new CustomAnimator(_texturePath, 9, true, true);
+        _canAutoFinding = canAutoFinding;
         _targetType = targetType;
-        if (targetType != GuildLocationEventType.None)
-        {
-            _canAutoFinding = canAutoFinding;
-        }
-        Clear();
     }
+    private const string PATH = "Textures/CharacterSheet/";
+
 
     public void Clear()
     {
         _direction = new Direction(2);
         _targetStepPosition = transform.localPosition;
-        ReturnLocation();
         _moveCommand.Clear();
         _movementProgress = 0.0f;
         _animator.SetPlaying(false);
-        _emotion.gameObject.SetActive(false);
-        UpdateAnimation();
-    }
-
-    private void ReturnLocation()
-    {
-        if (_targetLocation == null)
-        {
-            return;
-        }
-        TileMapManager.Instance.ReturnLocation(_targetLocation);
-        _targetLocation = null;
-    }
-
-    public void SetTargetTilePosition(Vector2Int position)
-    {
-        TileMapManager.Instance.GetRoute(Position, position, _moveCommand);
-    }
-
-    public void SetMoveCommand(Action onMoveComplete = null)
-    {
         ReturnLocation();
-        _time = _movementFrequency;
-        _onMoveComplete = onMoveComplete;
+        UpdateAnimation();
     }
 
     private void UpdateStep()
@@ -161,14 +121,19 @@ public class TileMapCharacterCore : Poolable
         }
     }
 
-    public void SetDirection()
+    private void OnMoveToTargetLocationComplete()
     {
         _direction = _targetLocation.Direction;
     }
 
-    private void OnMoveToTargetLocationComplete()
+    private void ReturnLocation()
     {
-        _direction = _targetLocation.Direction;
+        if (_targetLocation == null)
+        {
+            return;
+        }
+        TileMapManager.Instance.ReturnLocation(_targetLocation);
+        _targetLocation = null;
     }
 
     private void UpdateAnimation()
@@ -177,39 +142,20 @@ public class TileMapCharacterCore : Poolable
         _spriteRenderer.sprite = _animator.GetSprite(Time.fixedDeltaTime);
     }
 
-    public void SetOrder()
+    public void SetTargetTilePosition(Vector2Int position)
     {
-        _emotion.gameObject.SetActive(true);
-        if (_targetType.HasFlag(GuildLocationEventType.Shop))
-        {
-            _emotion.SetIcon("Textures/Icon/PixelFood/20_bagel");
-        }
-        else
-        {
-            SetFood();
-            _emotion.SetIcon("Textures/Icon/PixelFood/11_bun");
-            _emotion.SetTimer(10.0f, OnFailed);
-        }
+        TileMapManager.Instance.GetRoute(Position, position, _moveCommand);
     }
 
-    private void SetFood()
+    internal void SetMoveCommand(Action onMoveComplete)
     {
-        RecipeData recipe = RecipeManager.Instance.GetRandomOwnedRecipe();
-        _emotion.SetAction(() =>
-        {
-            // TODO
-        });
-        // TODO: Recipe에 맞는 아이콘 적용
-        //_emotion.SetIcon(recipe.name);
+        ReturnLocation();
+        _time = _movementFrequency;
+        _onMoveComplete = onMoveComplete;
     }
 
-    private void OnFailed()
+    public void SetDirection()
     {
-        TileMapManager.Instance.OnDinerCharacterExited(this);
-    }
-
-    public void OnClickOrder()
-    {
-
+        _direction = _targetLocation.Direction;
     }
 }

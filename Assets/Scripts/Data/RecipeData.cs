@@ -12,6 +12,7 @@ public class RecipeIngredient
 public class RecipeData
 {
     public int id;
+    public int itemId;
     public string name;
     public string rawIngredients;
     public bool isActive;

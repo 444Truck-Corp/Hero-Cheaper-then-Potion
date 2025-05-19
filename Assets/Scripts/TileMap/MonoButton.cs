@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum eClickEventType
 {
@@ -11,9 +12,18 @@ public enum eClickEventType
 public class MonoButton : MonoBehaviour
 {
     [SerializeField] private eClickEventType clickType;
+    [SerializeField] protected UnityEvent _onLeftClickEvent;
+    [SerializeField] protected UnityEvent _onRightClickEvent;
 
-    public void OnLeftClick() => HandleClick("L");
-    public void OnRightClick() => HandleClick("R");
+    public void OnLeftClick()// => HandleClick("L");
+    {
+        _onLeftClickEvent?.Invoke();
+    }
+
+    public void OnRightClick()// => HandleClick("R");
+    {
+        _onRightClickEvent?.Invoke();
+    }
 
     private void HandleClick(string suffix)
     {

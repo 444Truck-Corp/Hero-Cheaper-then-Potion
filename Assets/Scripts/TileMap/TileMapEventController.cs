@@ -3,8 +3,9 @@ using UnityEngine;
 
 public enum TileMapEventType
 {
-    Shop, // 상점 방문 이벤트
-    Diner // 식사하는 방문객
+    Shop, // 상점
+    Diner, // 식사하는 방문객
+    Quest, // 퀘스트 의뢰자
 }
 
 public class TileMapEventController : MonoBehaviour
@@ -73,6 +74,15 @@ public class TileMapEventController : MonoBehaviour
             AddEvent(randomTenMinutesCount, TileMapEventType.Diner);
             debugString += $"{randomTenMinutesCount / 6:D2}시 {randomTenMinutesCount % 6 * 10:D2}분\n";
         }
+
+        count = 5;
+        debugString += $"퀘스트 의뢰자 방문 예정 인원: {count}명\n";
+        while (count-- > 0)
+        {
+            randomTenMinutesCount = GetRandomTenMinutesCount(0.0f, maxEnterTime);
+            AddEvent(randomTenMinutesCount, TileMapEventType.Quest);
+            debugString += $"{randomTenMinutesCount / 6:D2}시 {randomTenMinutesCount % 6 * 10:D2}분\n";
+        }
         Debug.Log(debugString);
     }
 
@@ -95,13 +105,17 @@ public class TileMapEventController : MonoBehaviour
 
     private void ProcessEvent(TileMapEventType type)
     {
-        if (type == TileMapEventType.Shop)
+        switch (type)
         {
-            TileMapManager.Instance.OnShopCharacterEntered();
-        }
-        else
-        {
-            TileMapManager.Instance.OnDinerCharacterEntered();
+            case TileMapEventType.Diner:
+                TileMapManager.Instance.OnDinerEntered();
+                break;
+            case TileMapEventType.Quest: 
+                TileMapManager.Instance.OnQuestEntered();
+                break;
+            case TileMapEventType.Shop:
+                TileMapManager.Instance.OnShopEntered();
+                break;
         }
     }
 }

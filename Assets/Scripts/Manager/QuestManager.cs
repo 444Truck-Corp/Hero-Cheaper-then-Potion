@@ -5,24 +5,33 @@ using UnityEngine;
 public class QuestManager : Singleton<QuestManager>
 {
     private readonly Dictionary<int, QuestData> questDataDics = new();
+    private readonly Dictionary<int, RankToQuestData> rankToQuestDataDics = new();
+    private readonly List<QuestData> candidates = new();
 
     protected override void Awake()
     {
         isDestroyOnLoad = true;
         base.Awake();
 
-        var list = DataManager.Instance.GetObjList<QuestData>("QuestData");
+        var list = DataManager.Instance.GetObjList<QuestData>(nameof(QuestData));
         foreach (var data in list)
         {
             data.Parse();
             questDataDics[data.id] = data;
         }
 
-        EventManager.Instance.AddClickListener(eClickEventType.Quest_Click.ToString() + "L", OnQuestClick);
+        var rankToQuestData = DataManager.Instance.GetObjList<RankToQuestData>(nameof(RankToQuestData));
+        foreach (var data in rankToQuestData)
+        {
+            data.Parse();
+            rankToQuestDataDics[data.level] = data;
+        }
+
+        //EventManager.Instance.AddClickListener(eClickEventType.Quest_Click.ToString() + "L", OnQuestClick);
     }
 
     #region Main Methods
-    public QuestData GetQuestData(int id)
+    public QuestData GetQuestDataById(int id)
     {
         return questDataDics.TryGetValue(id, out var data) ? data : null;
     }
@@ -46,7 +55,7 @@ public class QuestManager : Singleton<QuestManager>
 
         // 돌아올 날짜 계산
         int today = SaveManager.Instance.MySaveData.day;
-        int returnDay = Mathf.Max(today - GetQuestData(questId).time, -1);
+        int returnDay = Mathf.Max(today - GetQuestDataById(questId).time, -1);
 
         // 퀘스트 진행 리스트에 추가
         var processQ = new QuestProcessInfo
@@ -75,15 +84,13 @@ public class QuestManager : Singleton<QuestManager>
     #endregion
 
     #region Sub Methods
-    private void OnQuestClick()
+    public void OnQuestClick(int questId)
     {
-        int rank = SaveManager.Instance.MySaveData.rank;
-        int randomQuestId = GetRandomQuest(rank);
-        QuestData quest = GetQuestData(randomQuestId);
+        QuestData quest = GetQuestDataById(questId);
 
         // UIOverrideModal 열기
         UIManager.Show<UIOverrideModal>(
-            quest.title, // 제목                           
+            quest.title, // 제목
             $"수락 시 {quest.time}일이 소요되고 {quest.reward} 골드를 보상으로 획득합니다.", // 설명
             true, // 확인 버튼 표시
             true, // 취소 버튼 표시
@@ -91,10 +98,33 @@ public class QuestManager : Singleton<QuestManager>
         );
     }
 
+    public int GetRandomQuestId()
+    {
+        int rank = GetRandomRank();
+        return GetRandomQuest(rank);
+    }
+
+    private int GetRandomRank()
+    {
+        float probability = UnityEngine.Random.Range(0.0f, 100.0f);
+        int guildRank = SaveManager.Instance.MySaveData.rank;
+        var rankData = rankToQuestDataDics[guildRank];
+        int index = 0;
+        while (index++ < 10)
+        {
+            if (rankData.probabilities[index] <= probability)
+            {
+                return index + 1;
+            }
+
+            probability -= rankData.probabilities[index];
+        }
+        return index;
+    }
+
     private int GetRandomQuest(int rank)
     {
-        List<QuestData> candidates = new();
-
+        candidates.Clear();
         foreach (var quest in questDataDics.Values)
         {
             if (quest.rank == rank)

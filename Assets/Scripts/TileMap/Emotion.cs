@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Emotion : MonoBehaviour
+public class Emotion : MonoButton
 {
     private const string PATH = "";
 
@@ -27,6 +27,7 @@ public class Emotion : MonoBehaviour
 
     public void SetTimer(float time, Action action)
     {
+        gameObject.SetActive(true);
         _originTime = 1.0f / time;
         _time = time;
         _action = action;
@@ -56,8 +57,14 @@ public class Emotion : MonoBehaviour
         CancleTimer();
     }
 
-    public void SetAction(Action value)
+    public void SetLeftClickEvent(Action value)
     {
-        
+        _onLeftClickEvent.AddListener(value.Invoke);
+    }
+
+    public void Clear()
+    {
+        CancleTimer();
+        gameObject.SetActive(false);
     }
 }

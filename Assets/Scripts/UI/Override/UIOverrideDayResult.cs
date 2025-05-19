@@ -46,7 +46,7 @@ public class UIOverrideDayResult : UIBase
             }
 
             //골드 지급
-            var questData = QuestManager.Instance.GetQuestData(completed.questId);
+            var questData = QuestManager.Instance.GetQuestDataById(completed.questId);
             SaveManager.Instance.SetSaveData(nameof(SaveData.gold), SaveManager.Instance.MySaveData.gold + questData.reward);
             
             //TODO : 아이템 확률적으로 획득

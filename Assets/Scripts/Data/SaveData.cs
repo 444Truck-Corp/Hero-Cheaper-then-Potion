@@ -18,7 +18,7 @@ public class SaveData
 
     #region guild
     public int rank = 1; // 길드 레벨
-
+    public int exp = 0;
     #endregion
 
     #region hero 

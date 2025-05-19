@@ -1,20 +1,25 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class TileMapManager : Singleton<TileMapManager>
 {
-    private const string TileMapCharacterPrefabPath = "Prefabs/TileMapCharacter";
+    private const string TileMapCharacterPrefabPath = "Prefabs/TileMapCharacter/";
+    private const string DinerPrefabName = "Diner";
+    private const string QuestPrefabName = "Quest";
+    private const string ShopPrefabName = "Shop";
+    private const string HeroPrefabName = "Hero";
 
     private readonly AStar _astar = new();
     private readonly TileMapEventLocationController _controller = new();
-    private readonly Dictionary<int, TileMapCharacterCore> _heroes = new();
+    private readonly Dictionary<int, CharacterHero> _heroes = new();
     private readonly Dictionary<int, TileMapCharacterCore> _npcs = new();
     private readonly Queue<TileMapCharacterCore> _waitingCharacters = new();
 
     [SerializeField] private Transform _heroParent;
     [SerializeField] private TileMapData _wallTileMap;
-    [SerializeField] private TileMapCharacterCore _shopCharacter;
+    [SerializeField] private CharacterShop _shopCharacter;
 
     public bool[,] Tiles => _wallTileMap.Tiles;
 
@@ -47,8 +52,7 @@ public class TileMapManager : Singleton<TileMapManager>
         if (count > 0)
         {
             var character = _waitingCharacters.Peek();
-            GuildLocationEventType type = character.TargetType;
-            EventLocation dinerLocation = GetEventLocation(type);
+            EventLocation dinerLocation = GetEventLocation(character.TargetType);
             if (dinerLocation == null)
             {
                 return;
@@ -74,10 +78,10 @@ public class TileMapManager : Singleton<TileMapManager>
         _astar.EnqueueRouteMovementValue(start, end, route);
     }
 
-    public void OnShopCharacterEntered()
+    public void OnShopEntered()
     {
-        _shopCharacter = CreateTileMapCharacter("도적1", GuildLocationEventType.Shop, false);
-        var location = GetEventLocation(GuildLocationEventType.Shop);
+        _shopCharacter = CreateTileMapCharacter<CharacterShop>(ShopPrefabName, "도적1");
+        var location = GetEventLocation(_shopCharacter.TargetType);
         _shopCharacter.SetTargetTilePosition(location.TilePosition);
         _shopCharacter.SetMoveCommand(_shopCharacter.SetOrder);
     }
@@ -93,17 +97,17 @@ public class TileMapManager : Singleton<TileMapManager>
         }
     }
 
-    private TileMapCharacterCore CreateTileMapCharacter(string textureName, GuildLocationEventType type = GuildLocationEventType.None, bool canAutoFinding = true)
+    private T CreateTileMapCharacter<T>(string prefabName, string textureName) where T : TileMapCharacterCore
     {
-        TileMapCharacterCore character = PoolManager.Instance.Get<TileMapCharacterCore>(TileMapCharacterPrefabPath, _heroParent, _controller.Entrance.transform.localPosition);
-        character.Initialize(textureName, type, canAutoFinding);
+        T character = PoolManager.Instance.Get<T>(TileMapCharacterPrefabPath + prefabName, _heroParent, _controller.Entrance.transform.localPosition);
+        character.Initialize(textureName);
         return character;
     }
 
     private void CreateTileMapHeroCharacter(HeroData heroData)
     {
-        // 캐릭터 스프라이트가 없는 관계로 궁사2로 통일
-        _heroes[heroData.id] = CreateTileMapCharacter("궁사2", GuildLocationEventType.QuestBoard | GuildLocationEventType.Food);
+        // 일부 캐릭터 스프라이트가 없는 관계로 궁사2로 통일
+        _heroes[heroData.id] = CreateTileMapCharacter<CharacterHero>(HeroPrefabName, "궁사2");
     }
 
     private void OnQuestStart(IEnumerable<HeroData> heroDatas, QuestData quest)
@@ -125,7 +129,7 @@ public class TileMapManager : Singleton<TileMapManager>
     private void OnHeroEntered(HeroData heroData)
     {
         var hero = _heroes[heroData.id];
-        hero.transform.localPosition = _controller.Entrance.transform.position;
+        hero.transform.localPosition = _controller.Entrance.transform.localPosition;
         hero.Clear();
         hero.gameObject.SetActive(true);
     }
@@ -136,11 +140,12 @@ public class TileMapManager : Singleton<TileMapManager>
         OnHeroEntered(heroData);
     }
 
-    public void OnDinerCharacterEntered()
+    public void OnDinerEntered()
     {
-        var dinerCharacter = CreateTileMapCharacter("도적2", GuildLocationEventType.Food | GuildLocationEventType.Chair, false);
-        var location = GetEventLocation(GuildLocationEventType.Food | GuildLocationEventType.Chair);
-        // 앉을 자리가 없다면
+        var dinerCharacter = CreateTileMapCharacter<CharacterDiner>(DinerPrefabName, "도적2");
+        var location = GetEventLocation(dinerCharacter.TargetType);
+        
+        // 앉을 자리가 없다면 대기
         if (location == null)
         {
             _waitingCharacters.Enqueue(dinerCharacter);
@@ -150,21 +155,43 @@ public class TileMapManager : Singleton<TileMapManager>
                 return;
             }
         }
+
         dinerCharacter.SetTargetTilePosition(location.TilePosition);
         dinerCharacter.SetMoveCommand(dinerCharacter.SetOrder);
     }
 
+    // TODO: 풀매니저에 돌려놓을 때 자료형에 주의해야 함
     public void OnDinerCharacterExited(TileMapCharacterCore character)
     {
         character.SetTargetTilePosition(_controller.Entrance.TilePosition);
-        character.SetMoveCommand(() => character.gameObject.SetActive(false));
+        character.SetMoveCommand(() => PoolManager.Instance.Return(character));
     }
 
     private void OnHeroExit(HeroData heroData)
     {
         if (!_heroes.TryGetValue(heroData.id, out var hero)) return;
         hero.SetTargetTilePosition(_controller.Entrance.TilePosition);
-        hero.SetMoveCommand(() => hero.gameObject.SetActive(false));
+        hero.SetMoveCommand(() => PoolManager.Instance.Return(hero));
+    }
+
+    public void OnQuestEntered()
+    {
+        var questCharacter = CreateTileMapCharacter<CharacterQuest>(QuestPrefabName, "도적2");
+        var location = GetEventLocation(questCharacter.TargetType);
+
+        // 앉을 자리가 없다면 대기
+        if (location == null)
+        {
+            _waitingCharacters.Enqueue(questCharacter);
+            location = GetEventLocation(GuildLocationEventType.Waiting);
+            if (location == null)
+            {
+                return;
+            }
+        }
+
+        questCharacter.SetTargetTilePosition(location.TilePosition);
+        questCharacter.SetMoveCommand(questCharacter.SetOrder);
     }
     #endregion
 }

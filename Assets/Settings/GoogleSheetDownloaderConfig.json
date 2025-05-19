@@ -46,17 +46,17 @@
   },
   {
     "Gid": "1195255719",
-    "Selected": true,
-    "OutputFileName": "RecipeData.json"
+    "Selected": false,
+    "OutputFileName": "_RecipeData.json"
   },
   {
     "Gid": "1738881584",
-    "Selected": true,
+    "Selected": false,
     "OutputFileName": "ItemData.json"
   },
   {
     "Gid": "685569327",
-    "Selected": true,
+    "Selected": false,
     "OutputFileName": "EquipmentData.json"
   }
 ]

@@ -60,7 +60,7 @@ public class UINavQuest : UIBase
         var receivedList = SaveManager.Instance.MySaveData.receivedQuests;
         foreach (int questId in receivedList)
         {
-            var quest = QuestManager.Instance.GetQuestData(questId);
+            var quest = QuestManager.Instance.GetQuestDataById(questId);
             if (quest == null) continue;
 
             var go = Instantiate(slotPrefab, questContent[(int)eTab.Accepted]);
@@ -76,7 +76,7 @@ public class UINavQuest : UIBase
         var ongoingList = SaveManager.Instance.MySaveData.processingQuests;
         foreach (var questInfo in ongoingList)
         {
-            var quest = QuestManager.Instance.GetQuestData(questInfo.questId);
+            var quest = QuestManager.Instance.GetQuestDataById(questInfo.questId);
             if (quest == null) continue;
 
             var go = Instantiate(slotPrefab, questContent[(int)eTab.Onboard]);

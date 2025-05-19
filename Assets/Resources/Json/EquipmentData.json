@@ -58,35 +58,35 @@
     "name": "아이템7",
     "category": "Equipment",
     "description": "",
-    "stats": "",
+    "stats": "[1,1,1,1]",
     "parts": "Weapon",
-    "value": ""
+    "value": "100"
   },
   {
     "id": "8",
     "name": "아이템8",
     "category": "Equipment",
     "description": "",
-    "stats": "",
+    "stats": "[1,1,1,1]",
     "parts": "Accessory",
-    "value": ""
+    "value": "100"
   },
   {
     "id": "9",
     "name": "아이템9",
     "category": "Equipment",
     "description": "",
-    "stats": "",
+    "stats": "[1,1,1,1]",
     "parts": "Accessory",
-    "value": ""
+    "value": "100"
   },
   {
     "id": "10",
     "name": "아이템10",
     "category": "Equipment",
     "description": "",
-    "stats": "",
+    "stats": "[1,1,1,1]",
     "parts": "Accessory",
-    "value": ""
+    "value": "100"
   }
 ]
