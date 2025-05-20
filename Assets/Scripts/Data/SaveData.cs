@@ -13,7 +13,7 @@ public class SaveData
 
     #region gold
     public int gold = 0;
-    public int dailyConsume = 0;
+    public int dayStartGold = 0;
     #endregion
 
     #region guild

@@ -11,7 +11,7 @@ public class UIMainCurrency : MonoBehaviour
     private void OnEnable()
     {
         EventManager.Instance.AddSaveDataListener(nameof(SaveData.gold), UpdateGoldUI);
-        EventManager.Instance.AddSaveDataListener(nameof(SaveData.dailyConsume), UpdateDailyConsumeUI);
+        //EventManager.Instance.AddSaveDataListener(nameof(SaveData.dailyConsume), UpdateDailyConsumeUI);
     }
 
     private void Start()
@@ -23,7 +23,7 @@ public class UIMainCurrency : MonoBehaviour
     private void OnDisable()
     {
         EventManager.Instance.RemoveSaveDataListener(nameof(SaveData.gold), UpdateGoldUI);
-        EventManager.Instance.RemoveSaveDataListener(nameof(SaveData.dailyConsume), UpdateDailyConsumeUI);
+        //EventManager.Instance.RemoveSaveDataListener(nameof(SaveData.dailyConsume), UpdateDailyConsumeUI);
     }
     #endregion
 
@@ -31,13 +31,13 @@ public class UIMainCurrency : MonoBehaviour
     private void UpdateGoldUI()
     {
         int gold = SaveManager.Instance.MySaveData.gold;
-        goldTxt.text = gold.ToString();
+        goldTxt.text = gold.ToString() + " G";
     }
 
     private void UpdateDailyConsumeUI()
     {
-        int dailyConsume = SaveManager.Instance.MySaveData.dailyConsume;
-        dailyConsumeTxt.text = dailyConsume.ToString();
+        //int dailyConsume = SaveManager.Instance.MySaveData.dailyConsume;
+        //dailyConsumeTxt.text = dailyConsume.ToString();
     }
     #endregion
 }
