@@ -226,7 +226,7 @@
   },
   {
     "id": "26",
-    "name": "돌비늘대구",
+    "name": "숲장어",
     "category": "Material",
     "description": "재료2-6",
     "value": "17812",
@@ -452,10 +452,10 @@
   {
     "id": "51",
     "name": "요리0",
-    "category": "",
+    "category": "Potion",
     "description": "",
-    "value": "",
-    "rank": "",
+    "value": "0",
+    "rank": "1",
     "icon": ""
   },
   {

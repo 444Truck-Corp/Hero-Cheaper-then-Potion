@@ -11,17 +11,17 @@
   },
   {
     "Gid": "658489092",
-    "Selected": true,
+    "Selected": false,
     "OutputFileName": "ClassData.json"
   },
   {
     "Gid": "87811400",
-    "Selected": true,
+    "Selected": false,
     "OutputFileName": "NameData.json"
   },
   {
     "Gid": "858707003",
-    "Selected": true,
+    "Selected": false,
     "OutputFileName": "LvData.json"
   },
   {
@@ -31,13 +31,13 @@
   },
   {
     "Gid": "2027353182",
-    "Selected": true,
+    "Selected": false,
     "OutputFileName": "QuestData.json"
   },
   {
     "Gid": "2123639975",
-    "Selected": true,
-    "OutputFileName": "RanktoQuest.json"
+    "Selected": false,
+    "OutputFileName": "RanktoQuestData.json"
   },
   {
     "Gid": "1776160018",
@@ -46,12 +46,12 @@
   },
   {
     "Gid": "1195255719",
-    "Selected": true,
+    "Selected": false,
     "OutputFileName": "RecipeData.json"
   },
   {
     "Gid": "685569327",
-    "Selected": true,
+    "Selected": false,
     "OutputFileName": "EquipmentData.json"
   },
   {
