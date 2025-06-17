@@ -22,35 +22,42 @@ public class QuestData
     public int id;
     public int rank;
     public string title;
-    public int reward;
-    public string rawNeedSpecs; // "str, dex, int, hp"
+    public int goldReward;
+    public string needSpec; // "str, dex, int, hp"
     public int time; // 소요 일수
-    public string rawDropItems; // "itemId:probability,itemId:probability,..."
+    public string dropItems; // "itemId:probability,itemId:probability,..."
 
-    [NonSerialized] public int[] needSpecs;
+    [NonSerialized] public StatusData needSpecs;
     [NonSerialized] public List<DropItemInfo> parsedDropItems;
 
     public void Parse()
     {
         // parsing neepSpecs 
-        if (!string.IsNullOrWhiteSpace(rawNeedSpecs))
+        if (!string.IsNullOrWhiteSpace(needSpec))
         {
-            var parts = rawNeedSpecs.Split(',');
+            var parts = needSpec.Split(',');
             var values = new List<int>();
-            foreach (var part in parts)
+            
+            for (int i = 0; i < parts.Length; i++)
             {
-                if (int.TryParse(part.Trim(), out var num))
-                    values.Add(num);
+                if (int.TryParse(parts[i].Trim(), out var value))
+                {
+                    values.Add(value);
+                }
             }
-            needSpecs = values.ToArray();
+
+            needSpecs.STR = values.Count > 0 ? values[0] : 0;
+            needSpecs.DEX = values.Count > 1 ? values[1] : 0;
+            needSpecs.INT = values.Count > 2 ? values[2] : 0;
+            needSpecs.HP = values.Count > 3 ? values[3] : 0;
         }
         
         //parsing dropItems
         parsedDropItems = new List<DropItemInfo>();
-        if (string.IsNullOrWhiteSpace(rawDropItems))
+        if (string.IsNullOrWhiteSpace(dropItems))
             return;
 
-        var entries = rawDropItems.Split(',');
+        var entries = dropItems.Split(',');
         foreach (var entry in entries)
         {
             var parts = entry.Trim().Split(':');

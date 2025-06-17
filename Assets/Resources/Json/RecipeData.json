@@ -1,122 +1,68 @@
 [
   {
     "id": "1",
-    "itemId": "1",
-    "name": "기본 레시피",
+    "itemId": "51",
+    "name": "요리0",
     "rawIngredients": ""
   },
   {
     "id": "2",
-    "itemId": "1",
-    "name": "",
-    "rawIngredients": ""
-  },
-  {
-    "id": "3",
-    "itemId": "1",
-    "name": "",
-    "rawIngredients": ""
-  },
-  {
-    "id": "4",
-    "itemId": "1",
-    "name": "",
-    "rawIngredients": ""
-  },
-  {
-    "id": "5",
-    "itemId": "1",
-    "name": "",
-    "rawIngredients": ""
-  },
-  {
-    "id": "6",
-    "itemId": "1",
-    "name": "",
-    "rawIngredients": ""
-  },
-  {
-    "id": "7",
-    "itemId": "1",
-    "name": "",
-    "rawIngredients": ""
-  },
-  {
-    "id": "8",
-    "itemId": "1",
-    "name": "",
-    "rawIngredients": ""
-  },
-  {
-    "id": "9",
-    "itemId": "1",
-    "name": "",
-    "rawIngredients": ""
-  },
-  {
-    "id": "10",
-    "itemId": "1",
-    "name": "",
-    "rawIngredients": ""
-  },
-  {
-    "id": "11",
-    "itemId": "51",
-    "name": "랭크1",
+    "itemId": "52",
+    "name": "요리1",
     "rawIngredients": "11:10, 21:5, 41:1"
   },
   {
-    "id": "12",
-    "itemId": "52",
-    "name": "랭크2",
+    "id": "3",
+    "itemId": "53",
+    "name": "요리2",
     "rawIngredients": "12:10, 22:5, 32:1"
   },
   {
-    "id": "13",
-    "itemId": "53",
-    "name": "랭크3",
+    "id": "4",
+    "itemId": "54",
+    "name": "요리3",
     "rawIngredients": "13:20, 22:10, 43:1"
   },
   {
-    "id": "14",
-    "itemId": "54",
-    "name": "랭크4",
+    "id": "5",
+    "itemId": "55",
+    "name": "요리4",
     "rawIngredients": "14:20, 24:10, 34:1"
   },
   {
-    "id": "15",
-    "itemId": "55",
-    "name": "랭크5",
+    "id": "6",
+    "itemId": "56",
+    "name": "요리5",
     "rawIngredients": "15:30, 25:15, 45:1"
   },
   {
-    "id": "16",
-    "itemId": "56",
-    "name": "랭크6",
+    "id": "7",
+    "itemId": "57",
+    "name": "요리6",
     "rawIngredients": "16:30, 26:15, 36:1"
   },
   {
-    "id": "17",
-    "itemId": "57",
-    "name": "랭크7",
+    "id": "8",
+    "itemId": "58",
+    "name": "요리7",
     "rawIngredients": "17:40, 27:20, 47:1"
   },
   {
-    "id": "18",
-    "itemId": "58",
-    "name": "랭크8",
+    "id": "9",
+    "itemId": "59",
+    "name": "요리8",
     "rawIngredients": "18:40, 28:20, 38:1"
   },
   {
-    "id": "19",
-    "itemId": "59",
-    "name": "랭크9",
+    "id": "10",
+    "itemId": "60",
+    "name": "요리9",
     "rawIngredients": "19:50, 29:25, 49:1"
   },
   {
-    "id": "20",
-    "itemId": "60",
-    "name": "랭크10",
+    "id": "11",
+    "itemId": "61",
+    "name": "요리10",
     "rawIngredients": "20:50, 30:25, 40:1"
   }
 ]

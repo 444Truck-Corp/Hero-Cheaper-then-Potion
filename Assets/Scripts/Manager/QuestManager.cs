@@ -91,7 +91,7 @@ public class QuestManager : Singleton<QuestManager>
         // UIOverrideModal 열기
         UIManager.Show<UIOverrideModal>(
             quest.title, // 제목
-            $"수락 시 {quest.time}일이 소요되고 {quest.reward} 골드를 보상으로 획득합니다.", // 설명
+            $"수락 시 {quest.time}일이 소요되고 {quest.goldReward} 골드를 보상으로 획득합니다.", // 설명
             true, // 확인 버튼 표시
             true, // 취소 버튼 표시
             (Action)(() => ReceiveQuest(quest.id))
@@ -162,7 +162,7 @@ public class QuestManager : Singleton<QuestManager>
         Debug.Log($"=== Quest ID: {quest.id} ===");
         Debug.Log($"Title: {quest.title}");
         Debug.Log($"Rank: {quest.rank}");
-        Debug.Log($"Reward: {quest.reward}");
+        Debug.Log($"Reward: {quest.goldReward}");
         Debug.Log($"Time: {quest.time}일");
         Debug.Log("Need Specs: [STR, DEX, INT, HP]");
         Debug.Log($"[{string.Join(", ", quest.needSpecs)}]");
