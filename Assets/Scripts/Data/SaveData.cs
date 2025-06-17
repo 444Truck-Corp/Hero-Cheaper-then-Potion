@@ -38,4 +38,15 @@ public class SaveData
     #endregion
 
     public SaveData() { }
+
+    public void ModifyItem(int id, int count)
+    {
+        if (!items.ContainsKey(id)) 
+        {
+            items[id] = count;
+            return;
+        }
+        items[id] += count;
+        if (items[id] < 0) items.Remove(id);
+    }
 }
