@@ -13,7 +13,7 @@ public struct StatusData
     public int STR; // 근력
     public int DEX; // 민첩
     public int INT; // 지능
-    public int HP; // 행운
+    public int HP; // 체력
 
     public StatusData(int _str, int _dex, int _int, int _luk)
     {

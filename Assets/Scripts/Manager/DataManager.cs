@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 
 public class DataManager : Singleton<DataManager>
 {
+    /// <summary>Json 파일의 이름을 키로, Json 데이터를 값으로 가지는 딕셔너리</summary>
     private readonly Dictionary<string, string> dataDics = new(); //Resources/Json으로부터 자동로드.
 
     #region Unity Life Cycles

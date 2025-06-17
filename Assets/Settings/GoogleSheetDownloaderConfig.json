@@ -7,56 +7,56 @@
   {
     "Gid": "1759952678",
     "Selected": false,
-    "OutputFileName": "_ClassData.json"
+    "OutputFileName": "기획_ClassData.json"
   },
   {
     "Gid": "658489092",
-    "Selected": false,
+    "Selected": true,
     "OutputFileName": "ClassData.json"
   },
   {
     "Gid": "87811400",
-    "Selected": false,
+    "Selected": true,
     "OutputFileName": "NameData.json"
   },
   {
     "Gid": "858707003",
-    "Selected": false,
+    "Selected": true,
     "OutputFileName": "LvData.json"
   },
   {
     "Gid": "0",
+    "Selected": false,
+    "OutputFileName": "기획_QuestData.json"
+  },
+  {
+    "Gid": "2027353182",
     "Selected": true,
     "OutputFileName": "QuestData.json"
   },
   {
-    "Gid": "2027353182",
-    "Selected": false,
-    "OutputFileName": "QuestData.json"
-  },
-  {
     "Gid": "2123639975",
-    "Selected": false,
+    "Selected": true,
     "OutputFileName": "RanktoQuest.json"
   },
   {
     "Gid": "1776160018",
     "Selected": false,
-    "OutputFileName": "RecipeData.json"
+    "OutputFileName": "기획_RecipeData.json"
   },
   {
     "Gid": "1195255719",
-    "Selected": false,
-    "OutputFileName": "_RecipeData.json"
-  },
-  {
-    "Gid": "1738881584",
     "Selected": true,
-    "OutputFileName": "ItemData.json"
+    "OutputFileName": "RecipeData.json"
   },
   {
     "Gid": "685569327",
     "Selected": true,
     "OutputFileName": "EquipmentData.json"
+  },
+  {
+    "Gid": "1738881584",
+    "Selected": true,
+    "OutputFileName": "ItemData.json"
   }
 ]

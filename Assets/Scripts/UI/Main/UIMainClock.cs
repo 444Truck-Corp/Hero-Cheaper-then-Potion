@@ -36,11 +36,6 @@ public class UIMainClock : MonoBehaviour
     #region Sub Methods
     private IEnumerator UpdateTime()
     {
-        if (time == 0)
-        {
-            SaveManager.Instance.MySaveData.dayStartGold = SaveManager.Instance.MySaveData.gold;
-        }
-
         while (time < maxTime)
         {
             // 시간 업데이트
