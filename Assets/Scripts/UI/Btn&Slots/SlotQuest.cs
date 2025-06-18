@@ -42,7 +42,7 @@ public class SlotQuest : MonoBehaviour
 
         titleTxt.text = questData.title;
         timeTxt.text = $"{questData.time}일";
-        rewardTxt.text = $"{questData.reward} P";
+        rewardTxt.text = $"{questData.goldReward} P";
         rankTxt.text = Utils.ChangeToStars(questData.rank);
 
         sendBtnObj.SetActive(isPending);

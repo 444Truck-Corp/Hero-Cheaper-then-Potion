@@ -36,10 +36,11 @@ public class UIMainClock : MonoBehaviour
     #region Sub Methods
     private IEnumerator UpdateTime()
     {
-        if (time == 0)
-        {
-            SaveManager.Instance.MySaveData.dayStartGold = SaveManager.Instance.MySaveData.gold;
-        }
+        day = SaveManager.Instance.MySaveData.day;
+        dayTxt.text = $"{day}일"; // TODO : Localization
+
+        time = SaveManager.Instance.MySaveData.time;
+        clockFill.fillAmount = time / maxTime;
 
         while (time < maxTime)
         {

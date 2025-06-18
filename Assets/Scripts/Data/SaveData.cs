@@ -13,7 +13,6 @@ public class SaveData
 
     #region gold
     public int gold = 0;
-    public int dayStartGold = 0;
     #endregion
 
     #region guild
@@ -29,7 +28,7 @@ public class SaveData
     #region inventory
     public List<int> ownedRecipes = new();
     public List<EquipmentData> ownedEquips = new();
-    public Dictionary<int, int> items = new();
+    public Dictionary<int, int> items = new(); //id, 수량.
     #endregion
 
     #region quest
@@ -37,5 +36,20 @@ public class SaveData
     public List<QuestProcessInfo> processingQuests = new(); // 진행중인 퀘스트 목록.
     #endregion
 
+    #region results
+    public Dictionary<int, int> foodProfits = new(); //음식 종류별 판매량
+    #endregion
+
     public SaveData() { }
+
+    public void ModifyItem(int id, int count)
+    {
+        if (!items.ContainsKey(id)) 
+        {
+            items[id] = count;
+            return;
+        }
+        items[id] += count;
+        if (items[id] < 0) items.Remove(id);
+    }
 }

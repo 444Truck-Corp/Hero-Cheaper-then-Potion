@@ -1,75 +1,194 @@
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIOverrideDayResult : UIBase
 {
-    [SerializeField] private TextMeshProUGUI foodProfitTxt;
-    [SerializeField] private TextMeshProUGUI questProfitTxt;
-    [SerializeField] private TextMeshProUGUI dailyCostTxt;
-    [SerializeField] private TextMeshProUGUI totalProfitTxt; // 총 평가 금액 텍스트
+    [SerializeField] private ScrollRect scrollRect;
+    [SerializeField] private Transform ResultTxtParent;
+    [SerializeField] private GameObject ResultTxtPrefab;
+
+    private readonly Color blueTxtColor = new(0.39f, 0.78f, 1f, 1f); // #64C8FF
+    private readonly Color redTxtColor = new(1f, 0.39f, 0.39f, 1f); // #FF6464
 
     public override void Opened(object[] param)
     {
         ProcessDayTransition();
-        SetActive<UIOverrideDayResult>(false);
     }
 
     public void OnBtnClicked()
     {
+        SaveManager.Instance.MySaveData.time = 0; // 시간 초기화
+        SaveManager.Instance.MySaveData.foodProfits = new(); // 음식 판매 수익 초기화
         SetActive<UIOverrideDayResult>(false);
     }
 
     private void ProcessDayTransition()
     {
-        UpdateDayResultUI();
+        StartCoroutine(UpdateDayResultUI());
     }
 
-    private void UpdateDayResultUI()
+    private IEnumerator UpdateDayResultUI()
     {
-        int foodProfit = CalculateFoodProfit();
-        foodProfitTxt.text = $"길드 식당 수익 : {foodProfit} G";
+        // 음식 판매 수익 계산
+        yield return StartCoroutine(HandleFoodProfits());
+        AddLine("", Color.white);
+        yield return new WaitForSeconds(0.2f);
 
-        int questProfit = ProcessCompletedQuests();
-        questProfitTxt.text = $"퀘스트 수익 : {questProfit} G";
+        // 퀘스트 보상 처리
+        yield return StartCoroutine(HandleQuestResults());
+        AddLine("", Color.white);
+        yield return new WaitForSeconds(0.2f);
 
+        // 생활비 차감
         int dailyCost = CalculateDailyCost();
-        dailyCostTxt.text = $"길드 유지비 : {dailyCost} G";
+        AddLine($"생활비 : {dailyCost} G\n", redTxtColor);
+        yield return new WaitForSeconds(0.2f);
 
-        SaveManager.Instance.SetSaveData(nameof(SaveData.gold), -dailyCost);
+        // 구분선 및 최종 수익
+        AddLine("========================================", Color.white);
+        yield return new WaitForSeconds(0.5f);
 
-        int totalProfit = foodProfit + questProfit - dailyCost;
-        UpdateTotalProfitText(totalProfit);
+        int totalProfit = foodProfitSubtotal + questProfitSubtotal - dailyCost;
+        SaveManager.Instance.SetSaveData(nameof(SaveData.gold), SaveManager.Instance.MySaveData.gold + totalProfit);
+        AddLine($"최종 수익 : {totalProfit} G", Color.yellow);
     }
 
-    private int CalculateFoodProfit()
+    private int foodProfitSubtotal = 0;
+    private IEnumerator HandleFoodProfits()
     {
-        int currentGold = SaveManager.Instance.MySaveData.gold;
-        int startGold = SaveManager.Instance.MySaveData.dayStartGold;
-        int profit = currentGold - startGold;
+        foodProfitSubtotal = 0;
+        var foodProfits = SaveManager.Instance.MySaveData.foodProfits;
 
-        SaveManager.Instance.MySaveData.dayStartGold = currentGold;
-        return profit;
+        foreach (var foodProfit in foodProfits)
+        {
+            ItemManager.Instance.ItemList.TryGetValue(foodProfit.Key, out var foodData);
+            int value = foodData.value * foodProfit.Value;
+            foodProfitSubtotal += value;
+
+            AddLine($"{foodData.name} * {foodProfit.Value} = {value} G", blueTxtColor);
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 
-    private int ProcessCompletedQuests()
+    private int questProfitSubtotal = 0;
+    private IEnumerator HandleQuestResults()
     {
+        questProfitSubtotal = 0;
         int currentDay = SaveManager.Instance.MySaveData.day;
         var quests = SaveManager.Instance.MySaveData.processingQuests;
         var completedQuests = quests.FindAll(q => q.returnDay == currentDay);
 
-        int totalQuestReward = 0;
-
         foreach (var quest in completedQuests)
         {
             RemoveCompletedQuest(quest);
-            var data = QuestManager.Instance.GetQuestDataById(quest.questId);
-            totalQuestReward += data.reward;
+            var questData = QuestManager.Instance.GetQuestDataById(quest.questId);
+            string questMsg = $"{questData.title} 결과: ";
+
+            List<HeroData> questHeros = GetQuestHeroes(quest);
+            StatusData heroSum = SumHeroStatus(questHeros);
+            float successProb = CalculateSuccessProbability(heroSum, questData.needSpecs);
+            bool isSuccess = Random.value < successProb;
+
+            if (isSuccess)
+            {
+                questProfitSubtotal += questData.goldReward;
+                questMsg += $"성공!\t+{questData.goldReward} G, ";
+                questMsg += DistributeQuestRewards(questData.parsedDropItems);
+            }
+            else
+            {
+                questMsg += "실패...";
+            }
+
+            AddLine(questMsg, isSuccess ? blueTxtColor : redTxtColor);
+            yield return new WaitForSeconds(0.1f);
+
+            // 용사 데미지 계산 및 사망 처리
+            ApplyQuestDamage(questHeros, questData.rank, successProb, isSuccess);
         }
+    }
 
-        SaveManager.Instance.SetSaveData(nameof(SaveData.gold), SaveManager.Instance.MySaveData.gold + totalQuestReward);
-        SaveManager.Instance.MySaveData.dayStartGold = SaveManager.Instance.MySaveData.gold;
+    private List<HeroData> GetQuestHeroes(QuestProcessInfo quest)
+    {
+        List<HeroData> result = new();
+        foreach (int heroId in quest.heroIds)
+        {
+            if (SaveManager.Instance.MySaveData.ownedHeroes.TryGetValue(heroId, out HeroData hero))
+            {
+                result.Add(hero);
+            }
+        }
+        return result;
+    }
 
-        return totalQuestReward;
+    private StatusData SumHeroStatus(List<HeroData> heros)
+    {
+        StatusData sum = new();
+        foreach (var h in heros)
+        {
+            sum += h.status;
+        }
+        return sum;
+    }
+
+    private float CalculateSuccessProbability(StatusData sum, StatusData req)
+    {
+        float prob = 0;
+        prob += 0.25f * Mathf.Min(sum.STR / (float)req.STR, 1f);
+        prob += 0.25f * Mathf.Min(sum.DEX / (float)req.DEX, 1f);
+        prob += 0.25f * Mathf.Min(sum.INT / (float)req.INT, 1f);
+        prob += 0.25f * Mathf.Min(sum.HP / (float)req.HP, 1f);
+        return prob;
+    }
+
+    private string DistributeQuestRewards(List<DropItemInfo> drops)
+    {
+        string rewardText = "";
+        foreach (var drop in drops)
+        {
+            if (Random.value < drop.probability)
+            {
+                if (SaveManager.Instance.MySaveData.items.TryGetValue(drop.id, out int amount))
+                {
+                    SaveManager.Instance.MySaveData.items[drop.id] = amount + 1;
+                }
+                else
+                {
+                    SaveManager.Instance.MySaveData.items[drop.id] = 1;
+                }
+                ItemManager.Instance.ItemList.TryGetValue(drop.id, out var itemData);
+                rewardText += $"{itemData.name} ";
+            }
+        }
+        return rewardText;
+    }
+
+    private void ApplyQuestDamage(List<HeroData> heros, int rank, float successProb, bool isSuccess)
+    {
+        int damage = isSuccess ? rank * 10 : (int)(rank * 10 + (1 - successProb) * 15f);
+
+        foreach (var hero in heros)
+        {
+            hero.curHP = Mathf.Max(0, hero.curHP - damage);
+            string msg = $"{hero.name}의 HP: {hero.curHP}/{hero.status.HP} (-{damage})";
+            AddLine(msg, hero.curHP > 0 ? blueTxtColor : redTxtColor);
+        }
+    }
+
+    private TextMeshProUGUI AddLine(string message, Color color)
+    {
+        var entry = Instantiate(ResultTxtPrefab, ResultTxtParent);
+        var textComponent = entry.GetComponent<TextMeshProUGUI>();
+        textComponent.text = message;
+        textComponent.color = color;
+
+        Canvas.ForceUpdateCanvases();
+        scrollRect.verticalNormalizedPosition = 0f;
+
+        return textComponent;
     }
 
     private void RemoveCompletedQuest(QuestProcessInfo quest)
@@ -81,36 +200,15 @@ public class UIOverrideDayResult : UIBase
         {
             SaveManager.Instance.MySaveData.ownedHeroes[heroId].state = EHeroState.FREE;
         }
-
-        // TODO: 아이템 확률적으로 획득
     }
 
     private int CalculateDailyCost()
     {
-        int cost = SaveManager.Instance.MySaveData.rank * 150;
-
+        int cost = 300 + SaveManager.Instance.MySaveData.rank * 150;
         foreach (var hero in SaveManager.Instance.MySaveData.ownedHeroes.Values)
         {
             cost += hero.level * 150;
         }
-
         return cost;
-    }
-
-    private void UpdateTotalProfitText(int totalProfit)
-    {
-        totalProfitTxt.text = $"평가 금액 : {totalProfit} G";
-
-        string colorHex = totalProfit < 0 ? "#FF6464" : "#64C8FF";
-        totalProfitTxt.color = HexToColor(colorHex);
-    }
-
-    private Color HexToColor(string hex)
-    {
-        Color color;
-        if (ColorUtility.TryParseHtmlString(hex, out color))
-            return color;
-
-        return Color.white;
     }
 }

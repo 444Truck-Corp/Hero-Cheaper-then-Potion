@@ -7,7 +7,7 @@
   {
     "Gid": "1759952678",
     "Selected": false,
-    "OutputFileName": "_ClassData.json"
+    "OutputFileName": "기획_ClassData.json"
   },
   {
     "Gid": "658489092",
@@ -26,8 +26,8 @@
   },
   {
     "Gid": "0",
-    "Selected": true,
-    "OutputFileName": "QuestData.json"
+    "Selected": false,
+    "OutputFileName": "기획_QuestData.json"
   },
   {
     "Gid": "2027353182",
@@ -37,26 +37,26 @@
   {
     "Gid": "2123639975",
     "Selected": false,
-    "OutputFileName": "RanktoQuest.json"
+    "OutputFileName": "RanktoQuestData.json"
   },
   {
     "Gid": "1776160018",
     "Selected": false,
-    "OutputFileName": "RecipeData.json"
+    "OutputFileName": "기획_RecipeData.json"
   },
   {
     "Gid": "1195255719",
     "Selected": false,
-    "OutputFileName": "_RecipeData.json"
+    "OutputFileName": "RecipeData.json"
+  },
+  {
+    "Gid": "685569327",
+    "Selected": false,
+    "OutputFileName": "EquipmentData.json"
   },
   {
     "Gid": "1738881584",
     "Selected": true,
     "OutputFileName": "ItemData.json"
-  },
-  {
-    "Gid": "685569327",
-    "Selected": true,
-    "OutputFileName": "EquipmentData.json"
   }
 ]

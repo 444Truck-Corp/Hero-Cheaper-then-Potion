@@ -15,6 +15,7 @@ public class HeroData
     public string name;
     public ClassData classData;
     public StatusData status;
+    public int curHP;
     public int level;
     public int exp;
     public EHeroState state;
