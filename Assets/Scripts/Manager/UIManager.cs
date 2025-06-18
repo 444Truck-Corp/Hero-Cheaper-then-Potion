@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -51,7 +52,7 @@ public class UIManager : Singleton<UIManager>
 
         if (ui.uiPosition == eUIPosition.Navigator)
         {
-            foreach (var opened in Instance.uiList)
+            foreach (var opened in Instance.uiList.ToList())
             {
                 if (opened.uiPosition == eUIPosition.Popup)
                 {

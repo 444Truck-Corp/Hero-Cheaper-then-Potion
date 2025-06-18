@@ -9,6 +9,7 @@ public enum EItemCategory
 {
     Material,
     Potion,
+    Consumable,
     Equipment,
 }
 

@@ -15,24 +15,24 @@ public enum NavUI
 
 public class UIMainBtns : MonoBehaviour
 {
-    #region Component
     [SerializeField] private Button btnHero;
     [SerializeField] private Button btnFood;
     [SerializeField] private Button btnQuest;
     [SerializeField] private Button btnInven;
-    #endregion
 
-    private Dictionary<NavUI, Button> navButtons;
-    private NavUI currentOpenUI;
+    private NavUI _openedUI;
+    private Dictionary<NavUI, Button> _navButtons;
+    private Dictionary<NavUI, Action> _showActions;
+    private Dictionary<NavUI, Action> _hideActions;
+    private Dictionary<NavUI, Func<bool>> _isActiveChecks;
 
-    private readonly WaitForSeconds transitionDelay = new(0.2f);
+    private readonly WaitForSeconds _transitionDelay = new(0.2f);
     private readonly Color normalColor = Color.white;
     private readonly Color activeColor = new(0.7f, 0.7f, 0.7f);
 
-    #region Unity Methods
     private void Awake()
     {
-        navButtons = new Dictionary<NavUI, Button>
+        _navButtons = new()
         {
             { NavUI.Hero, btnHero },
             { NavUI.Food, btnFood },
@@ -40,96 +40,78 @@ public class UIMainBtns : MonoBehaviour
             { NavUI.Inven, btnInven }
         };
 
-        currentOpenUI = NavUI.None;
-        UpdateButtonColor(currentOpenUI);
+        _showActions = new()
+        {
+            { NavUI.Hero, () => UIManager.Show<UINavHero>() },
+            { NavUI.Food, () => UIManager.Show<UINavFood>() },
+            { NavUI.Quest, () => UIManager.Show<UINavQuest>() },
+            { NavUI.Inven, () => UIManager.Show<UINavInven>() }
+        };
+
+        _hideActions = new()
+        {
+            { NavUI.Hero, () => UIManager.Hide<UINavHero>() },
+            { NavUI.Food, () => UIManager.Hide<UINavFood>() },
+            { NavUI.Quest, () => UIManager.Hide<UINavQuest>() },
+            { NavUI.Inven, () => UIManager.Hide<UINavInven>() }
+        };
+
+        _isActiveChecks = new()
+        {
+            { NavUI.Hero, () => UIManager.IsActive<UINavHero>() },
+            { NavUI.Food, () => UIManager.IsActive<UINavFood>() },
+            { NavUI.Quest, () => UIManager.IsActive<UINavQuest>() },
+            { NavUI.Inven, () => UIManager.IsActive<UINavInven>() }
+        };
+
+        _openedUI = NavUI.None;
+        UpdateButtonColor(_openedUI);
+
+        btnHero.onClick.AddListener(() => OpenNavUI(NavUI.Hero));
+        btnFood.onClick.AddListener(() => OpenNavUI(NavUI.Food));
+        btnQuest.onClick.AddListener(() => OpenNavUI(NavUI.Quest));
+        btnInven.onClick.AddListener(() => OpenNavUI(NavUI.Inven));
     }
 
     private void Update()
     {
-        if (currentOpenUI == NavUI.None) return;
-
-        bool isActive = currentOpenUI switch
+        if (_openedUI != NavUI.None && !_isActiveChecks[_openedUI]())
         {
-            NavUI.Hero => UIManager.IsActive<UINavHero>(),
-            NavUI.Food => UIManager.IsActive<UINavFood>(),
-            NavUI.Quest => UIManager.IsActive<UINavQuest>(),
-            NavUI.Inven => UIManager.IsActive<UINavInven>(),
-            _ => false
-        };
-
-        if (!isActive)
-        {
-            currentOpenUI = NavUI.None;
-            UpdateButtonColor(currentOpenUI);
+            _openedUI = NavUI.None;
+            UpdateButtonColor(NavUI.None);
         }
     }
-    #endregion
 
-    #region Main Methods
-    public void OnClickHeroBtn() => StartCoroutine(OpenNavUI(NavUI.Hero));
-    public void OnClickFoodBtn() => StartCoroutine(OpenNavUI(NavUI.Food));
-    public void OnClickQuestBtn() => StartCoroutine(OpenNavUI(NavUI.Quest));
-    public void OnClickInvenBtn() => StartCoroutine(OpenNavUI(NavUI.Inven));
-    #endregion
-
-    #region Sub Methods
-    private IEnumerator OpenNavUI(NavUI type)
+    private void OpenNavUI(NavUI target)
     {
-        if (currentOpenUI == type) yield break;
+        if (_openedUI == target) return;
 
-        SetAllButtonsInteractable(false);
+        SetInteractable(false);
 
-        try
-        {
-            switch (currentOpenUI)
-            {
-                case NavUI.Hero: UIManager.Hide<UINavHero>(); break;
-                case NavUI.Food: UIManager.Hide<UINavFood>(); break;
-                case NavUI.Quest: UIManager.Hide<UINavQuest>(); break;
-                case NavUI.Inven: UIManager.Hide<UINavInven>(); break;
-            }
-        }
-        catch (Exception e)
-        {
-            Debug.LogError($"Hide 실패: {e.Message}");
-        }
+        if (_openedUI != NavUI.None) _hideActions[_openedUI]?.Invoke();
+        _showActions[target]?.Invoke();
 
-        try
-        {
-            switch (type)
-            {
-                case NavUI.Hero: UIManager.Show<UINavHero>(); break;
-                case NavUI.Food: UIManager.Show<UINavFood>(); break;
-                case NavUI.Quest: UIManager.Show<UINavQuest>(); break;
-                case NavUI.Inven: UIManager.Show<UINavInven>(); break;
-            }
-        }
-        catch (Exception e)
-        {
-            Debug.LogError($"Show 실패: {e.Message}");
-        }
+        _openedUI = target;
+        UpdateButtonColor(target);
 
-        currentOpenUI = type;
-        UpdateButtonColor(type);
-
-        yield return transitionDelay;
-        SetAllButtonsInteractable(true);
+        SetInteractable(true);
     }
 
-    private void SetAllButtonsInteractable(bool interactable)
+    private void SetInteractable(bool enabled)
     {
-        foreach (var btn in navButtons.Values)
-            btn.interactable = interactable;
+        foreach (var button in _navButtons.Values)
+        {
+            button.interactable = enabled;
+        }
     }
 
     private void UpdateButtonColor(NavUI active)
     {
-        foreach (var pair in navButtons)
+        foreach (var (nav, button) in _navButtons)
         {
-            var cb = pair.Value.colors;
-            cb.normalColor = (active != NavUI.None && pair.Key == active) ? activeColor : normalColor;
-            pair.Value.colors = cb;
+            var colors = button.colors;
+            colors.normalColor = nav == active ? activeColor : normalColor;
+            button.colors = colors;
         }
     }
-    #endregion
 }

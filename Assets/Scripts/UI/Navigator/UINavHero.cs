@@ -35,7 +35,6 @@ public class UINavHero : UIBase
 
     public void OnSummonHeroClicked()
     {
-        SaveManager.Instance.MySaveData.gold = 9999;
         int gold = SaveManager.Instance.MySaveData.gold;
 
         if (gold >= summonPrice)
