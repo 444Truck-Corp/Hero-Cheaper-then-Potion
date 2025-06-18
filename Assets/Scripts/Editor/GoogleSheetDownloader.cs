@@ -69,7 +69,6 @@ public class GoogleSheetDownloader : EditorWindow
         if (GUILayout.Button("시트 목록 불러오기"))
         {
             LoadSheetListAsync();
-            LoadSheetSettings();
         }
 
         if (_sheets.Count > 0)
@@ -82,39 +81,32 @@ public class GoogleSheetDownloader : EditorWindow
 
             // 일괄 선택
             EditorGUI.BeginChangeCheck();
-            bool newSelectAll = EditorGUILayout.ToggleLeft("일괄 선택", _selectAll);
+            bool allSelected = _sheets.All(i => i.Selected);
+            bool newSelectedAll = EditorGUILayout.ToggleLeft("일괄 선택", allSelected);
             if (EditorGUI.EndChangeCheck())
             {
-                _selectAll = newSelectAll;
+                _selectAll = newSelectedAll;
                 foreach (var sheet in _sheets)
                 {
                     sheet.Selected = _selectAll;
                 }
             }
 
-            // _selectAll 갱신
-            bool allSelected = true;
             foreach (var sheet in _sheets)
             {
                 EditorGUI.BeginChangeCheck();
                 sheet.Selected = EditorGUILayout.ToggleLeft($"{sheet.Title} (GID: {sheet.Gid})", sheet.Selected);
                 sheet.OutputFileName = EditorGUILayout.TextField("→ 파일 이름", sheet.OutputFileName);
                 EditorGUILayout.Space();
-
-                if (!sheet.Selected)
-                {
-                    allSelected = false;
-                }
             }
-            _selectAll = allSelected;
 
             EditorGUILayout.EndScrollView();
 
             if (GUILayout.Button("선택한 시트들을 JSON으로 저장"))
             {
                 DownloadSelectedSheetsAsync();
-                SaveSheetSettings();
             }
+            SaveSheetSettings();
         }
         else if (_isSheetLoaded)
         {
@@ -145,11 +137,12 @@ public class GoogleSheetDownloader : EditorWindow
                     Title = title,
                     Gid = gid.ToString(),
                     OutputFileName = $"{title}.json",
-                    Selected = true
+                    Selected = false
                 });
             }
 
             _isSheetLoaded = true;
+            LoadSheetSettings();
             Debug.Log($"✅ 시트 {_sheets.Count}개를 확인했습니다.");
         }
         catch (Exception e)
