@@ -56,9 +56,7 @@ public class PoolManager : Singleton<PoolManager>
         else
         {
             // 사용 해제 후 반환
-            if (!item.IsUsing) return;
             GetStack(item.ResourcePath).Push(item.gameObject);
-            item.IsUsing = false;
             item.gameObject.SetActive(false);
         }
         aliveItems.Remove(item.PoolID);
@@ -105,7 +103,6 @@ public class PoolManager : Singleton<PoolManager>
         itemObject.SetActive(true);
 
         item.PoolID = poolId++;
-        item.IsUsing = true;
         item.Pool = this;
     }
 
