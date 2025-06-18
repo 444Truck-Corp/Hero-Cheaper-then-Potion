@@ -24,7 +24,7 @@ public class UIPopupShop : UIBase
             {
                 var itemData = ItemManager.Instance.ItemList[itemId];
                 var slot = PoolManager.Instance.Get<SlotShopItem>(_itemPrefab, _itemParent);
-                slot.Initialize(this, itemId, itemData.icon);
+                slot.Initialize(this, itemData);
                 _items.Add(slot);
             }
         }
@@ -53,7 +53,13 @@ public class UIPopupShop : UIBase
         foreach (var (id, slotItem) in _cartItems)
         {
             save.ModifyItem(id, slotItem.Amount);
+            //Debug.Log($"{ItemManager.Instance.ItemList[id].name}을 {slotItem.Amount}개 구입 -> {SaveManager.Instance.MySaveData.items[id]}");
         }
+        foreach (var (id, slotItem) in _cartItems)
+        {
+            RemoveFromCart(id);
+        }
+        _cartItems.Clear();
 
         SaveManager.Instance.SetSaveData(nameof(save.gold), save.gold);
         SaveManager.Instance.SetSaveData(nameof(save.items), save.items);
@@ -61,15 +67,16 @@ public class UIPopupShop : UIBase
 
     public void AddToCart(int itemId, int amount, Sprite icon)
     {
+        var itemData = ItemManager.Instance.ItemList[itemId];
         if (!_cartItems.TryGetValue(itemId, out var cartItem))
         {
             cartItem = PoolManager.Instance.Get<SlotCartItem>(_cartPrefab, _cartParent);
-            cartItem.Initialize(this, itemId, icon);
+            cartItem.Initialize(this, itemData);
             _cartItems[itemId] = cartItem;
         }
 
         cartItem.ModifyAmount(amount);
-        _price += ItemManager.Instance.ItemList[itemId].value * amount;
+        _price += itemData.value * amount;
 
         RefreshPrice();
     }
