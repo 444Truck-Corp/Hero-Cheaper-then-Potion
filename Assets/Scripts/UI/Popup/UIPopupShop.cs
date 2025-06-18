@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -55,7 +56,7 @@ public class UIPopupShop : UIBase
             save.ModifyItem(id, slotItem.Amount);
             //Debug.Log($"{ItemManager.Instance.ItemList[id].name}을 {slotItem.Amount}개 구입 -> {SaveManager.Instance.MySaveData.items[id]}");
         }
-        foreach (var (id, slotItem) in _cartItems)
+        foreach (var id in _cartItems.Keys.ToList())
         {
             RemoveFromCart(id);
         }
