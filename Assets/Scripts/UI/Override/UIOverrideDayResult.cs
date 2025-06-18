@@ -20,6 +20,8 @@ public class UIOverrideDayResult : UIBase
 
     public void OnBtnClicked()
     {
+        SaveManager.Instance.MySaveData.time = 0; // 시간 초기화
+        SaveManager.Instance.MySaveData.foodProfits = new(); // 음식 판매 수익 초기화
         SetActive<UIOverrideDayResult>(false);
     }
 
@@ -30,8 +32,6 @@ public class UIOverrideDayResult : UIBase
 
     private IEnumerator UpdateDayResultUI()
     {
-        int totalProfit = 0;
-
         // 음식 판매 수익 계산
         yield return StartCoroutine(HandleFoodProfits());
         AddLine("", Color.white);
@@ -45,13 +45,13 @@ public class UIOverrideDayResult : UIBase
         // 생활비 차감
         int dailyCost = CalculateDailyCost();
         AddLine($"생활비 : {dailyCost} G\n", redTxtColor);
-        totalProfit += foodProfitSubtotal + questProfitSubtotal - dailyCost;
         yield return new WaitForSeconds(0.2f);
 
         // 구분선 및 최종 수익
         AddLine("========================================", Color.white);
         yield return new WaitForSeconds(0.5f);
 
+        int totalProfit = foodProfitSubtotal + questProfitSubtotal - dailyCost;
         SaveManager.Instance.SetSaveData(nameof(SaveData.gold), SaveManager.Instance.MySaveData.gold + totalProfit);
         AddLine($"최종 수익 : {totalProfit} G", Color.yellow);
     }
@@ -107,18 +107,7 @@ public class UIOverrideDayResult : UIBase
             yield return new WaitForSeconds(0.1f);
 
             // 용사 데미지 계산 및 사망 처리
-            List<HeroData> deadHeros = ApplyQuestDamage(questHeros, questData.rank, successProb, isSuccess);
-            if (deadHeros.Count > 0)
-            {
-                string deathMsg = "RIP: ";
-                foreach (var hero in deadHeros)
-                {
-                    deathMsg += $"{hero.name} ";
-                    SaveManager.Instance.MySaveData.ownedHeroes.Remove(hero.id);
-                }
-                AddLine(deathMsg, redTxtColor);
-                yield return new WaitForSeconds(0.1f);
-            }
+            ApplyQuestDamage(questHeros, questData.rank, successProb, isSuccess);
         }
     }
 
@@ -177,20 +166,16 @@ public class UIOverrideDayResult : UIBase
         return rewardText;
     }
 
-    private List<HeroData> ApplyQuestDamage(List<HeroData> heros, int rank, float successProb, bool isSuccess)
+    private void ApplyQuestDamage(List<HeroData> heros, int rank, float successProb, bool isSuccess)
     {
-        List<HeroData> dead = new();
         int damage = isSuccess ? rank * 10 : (int)(rank * 10 + (1 - successProb) * 15f);
 
         foreach (var hero in heros)
         {
-            hero.status.HP = Mathf.Max(0, hero.status.HP - damage);
-            if (hero.status.HP == 0)
-            {
-                dead.Add(hero);
-            }
+            hero.curHP = Mathf.Max(0, hero.curHP - damage);
+            string msg = $"{hero.name}의 HP: {hero.curHP}/{hero.status.HP} (-{damage})";
+            AddLine(msg, hero.curHP > 0 ? blueTxtColor : redTxtColor);
         }
-        return dead;
     }
 
     private TextMeshProUGUI AddLine(string message, Color color)

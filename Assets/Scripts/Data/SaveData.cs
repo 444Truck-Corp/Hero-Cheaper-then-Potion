@@ -37,7 +37,7 @@ public class SaveData
     #endregion
 
     #region results
-    public Dictionary<int, int> foodProfits; //음식 종류별 판매량
+    public Dictionary<int, int> foodProfits = new(); //음식 종류별 판매량
     #endregion
 
     public SaveData() { }

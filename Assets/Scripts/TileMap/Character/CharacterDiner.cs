@@ -31,8 +31,14 @@ public class CharacterDiner : TileMapCharacterCore
         // 재화 획득하고 다시 불러와서 악용 가능
 
         // 골드 증가
-        int gold = SaveManager.Instance.MySaveData.gold += ItemManager.Instance.ItemList[_recipeId].rank * 7;
-        SaveManager.Instance.SetSaveData(nameof(SaveManager.Instance.MySaveData.gold), gold);
+        if (SaveManager.Instance.MySaveData.foodProfits.TryGetValue(_recipeId, out int count))
+        {
+            SaveManager.Instance.MySaveData.foodProfits[_recipeId] = count + 1;
+        }
+        else
+        {
+            SaveManager.Instance.MySaveData.foodProfits.Add(_recipeId, 1);
+        }
 
         // 경험치 증가
         int exp = SaveManager.Instance.MySaveData.exp += 1;
