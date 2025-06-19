@@ -50,12 +50,14 @@ public class UINavInven : UIBase
         if (_selectedCategory == EItemCategory.Equipment)
         {
             return allItems
-                .Where(item => ItemManager.Instance.EquipmentList[item.Key].parts == _selectedEquipType)
+                .Where(item => ItemManager.Instance.EquipmentList.ContainsKey(item.Key) && 
+                    ItemManager.Instance.EquipmentList[item.Key].parts == _selectedEquipType)
                 .ToList();
         }
 
         return allItems
-            .Where(item => ItemManager.Instance.ItemList[item.Key].category == _selectedCategory)
+            .Where(item => ItemManager.Instance.ItemList.ContainsKey(item.Key) &&
+                ItemManager.Instance.ItemList[item.Key]?.category == _selectedCategory)
             .ToList();
     }
 

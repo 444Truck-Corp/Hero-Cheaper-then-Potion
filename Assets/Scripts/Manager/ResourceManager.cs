@@ -6,6 +6,7 @@ public class ResourceManager : Singleton<ResourceManager>
     private readonly Dictionary<string, Object> assetPools = new();
 
     public static readonly string thumbnailDir = "Thumbnails";
+    public static readonly string textureDir = "Textures";
 
     /// <summary> 
     /// Awake 대용 : Manager 실행순서 관리하기 위함. 

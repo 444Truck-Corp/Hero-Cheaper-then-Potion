@@ -1,772 +1,772 @@
 [
   {
-    "id": "1",
-    "name": "아이템1",
+    "id": "1001",
+    "name": "낡은 은반지",
     "category": "Equipment",
-    "description": "낡은 은반지",
+    "description": "아이템1",
     "stats": "[1,1,0,0]",
     "parts": "Accessory",
     "value": "150",
     "rank": "1",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Rings_jewellery/PNG/Transperent/Icon8"
   },
   {
-    "id": "2",
-    "name": "아이템2",
+    "id": "1002",
+    "name": "훈련용 팔보호대",
     "category": "Equipment",
-    "description": "훈련용 팔보호대",
+    "description": "아이템2",
     "stats": "[0,0,0,2]",
     "parts": "Arm",
     "value": "150",
     "rank": "1",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Brasers/PNG/Transperent/Icon7"
   },
   {
-    "id": "3",
-    "name": "아이템3",
+    "id": "1003",
+    "name": "훈련용 갑옷",
     "category": "Equipment",
-    "description": "훈련용 갑옷",
+    "description": "아이템3",
     "stats": "[2,0,0,0]",
     "parts": "Chest",
     "value": "150",
     "rank": "1",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Cuirass/PNG/Transperent/Icon16"
   },
   {
-    "id": "4",
-    "name": "아이템4",
+    "id": "1004",
+    "name": "훈련용 투구",
     "category": "Equipment",
-    "description": "훈련용 투구",
+    "description": "아이템4",
     "stats": "[0,0,2,0]",
     "parts": "Head",
     "value": "150",
     "rank": "1",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Helmets/PNG/Transperent/Icon8"
   },
   {
-    "id": "5",
-    "name": "아이템5",
+    "id": "1005",
+    "name": "훈련용 각반",
     "category": "Equipment",
-    "description": "훈련용 각반",
+    "description": "아이템5",
     "stats": "[0,2,0,0]",
     "parts": "Leg",
     "value": "150",
     "rank": "1",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Sabatons/PNG/Transperent/Icon2"
   },
   {
-    "id": "6",
-    "name": "아이템6",
+    "id": "1006",
+    "name": "훈련용 목검",
     "category": "Equipment",
-    "description": "훈련용 목검",
+    "description": "아이템6",
     "stats": "[1,1,1,1]",
     "parts": "Weapon",
     "value": "150",
     "rank": "1",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Swords/PNG/Transperent/Icon3_no_effect"
   },
   {
-    "id": "7",
-    "name": "아이템7",
+    "id": "1007",
+    "name": "낡은 에메랄드 목걸이",
     "category": "Equipment",
-    "description": "낡은 은귀걸이",
+    "description": "아이템7",
     "stats": "[0,0,1,1]",
     "parts": "Accessory",
     "value": "150",
     "rank": "1",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Rings_jewellery/PNG/Transperent/Icon23"
   },
   {
-    "id": "8",
-    "name": "아이템8",
+    "id": "1008",
+    "name": "은반지",
     "category": "Equipment",
-    "description": "은반지",
+    "description": "아이템8",
     "stats": "[2,2,0,0]",
     "parts": "Accessory",
     "value": "450",
     "rank": "2",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Rings_jewellery/PNG/Transperent/Icon13"
   },
   {
-    "id": "9",
-    "name": "아이템9",
+    "id": "1009",
+    "name": "가죽 팔보호대",
     "category": "Equipment",
-    "description": "가죽 팔보호대",
+    "description": "아이템9",
     "stats": "[0,0,0,4]",
     "parts": "Arm",
     "value": "450",
     "rank": "2",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Brasers/PNG/Transperent/Icon6"
   },
   {
-    "id": "10",
-    "name": "아이템10",
+    "id": "1010",
+    "name": "가죽 갑옷",
     "category": "Equipment",
-    "description": "가죽 갑옷",
+    "description": "아이템10",
     "stats": "[4,0,0,0]",
     "parts": "Chest",
     "value": "450",
     "rank": "2",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Cuirass/PNG/Transperent/Icon7"
   },
   {
-    "id": "11",
-    "name": "아이템11",
+    "id": "1011",
+    "name": "가죽 투구",
     "category": "Equipment",
-    "description": "가죽 투구",
+    "description": "아이템11",
     "stats": "[0,0,4,0]",
     "parts": "Head",
     "value": "450",
     "rank": "2",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Helmets/PNG/Transperent/Icon17"
   },
   {
-    "id": "12",
-    "name": "아이템12",
+    "id": "1012",
+    "name": "가죽 각반",
     "category": "Equipment",
-    "description": "가죽 각반",
+    "description": "아이템12",
     "stats": "[0,4,0,0]",
     "parts": "Leg",
     "value": "450",
     "rank": "2",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Sabatons/PNG/Transperent/Icon6"
   },
   {
-    "id": "13",
-    "name": "아이템13",
+    "id": "1013",
+    "name": "목검",
     "category": "Equipment",
-    "description": "목검",
+    "description": "아이템13",
     "stats": "[2,2,2,2]",
     "parts": "Weapon",
     "value": "450",
     "rank": "2",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Swords/PNG/Transperent/Icon10_no_effect"
   },
   {
-    "id": "14",
-    "name": "아이템14",
+    "id": "1014",
+    "name": "사파이어 목걸이",
     "category": "Equipment",
-    "description": "은귀걸이",
+    "description": "아이템14",
     "stats": "[0,0,2,2]",
     "parts": "Accessory",
     "value": "450",
     "rank": "2",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Rings_jewellery/PNG/Transperent/Icon21"
   },
   {
-    "id": "15",
-    "name": "아이템15",
+    "id": "1015",
+    "name": "루비 반지",
     "category": "Equipment",
-    "description": "루비 반지",
+    "description": "아이템15",
     "stats": "[3,3,0,0]",
     "parts": "Accessory",
     "value": "1350",
     "rank": "3",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Rings_jewellery/PNG/Transperent/Icon15"
   },
   {
-    "id": "16",
-    "name": "아이템16",
+    "id": "1016",
+    "name": "강철 팔보호대",
     "category": "Equipment",
-    "description": "강철 팔보호대",
+    "description": "아이템16",
     "stats": "[0,0,0,6]",
     "parts": "Arm",
     "value": "1350",
     "rank": "3",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Brasers/PNG/Transperent/Icon2"
   },
   {
-    "id": "17",
-    "name": "아이템17",
+    "id": "1017",
+    "name": "사슬 갑옷",
     "category": "Equipment",
-    "description": "사슬 갑옷",
+    "description": "아이템17",
     "stats": "[6,0,0,0]",
     "parts": "Chest",
     "value": "1350",
     "rank": "3",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Cuirass/PNG/Transperent/Icon38"
   },
   {
-    "id": "18",
-    "name": "아이템18",
+    "id": "1018",
+    "name": "철제 투구",
     "category": "Equipment",
-    "description": "철제 투구",
+    "description": "아이템18",
     "stats": "[0,0,6,0]",
     "parts": "Head",
     "value": "1350",
     "rank": "3",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Helmets/PNG/Transperent/Icon18"
   },
   {
-    "id": "19",
-    "name": "아이템19",
+    "id": "1019",
+    "name": "강철 각반",
     "category": "Equipment",
-    "description": "강철 각반",
+    "description": "아이템19",
     "stats": "[0,6,0,0]",
     "parts": "Leg",
     "value": "1350",
     "rank": "3",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Sabatons/PNG/Transperent/Icon4"
   },
   {
-    "id": "20",
-    "name": "아이템20",
+    "id": "1020",
+    "name": "강철검",
     "category": "Equipment",
-    "description": "강철검",
+    "description": "아이템20",
     "stats": "[3,3,3,3]",
     "parts": "Weapon",
     "value": "1350",
     "rank": "3",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Swords/PNG/Transperent/Icon13"
   },
   {
-    "id": "21",
-    "name": "아이템21",
+    "id": "1021",
+    "name": "루비 목걸이",
     "category": "Equipment",
-    "description": "루비 귀걸이",
+    "description": "아이템21",
     "stats": "[0,0,3,3]",
     "parts": "Accessory",
     "value": "1350",
     "rank": "3",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Rings_jewellery/PNG/Transperent/Icon8"
   },
   {
-    "id": "22",
-    "name": "아이템22",
+    "id": "1022",
+    "name": "청금석 반지",
     "category": "Equipment",
-    "description": "청금석 반지",
+    "description": "아이템22",
     "stats": "[4,4,0,0]",
     "parts": "Accessory",
     "value": "3250",
     "rank": "4",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Rings_jewellery/PNG/Transperent/Icon22"
   },
   {
-    "id": "23",
-    "name": "아이템23",
+    "id": "1023",
+    "name": "판금 팔보호대",
     "category": "Equipment",
-    "description": "판금 팔보호대",
+    "description": "아이템23",
     "stats": "[0,0,0,8]",
     "parts": "Arm",
     "value": "3250",
     "rank": "4",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Brasers/PNG/Transperent/Icon4"
   },
   {
-    "id": "24",
-    "name": "아이템24",
+    "id": "1024",
+    "name": "판금 갑옷",
     "category": "Equipment",
-    "description": "판금 갑옷",
+    "description": "아이템24",
     "stats": "[8,0,0,0]",
     "parts": "Chest",
     "value": "3250",
     "rank": "4",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Cuirass/PNG/Transperent/Icon3"
   },
   {
-    "id": "25",
-    "name": "아이템25",
+    "id": "1025",
+    "name": "판금 투구",
     "category": "Equipment",
-    "description": "판금 투구",
+    "description": "아이템25",
     "stats": "[0,0,8,0]",
     "parts": "Head",
     "value": "3250",
     "rank": "4",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Helmets/PNG/Transperent/Icon22"
   },
   {
-    "id": "26",
-    "name": "아이템26",
+    "id": "1026",
+    "name": "판금 각반",
     "category": "Equipment",
-    "description": "판금 각반",
+    "description": "아이템26",
     "stats": "[0,8,0,0]",
     "parts": "Leg",
     "value": "3250",
     "rank": "4",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Sabatons/PNG/Transperent/Icon18"
   },
   {
-    "id": "27",
-    "name": "아이템27",
+    "id": "1027",
+    "name": "다마스쿠스 검",
     "category": "Equipment",
-    "description": "다마스쿠스 검",
+    "description": "아이템27",
     "stats": "[4,4,4,4]",
     "parts": "Weapon",
     "value": "3250",
     "rank": "4",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Swords/PNG/Transperent/Icon25"
   },
   {
-    "id": "28",
-    "name": "아이템28",
+    "id": "1028",
+    "name": "액막이 부적",
     "category": "Equipment",
-    "description": "청금석 귀걸이",
+    "description": "아이템28",
     "stats": "[0,0,4,4]",
     "parts": "Accessory",
     "value": "3250",
     "rank": "4",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Rings_jewellery/PNG/Transperent/Icon42"
   },
   {
-    "id": "29",
-    "name": "아이템29",
+    "id": "1029",
+    "name": "흑요석 반지",
     "category": "Equipment",
-    "description": "흑요석 반지",
+    "description": "아이템29",
     "stats": "[5,5,0,0]",
     "parts": "Accessory",
     "value": "7000",
     "rank": "5",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Rings_jewellery/PNG/Transperent/Icon6"
   },
   {
-    "id": "30",
-    "name": "아이템30",
+    "id": "1030",
+    "name": "백금 팔보호대",
     "category": "Equipment",
-    "description": "백금 팔보호대",
+    "description": "아이템30",
     "stats": "[0,0,0,10]",
     "parts": "Arm",
     "value": "7000",
     "rank": "5",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Brasers/PNG/Transperent/Icon3"
   },
   {
-    "id": "31",
-    "name": "아이템31",
+    "id": "1031",
+    "name": "백금 갑옷",
     "category": "Equipment",
-    "description": "백금 갑옷",
+    "description": "아이템31",
     "stats": "[10,0,0,0]",
     "parts": "Chest",
     "value": "7000",
     "rank": "5",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Cuirass/PNG/Transperent/Icon42"
   },
   {
-    "id": "32",
-    "name": "아이템32",
+    "id": "1032",
+    "name": "백금 투구",
     "category": "Equipment",
-    "description": "백금 투구",
+    "description": "아이템32",
     "stats": "[0,0,10,0]",
     "parts": "Head",
     "value": "7000",
     "rank": "5",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Helmets/PNG/Transperent/Icon41"
   },
   {
-    "id": "33",
-    "name": "아이템33",
+    "id": "1033",
+    "name": "백금 각반",
     "category": "Equipment",
-    "description": "백금 각반",
+    "description": "아이템33",
     "stats": "[0,10,0,0]",
     "parts": "Leg",
     "value": "7000",
     "rank": "5",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Sabatons/PNG/Transperent/Icon21"
   },
   {
-    "id": "34",
-    "name": "아이템34",
+    "id": "1034",
+    "name": "은검",
     "category": "Equipment",
-    "description": "은검",
+    "description": "아이템34",
     "stats": "[5,5,5,5]",
     "parts": "Weapon",
     "value": "7000",
     "rank": "5",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Swords/PNG/Transperent/Icon8_no_effect"
   },
   {
-    "id": "35",
-    "name": "아이템35",
+    "id": "1035",
+    "name": "은 목걸이",
     "category": "Equipment",
-    "description": "흑요석 귀걸이",
+    "description": "아이템35",
     "stats": "[0,0,5,5]",
     "parts": "Accessory",
     "value": "7000",
     "rank": "5",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Rings_jewellery/PNG/Transperent/Icon35"
   },
   {
-    "id": "36",
-    "name": "아이템36",
+    "id": "1036",
+    "name": "미스릴 반지",
     "category": "Equipment",
-    "description": "미스릴 반지",
+    "description": "아이템36",
     "stats": "[6,6,0,0]",
     "parts": "Accessory",
     "value": "11500",
     "rank": "6",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Rings_jewellery/PNG/Transperent/Icon7"
   },
   {
-    "id": "37",
-    "name": "아이템37",
+    "id": "1037",
+    "name": "미스릴 팔보호대",
     "category": "Equipment",
-    "description": "미스릴 팔보호대",
+    "description": "아이템37",
     "stats": "[0,0,0,12]",
     "parts": "Arm",
     "value": "11500",
     "rank": "6",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Brasers/PNG/Transperent/Icon30"
   },
   {
-    "id": "38",
-    "name": "아이템38",
+    "id": "1038",
+    "name": "미스릴 갑옷",
     "category": "Equipment",
-    "description": "미스릴 갑옷",
+    "description": "아이템38",
     "stats": "[12,0,0,0]",
     "parts": "Chest",
     "value": "11500",
     "rank": "6",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Cuirass/PNG/Transperent/Icon30"
   },
   {
-    "id": "39",
-    "name": "아이템39",
+    "id": "1039",
+    "name": "미스릴 투구",
     "category": "Equipment",
-    "description": "미스릴 투구",
+    "description": "아이템39",
     "stats": "[0,0,12,0]",
     "parts": "Head",
     "value": "11500",
     "rank": "6",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Helmets/PNG/Transperent/Icon29"
   },
   {
-    "id": "40",
-    "name": "아이템40",
+    "id": "1040",
+    "name": "미스릴 각반",
     "category": "Equipment",
-    "description": "미스릴 각반",
+    "description": "아이템40",
     "stats": "[0,12,0,0]",
     "parts": "Leg",
     "value": "11500",
     "rank": "6",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Sabatons/PNG/Transperent/Icon30"
   },
   {
-    "id": "41",
-    "name": "아이템41",
+    "id": "1041",
+    "name": "미스릴 검",
     "category": "Equipment",
-    "description": "미스릴 검",
+    "description": "아이템41",
     "stats": "[6,6,6,6]",
     "parts": "Weapon",
     "value": "11500",
     "rank": "6",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Swords/PNG/Transperent/Icon36_no_effect"
   },
   {
-    "id": "42",
-    "name": "아이템42",
+    "id": "1042",
+    "name": "미스릴 목걸이",
     "category": "Equipment",
-    "description": "미스릴 귀걸이",
+    "description": "아이템42",
     "stats": "[0,0,6,6]",
     "parts": "Accessory",
     "value": "11500",
     "rank": "6",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Rings_jewellery/PNG/Transperent/Icon29"
   },
   {
-    "id": "43",
-    "name": "아이템43",
+    "id": "1043",
+    "name": "오리칼쿰 반지",
     "category": "Equipment",
-    "description": "오리칼쿰 반지",
+    "description": "아이템43",
     "stats": "[7,7,0,0]",
     "parts": "Accessory",
     "value": "17000",
     "rank": "7",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Rings_jewellery/PNG/Transperent/Icon10"
   },
   {
-    "id": "44",
-    "name": "아이템44",
+    "id": "1044",
+    "name": "오리칼쿰 팔보호대",
     "category": "Equipment",
-    "description": "오리칼쿰 팔보호대",
+    "description": "아이템44",
     "stats": "[0,0,0,14]",
     "parts": "Arm",
     "value": "17000",
     "rank": "7",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Brasers/PNG/Transperent/Icon32"
   },
   {
-    "id": "45",
-    "name": "아이템45",
+    "id": "1045",
+    "name": "오리칼쿰 갑옷",
     "category": "Equipment",
-    "description": "오리칼쿰 갑옷",
+    "description": "아이템45",
     "stats": "[14,0,0,0]",
     "parts": "Chest",
     "value": "17000",
     "rank": "7",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Cuirass/PNG/Transperent/Icon32"
   },
   {
-    "id": "46",
-    "name": "아이템46",
+    "id": "1046",
+    "name": "오리칼쿰 투구",
     "category": "Equipment",
-    "description": "오리칼쿰 투구",
+    "description": "아이템46",
     "stats": "[0,0,14,0]",
     "parts": "Head",
     "value": "17000",
     "rank": "7",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Helmets/PNG/Transperent/Icon32"
   },
   {
-    "id": "47",
-    "name": "아이템47",
+    "id": "1047",
+    "name": "오리칼쿰 각반",
     "category": "Equipment",
-    "description": "오리칼쿰 각반",
+    "description": "아이템47",
     "stats": "[0,14,0,0]",
     "parts": "Leg",
     "value": "17000",
     "rank": "7",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Sabatons/PNG/Transperent/Icon33"
   },
   {
-    "id": "48",
-    "name": "아이템48",
+    "id": "1048",
+    "name": "오리칼쿰 검",
     "category": "Equipment",
-    "description": "오리칼쿰 검",
+    "description": "아이템48",
     "stats": "[7,7,7,7]",
     "parts": "Weapon",
     "value": "17000",
     "rank": "7",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Swords/PNG/Transperent/Icon22_no_effect"
   },
   {
-    "id": "49",
-    "name": "아이템49",
+    "id": "1049",
+    "name": "악마의 눈 부적",
     "category": "Equipment",
-    "description": "오리칼쿰 귀걸이",
+    "description": "아이템49",
     "stats": "[0,0,7,7]",
     "parts": "Accessory",
     "value": "17000",
     "rank": "7",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Rings_jewellery/PNG/Transperent/Icon47"
   },
   {
-    "id": "50",
-    "name": "아이템50",
+    "id": "1050",
+    "name": "별철 반지",
     "category": "Equipment",
-    "description": "별철 반지",
+    "description": "아이템50",
     "stats": "[8,8,0,0]",
     "parts": "Accessory",
     "value": "24000",
     "rank": "8",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Rings_jewellery/PNG/Transperent/Icon12"
   },
   {
-    "id": "51",
-    "name": "아이템51",
+    "id": "1051",
+    "name": "별철 팔보호대",
     "category": "Equipment",
-    "description": "별철 팔보호대",
+    "description": "아이템51",
     "stats": "[0,0,0,16]",
     "parts": "Arm",
     "value": "24000",
     "rank": "8",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Brasers/PNG/Transperent/Icon31"
   },
   {
-    "id": "52",
-    "name": "아이템52",
+    "id": "1052",
+    "name": "별철 갑옷",
     "category": "Equipment",
-    "description": "별철 갑옷",
+    "description": "아이템52",
     "stats": "[16,0,0,0]",
     "parts": "Chest",
     "value": "24000",
     "rank": "8",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Cuirass/PNG/Transperent/Icon31"
   },
   {
-    "id": "53",
-    "name": "아이템53",
+    "id": "1053",
+    "name": "별쳘 투구",
     "category": "Equipment",
-    "description": "별쳘 투구",
+    "description": "아이템53",
     "stats": "[0,0,16,0]",
     "parts": "Head",
     "value": "24000",
     "rank": "8",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Helmets/PNG/Transperent/Icon32"
   },
   {
-    "id": "54",
-    "name": "아이템54",
+    "id": "1054",
+    "name": "별쳘 각반",
     "category": "Equipment",
-    "description": "별쳘 각반",
+    "description": "아이템54",
     "stats": "[0,16,0,0]",
     "parts": "Leg",
     "value": "24000",
     "rank": "8",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Sabatons/PNG/Transperent/Icon32"
   },
   {
-    "id": "55",
-    "name": "아이템55",
+    "id": "1055",
+    "name": "별철 검",
     "category": "Equipment",
-    "description": "별철 검",
+    "description": "아이템55",
     "stats": "[8,8,8,8]",
     "parts": "Weapon",
     "value": "24000",
     "rank": "8",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Swords/PNG/Transperent/Icon45"
   },
   {
-    "id": "56",
-    "name": "아이템56",
+    "id": "1056",
+    "name": "별철 목걸이",
     "category": "Equipment",
-    "description": "별철 귀걸이",
+    "description": "아이템56",
     "stats": "[0,0,8,8]",
     "parts": "Accessory",
     "value": "24000",
     "rank": "8",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Rings_jewellery/PNG/Transperent/Icon8"
   },
   {
-    "id": "57",
-    "name": "아이템57",
+    "id": "1057",
+    "name": "불타는 혼",
     "category": "Equipment",
-    "description": "불타는 혼",
+    "description": "아이템57",
     "stats": "[9,9,0,0]",
     "parts": "Accessory",
     "value": "32000",
     "rank": "9",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Rings_jewellery/PNG/Transperent/Icon36"
   },
   {
-    "id": "58",
-    "name": "아이템58",
+    "id": "1058",
+    "name": "성자의 손길",
     "category": "Equipment",
-    "description": "성자의 손길",
+    "description": "아이템58",
     "stats": "[0,0,0,18]",
     "parts": "Arm",
     "value": "32000",
     "rank": "9",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Brasers/PNG/Transperent/Icon44"
   },
   {
-    "id": "59",
-    "name": "아이템59",
+    "id": "1059",
+    "name": "태양의 갑옷",
     "category": "Equipment",
-    "description": "태양의 갑옷",
+    "description": "아이템59",
     "stats": "[18,0,0,0]",
     "parts": "Chest",
     "value": "32000",
     "rank": "9",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Cuirass/PNG/Transperent/Icon44"
   },
   {
-    "id": "60",
-    "name": "아이템60",
+    "id": "1060",
+    "name": "빛의 증표",
     "category": "Equipment",
-    "description": "빛의 증표",
+    "description": "아이템60",
     "stats": "[0,0,18,0]",
     "parts": "Head",
     "value": "32000",
     "rank": "9",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Helmets/PNG/Transperent/Icon46"
   },
   {
-    "id": "61",
-    "name": "아이템61",
+    "id": "1061",
+    "name": "와일드 워커",
     "category": "Equipment",
-    "description": "와일드 워커",
+    "description": "아이템61",
     "stats": "[0,18,0,0]",
     "parts": "Leg",
     "value": "32000",
     "rank": "9",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Sabatons/PNG/Transperent/Icon35"
   },
   {
-    "id": "62",
-    "name": "아이템62",
+    "id": "1062",
+    "name": "다인슬라이프",
     "category": "Equipment",
-    "description": "다인슬라이프",
+    "description": "아이템62",
     "stats": "[9,9,9,9]",
     "parts": "Weapon",
     "value": "32000",
     "rank": "9",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Swords/PNG/Transperent/Icon46_no_effect"
   },
   {
-    "id": "63",
-    "name": "아이템63",
+    "id": "1063",
+    "name": "계약의 인장",
     "category": "Equipment",
-    "description": "계약의 인장",
+    "description": "아이템63",
     "stats": "[0,0,9,9]",
     "parts": "Accessory",
     "value": "32000",
     "rank": "9",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Rings_jewellery/PNG/Transperent/Icon34"
   },
   {
-    "id": "64",
-    "name": "아이템64",
+    "id": "1064",
+    "name": "안드바라나우트",
     "category": "Equipment",
-    "description": "안드바라나우트",
+    "description": "아이템64",
     "stats": "[10,10,0,0]",
     "parts": "Accessory",
     "value": "42500",
     "rank": "10",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Rings_jewellery/PNG/Transperent/Icon1"
   },
   {
-    "id": "65",
-    "name": "아이템65",
+    "id": "1065",
+    "name": "야릉그레이프",
     "category": "Equipment",
-    "description": "야릉그레이프",
+    "description": "아이템65",
     "stats": "[0,0,0,20]",
     "parts": "Arm",
     "value": "42500",
     "rank": "10",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Brasers/PNG/Transperent/Icon46"
   },
   {
-    "id": "66",
-    "name": "아이템66",
+    "id": "1066",
+    "name": "카바나",
     "category": "Equipment",
-    "description": "카바나",
+    "description": "아이템66",
     "stats": "[20,0,0,0]",
     "parts": "Chest",
     "value": "42500",
     "rank": "10",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Cuirass/PNG/Transperent/Icon47"
   },
   {
-    "id": "67",
-    "name": "아이템67",
+    "id": "1067",
+    "name": "퀴네에",
     "category": "Equipment",
-    "description": "퀴네에",
+    "description": "아이템67",
     "stats": "[0,0,20,0]",
     "parts": "Head",
     "value": "42500",
     "rank": "10",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Helmets/PNG/Transperent/Icon11"
   },
   {
-    "id": "68",
-    "name": "아이템68",
+    "id": "1068",
+    "name": "슬레이프니르",
     "category": "Equipment",
-    "description": "슬레이프니르",
+    "description": "아이템68",
     "stats": "[0,20,0,0]",
     "parts": "Leg",
     "value": "42500",
     "rank": "10",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Sabatons/PNG/Transperent/Icon36"
   },
   {
-    "id": "69",
-    "name": "아이템69",
+    "id": "1069",
+    "name": "레바테인",
     "category": "Equipment",
-    "description": "레바테인",
+    "description": "아이템69",
     "stats": "[10,10,10,10]",
     "parts": "Weapon",
     "value": "42500",
     "rank": "10",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Swords/PNG/Transperent/Icon48_no_effect"
   },
   {
-    "id": "70",
-    "name": "아이템70",
+    "id": "1070",
+    "name": "브리싱가멘",
     "category": "Equipment",
-    "description": "브리싱가멘",
+    "description": "아이템70",
     "stats": "[0,0,10,10]",
     "parts": "Accessory",
     "value": "42500",
     "rank": "10",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Rings_jewellery/PNG/Transperent/Icon44"
   }
 ]

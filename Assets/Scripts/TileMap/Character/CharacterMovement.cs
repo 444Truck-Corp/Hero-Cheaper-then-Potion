@@ -23,6 +23,7 @@ public class CharacterMovement : MonoBehaviour
     private readonly Queue<Vector2Int> _moveCommand = new();
 
     public Vector2Int Position => new((int)_targetStepPosition.x, (int)-_targetStepPosition.y);
+    private const string PATH = "Textures/CharacterSheet/";
 
     private void FixedUpdate()
     {
@@ -70,8 +71,6 @@ public class CharacterMovement : MonoBehaviour
         _canAutoFinding = canAutoFinding;
         _targetType = targetType;
     }
-    private const string PATH = "Textures/CharacterSheet/";
-
 
     public void Clear()
     {
