@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public enum TileMapEventType
@@ -30,6 +31,7 @@ public class TileMapEventController : MonoBehaviour
         {
             Debug.Log($"날짜 변경 {_lastUpdatedDay} => {SaveManager.Instance.MySaveData.day}");
             InitializeDailyEvent();
+            ReturnHeroes();
             _lastUpdatedDay = SaveManager.Instance.MySaveData.day;
             _time = 0.0f;
             _lastUpdatedTenMinutes = 0;
@@ -85,6 +87,20 @@ public class TileMapEventController : MonoBehaviour
             debugString += $"{randomTenMinutesCount / 6:D2}시 {randomTenMinutesCount % 6 * 10:D2}분\n";
         }
         Debug.Log(debugString);
+    }
+
+    private void ReturnHeroes()
+    {
+        var heroIds = SaveManager.Instance.MySaveData.processingQuests
+            .Where(quest => quest.returnDay == SaveManager.Instance.MySaveData.day)
+            .SelectMany(quest => quest.heroIds);
+        foreach (var id in heroIds)
+        {
+            if (SaveManager.Instance.MySaveData.ownedHeroes.TryGetValue(id, out HeroData hero))
+            {
+                TileMapManager.Instance.OnHeroEntered(hero);
+            }
+        }
     }
 
     private int GetRandomTenMinutesCount(float minTime, float maxTime)

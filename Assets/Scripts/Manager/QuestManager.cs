@@ -74,6 +74,7 @@ public class QuestManager : Singleton<QuestManager>
             if (SaveManager.Instance.MySaveData.ownedHeroes.TryGetValue(heroId, out HeroData hero))
             {
                 hero.state = EHeroState.QUEST;
+                TileMapManager.Instance.OnHeroExit(hero);
             }
             else
             {

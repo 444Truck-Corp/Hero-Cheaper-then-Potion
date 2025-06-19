@@ -114,6 +114,7 @@ public class AStar
     public void EnqueueRouteMovementValue(Vector2Int start, Vector2Int end, Queue<Vector2Int> route)
     {
         List<Node> routeNodes = Find(start, end);
+        route.Clear();
         for (int index = 1; index < routeNodes.Count; index++)
         {
             int x = routeNodes[index].X - routeNodes[index - 1].X;

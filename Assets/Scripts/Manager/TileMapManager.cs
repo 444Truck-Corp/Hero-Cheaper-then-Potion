@@ -109,7 +109,7 @@ public class TileMapManager : Singleton<TileMapManager>
         _heroes[heroData.id] = CreateTileMapCharacter<CharacterHero>(HeroPrefabName, "궁사2");
     }
 
-    private void OnQuestStart(IEnumerable<HeroData> heroDatas, QuestData quest)
+    public void OnQuestStart(IEnumerable<HeroData> heroDatas, QuestData quest)
     {
         foreach (var heroData in heroDatas)
         {
@@ -125,7 +125,7 @@ public class TileMapManager : Singleton<TileMapManager>
         }
     }
 
-    private void OnHeroEntered(HeroData heroData)
+    public void OnHeroEntered(HeroData heroData)
     {
         var hero = _heroes[heroData.id];
         hero.transform.localPosition = _controller.Entrance.transform.localPosition;
@@ -156,6 +156,7 @@ public class TileMapManager : Singleton<TileMapManager>
         }
 
         dinerCharacter.SetTargetTilePosition(location.TilePosition);
+        dinerCharacter.SetTargetLocation(location);
         dinerCharacter.SetMoveCommand(dinerCharacter.SetOrder);
     }
 
@@ -166,7 +167,7 @@ public class TileMapManager : Singleton<TileMapManager>
         character.SetMoveCommand(() => PoolManager.Instance.Return(character));
     }
 
-    private void OnHeroExit(HeroData heroData)
+    public void OnHeroExit(HeroData heroData)
     {
         if (!_heroes.TryGetValue(heroData.id, out var hero)) return;
         hero.SetTargetTilePosition(_controller.Entrance.TilePosition);
