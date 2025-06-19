@@ -28,14 +28,14 @@ public class TileMapEventController : MonoBehaviour
         // 날짜 변경 감지
         if (_lastUpdatedDay > SaveManager.Instance.MySaveData.day)
         {
-            InitializeDailyEvent();
             Debug.Log($"날짜 변경 {_lastUpdatedDay} => {SaveManager.Instance.MySaveData.day}");
+            InitializeDailyEvent();
             _lastUpdatedDay = SaveManager.Instance.MySaveData.day;
             _time = 0.0f;
+            _lastUpdatedTenMinutes = 0;
         }
 
         // 게임 내 10분마다 이벤트를 진행
-        _time += Time.fixedDeltaTime;
         int currentTenMinutesCount = (int)(_time * tenMinutesTimeDivider);
         if (currentTenMinutesCount > _lastUpdatedTenMinutes)
         {
@@ -50,15 +50,16 @@ public class TileMapEventController : MonoBehaviour
             }
             _lastUpdatedTenMinutes = currentTenMinutesCount;
         }
+        _time += Time.fixedDeltaTime;
     }
 
     private void InitializeDailyEvent()
     {
         string debugString = "일일 이벤트 초기화\n";
         // 이벤트 초기화
-        foreach (var pair in _eventQueueDictionary)
+        foreach (var (id, queue) in _eventQueueDictionary)
         {
-            pair.Value.Clear();
+            queue.Clear();
         }
 
         // 상점 방문 이벤트 추가

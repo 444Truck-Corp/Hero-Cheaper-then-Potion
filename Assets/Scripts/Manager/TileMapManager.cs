@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -144,7 +143,7 @@ public class TileMapManager : Singleton<TileMapManager>
     {
         var dinerCharacter = CreateTileMapCharacter<CharacterDiner>(DinerPrefabName, "도적2");
         var location = GetEventLocation(dinerCharacter.TargetType);
-        
+
         // 앉을 자리가 없다면 대기
         if (location == null)
         {

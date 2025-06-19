@@ -9,7 +9,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float _movementProgress;
     [SerializeField] private float _movementSpeed = 5;
     [SerializeField] private Direction _direction;
-    [SerializeField] private float _time;
+    [SerializeField] private float _waitTime;
     [SerializeField] private CustomAnimator _animator;
     [SerializeField] private Vector3 _lastPosition;
     [SerializeField] private Vector3 _targetStepPosition;
@@ -20,7 +20,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private bool _canAutoFinding;
     [SerializeField] private GuildLocationEventType _targetType;
 
-    private readonly Queue<Vector2Int> _moveCommand = new();
+    [SerializeField] private Queue<Vector2Int> _moveQueue = new();
 
     public Vector2Int Position => new((int)_targetStepPosition.x, (int)-_targetStepPosition.y);
     private const string PATH = "Textures/CharacterSheet/";
@@ -30,37 +30,22 @@ public class CharacterMovement : MonoBehaviour
         // 이동중일 때
         if (_isMoving)
         {
-            _movementProgress += _movementSpeed * Time.fixedDeltaTime;
-            transform.localPosition = Vector3.Lerp(_lastPosition, _targetStepPosition, _movementProgress);
-            if (_movementProgress > 1.0f)
-            {
-                transform.localPosition = _targetStepPosition;
-                _movementProgress -= 1.0f;
-                _isMoving = false;
-                if (_moveCommand.Count == 0)
-                {
-                    _onMoveComplete?.Invoke();
-                    _time = UnityEngine.Random.Range(0.0f, 3.0f);
-                    _animator.SetPlaying(false);
-                }
-            }
+            MoveStep();
         }
         // 이동하지 않을 때
+        else if (_moveQueue.Count > 0)
+        {
+            TryStartNextMove();
+        }
+        else if (_moveQueue.Count == 0 && _canAutoFinding)
+        {
+            TryFindTargetLocation();
+        }
         else
         {
-            if (_moveCommand.Count > 0)
-            {
-                UpdateStep();
-            }
-            else if (_moveCommand.Count == 0 && _canAutoFinding)
-            {
-                FindNewTargetLocation();
-            }
-            else
-            {
-                _animator.SetPlaying(false);
-            }
+            _animator.SetPlaying(false);
         }
+
         UpdateAnimation();
     }
 
@@ -75,54 +60,82 @@ public class CharacterMovement : MonoBehaviour
     public void Clear()
     {
         _direction = new Direction(2);
-        _targetStepPosition = transform.localPosition;
-        _moveCommand.Clear();
+        _isMoving = false;
         _movementProgress = 0.0f;
+        _targetStepPosition = transform.localPosition;
+        _moveQueue.Clear();
         _animator.SetPlaying(false);
         ReturnLocation();
         UpdateAnimation();
     }
 
-    private void UpdateStep()
+    private void MoveStep()
     {
-        if (_time > 0)
-        {
-            _time -= Time.fixedDeltaTime;
-            return;
-        }
+        _movementProgress += _movementSpeed * Time.fixedDeltaTime;
+        transform.localPosition = Vector3.Lerp(_lastPosition, _targetStepPosition, _movementProgress);
 
-        _time = _movementFrequency;
-        _movementProgress = 0;
+        if (_movementProgress >= 1.0f)
+        {
+            _movementProgress -= 1.0f;
+            _isMoving = false;
+
+            // 더이상 이동할 걸음이 없을 때
+            if (_moveQueue.Count == 0)
+            {
+                transform.localPosition = _targetStepPosition;
+                _movementProgress = 0.0f;
+                _onMoveComplete?.Invoke();
+                _waitTime = UnityEngine.Random.Range(0.0f, 3.0f);
+                _animator.SetPlaying(false);
+            }
+        }
+    }
+
+    private void TryStartNextMove()
+    {
+        if (!IsWaitTimeOver()) return;
+
+        Vector2Int next = _moveQueue.Dequeue();
+        _direction.Forward = Direction.VECTOR_INDEX_MAP[next];
+
         _lastPosition = transform.localPosition;
-        Vector2Int currentCommand = _moveCommand.Dequeue();
-        _direction.Forward = Direction.VECTOR_INDEX_MAP[currentCommand];
-        _targetStepPosition = transform.localPosition + (Vector3)(Vector2)currentCommand;
+        _targetStepPosition = _lastPosition + (Vector3)(Vector2)next;
+        _waitTime = _movementFrequency;
+        _movementProgress = 0.0f;
         _isMoving = true;
+
         _animator.SetPlaying(true);
     }
 
-    private void FindNewTargetLocation()
+    private void TryFindTargetLocation()
     {
-        if (_time > 0)
-        {
-            _time -= Time.fixedDeltaTime;
-            return;
-        }
+        if (!IsWaitTimeOver()) return;
 
         ReturnLocation();
-        EventLocation target = TileMapManager.Instance.GetEventLocation(_targetType);
-        if (target != null)
+        _targetLocation = TileMapManager.Instance.GetEventLocation(_targetType);
+        if (_targetLocation != null)
         {
-            Vector2Int position = new((int)target.transform.localPosition.x, -(int)target.transform.localPosition.y);
-            TileMapManager.Instance.GetRoute(Position, position, _moveCommand);
+            int x = (int)_targetLocation.transform.localPosition.x;
+            int y = -(int)_targetLocation.transform.localPosition.y;
+            Vector2Int goal = new(x, y);
+            TileMapManager.Instance.GetRoute(Position, goal, _moveQueue);
             SetMoveCommand(OnMoveToTargetLocationComplete);
-            _targetLocation = target;
         }
+    }
+
+    private bool IsWaitTimeOver()
+    {
+        if (_waitTime > 0.0f)
+        {
+            _waitTime -= Time.fixedDeltaTime;
+            return false;
+        }
+        return true;
     }
 
     private void OnMoveToTargetLocationComplete()
     {
-        _direction = _targetLocation.Direction;
+        _direction = _targetLocation != null ? _targetLocation.Direction : _direction;
     }
 
     private void ReturnLocation()
@@ -143,18 +156,13 @@ public class CharacterMovement : MonoBehaviour
 
     public void SetTargetTilePosition(Vector2Int position)
     {
-        TileMapManager.Instance.GetRoute(Position, position, _moveCommand);
+        TileMapManager.Instance.GetRoute(Position, position, _moveQueue);
     }
 
-    internal void SetMoveCommand(Action onMoveComplete)
+    public void SetMoveCommand(Action onMoveComplete)
     {
         ReturnLocation();
-        _time = _movementFrequency;
+        _waitTime = _movementFrequency;
         _onMoveComplete = onMoveComplete;
-    }
-
-    public void SetDirection()
-    {
-        _direction = _targetLocation.Direction;
     }
 }
