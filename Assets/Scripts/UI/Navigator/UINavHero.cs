@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UINavHero : UIBase
 {
@@ -28,11 +29,6 @@ public class UINavHero : UIBase
         EventManager.Instance.RemoveSaveDataListener(nameof(SaveData.ownedHeroes), FetchHeroList);
     }
 
-    public void OnHeroSlotSelected(int listIdx)
-    {
-        UIManager.Show<UIPopupHeroDetail>(heroInfos[listIdx]);
-    }
-
     public void OnSummonHeroClicked()
     {
         int gold = SaveManager.Instance.MySaveData.gold;
@@ -51,24 +47,29 @@ public class UINavHero : UIBase
     }
 
     #region Sub Methods
+    private void OnHeroSlotSelected(int listIdx)
+    {
+        UIManager.Show<UIPopupHeroDetail>(heroInfos[listIdx]);
+    }
+
     private void FetchHeroList()
     {
-        Dictionary<int, HeroData> heros = SaveManager.Instance.MySaveData.ownedHeroes;
-        heroInfos = new Dictionary<int, HeroData>(heros);
-
         heroSlots.Clear();
         foreach (Transform child in ListParent)
         {
             Destroy(child.gameObject);
         }
 
-        foreach (var (key, heroData) in heros)
+        heroInfos = new(SaveManager.Instance.MySaveData.ownedHeroes);
+        foreach (var (key, heroData) in heroInfos)
         {
             var slotObj = Instantiate(ListPrefab, ListParent);
             var slot = slotObj.GetComponent<SlotHeroList>();
-
             heroSlots.Add(key, slot);
             slot.InitHeroSlot(key, heroData);
+
+            var btn = slotObj.GetComponent<Button>();
+            btn.onClick.AddListener(() => OnHeroSlotSelected(key));
         }
     }
     #endregion

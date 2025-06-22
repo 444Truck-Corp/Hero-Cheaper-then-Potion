@@ -28,6 +28,19 @@ public class HeroData
         equipList = new();
     }
 
+    public HeroData(HeroData data)
+    {
+        id = data.id;
+        name = data.name;
+        classData = data.classData;
+        status = data.status;
+        curHP = data.curHP;
+        level = data.level;
+        exp = data.exp;
+        state = data.state;
+        equipList = new List<EquipmentData>(data.equipList);
+    }
+
     //TODO : 위치 이동
     //public void GetExp(int delta)
     //{

@@ -123,12 +123,14 @@ public class UIManager : Singleton<UIManager>
     #region fades
     public void ToBlack()
     {
+        fadeBG.raycastTarget = true;
         fadeBG.DOFade(1f, 1f).SetUpdate(true);
     }
 
     public void ToTransparent()
     {
         fadeBG.DOFade(0f, 1f).SetUpdate(true);
+        fadeBG.raycastTarget = false;
     }
     #endregion
 }

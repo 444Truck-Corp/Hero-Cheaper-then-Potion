@@ -1150,7 +1150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 500356d6db400bc419840b7522610154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActiveInCreated: 1
+  isActiveInCreated: 0
   isDestroyAtClosed: 1
   uiPosition: 2
   listParent: {fileID: 2620255109372354020}

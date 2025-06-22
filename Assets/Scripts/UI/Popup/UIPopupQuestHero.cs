@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class UIPopupQuestHero : UIBase
@@ -6,11 +7,13 @@ public class UIPopupQuestHero : UIBase
     [SerializeField] private Transform listParent;
     [SerializeField] private GameObject slotPrefab;
 
+    private UINavQuest navQuest;
     private Action<int> onSelected;
 
     public override void Opened(object[] param)
     {
-        onSelected = param.Length > 0 && param[0] is Action<int> cb ? cb : null;
+        navQuest = param.Length > 0 && param[0] is UINavQuest nav ? nav : null;
+        onSelected = param.Length > 1 && param[1] is Action<int> cb ? cb : null;
         Refresh();
     }
 
@@ -25,7 +28,11 @@ public class UIPopupQuestHero : UIBase
         foreach (Transform child in listParent)
             Destroy(child.gameObject);
 
-        var allHeros = SaveManager.Instance.MySaveData.ownedHeroes;
+        Dictionary<int, HeroData> allHeros = new(SaveManager.Instance.MySaveData.ownedHeroes);
+        foreach (int key in navQuest.selectedHeros)
+        {
+            allHeros.Remove(key);
+        }
 
         foreach (var (id, hero) in allHeros)
         {

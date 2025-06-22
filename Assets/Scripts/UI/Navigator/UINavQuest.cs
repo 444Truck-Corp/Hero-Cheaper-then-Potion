@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,9 +25,13 @@ public class UINavQuest : UIBase
     public void OnClickTabOnboard() => SwitchTab(eTab.Onboard);
     public void OnClickTabAlways() => SwitchTab(eTab.Always);
 
+    [HideInInspector]
+    public List<int> selectedHeros;
+
     public override void Opened(object[] param)
     {
         SwitchTab(curTab);
+        selectedHeros = new();
     }
 
     private void SwitchTab(eTab tab)
@@ -65,7 +70,7 @@ public class UINavQuest : UIBase
 
             var go = Instantiate(slotPrefab, questContent[(int)eTab.Accepted]);
             var slot = go.GetComponent<SlotQuest>();
-            slot.SetData(quest, true);
+            slot.SetData(this, quest, true);
         }
     }
 
@@ -81,7 +86,7 @@ public class UINavQuest : UIBase
 
             var go = Instantiate(slotPrefab, questContent[(int)eTab.Onboard]);
             var slot = go.GetComponent<SlotQuest>();
-            slot.SetData(quest, false);
+            slot.SetData(this, quest, false);
             slot.SetHeroes(questInfo.heroIds);
         }
     }

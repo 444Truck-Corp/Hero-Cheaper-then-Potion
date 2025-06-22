@@ -129,13 +129,13 @@ TextureImporter:
       name: btn_buy_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 190
-        height: 114
+        x: 2
+        y: 3
+        width: 186
+        height: 109
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 12, y: 13, z: 12, w: 13}
+      border: {x: 8, y: 6, z: 7, w: 8}
       customData: 
       outline: []
       physicsShape: []
