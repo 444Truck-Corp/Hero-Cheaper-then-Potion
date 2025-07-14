@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public class HeroManager : Singleton<HeroManager>
 {
@@ -19,6 +20,7 @@ public class HeroManager : Singleton<HeroManager>
         classList = DataManager.Instance.GetObjList<ClassData>(nameof(ClassData));
         nameList = DataManager.Instance.GetObjList<string>(nameData);
         lvList = DataManager.Instance.GetObjList<LvData>(nameof(LvData));
+        Debug.Log(1);
     }
 
     #region Main Methods
@@ -44,10 +46,12 @@ public class HeroManager : Singleton<HeroManager>
             name = name,
             classData = classData,
             status = classData.SetBaseStat(),
-            level = 0,
+            level = 1,
             exp = 0,
             state = EHeroState.FREE
         };
+        hero.status.HP = lvList[hero.level].hp;
+        hero.curHP = hero.status.HP;
 
         SaveManager.Instance.SetSaveData(nameof(SaveManager.Instance.MySaveData.heroNum), hero.id + 1);
 

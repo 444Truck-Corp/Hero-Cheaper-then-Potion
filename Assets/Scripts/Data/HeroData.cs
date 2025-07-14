@@ -53,6 +53,8 @@ public class HeroData
             exp -= maxExp;
             level++;
             status = classData.AddIncStat(status);
+            status.HP = HeroManager.Instance.lvList[level].hp;
+            curHP = status.HP;
         }
     }
 }
