@@ -63,66 +63,66 @@
     "lv": "10",
     "exp": "85000",
     "hp": "200",
-    "guildExp": ""
+    "guildExp": "0"
   },
   {
     "lv": "11",
     "exp": "100000",
     "hp": "220",
-    "guildExp": ""
+    "guildExp": "0"
   },
   {
     "lv": "12",
     "exp": "120000",
     "hp": "240",
-    "guildExp": ""
+    "guildExp": "0"
   },
   {
     "lv": "13",
     "exp": "140000",
     "hp": "260",
-    "guildExp": ""
+    "guildExp": "0"
   },
   {
     "lv": "14",
     "exp": "165000",
     "hp": "280",
-    "guildExp": ""
+    "guildExp": "0"
   },
   {
     "lv": "15",
     "exp": "195000",
     "hp": "300",
-    "guildExp": ""
+    "guildExp": "0"
   },
   {
     "lv": "16",
     "exp": "225000",
     "hp": "320",
-    "guildExp": ""
+    "guildExp": "0"
   },
   {
     "lv": "17",
     "exp": "265000",
     "hp": "340",
-    "guildExp": ""
+    "guildExp": "0"
   },
   {
     "lv": "18",
     "exp": "305000",
     "hp": "360",
-    "guildExp": ""
+    "guildExp": "0"
   },
   {
     "lv": "19",
     "exp": "355000",
     "hp": "380",
-    "guildExp": ""
+    "guildExp": "0"
   },
   {
     "lv": "20",
     "exp": "0",
     "hp": "400",
-    "guildExp": ""
+    "guildExp": "0"
   }
 ]
