@@ -35,7 +35,13 @@ public class TileMapCharacterCore : Poolable
 
     public void SetTargetTilePosition(Vector2Int position)
     {
+        _movement.ReleaseLocation();
         _movement.SetTargetTilePosition(position);
+    }
+
+    public void SetTargetLocation(EventLocation location)
+    {
+        _movement.SetLocation(location);
     }
 
     public void SetMoveCommand(Action onMoveComplete = null)

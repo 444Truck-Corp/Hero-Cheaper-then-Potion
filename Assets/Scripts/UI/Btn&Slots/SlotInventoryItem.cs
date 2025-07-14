@@ -9,13 +9,12 @@ public class SlotInventoryItem : Poolable, IPointerEnterHandler, IPointerExitHan
     [SerializeField] private TextMeshProUGUI _amountText;
 
     private ItemData _data;
-    private const string Path = "";
 
     public void Initialize(ItemData itemData)
     {
         _data = itemData;
 
-        Sprite sprite = Resources.Load<Sprite>(Path + itemData.icon);
+        Sprite sprite = ResourceManager.Instance.LoadAsset<Sprite>(ResourceManager.textureDir, itemData.icon);
         if (sprite != null)
         {
             _icon.sprite = sprite;

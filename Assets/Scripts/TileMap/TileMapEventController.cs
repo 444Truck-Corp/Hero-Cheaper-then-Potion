@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public enum TileMapEventType
@@ -28,14 +29,15 @@ public class TileMapEventController : MonoBehaviour
         // 날짜 변경 감지
         if (_lastUpdatedDay > SaveManager.Instance.MySaveData.day)
         {
-            InitializeDailyEvent();
             Debug.Log($"날짜 변경 {_lastUpdatedDay} => {SaveManager.Instance.MySaveData.day}");
+            InitializeDailyEvent();
+            ReturnHeroes();
             _lastUpdatedDay = SaveManager.Instance.MySaveData.day;
             _time = 0.0f;
+            _lastUpdatedTenMinutes = 0;
         }
 
         // 게임 내 10분마다 이벤트를 진행
-        _time += Time.fixedDeltaTime;
         int currentTenMinutesCount = (int)(_time * tenMinutesTimeDivider);
         if (currentTenMinutesCount > _lastUpdatedTenMinutes)
         {
@@ -50,15 +52,16 @@ public class TileMapEventController : MonoBehaviour
             }
             _lastUpdatedTenMinutes = currentTenMinutesCount;
         }
+        _time += Time.fixedDeltaTime;
     }
 
     private void InitializeDailyEvent()
     {
         string debugString = "일일 이벤트 초기화\n";
         // 이벤트 초기화
-        foreach (var pair in _eventQueueDictionary)
+        foreach (var (id, queue) in _eventQueueDictionary)
         {
-            pair.Value.Clear();
+            queue.Clear();
         }
 
         // 상점 방문 이벤트 추가
@@ -84,6 +87,20 @@ public class TileMapEventController : MonoBehaviour
             debugString += $"{randomTenMinutesCount / 6:D2}시 {randomTenMinutesCount % 6 * 10:D2}분\n";
         }
         Debug.Log(debugString);
+    }
+
+    private void ReturnHeroes()
+    {
+        var heroIds = SaveManager.Instance.MySaveData.processingQuests
+            .Where(quest => quest.returnDay == SaveManager.Instance.MySaveData.day)
+            .SelectMany(quest => quest.heroIds);
+        foreach (var id in heroIds)
+        {
+            if (SaveManager.Instance.MySaveData.ownedHeroes.TryGetValue(id, out HeroData hero))
+            {
+                TileMapManager.Instance.OnHeroEntered(hero);
+            }
+        }
     }
 
     private int GetRandomTenMinutesCount(float minTime, float maxTime)

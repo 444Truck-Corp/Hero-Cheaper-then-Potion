@@ -11,7 +11,6 @@ public class SlotCartItem : Poolable, IPointerClickHandler, IPointerEnterHandler
     private int _amount;
     private ItemData _itemData;
     private UIPopupShop _shop;
-    private const string Path = "";
 
     public int ItemId => _itemData.id;
     public int Amount => _amount;
@@ -21,7 +20,7 @@ public class SlotCartItem : Poolable, IPointerClickHandler, IPointerEnterHandler
         _shop = shop;
         _itemData = itemData;
 
-        Sprite sprite = Resources.Load<Sprite>(Path + itemData.icon);
+        Sprite sprite = ResourceManager.Instance.LoadAsset<Sprite>(ResourceManager.textureDir, itemData.icon);
         if (sprite != null)
         {
             _icon.sprite = sprite;

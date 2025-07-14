@@ -6,7 +6,7 @@
     "description": "체력 10 회복",
     "value": "30",
     "rank": "1",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Alchemy2/PNG/Transperent/Icon5"
   },
   {
     "id": "2",
@@ -15,7 +15,7 @@
     "description": "체력 20 회복",
     "value": "90",
     "rank": "2",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Berries_nuts/PNG/Transperent/Icon47"
   },
   {
     "id": "3",
@@ -24,7 +24,7 @@
     "description": "체력 30 회복",
     "value": "230",
     "rank": "3",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Potions 2/PNG/Transperent/Icon23"
   },
   {
     "id": "4",
@@ -33,7 +33,7 @@
     "description": "체력 40 회복",
     "value": "500",
     "rank": "4",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Potions 2/PNG/Transperent/Icon33"
   },
   {
     "id": "5",
@@ -42,7 +42,7 @@
     "description": "체력 50 회복",
     "value": "925",
     "rank": "5",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Potions/PNG/Transperent/Icon1"
   },
   {
     "id": "6",
@@ -51,7 +51,7 @@
     "description": "체력 60 회복",
     "value": "1400",
     "rank": "6",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Potions/PNG/Transperent/Icon21"
   },
   {
     "id": "7",
@@ -60,7 +60,7 @@
     "description": "체력 70 회복",
     "value": "2000",
     "rank": "7",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Potions/PNG/Transperent/Icon33"
   },
   {
     "id": "8",
@@ -69,7 +69,7 @@
     "description": "체력 80 회복",
     "value": "2800",
     "rank": "8",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Potions/PNG/Transperent/Icon1"
   },
   {
     "id": "9",
@@ -78,7 +78,7 @@
     "description": "체력 50% 회복",
     "value": "3700",
     "rank": "9",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Potions 2/PNG/Transperent/Icon1"
   },
   {
     "id": "10",
@@ -87,7 +87,7 @@
     "description": "완전 회복",
     "value": "5000",
     "rank": "10",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Potions/PNG/Transperent/Icon37"
   },
   {
     "id": "11",
@@ -96,7 +96,7 @@
     "description": "재료1-1",
     "value": "375",
     "rank": "1",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Meat_skins/PNG/Transperent/Icon20"
   },
   {
     "id": "12",
@@ -105,7 +105,7 @@
     "description": "재료1-2",
     "value": "1125",
     "rank": "2",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Meat_skins/PNG/Transperent/Icon4"
   },
   {
     "id": "13",
@@ -114,7 +114,7 @@
     "description": "재료1-3",
     "value": "2875",
     "rank": "3",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Craft_materials2/PNG/Transperent/Icon35"
   },
   {
     "id": "14",
@@ -123,7 +123,7 @@
     "description": "재료1-4",
     "value": "6405",
     "rank": "4",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Meat_skins/PNG/Transperent/Icon42"
   },
   {
     "id": "15",
@@ -132,7 +132,7 @@
     "description": "재료1-5",
     "value": "11562",
     "rank": "5",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Drop1/PNG/Transperent/Icon18"
   },
   {
     "id": "16",
@@ -141,7 +141,7 @@
     "description": "재료1-6",
     "value": "17812",
     "rank": "6",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Drop1/PNG/Transperent/Icon4"
   },
   {
     "id": "17",
@@ -150,7 +150,7 @@
     "description": "재료1-7",
     "value": "25625",
     "rank": "7",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Demons Loot Icons/PNG/Transperent/Icon48"
   },
   {
     "id": "18",
@@ -159,7 +159,7 @@
     "description": "재료1-8",
     "value": "35000",
     "rank": "8",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Meat_skins/PNG/Transperent/Icon36"
   },
   {
     "id": "19",
@@ -168,7 +168,7 @@
     "description": "재료1-9",
     "value": "46562",
     "rank": "9",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Meat_skins/PNG/Transperent/Icon9"
   },
   {
     "id": "20",
@@ -177,7 +177,7 @@
     "description": "재료1-10",
     "value": "57812",
     "rank": "10",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Chaos monsters loot pack/PNG/Transperent/Icon18"
   },
   {
     "id": "21",
@@ -186,7 +186,7 @@
     "description": "재료2-1",
     "value": "375",
     "rank": "1",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Fishing/PNG/Transperent/Icon6"
   },
   {
     "id": "22",
@@ -195,7 +195,7 @@
     "description": "재료2-2",
     "value": "1125",
     "rank": "2",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Fishing/PNG/Transperent/Icon20"
   },
   {
     "id": "23",
@@ -204,7 +204,7 @@
     "description": "재료2-3",
     "value": "2875",
     "rank": "3",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Fishing/PNG/Transperent/Icon17"
   },
   {
     "id": "24",
@@ -213,7 +213,7 @@
     "description": "재료2-4",
     "value": "6405",
     "rank": "4",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Fishing/PNG/Transperent/Icon22"
   },
   {
     "id": "25",
@@ -222,7 +222,7 @@
     "description": "재료2-5",
     "value": "11562",
     "rank": "5",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Fishing/PNG/Transperent/Icon21"
   },
   {
     "id": "26",
@@ -231,7 +231,7 @@
     "description": "재료2-6",
     "value": "17812",
     "rank": "6",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Fishing/PNG/Transperent/Icon10"
   },
   {
     "id": "27",
@@ -240,7 +240,7 @@
     "description": "재료2-7",
     "value": "25625",
     "rank": "7",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Fishing/PNG/Transperent/Icon4"
   },
   {
     "id": "28",
@@ -249,7 +249,7 @@
     "description": "재료2-8",
     "value": "35000",
     "rank": "8",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Fishing/PNG/Transperent/Icon29"
   },
   {
     "id": "29",
@@ -258,7 +258,7 @@
     "description": "재료2-9",
     "value": "46562",
     "rank": "9",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Meat_skins/PNG/Transperent/Icon31"
   },
   {
     "id": "30",
@@ -267,7 +267,7 @@
     "description": "재료2-10",
     "value": "57812",
     "rank": "10",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Fishing/PNG/Transperent/Icon28"
   },
   {
     "id": "31",
@@ -276,7 +276,7 @@
     "description": "재료3-1",
     "value": "750",
     "rank": "1",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Berries_nuts/PNG/Transperent/Icon47"
   },
   {
     "id": "32",
@@ -285,7 +285,7 @@
     "description": "재료3-2",
     "value": "2250",
     "rank": "2",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Alchemy2/PNG/Transperent/Icon1"
   },
   {
     "id": "33",
@@ -294,7 +294,7 @@
     "description": "재료3-3",
     "value": "5750",
     "rank": "3",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Alchemy2/PNG/Transperent/Icon10"
   },
   {
     "id": "34",
@@ -303,7 +303,7 @@
     "description": "재료3-4",
     "value": "12810",
     "rank": "4",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Fruits_vegetables/PNG/Transperent/Icon25"
   },
   {
     "id": "35",
@@ -312,7 +312,7 @@
     "description": "재료3-5",
     "value": "23124",
     "rank": "5",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Fairy loot/Bonus/PNG/Transperent/Icon50"
   },
   {
     "id": "36",
@@ -321,7 +321,7 @@
     "description": "재료3-6",
     "value": "35624",
     "rank": "6",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Alchemy1/PNG/Transperent/Icon45"
   },
   {
     "id": "37",
@@ -330,7 +330,7 @@
     "description": "재료3-7",
     "value": "51250",
     "rank": "7",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Alchemy1/PNG/Transperent/Icon47"
   },
   {
     "id": "38",
@@ -339,7 +339,7 @@
     "description": "재료3-8",
     "value": "70000",
     "rank": "8",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Alchemy2/PNG/Transperent/Icon35"
   },
   {
     "id": "39",
@@ -348,7 +348,7 @@
     "description": "재료3-9",
     "value": "93124",
     "rank": "9",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Alchemy2/PNG/Transperent/Icon26"
   },
   {
     "id": "40",
@@ -357,7 +357,7 @@
     "description": "재료3-10",
     "value": "115624",
     "rank": "10",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Alchemy2/PNG/Transperent/Icon43"
   },
   {
     "id": "41",
@@ -366,7 +366,7 @@
     "description": "상점 구매 재료 1",
     "value": "375",
     "rank": "1",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Potions/PNG/Transperent/Icon47"
   },
   {
     "id": "42",
@@ -375,7 +375,7 @@
     "description": "상점 구매 재료 2",
     "value": "1125",
     "rank": "2",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Potions 2/PNG/Transperent/Icon2"
   },
   {
     "id": "43",
@@ -384,7 +384,7 @@
     "description": "상점 구매 재료 3",
     "value": "2875",
     "rank": "3",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Potions 2/PNG/Transperent/Icon21"
   },
   {
     "id": "44",
@@ -393,7 +393,7 @@
     "description": "상점 구매 재료 4",
     "value": "6405",
     "rank": "4",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Potions/PNG/Transperent/Icon48"
   },
   {
     "id": "45",
@@ -402,7 +402,7 @@
     "description": "상점 구매 재료 5",
     "value": "11562",
     "rank": "5",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Potions/PNG/Transperent/Icon46"
   },
   {
     "id": "46",
@@ -411,7 +411,7 @@
     "description": "상점 구매 재료 6",
     "value": "17812",
     "rank": "6",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Potions 2/PNG/Transperent/Icon42"
   },
   {
     "id": "47",
@@ -420,7 +420,7 @@
     "description": "상점 구매 재료 7",
     "value": "25625",
     "rank": "7",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Potions 2/PNG/Transperent/Icon35"
   },
   {
     "id": "48",
@@ -429,7 +429,7 @@
     "description": "상점 구매 재료 8",
     "value": "35000",
     "rank": "8",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Potions 2/PNG/Transperent/Icon26"
   },
   {
     "id": "49",
@@ -438,7 +438,7 @@
     "description": "상점 구매 재료 9",
     "value": "46562",
     "rank": "9",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Potions 2/PNG/Transperent/Icon8"
   },
   {
     "id": "50",
@@ -447,7 +447,7 @@
     "description": "상점 구매 재료 10",
     "value": "57812",
     "rank": "10",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Potions 2/PNG/Transperent/Icon47"
   },
   {
     "id": "51",
@@ -543,6 +543,357 @@
     "id": "61",
     "name": "요리10",
     "category": "Potion",
+    "description": "",
+    "value": "0",
+    "rank": "1",
+    "icon": ""
+  },
+  {
+    "id": "62",
+    "name": "찢어진 수기",
+    "category": "Consumable",
+    "description": "소모품1",
+    "value": "0",
+    "rank": "1",
+    "icon": "RPG Icons Pixel Art/Books/PNG/Transperent/Icon30"
+  },
+  {
+    "id": "63",
+    "name": "훈련 교본",
+    "category": "Consumable",
+    "description": "소모품2",
+    "value": "0",
+    "rank": "1",
+    "icon": "RPG Icons Pixel Art/Books/PNG/Transperent/Icon8"
+  },
+  {
+    "id": "64",
+    "name": "바보를 위한 식물 도감",
+    "category": "Consumable",
+    "description": "소모품3",
+    "value": "0",
+    "rank": "1",
+    "icon": "RPG Icons Pixel Art/Books/PNG/Transperent/Icon24"
+  },
+  {
+    "id": "65",
+    "name": "교전 수칙 1권 ",
+    "category": "Consumable",
+    "description": "소모품4",
+    "value": "0",
+    "rank": "1",
+    "icon": "RPG Icons Pixel Art/Books/PNG/Transperent/Icon31"
+  },
+  {
+    "id": "66",
+    "name": "마수 도감",
+    "category": "Consumable",
+    "description": "소모품5",
+    "value": "0",
+    "rank": "1",
+    "icon": "RPG Icons Pixel Art/Books/PNG/Transperent/Icon22"
+  },
+  {
+    "id": "67",
+    "name": "마물 도감",
+    "category": "Consumable",
+    "description": "소모품6",
+    "value": "0",
+    "rank": "1",
+    "icon": "RPG Icons Pixel Art/Books/PNG/Transperent/Icon23"
+  },
+  {
+    "id": "68",
+    "name": "미궁 지도책",
+    "category": "Consumable",
+    "description": "소모품7",
+    "value": "0",
+    "rank": "1",
+    "icon": "RPG Icons Pixel Art/Books/PNG/Transperent/Icon44"
+  },
+  {
+    "id": "69",
+    "name": "악마 도감",
+    "category": "Consumable",
+    "description": "소모품8",
+    "value": "0",
+    "rank": "1",
+    "icon": "RPG Icons Pixel Art/Books/PNG/Transperent/Icon3"
+  },
+  {
+    "id": "70",
+    "name": "잊힌 신들의 기록",
+    "category": "Consumable",
+    "description": "소모품9",
+    "value": "0",
+    "rank": "1",
+    "icon": "RPG Icons Pixel Art/Books/PNG/Transperent/Icon25"
+  },
+  {
+    "id": "71",
+    "name": "금서",
+    "category": "Consumable",
+    "description": "소모품10",
+    "value": "0",
+    "rank": "1",
+    "icon": "RPG Icons Pixel Art/Books/PNG/Transperent/Icon11"
+  },
+  {
+    "id": "72",
+    "name": "자루",
+    "category": "Consumable",
+    "description": "소모품1",
+    "value": "0",
+    "rank": "1",
+    "icon": "RPG Icons Pixel Art/Dwarf loot pack/PNG/Transperent/Icon42"
+  },
+  {
+    "id": "73",
+    "name": "탐험용 배낭",
+    "category": "Consumable",
+    "description": "소모품2",
+    "value": "0",
+    "rank": "1",
+    "icon": "RPG Icons Pixel Art/Dwarf loot pack/PNG/Transperent/Icon3"
+  },
+  {
+    "id": "74",
+    "name": "랜턴",
+    "category": "Consumable",
+    "description": "소모품3",
+    "value": "0",
+    "rank": "1",
+    "icon": "RPG Icons Pixel Art/Dwarf loot pack/PNG/Transperent/Icon11"
+  },
+  {
+    "id": "75",
+    "name": "열쇠",
+    "category": "Consumable",
+    "description": "소모품4",
+    "value": "0",
+    "rank": "1",
+    "icon": "RPG Icons Pixel Art/Chests_keys_treasure/PNG/Transperent/Icon25"
+  },
+  {
+    "id": "76",
+    "name": "마법 깃든 열쇠",
+    "category": "Consumable",
+    "description": "소모품5",
+    "value": "0",
+    "rank": "1",
+    "icon": "RPG Icons Pixel Art/Chests_keys_treasure/PNG/Transperent/Icon30"
+  },
+  {
+    "id": "77",
+    "name": "자물쇠따개",
+    "category": "Consumable",
+    "description": "소모품6",
+    "value": "0",
+    "rank": "1",
+    "icon": "RPG Icons Pixel Art/Craft_materials2/PNG/Transperent/Icon23"
+  },
+  {
+    "id": "78",
+    "name": "해정술 교본",
+    "category": "Consumable",
+    "description": "소모품7",
+    "value": "0",
+    "rank": "1",
+    "icon": "RPG Icons Pixel Art/Books/PNG/Transperent/Icon34"
+  },
+  {
+    "id": "79",
+    "name": "행운의 묘약",
+    "category": "Consumable",
+    "description": "소모품8",
+    "value": "0",
+    "rank": "1",
+    "icon": "RPG Icons Pixel Art/Craft_materials2/PNG/Transperent/Icon35"
+  },
+  {
+    "id": "80",
+    "name": "토끼발",
+    "category": "Consumable",
+    "description": "소모품9",
+    "value": "0",
+    "rank": "1",
+    "icon": "RPG Icons Pixel Art/Meat_skins/PNG/Transperent/Icon45"
+  },
+  {
+    "id": "81",
+    "name": "행운의 부적",
+    "category": "Consumable",
+    "description": "소모품10",
+    "value": "0",
+    "rank": "1",
+    "icon": "RPG Icons Pixel Art/Rings_jewellery/PNG/Transperent/Icon45"
+  },
+  {
+    "id": "82",
+    "name": "",
+    "category": "Consumable",
+    "description": "",
+    "value": "0",
+    "rank": "1",
+    "icon": ""
+  },
+  {
+    "id": "83",
+    "name": "",
+    "category": "Consumable",
+    "description": "",
+    "value": "0",
+    "rank": "1",
+    "icon": ""
+  },
+  {
+    "id": "84",
+    "name": "",
+    "category": "Consumable",
+    "description": "",
+    "value": "0",
+    "rank": "1",
+    "icon": ""
+  },
+  {
+    "id": "85",
+    "name": "",
+    "category": "Consumable",
+    "description": "",
+    "value": "0",
+    "rank": "1",
+    "icon": ""
+  },
+  {
+    "id": "86",
+    "name": "",
+    "category": "Consumable",
+    "description": "",
+    "value": "0",
+    "rank": "1",
+    "icon": ""
+  },
+  {
+    "id": "87",
+    "name": "",
+    "category": "Consumable",
+    "description": "",
+    "value": "0",
+    "rank": "1",
+    "icon": ""
+  },
+  {
+    "id": "88",
+    "name": "",
+    "category": "Consumable",
+    "description": "",
+    "value": "0",
+    "rank": "1",
+    "icon": ""
+  },
+  {
+    "id": "89",
+    "name": "",
+    "category": "Consumable",
+    "description": "",
+    "value": "0",
+    "rank": "1",
+    "icon": ""
+  },
+  {
+    "id": "90",
+    "name": "",
+    "category": "Consumable",
+    "description": "",
+    "value": "0",
+    "rank": "1",
+    "icon": ""
+  },
+  {
+    "id": "91",
+    "name": "",
+    "category": "Consumable",
+    "description": "",
+    "value": "0",
+    "rank": "1",
+    "icon": ""
+  },
+  {
+    "id": "92",
+    "name": "",
+    "category": "Consumable",
+    "description": "",
+    "value": "0",
+    "rank": "1",
+    "icon": ""
+  },
+  {
+    "id": "93",
+    "name": "",
+    "category": "Consumable",
+    "description": "",
+    "value": "0",
+    "rank": "1",
+    "icon": ""
+  },
+  {
+    "id": "94",
+    "name": "",
+    "category": "Consumable",
+    "description": "",
+    "value": "0",
+    "rank": "1",
+    "icon": ""
+  },
+  {
+    "id": "95",
+    "name": "",
+    "category": "Consumable",
+    "description": "",
+    "value": "0",
+    "rank": "1",
+    "icon": ""
+  },
+  {
+    "id": "96",
+    "name": "",
+    "category": "Consumable",
+    "description": "",
+    "value": "0",
+    "rank": "1",
+    "icon": ""
+  },
+  {
+    "id": "97",
+    "name": "",
+    "category": "Consumable",
+    "description": "",
+    "value": "0",
+    "rank": "1",
+    "icon": ""
+  },
+  {
+    "id": "98",
+    "name": "",
+    "category": "Consumable",
+    "description": "",
+    "value": "0",
+    "rank": "1",
+    "icon": ""
+  },
+  {
+    "id": "99",
+    "name": "",
+    "category": "Consumable",
+    "description": "",
+    "value": "0",
+    "rank": "1",
+    "icon": ""
+  },
+  {
+    "id": "100",
+    "name": "",
+    "category": "Consumable",
     "description": "",
     "value": "0",
     "rank": "1",

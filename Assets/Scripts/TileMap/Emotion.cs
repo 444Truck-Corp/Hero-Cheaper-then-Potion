@@ -40,6 +40,7 @@ public class Emotion : MonoButton
     {
         _action = null;
         _progress.gameObject.SetActive(false);
+        _onLeftClickEvent.RemoveAllListeners();
     }
 
     private void FixedUpdate()
