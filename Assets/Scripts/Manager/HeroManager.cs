@@ -1,12 +1,14 @@
 using System.Collections.Generic;
+using System.Linq;
 
 public class HeroManager : Singleton<HeroManager>
 {
     private const string nameData = "NameData";
 
     private List<string> nameList;
-    private List<ClassData> classList;
-    private List<LvData> lvList;
+    public List<ClassData> classList { get; private set; }
+    public List<LvData> lvList { get; private set; }
+    public int MaxExp => lvList.Sum(data => data.characExp);
 
     protected override void Awake()
     {
@@ -41,7 +43,7 @@ public class HeroManager : Singleton<HeroManager>
             id = SaveManager.Instance.MySaveData.heroNum,
             name = name,
             classData = classData,
-            status = classData.BaseStat,
+            status = classData.SetBaseStat(),
             level = 0,
             exp = 0,
             state = EHeroState.FREE
