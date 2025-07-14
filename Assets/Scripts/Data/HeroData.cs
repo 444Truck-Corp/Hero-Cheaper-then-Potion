@@ -28,18 +28,31 @@ public class HeroData
         equipList = new();
     }
 
-    //TODO : 위치 이동
-    //public void GetExp(int delta)
-    //{
-    //    if (delta == 0) return;
-    //    exp += delta;
-    //    GameManager.Instance.OnGetExpEvent?.Invoke(this, delta);
-    //    while (exp >= levelExpList[level] && level < 10)
-    //    {
-    //        exp -= levelExpList[level++];
-    //        status += classData.IncStat;
-    //        GameManager.Instance.OnHeroLevelUpEvent?.Invoke(this, level);
-    //        GameManager.Instance.OnHeroStatUpEvent?.Invoke(this, classData.IncStat);
-    //    }
-    //}
+    public HeroData(HeroData data)
+    {
+        id = data.id;
+        name = data.name;
+        classData = data.classData;
+        status = data.status;
+        curHP = data.curHP;
+        level = data.level;
+        exp = data.exp;
+        state = data.state;
+        equipList = new List<EquipmentData>(data.equipList);
+    }
+
+    public void GetExp(int value)
+    {
+        exp += value;
+
+        while (level < HeroManager.Instance.lvList.Count - 1)
+        {
+            int maxExp = HeroManager.Instance.lvList[level].characExp;
+            if (exp < maxExp) break;
+
+            exp -= maxExp;
+            level++;
+            status = classData.AddIncStat(status);
+        }
+    }
 }

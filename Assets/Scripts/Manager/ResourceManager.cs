@@ -5,6 +5,7 @@ public class ResourceManager : Singleton<ResourceManager>
 {
     private readonly Dictionary<string, Object> assetPools = new();
 
+    public static readonly string standDir = "Stands";
     public static readonly string thumbnailDir = "Thumbnails";
     public static readonly string textureDir = "Textures";
 

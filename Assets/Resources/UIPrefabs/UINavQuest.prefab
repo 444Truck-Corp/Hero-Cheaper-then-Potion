@@ -1233,6 +1233,7 @@ MonoBehaviour:
   - {fileID: 220769177516685823}
   - {fileID: 552716704661827829}
   slotPrefab: {fileID: 7921086551769028475, guid: 80d58e091d7d0d14795861de2570f9f2, type: 3}
+  popupQuestHero: {fileID: 0}
 --- !u!1 &4215629619339576752
 GameObject:
   m_ObjectHideFlags: 0

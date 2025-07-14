@@ -25,7 +25,8 @@ public class SlotQuest : MonoBehaviour
     [SerializeField] private GameObject sendBtnObj;
 
     private bool isInteractive;
-
+    private UINavQuest navQuest;
+    
     private void Awake()
     {
         for (int i = 0; i < heroBtns.Length; i++)
@@ -35,8 +36,10 @@ public class SlotQuest : MonoBehaviour
         }
     }
 
-    public void SetData(QuestData questData, bool isPending = false)
+    public void SetData(UINavQuest uiNavQuest, QuestData questData, bool isPending = false)
     {
+        navQuest = uiNavQuest;
+
         questId = questData.id;
         isInteractive = isPending;
 
@@ -74,6 +77,7 @@ public class SlotQuest : MonoBehaviour
     {
         int selectedId = await RequestHeroSelection();
         heroIds[slotIdx] = selectedId;
+        navQuest.selectedHeros.Add(selectedId);
         ResetHeroIcons();
     }
 
@@ -126,7 +130,7 @@ public class SlotQuest : MonoBehaviour
     private Task<int> RequestHeroSelection()
     {
         var tcs = new TaskCompletionSource<int>();
-        UIManager.Show<UIPopupQuestHero>((Action<int>)((int selectedId) =>
+        UIManager.Show<UIPopupQuestHero>(navQuest, (Action<int>)((int selectedId) =>
         {
             tcs.SetResult(selectedId);
         }));

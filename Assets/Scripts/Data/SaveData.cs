@@ -12,7 +12,7 @@ public class SaveData
     #endregion
 
     #region gold
-    public int gold = 0;
+    public int gold = 5000;
     #endregion
 
     #region guild

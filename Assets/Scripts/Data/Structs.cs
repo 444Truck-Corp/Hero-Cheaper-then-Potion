@@ -4,7 +4,9 @@ using System;
 public struct LvData
 {
     public int level;
-    public int exp;
+    public int characExp;
+    public int hp;
+    public int guildExp;
 }
 
 [Serializable]
