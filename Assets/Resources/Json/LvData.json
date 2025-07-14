@@ -1,127 +1,127 @@
 [
   {
-    "lv": "0",
-    "exp": "0",
+    "level": "0",
+    "characExp": "0",
     "hp": "0",
     "guildExp": "0"
   },
   {
-    "lv": "1",
-    "exp": "300",
+    "level": "1",
+    "characExp": "300",
     "hp": "20",
     "guildExp": "50"
   },
   {
-    "lv": "2",
-    "exp": "900",
+    "level": "2",
+    "characExp": "900",
     "hp": "40",
     "guildExp": "100"
   },
   {
-    "lv": "3",
-    "exp": "2700",
+    "level": "3",
+    "characExp": "2700",
     "hp": "60",
     "guildExp": "200"
   },
   {
-    "lv": "4",
-    "exp": "6500",
+    "level": "4",
+    "characExp": "6500",
     "hp": "80",
     "guildExp": "400"
   },
   {
-    "lv": "5",
-    "exp": "14000",
+    "level": "5",
+    "characExp": "14000",
     "hp": "100",
     "guildExp": "700"
   },
   {
-    "lv": "6",
-    "exp": "23000",
+    "level": "6",
+    "characExp": "23000",
     "hp": "120",
     "guildExp": "1100"
   },
   {
-    "lv": "7",
-    "exp": "34000",
+    "level": "7",
+    "characExp": "34000",
     "hp": "140",
     "guildExp": "1700"
   },
   {
-    "lv": "8",
-    "exp": "48000",
+    "level": "8",
+    "characExp": "48000",
     "hp": "160",
     "guildExp": "2500"
   },
   {
-    "lv": "9",
-    "exp": "64000",
+    "level": "9",
+    "characExp": "64000",
     "hp": "180",
     "guildExp": "3500"
   },
   {
-    "lv": "10",
-    "exp": "85000",
+    "level": "10",
+    "characExp": "85000",
     "hp": "200",
     "guildExp": "0"
   },
   {
-    "lv": "11",
-    "exp": "100000",
+    "level": "11",
+    "characExp": "100000",
     "hp": "220",
     "guildExp": "0"
   },
   {
-    "lv": "12",
-    "exp": "120000",
+    "level": "12",
+    "characExp": "120000",
     "hp": "240",
     "guildExp": "0"
   },
   {
-    "lv": "13",
-    "exp": "140000",
+    "level": "13",
+    "characExp": "140000",
     "hp": "260",
     "guildExp": "0"
   },
   {
-    "lv": "14",
-    "exp": "165000",
+    "level": "14",
+    "characExp": "165000",
     "hp": "280",
     "guildExp": "0"
   },
   {
-    "lv": "15",
-    "exp": "195000",
+    "level": "15",
+    "characExp": "195000",
     "hp": "300",
     "guildExp": "0"
   },
   {
-    "lv": "16",
-    "exp": "225000",
+    "level": "16",
+    "characExp": "225000",
     "hp": "320",
     "guildExp": "0"
   },
   {
-    "lv": "17",
-    "exp": "265000",
+    "level": "17",
+    "characExp": "265000",
     "hp": "340",
     "guildExp": "0"
   },
   {
-    "lv": "18",
-    "exp": "305000",
+    "level": "18",
+    "characExp": "305000",
     "hp": "360",
     "guildExp": "0"
   },
   {
-    "lv": "19",
-    "exp": "355000",
+    "level": "19",
+    "characExp": "355000",
     "hp": "380",
     "guildExp": "0"
   },
   {
-    "lv": "20",
-    "exp": "0",
+    "level": "20",
+    "characExp": "0",
     "hp": "400",
     "guildExp": "0"
   }
