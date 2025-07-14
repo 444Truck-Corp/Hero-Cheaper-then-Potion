@@ -1,3 +1,4 @@
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,9 +22,16 @@ public class UIPopupHeroDetail : UIBase
     [SerializeField] private TextMeshProUGUI maxHpTxt;
     [SerializeField] private TextMeshProUGUI curHpTxt;
 
+    private int curHeroIdx;
+
+    private int maxExp = 0;
+    private int incExp = 0;
+    private float curSldrValue = 0;
+
     public override void Opened(object[] param)
     {
         HeroData data = param.Length > 0 && param[0] is HeroData heroData ? heroData : null;
+        curHeroIdx = data.id;
 
         standImg.sprite = ResourceManager.Instance.LoadAsset<Sprite>(ResourceManager.standDir, data.classData.id.ToString());
 
@@ -36,25 +44,47 @@ public class UIPopupHeroDetail : UIBase
         intTxt.text = data.status.INT.ToString();
         maxHpTxt.text = data.status.HP.ToString();
         curHpTxt.text = data.curHP.ToString();
+
+        curSldrValue = 0;
+        lvSlider.value = 0;
+        lvSlider.onValueChanged.RemoveAllListeners();
+        lvSlider.onValueChanged.AddListener(OnExpValueChanged);
+
+        lvPriceTxt.text = "0 G";
+
+        maxExp = HeroManager.Instance.lvList[data.level].characExp;
+        maxExp -= data.exp;
     }
 
     public void OnExpBtn()
     {
-        if (lvSlider.gameObject.activeSelf)
+        if (incExp <= SaveManager.Instance.MySaveData.gold)
         {
-            lvSlider.gameObject.SetActive(false);
+            HeroData curHero = SaveManager.Instance.MySaveData.ownedHeroes[curHeroIdx];
+            curHero.GetExp(incExp);
+            SaveManager.Instance.SetSaveData(nameof(SaveData.gold), SaveManager.Instance.MySaveData.gold - incExp);
+
+            maxExp = HeroManager.Instance.lvList[curHero.level].characExp;
+            incExp = (int)(curSldrValue * maxExp);
+            lvPriceTxt.text = $"{incExp} G";
+
+            lvTxt.text = curHero.level.ToString();
+            strTxt.text = curHero.status.STR.ToString();
+            dexTxt.text = curHero.status.DEX.ToString();
+            intTxt.text = curHero.status.INT.ToString();
+            maxHpTxt.text = curHero.status.HP.ToString();
+            curHpTxt.text = curHero.curHP.ToString();
         }
         else
         {
-            lvSlider.gameObject.SetActive(true);
-            lvPriceTxt.text = "0 G";
-
-            lvSlider.onValueChanged.RemoveAllListeners();
-            lvSlider.onValueChanged.AddListener(OnExpValueChanged);
+            //TODO : 보유 금액 부족 알림.
         }
     }
 
     private void OnExpValueChanged(float value)
     {
+        curSldrValue = value;
+        incExp = (int)(value * maxExp);
+        lvPriceTxt.text = $"{incExp} G";
     }
 }
