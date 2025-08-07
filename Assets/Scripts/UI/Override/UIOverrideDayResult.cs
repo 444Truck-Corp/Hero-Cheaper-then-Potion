@@ -94,8 +94,8 @@ public class UIOverrideDayResult : UIBase
 
             if (isSuccess)
             {
-                questProfitSubtotal += questData.goldReward;
-                questMsg += $"성공!\t+{questData.goldReward} G, ";
+                questProfitSubtotal += questData.reward;
+                questMsg += $"성공!\t+{questData.reward} G, ";
                 questMsg += DistributeQuestRewards(questData.parsedDropItems);
             }
             else
