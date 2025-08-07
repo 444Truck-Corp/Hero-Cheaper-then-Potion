@@ -11,23 +11,19 @@ public class ClassData
     public string rawBaseStr;
     public string rawBaseDex;
     public string rawBaseInt;
-    public string rawBaseHp;
     public string rawIncStr;
     public string rawIncDex;
     public string rawIncInt;
-    public string rawIncHp;
 
 
     // 기본 스탯
     public int[] baseStr;
     public int[] baseDex;
     public int[] baseInt;
-    public int[] baseHp;
     // 증가 스탯
     public int[] incStr;
     public int[] incDex;
     public int[] incInt;
-    public int[] incHp;
 
     [OnDeserialized]
     private void OnDeserialized(StreamingContext context)
@@ -37,25 +33,23 @@ public class ClassData
 
     public StatusData SetBaseStat()
     {
-        int str, dex, intel, hp;
+        int str, dex, intel;
         str = SetValue(baseStr);
         dex = SetValue(baseDex);
         intel = SetValue(baseInt);
-        hp = SetValue(baseHp);
 
-        StatusData baseStat = new(str, dex, intel, hp);
+        StatusData baseStat = new(str, dex, intel);
         return baseStat;
     }
 
     public StatusData AddIncStat(StatusData curStatus)
     {
-        int str, dex, intel, hp;
+        int str, dex, intel;
         str = SetValue(incStr);
         dex = SetValue(incDex);
         intel = SetValue(incInt);
-        hp = SetValue(incHp);
 
-        StatusData incStat = new(str, dex, intel, hp);
+        StatusData incStat = new(str, dex, intel);
         return curStatus + incStat;
     }
 
@@ -64,11 +58,9 @@ public class ClassData
         baseStr = DecodeRawData(rawBaseStr);
         baseDex = DecodeRawData(rawBaseDex);
         baseInt = DecodeRawData(rawBaseInt);
-        baseHp = DecodeRawData(rawBaseHp);
         incStr = DecodeRawData(rawIncStr);
         incDex = DecodeRawData(rawIncDex);
         incInt = DecodeRawData(rawIncInt);
-        incHp = DecodeRawData(rawIncHp);
     }
 
     private int[] DecodeRawData(string input)

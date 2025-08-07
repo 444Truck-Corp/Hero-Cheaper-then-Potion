@@ -589,14 +589,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UINavHero, Assembly-CSharp
-        m_MethodName: OnSummonHeroClicked
-        m_Mode: 1
+      - m_Target: {fileID: 6404136342644273767}
+        m_TargetAssemblyTypeName: UIPopupHeroDetail, Assembly-CSharp
+        m_MethodName: OnEquipBtn
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1166,14 +1166,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UINavHero, Assembly-CSharp
-        m_MethodName: OnSummonHeroClicked
-        m_Mode: 1
+      - m_Target: {fileID: 6404136342644273767}
+        m_TargetAssemblyTypeName: UIPopupHeroDetail, Assembly-CSharp
+        m_MethodName: OnEquipBtn
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4229,10 +4229,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UINavHero, Assembly-CSharp
-        m_MethodName: OnSummonHeroClicked
-        m_Mode: 1
+      - m_Target: {fileID: 6404136342644273767}
+        m_TargetAssemblyTypeName: UIPopupHeroDetail, Assembly-CSharp
+        m_MethodName: OnEquipBtn
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4484,7 +4484,7 @@ GameObject:
   - component: {fileID: 4817553406672449452}
   - component: {fileID: 3117352234219479563}
   m_Layer: 5
-  m_Name: BtnEquipDeco
+  m_Name: BtnEquipAcc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4593,14 +4593,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UINavHero, Assembly-CSharp
-        m_MethodName: OnSummonHeroClicked
-        m_Mode: 1
+      - m_Target: {fileID: 6404136342644273767}
+        m_TargetAssemblyTypeName: UIPopupHeroDetail, Assembly-CSharp
+        m_MethodName: OnEquipBtn
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5221,7 +5221,7 @@ GameObject:
   - component: {fileID: 3160220153288958554}
   - component: {fileID: 9164043549447479313}
   m_Layer: 5
-  m_Name: BtnEquipPants
+  m_Name: BtnEquipLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5330,14 +5330,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UINavHero, Assembly-CSharp
-        m_MethodName: OnSummonHeroClicked
-        m_Mode: 1
+      - m_Target: {fileID: 6404136342644273767}
+        m_TargetAssemblyTypeName: UIPopupHeroDetail, Assembly-CSharp
+        m_MethodName: OnEquipBtn
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6022,6 +6022,19 @@ MonoBehaviour:
   intTxt: {fileID: 1737476736535756464}
   maxHpTxt: {fileID: 9192146495977735092}
   curHpTxt: {fileID: 2822716736810261086}
+  equipImages:
+  - {fileID: 2632617880344711574}
+  - {fileID: 1885390873948696487}
+  - {fileID: 6594864656439340951}
+  - {fileID: 874250859089497340}
+  - {fileID: 1593884814399114594}
+  defaultEquips:
+  - {fileID: 3567876534770325076, guid: 9470d75e99992004c970877b0399df5e, type: 3}
+  - {fileID: -5604920543791102885, guid: 9470d75e99992004c970877b0399df5e, type: 3}
+  - {fileID: -8973731641081011390, guid: 9470d75e99992004c970877b0399df5e, type: 3}
+  - {fileID: 6154510391789251421, guid: 9470d75e99992004c970877b0399df5e, type: 3}
+  - {fileID: 716187651507184709, guid: 9470d75e99992004c970877b0399df5e, type: 3}
+  defaultColor: {r: 0.33333334, g: 0.13725491, b: 0, a: 1}
 --- !u!1 &7828378854818060017
 GameObject:
   m_ObjectHideFlags: 0

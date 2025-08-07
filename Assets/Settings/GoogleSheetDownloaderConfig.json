@@ -11,7 +11,7 @@
   },
   {
     "Gid": "658489092",
-    "Selected": false,
+    "Selected": true,
     "OutputFileName": "ClassData.json"
   },
   {
@@ -31,7 +31,7 @@
   },
   {
     "Gid": "2027353182",
-    "Selected": true,
+    "Selected": false,
     "OutputFileName": "QuestData.json"
   },
   {

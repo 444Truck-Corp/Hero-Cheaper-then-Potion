@@ -1,15 +1,15 @@
 [
   {
-    "id": "1",
+    "id": "140001",
     "name": "한 줌의 약초",
     "category": "Potion",
     "description": "체력 10 회복",
     "value": "30",
     "rank": "1",
-    "icon": "RPG Icons Pixel Art/Alchemy2/PNG/Transperent/Icon5"
+    "icon": "RPG Icons Pixel Art/Alchemy/PNG/Transperent/Icon5"
   },
   {
-    "id": "2",
+    "id": "140002",
     "name": "회복약 혼합물",
     "category": "Potion",
     "description": "체력 20 회복",
@@ -18,7 +18,7 @@
     "icon": "RPG Icons Pixel Art/Berries_nuts/PNG/Transperent/Icon47"
   },
   {
-    "id": "3",
+    "id": "140003",
     "name": "하급 치유연고",
     "category": "Potion",
     "description": "체력 30 회복",
@@ -27,7 +27,7 @@
     "icon": "RPG Icons Pixel Art/Potions 2/PNG/Transperent/Icon23"
   },
   {
-    "id": "4",
+    "id": "140004",
     "name": "치유연고",
     "category": "Potion",
     "description": "체력 40 회복",
@@ -36,7 +36,7 @@
     "icon": "RPG Icons Pixel Art/Potions 2/PNG/Transperent/Icon33"
   },
   {
-    "id": "5",
+    "id": "140005",
     "name": "하급 포션",
     "category": "Potion",
     "description": "체력 50 회복",
@@ -45,7 +45,7 @@
     "icon": "RPG Icons Pixel Art/Potions/PNG/Transperent/Icon1"
   },
   {
-    "id": "6",
+    "id": "140006",
     "name": "중급 포션",
     "category": "Potion",
     "description": "체력 60 회복",
@@ -54,7 +54,7 @@
     "icon": "RPG Icons Pixel Art/Potions/PNG/Transperent/Icon21"
   },
   {
-    "id": "7",
+    "id": "140007",
     "name": "상급 포션",
     "category": "Potion",
     "description": "체력 70 회복",
@@ -63,7 +63,7 @@
     "icon": "RPG Icons Pixel Art/Potions/PNG/Transperent/Icon33"
   },
   {
-    "id": "8",
+    "id": "140008",
     "name": "최상급 포션",
     "category": "Potion",
     "description": "체력 80 회복",
@@ -72,7 +72,7 @@
     "icon": "RPG Icons Pixel Art/Potions/PNG/Transperent/Icon1"
   },
   {
-    "id": "9",
+    "id": "140009",
     "name": "엘릭서",
     "category": "Potion",
     "description": "체력 50% 회복",
@@ -81,7 +81,7 @@
     "icon": "RPG Icons Pixel Art/Potions 2/PNG/Transperent/Icon1"
   },
   {
-    "id": "10",
+    "id": "140010",
     "name": "정제된 엘릭서",
     "category": "Potion",
     "description": "완전 회복",
@@ -90,7 +90,7 @@
     "icon": "RPG Icons Pixel Art/Potions/PNG/Transperent/Icon37"
   },
   {
-    "id": "11",
+    "id": "140011",
     "name": "의심스러운 고기",
     "category": "Material",
     "description": "재료1-1",
@@ -99,7 +99,7 @@
     "icon": "RPG Icons Pixel Art/Meat_skins/PNG/Transperent/Icon20"
   },
   {
-    "id": "12",
+    "id": "140012",
     "name": "단단한 멧돼지 살점",
     "category": "Material",
     "description": "재료1-2",
@@ -108,7 +108,7 @@
     "icon": "RPG Icons Pixel Art/Meat_skins/PNG/Transperent/Icon4"
   },
   {
-    "id": "13",
+    "id": "140013",
     "name": "슬라임 조각",
     "category": "Material",
     "description": "재료1-3",
@@ -117,7 +117,7 @@
     "icon": "RPG Icons Pixel Art/Craft_materials2/PNG/Transperent/Icon35"
   },
   {
-    "id": "14",
+    "id": "140014",
     "name": "마수의 살점",
     "category": "Material",
     "description": "재료1-4",
@@ -126,7 +126,7 @@
     "icon": "RPG Icons Pixel Art/Meat_skins/PNG/Transperent/Icon42"
   },
   {
-    "id": "15",
+    "id": "140015",
     "name": "비룡의 알",
     "category": "Material",
     "description": "재료1-5",
@@ -135,7 +135,7 @@
     "icon": "RPG Icons Pixel Art/Drop1/PNG/Transperent/Icon18"
   },
   {
-    "id": "16",
+    "id": "140016",
     "name": "천둥 도마뱀의 꼬리",
     "category": "Material",
     "description": "재료1-6",
@@ -144,7 +144,7 @@
     "icon": "RPG Icons Pixel Art/Drop1/PNG/Transperent/Icon4"
   },
   {
-    "id": "17",
+    "id": "140017",
     "name": "용의 날개",
     "category": "Material",
     "description": "재료1-7",
@@ -153,7 +153,7 @@
     "icon": "RPG Icons Pixel Art/Demons Loot Icons/PNG/Transperent/Icon48"
   },
   {
-    "id": "18",
+    "id": "140018",
     "name": "아라크네의 다리",
     "category": "Material",
     "description": "재료1-8",
@@ -162,7 +162,7 @@
     "icon": "RPG Icons Pixel Art/Meat_skins/PNG/Transperent/Icon36"
   },
   {
-    "id": "19",
+    "id": "140019",
     "name": "바실리스크의 간",
     "category": "Material",
     "description": "재료1-9",
@@ -171,7 +171,7 @@
     "icon": "RPG Icons Pixel Art/Meat_skins/PNG/Transperent/Icon9"
   },
   {
-    "id": "20",
+    "id": "140020",
     "name": "키메라의 심장",
     "category": "Material",
     "description": "재료1-10",
@@ -180,7 +180,7 @@
     "icon": "RPG Icons Pixel Art/Chaos monsters loot pack/PNG/Transperent/Icon18"
   },
   {
-    "id": "21",
+    "id": "140021",
     "name": "비단 잉어",
     "category": "Material",
     "description": "재료2-1",
@@ -189,7 +189,7 @@
     "icon": "RPG Icons Pixel Art/Fishing/PNG/Transperent/Icon6"
   },
   {
-    "id": "22",
+    "id": "140022",
     "name": "돌비늘 대구",
     "category": "Material",
     "description": "재료2-2",
@@ -198,7 +198,7 @@
     "icon": "RPG Icons Pixel Art/Fishing/PNG/Transperent/Icon20"
   },
   {
-    "id": "23",
+    "id": "140023",
     "name": "총명어",
     "category": "Material",
     "description": "재료2-3",
@@ -207,7 +207,7 @@
     "icon": "RPG Icons Pixel Art/Fishing/PNG/Transperent/Icon17"
   },
   {
-    "id": "24",
+    "id": "140024",
     "name": "점박이놀래기",
     "category": "Material",
     "description": "재료2-4",
@@ -216,7 +216,7 @@
     "icon": "RPG Icons Pixel Art/Fishing/PNG/Transperent/Icon22"
   },
   {
-    "id": "25",
+    "id": "140025",
     "name": "붉은통돔",
     "category": "Material",
     "description": "재료2-5",
@@ -225,7 +225,7 @@
     "icon": "RPG Icons Pixel Art/Fishing/PNG/Transperent/Icon21"
   },
   {
-    "id": "26",
+    "id": "140026",
     "name": "숲장어",
     "category": "Material",
     "description": "재료2-6",
@@ -234,7 +234,7 @@
     "icon": "RPG Icons Pixel Art/Fishing/PNG/Transperent/Icon10"
   },
   {
-    "id": "27",
+    "id": "140027",
     "name": "유리비늘연어",
     "category": "Material",
     "description": "재료2-7",
@@ -243,7 +243,7 @@
     "icon": "RPG Icons Pixel Art/Fishing/PNG/Transperent/Icon4"
   },
   {
-    "id": "28",
+    "id": "140028",
     "name": "핏빛 새우",
     "category": "Material",
     "description": "재료2-8",
@@ -252,7 +252,7 @@
     "icon": "RPG Icons Pixel Art/Fishing/PNG/Transperent/Icon29"
   },
   {
-    "id": "29",
+    "id": "140029",
     "name": "거대 거북의 혀",
     "category": "Material",
     "description": "재료2-9",
@@ -261,7 +261,7 @@
     "icon": "RPG Icons Pixel Art/Meat_skins/PNG/Transperent/Icon31"
   },
   {
-    "id": "30",
+    "id": "140030",
     "name": "카르키노스 집게발",
     "category": "Material",
     "description": "재료2-10",
@@ -270,7 +270,7 @@
     "icon": "RPG Icons Pixel Art/Fishing/PNG/Transperent/Icon28"
   },
   {
-    "id": "31",
+    "id": "140031",
     "name": "야생 딸기",
     "category": "Material",
     "description": "재료3-1",
@@ -279,7 +279,7 @@
     "icon": "RPG Icons Pixel Art/Berries_nuts/PNG/Transperent/Icon47"
   },
   {
-    "id": "32",
+    "id": "140032",
     "name": "토끼엉겅퀴",
     "category": "Material",
     "description": "재료3-2",
@@ -288,7 +288,7 @@
     "icon": "RPG Icons Pixel Art/Alchemy2/PNG/Transperent/Icon1"
   },
   {
-    "id": "33",
+    "id": "140033",
     "name": "뱀뿌리",
     "category": "Material",
     "description": "재료3-3",
@@ -297,7 +297,7 @@
     "icon": "RPG Icons Pixel Art/Alchemy2/PNG/Transperent/Icon10"
   },
   {
-    "id": "34",
+    "id": "140034",
     "name": "마력당근",
     "category": "Material",
     "description": "재료3-4",
@@ -306,7 +306,7 @@
     "icon": "RPG Icons Pixel Art/Fruits_vegetables/PNG/Transperent/Icon25"
   },
   {
-    "id": "35",
+    "id": "140035",
     "name": "섬광버섯",
     "category": "Material",
     "description": "재료3-5",
@@ -315,7 +315,7 @@
     "icon": "RPG Icons Pixel Art/Fairy loot/Bonus/PNG/Transperent/Icon50"
   },
   {
-    "id": "36",
+    "id": "140036",
     "name": "생명의뿌리",
     "category": "Material",
     "description": "재료3-6",
@@ -324,7 +324,7 @@
     "icon": "RPG Icons Pixel Art/Alchemy1/PNG/Transperent/Icon45"
   },
   {
-    "id": "37",
+    "id": "140037",
     "name": "미명초",
     "category": "Material",
     "description": "재료3-7",
@@ -333,7 +333,7 @@
     "icon": "RPG Icons Pixel Art/Alchemy1/PNG/Transperent/Icon47"
   },
   {
-    "id": "38",
+    "id": "140038",
     "name": "황금가시",
     "category": "Material",
     "description": "재료3-8",
@@ -342,7 +342,7 @@
     "icon": "RPG Icons Pixel Art/Alchemy2/PNG/Transperent/Icon35"
   },
   {
-    "id": "39",
+    "id": "140039",
     "name": "태양풀",
     "category": "Material",
     "description": "재료3-9",
@@ -351,7 +351,7 @@
     "icon": "RPG Icons Pixel Art/Alchemy2/PNG/Transperent/Icon26"
   },
   {
-    "id": "40",
+    "id": "140040",
     "name": "검은 연꽃",
     "category": "Material",
     "description": "재료3-10",
@@ -360,7 +360,7 @@
     "icon": "RPG Icons Pixel Art/Alchemy2/PNG/Transperent/Icon43"
   },
   {
-    "id": "41",
+    "id": "140041",
     "name": "고구마주",
     "category": "Material",
     "description": "상점 구매 재료 1",
@@ -369,7 +369,7 @@
     "icon": "RPG Icons Pixel Art/Potions/PNG/Transperent/Icon47"
   },
   {
-    "id": "42",
+    "id": "140042",
     "name": "머위주",
     "category": "Material",
     "description": "상점 구매 재료 2",
@@ -378,7 +378,7 @@
     "icon": "RPG Icons Pixel Art/Potions 2/PNG/Transperent/Icon2"
   },
   {
-    "id": "43",
+    "id": "140043",
     "name": "마녀의 사과주",
     "category": "Material",
     "description": "상점 구매 재료 3",
@@ -387,7 +387,7 @@
     "icon": "RPG Icons Pixel Art/Potions 2/PNG/Transperent/Icon21"
   },
   {
-    "id": "44",
+    "id": "140044",
     "name": "특농 미드",
     "category": "Material",
     "description": "상점 구매 재료 4",
@@ -396,7 +396,7 @@
     "icon": "RPG Icons Pixel Art/Potions/PNG/Transperent/Icon48"
   },
   {
-    "id": "45",
+    "id": "140045",
     "name": "럭키 데킬라",
     "category": "Material",
     "description": "상점 구매 재료 5",
@@ -405,7 +405,7 @@
     "icon": "RPG Icons Pixel Art/Potions/PNG/Transperent/Icon46"
   },
   {
-    "id": "46",
+    "id": "140046",
     "name": "생명주",
     "category": "Material",
     "description": "상점 구매 재료 6",
@@ -414,7 +414,7 @@
     "icon": "RPG Icons Pixel Art/Potions 2/PNG/Transperent/Icon42"
   },
   {
-    "id": "47",
+    "id": "140047",
     "name": "작염의 스피리터스",
     "category": "Material",
     "description": "상점 구매 재료 7",
@@ -423,7 +423,7 @@
     "icon": "RPG Icons Pixel Art/Potions 2/PNG/Transperent/Icon35"
   },
   {
-    "id": "48",
+    "id": "140048",
     "name": "크리스탈 하이볼",
     "category": "Material",
     "description": "상점 구매 재료 8",
@@ -432,7 +432,7 @@
     "icon": "RPG Icons Pixel Art/Potions 2/PNG/Transperent/Icon26"
   },
   {
-    "id": "49",
+    "id": "140049",
     "name": "스타 브랜디",
     "category": "Material",
     "description": "상점 구매 재료 9",
@@ -441,7 +441,7 @@
     "icon": "RPG Icons Pixel Art/Potions 2/PNG/Transperent/Icon8"
   },
   {
-    "id": "50",
+    "id": "140050",
     "name": "아스테라 맥주",
     "category": "Material",
     "description": "상점 구매 재료 10",
@@ -450,286 +450,286 @@
     "icon": "RPG Icons Pixel Art/Potions 2/PNG/Transperent/Icon47"
   },
   {
-    "id": "51",
-    "name": "요리0",
-    "category": "Potion",
-    "description": "",
+    "id": "140051",
+    "name": "탄산 보리차",
+    "category": "Food",
+    "description": "요리0",
     "value": "0",
     "rank": "1",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Food_Icons/PNG/Transperent/Icon38"
   },
   {
-    "id": "52",
-    "name": "요리1",
-    "category": "Potion",
-    "description": "",
+    "id": "140052",
+    "name": "미지의 고기 스튜",
+    "category": "Food",
+    "description": "요리1",
     "value": "0",
     "rank": "1",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Food_Icons/PNG/Transperent/Icon34"
   },
   {
-    "id": "53",
-    "name": "요리2",
-    "category": "Potion",
-    "description": "",
+    "id": "140053",
+    "name": "육포",
+    "category": "Food",
+    "description": "요리2",
     "value": "0",
     "rank": "1",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Food_Icons/PNG/Transperent/Icon17"
   },
   {
-    "id": "54",
-    "name": "요리3",
-    "category": "Potion",
-    "description": "",
+    "id": "140054",
+    "name": "슬라임 푸딩",
+    "category": "Food",
+    "description": "요리3",
     "value": "0",
     "rank": "1",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Food_Icons/PNG/Transperent/Icon46"
   },
   {
-    "id": "55",
-    "name": "요리4",
-    "category": "Potion",
-    "description": "",
+    "id": "140055",
+    "name": "마수고기 스튜",
+    "category": "Food",
+    "description": "요리4",
     "value": "0",
     "rank": "1",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Food_Icons/PNG/Transperent/Icon35"
   },
   {
-    "id": "56",
-    "name": "요리5",
-    "category": "Potion",
-    "description": "",
+    "id": "140056",
+    "name": "비룡알찜",
+    "category": "Food",
+    "description": "요리5",
     "value": "0",
     "rank": "1",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Food_Icons/PNG/Transperent/Icon43"
   },
   {
-    "id": "57",
-    "name": "요리6",
-    "category": "Potion",
-    "description": "",
+    "id": "140057",
+    "name": "깊은 숲 꼬치구이",
+    "category": "Food",
+    "description": "요리6",
     "value": "0",
     "rank": "1",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Food_Icons/PNG/Transperent/Icon2"
   },
   {
-    "id": "58",
-    "name": "요리7",
-    "category": "Potion",
-    "description": "",
+    "id": "140058",
+    "name": "훈제 유리 비늘 연어",
+    "category": "Food",
+    "description": "요리7",
     "value": "0",
     "rank": "1",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Food_Icons/PNG/Transperent/Icon13"
   },
   {
-    "id": "59",
-    "name": "요리8",
-    "category": "Potion",
-    "description": "",
+    "id": "140059",
+    "name": "심해사원 모둠 튀김",
+    "category": "Food",
+    "description": "요리8",
     "value": "0",
     "rank": "1",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Food_Icons/PNG/Transperent/Icon47"
   },
   {
-    "id": "60",
-    "name": "요리9",
-    "category": "Potion",
-    "description": "",
+    "id": "140060",
+    "name": "태양풀 무침",
+    "category": "Food",
+    "description": "요리9",
     "value": "0",
     "rank": "1",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Food_Icons/PNG/Transperent/Icon31"
   },
   {
-    "id": "61",
-    "name": "요리10",
-    "category": "Potion",
-    "description": "",
+    "id": "140061",
+    "name": "카르키노스 찜",
+    "category": "Food",
+    "description": "요리10",
     "value": "0",
     "rank": "1",
-    "icon": ""
+    "icon": "RPG Icons Pixel Art/Food_Icons/PNG/Transperent/Icon32"
   },
   {
-    "id": "62",
+    "id": "140062",
     "name": "찢어진 수기",
     "category": "Consumable",
-    "description": "소모품1",
+    "description": "성공률 소폭 상승 1",
     "value": "0",
     "rank": "1",
     "icon": "RPG Icons Pixel Art/Books/PNG/Transperent/Icon30"
   },
   {
-    "id": "63",
+    "id": "140063",
     "name": "훈련 교본",
     "category": "Consumable",
-    "description": "소모품2",
+    "description": "성공률 소폭 상승 2",
     "value": "0",
     "rank": "1",
     "icon": "RPG Icons Pixel Art/Books/PNG/Transperent/Icon8"
   },
   {
-    "id": "64",
+    "id": "140064",
     "name": "바보를 위한 식물 도감",
     "category": "Consumable",
-    "description": "소모품3",
+    "description": "성공률 소폭 상승 3",
     "value": "0",
     "rank": "1",
     "icon": "RPG Icons Pixel Art/Books/PNG/Transperent/Icon24"
   },
   {
-    "id": "65",
+    "id": "140065",
     "name": "교전 수칙 1권 ",
     "category": "Consumable",
-    "description": "소모품4",
+    "description": "성공률 상승1",
     "value": "0",
     "rank": "1",
     "icon": "RPG Icons Pixel Art/Books/PNG/Transperent/Icon31"
   },
   {
-    "id": "66",
+    "id": "140066",
     "name": "마수 도감",
     "category": "Consumable",
-    "description": "소모품5",
+    "description": "성공률 상승2",
     "value": "0",
     "rank": "1",
     "icon": "RPG Icons Pixel Art/Books/PNG/Transperent/Icon22"
   },
   {
-    "id": "67",
+    "id": "140067",
     "name": "마물 도감",
     "category": "Consumable",
-    "description": "소모품6",
+    "description": "성공률 상승3",
     "value": "0",
     "rank": "1",
     "icon": "RPG Icons Pixel Art/Books/PNG/Transperent/Icon23"
   },
   {
-    "id": "68",
+    "id": "140068",
     "name": "미궁 지도책",
     "category": "Consumable",
-    "description": "소모품7",
+    "description": "성공률 상승4",
     "value": "0",
     "rank": "1",
     "icon": "RPG Icons Pixel Art/Books/PNG/Transperent/Icon44"
   },
   {
-    "id": "69",
+    "id": "140069",
     "name": "악마 도감",
     "category": "Consumable",
-    "description": "소모품8",
+    "description": "성공률 대폭 상승1",
     "value": "0",
     "rank": "1",
     "icon": "RPG Icons Pixel Art/Books/PNG/Transperent/Icon3"
   },
   {
-    "id": "70",
+    "id": "140070",
     "name": "잊힌 신들의 기록",
     "category": "Consumable",
-    "description": "소모품9",
+    "description": "성공률 대폭 상승2",
     "value": "0",
     "rank": "1",
     "icon": "RPG Icons Pixel Art/Books/PNG/Transperent/Icon25"
   },
   {
-    "id": "71",
+    "id": "140071",
     "name": "금서",
     "category": "Consumable",
-    "description": "소모품10",
+    "description": "성공률 대폭 상승3",
     "value": "0",
     "rank": "1",
     "icon": "RPG Icons Pixel Art/Books/PNG/Transperent/Icon11"
   },
   {
-    "id": "72",
+    "id": "140072",
     "name": "자루",
     "category": "Consumable",
-    "description": "소모품1",
+    "description": "퀘스트 보상 소폭 상승 1",
     "value": "0",
     "rank": "1",
     "icon": "RPG Icons Pixel Art/Dwarf loot pack/PNG/Transperent/Icon42"
   },
   {
-    "id": "73",
+    "id": "140073",
     "name": "탐험용 배낭",
     "category": "Consumable",
-    "description": "소모품2",
+    "description": "퀘스트 보상 소폭 상승 2",
     "value": "0",
     "rank": "1",
     "icon": "RPG Icons Pixel Art/Dwarf loot pack/PNG/Transperent/Icon3"
   },
   {
-    "id": "74",
+    "id": "140074",
     "name": "랜턴",
     "category": "Consumable",
-    "description": "소모품3",
+    "description": "퀘스트 보상 소폭 상승 3",
     "value": "0",
     "rank": "1",
     "icon": "RPG Icons Pixel Art/Dwarf loot pack/PNG/Transperent/Icon11"
   },
   {
-    "id": "75",
+    "id": "140075",
     "name": "열쇠",
     "category": "Consumable",
-    "description": "소모품4",
+    "description": "퀘스트 보상 상승 1",
     "value": "0",
     "rank": "1",
     "icon": "RPG Icons Pixel Art/Chests_keys_treasure/PNG/Transperent/Icon25"
   },
   {
-    "id": "76",
+    "id": "140076",
     "name": "마법 깃든 열쇠",
     "category": "Consumable",
-    "description": "소모품5",
+    "description": "퀘스트 보상 상승 2",
     "value": "0",
     "rank": "1",
     "icon": "RPG Icons Pixel Art/Chests_keys_treasure/PNG/Transperent/Icon30"
   },
   {
-    "id": "77",
+    "id": "140077",
     "name": "자물쇠따개",
     "category": "Consumable",
-    "description": "소모품6",
+    "description": "퀘스트 보상 상승 3",
     "value": "0",
     "rank": "1",
     "icon": "RPG Icons Pixel Art/Craft_materials2/PNG/Transperent/Icon23"
   },
   {
-    "id": "78",
+    "id": "140078",
     "name": "해정술 교본",
     "category": "Consumable",
-    "description": "소모품7",
+    "description": "퀘스트 보상 상승 4",
     "value": "0",
     "rank": "1",
     "icon": "RPG Icons Pixel Art/Books/PNG/Transperent/Icon34"
   },
   {
-    "id": "79",
+    "id": "140079",
     "name": "행운의 묘약",
     "category": "Consumable",
-    "description": "소모품8",
+    "description": "퀘스트 보상 대폭 상승 1",
     "value": "0",
     "rank": "1",
     "icon": "RPG Icons Pixel Art/Craft_materials2/PNG/Transperent/Icon35"
   },
   {
-    "id": "80",
+    "id": "140080",
     "name": "토끼발",
     "category": "Consumable",
-    "description": "소모품9",
+    "description": "퀘스트 보상 대폭 상승 2",
     "value": "0",
     "rank": "1",
     "icon": "RPG Icons Pixel Art/Meat_skins/PNG/Transperent/Icon45"
   },
   {
-    "id": "81",
+    "id": "140081",
     "name": "행운의 부적",
     "category": "Consumable",
-    "description": "소모품10",
+    "description": "퀘스트 보상 대폭 상승 3",
     "value": "0",
     "rank": "1",
     "icon": "RPG Icons Pixel Art/Rings_jewellery/PNG/Transperent/Icon45"
   },
   {
-    "id": "82",
+    "id": "140082",
     "name": "",
     "category": "Consumable",
     "description": "",
@@ -738,7 +738,7 @@
     "icon": ""
   },
   {
-    "id": "83",
+    "id": "140083",
     "name": "",
     "category": "Consumable",
     "description": "",
@@ -747,7 +747,7 @@
     "icon": ""
   },
   {
-    "id": "84",
+    "id": "140084",
     "name": "",
     "category": "Consumable",
     "description": "",
@@ -756,7 +756,7 @@
     "icon": ""
   },
   {
-    "id": "85",
+    "id": "140085",
     "name": "",
     "category": "Consumable",
     "description": "",
@@ -765,7 +765,7 @@
     "icon": ""
   },
   {
-    "id": "86",
+    "id": "140086",
     "name": "",
     "category": "Consumable",
     "description": "",
@@ -774,7 +774,7 @@
     "icon": ""
   },
   {
-    "id": "87",
+    "id": "140087",
     "name": "",
     "category": "Consumable",
     "description": "",
@@ -783,7 +783,7 @@
     "icon": ""
   },
   {
-    "id": "88",
+    "id": "140088",
     "name": "",
     "category": "Consumable",
     "description": "",
@@ -792,7 +792,7 @@
     "icon": ""
   },
   {
-    "id": "89",
+    "id": "140089",
     "name": "",
     "category": "Consumable",
     "description": "",
@@ -801,7 +801,7 @@
     "icon": ""
   },
   {
-    "id": "90",
+    "id": "140090",
     "name": "",
     "category": "Consumable",
     "description": "",
@@ -810,7 +810,7 @@
     "icon": ""
   },
   {
-    "id": "91",
+    "id": "140091",
     "name": "",
     "category": "Consumable",
     "description": "",
@@ -819,7 +819,7 @@
     "icon": ""
   },
   {
-    "id": "92",
+    "id": "140092",
     "name": "",
     "category": "Consumable",
     "description": "",
@@ -828,7 +828,7 @@
     "icon": ""
   },
   {
-    "id": "93",
+    "id": "140093",
     "name": "",
     "category": "Consumable",
     "description": "",
@@ -837,7 +837,7 @@
     "icon": ""
   },
   {
-    "id": "94",
+    "id": "140094",
     "name": "",
     "category": "Consumable",
     "description": "",
@@ -846,7 +846,7 @@
     "icon": ""
   },
   {
-    "id": "95",
+    "id": "140095",
     "name": "",
     "category": "Consumable",
     "description": "",
@@ -855,7 +855,7 @@
     "icon": ""
   },
   {
-    "id": "96",
+    "id": "140096",
     "name": "",
     "category": "Consumable",
     "description": "",
@@ -864,7 +864,7 @@
     "icon": ""
   },
   {
-    "id": "97",
+    "id": "140097",
     "name": "",
     "category": "Consumable",
     "description": "",
@@ -873,7 +873,7 @@
     "icon": ""
   },
   {
-    "id": "98",
+    "id": "140098",
     "name": "",
     "category": "Consumable",
     "description": "",
@@ -882,7 +882,7 @@
     "icon": ""
   },
   {
-    "id": "99",
+    "id": "140099",
     "name": "",
     "category": "Consumable",
     "description": "",
@@ -891,7 +891,7 @@
     "icon": ""
   },
   {
-    "id": "100",
+    "id": "140100",
     "name": "",
     "category": "Consumable",
     "description": "",

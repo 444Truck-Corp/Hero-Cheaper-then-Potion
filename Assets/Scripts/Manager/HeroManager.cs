@@ -46,13 +46,13 @@ public class HeroManager : Singleton<HeroManager>
             name = name,
             classData = classData,
             status = classData.SetBaseStat(),
+            maxHP = lvList[1].hp,
+            curHP = lvList[1].hp,
             level = 1,
             exp = 0,
-            state = EHeroState.FREE
+            state = EHeroState.FREE,
         };
-        hero.status.HP = lvList[hero.level].hp;
-        hero.curHP = hero.status.HP;
-
+        
         SaveManager.Instance.SetSaveData(nameof(SaveManager.Instance.MySaveData.heroNum), hero.id + 1);
 
         return hero;
@@ -70,8 +70,7 @@ public class HeroManager : Singleton<HeroManager>
             $"Status:\n" +
             $" - STR: {newHero.status.STR}\n" +
             $" - DEX: {newHero.status.DEX}\n" +
-            $" - INT: {newHero.status.INT}\n" +
-            $" - HP: {newHero.status.HP}\n");
+            $" - INT: {newHero.status.INT}\n");
     }
     #endregion
 }

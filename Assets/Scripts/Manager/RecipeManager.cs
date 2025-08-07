@@ -44,7 +44,7 @@ public class RecipeManager : Singleton<RecipeManager>
     public int GetRandomOwnedRecipeId()
     {
         //int rank = SaveManager.Instance.MySaveData.rank;
-        int count = SaveManager.Instance.MySaveData.ownedRecipes.Count;
+        int count = SaveManager.Instance.MySaveData.ownedRecipeFoodId.Count;
 
         // 보유 레시피가 없을 때
         if (count == 0)
@@ -52,7 +52,7 @@ public class RecipeManager : Singleton<RecipeManager>
             return -1;
         }
         int index = Random.Range(0, count);
-        int recipeId = SaveManager.Instance.MySaveData.ownedRecipes[index];
+        int recipeId = SaveManager.Instance.MySaveData.ownedRecipeFoodId[index];
         return recipeId;
     }
 

@@ -22,8 +22,8 @@ public class QuestData
     public int id;
     public int rank;
     public string title;
-    public int reward;
     public string needSpec; // "str, dex, int, hp"
+    public int reward;
     public int time; // 소요 일수
     public string dropItems; // "itemId:probability,itemId:probability,..."
 
@@ -49,7 +49,6 @@ public class QuestData
             needSpecs.STR = values.Count > 0 ? values[0] : 0;
             needSpecs.DEX = values.Count > 1 ? values[1] : 0;
             needSpecs.INT = values.Count > 2 ? values[2] : 0;
-            needSpecs.HP = values.Count > 3 ? values[3] : 0;
         }
         
         //parsing dropItems

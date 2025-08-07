@@ -61,7 +61,7 @@ public class SaveManager : Singleton<SaveManager>
         saveData = new();
 
         // 기본 정보 추가
-        saveData.ownedRecipes.Add(1);
+        saveData.ownedRecipeFoodId.Add(140051);
 
         string path = GetSlotPath(0);
         string json = JsonConvert.SerializeObject(saveData, Formatting.Indented);

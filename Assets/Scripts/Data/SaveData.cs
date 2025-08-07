@@ -26,8 +26,9 @@ public class SaveData
     #endregion
 
     #region inventory
-    public List<int> ownedRecipes = new();
-    public List<EquipmentData> ownedEquips = new();
+    public List<int> ownedRecipeFoodId = new();
+    public int equipNum = 1;
+    public Dictionary<int, EquipmentData> ownedEquips = new(); //장비획득id, 장비데이터
     public Dictionary<int, int> items = new(); //id, 수량.
     #endregion
 
@@ -42,14 +43,44 @@ public class SaveData
 
     public SaveData() { }
 
-    public void ModifyItem(int id, int count)
+    public void AcquireItem(int id, int count = 1)
     {
+        if (id / 10000 == 12) //id가 장비인 경우.
+        {
+            EquipmentData newData = ItemManager.Instance.EquipmentList[id];
+            for (int i = 0; i < count; i++)
+                ownedEquips.Add(equipNum++, newData);
+            return;
+        }
+
         if (!items.ContainsKey(id)) 
         {
             items[id] = count;
             return;
         }
         items[id] += count;
-        if (items[id] < 0) items.Remove(id);
+        if (items[id] <= 0) items.Remove(id);
+    }
+
+    /// <param name="id">일반 item인 경우 itemdata id, 장비는 고유id.</param>
+    /// <param name="count">제거할 개수, 장비는 1개 고정</param>
+    public void RemoveItem(bool isEquip, int id, int count = 1)
+    {
+        if (isEquip)
+        {
+            EquipmentData oldData = ownedEquips[id];
+            ownedEquips.Remove(id);
+
+            //장착하고 있는 영웅이 있다면 장착해제
+            if (oldData.equippedHero != -1)
+            {
+                SaveManager.Instance.MySaveData.ownedHeroes[oldData.equippedHero].Equip(id);
+            }
+        }
+        else
+        {
+            items[id] -= count;
+            if (items[id] <= 0) items.Remove(id);
+        }
     }
 }
