@@ -1,0 +1,5837 @@
+fileFormatVersion: 2
+guid: 95677b59c46957f4191eadb1fc48a58d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4380020198895202157
+    second: Health, Magic, Armour, Money Icons_0
+  - first:
+      213: 6697574394750463618
+    second: Health, Magic, Armour, Money Icons_1
+  - first:
+      213: -217541767815360005
+    second: Health, Magic, Armour, Money Icons_2
+  - first:
+      213: -2847686608854322322
+    second: Health, Magic, Armour, Money Icons_3
+  - first:
+      213: 9117286597271426753
+    second: Health, Magic, Armour, Money Icons_4
+  - first:
+      213: 7983798801699964300
+    second: Health, Magic, Armour, Money Icons_5
+  - first:
+      213: 1164010986219241049
+    second: Health, Magic, Armour, Money Icons_6
+  - first:
+      213: 7613888033894267548
+    second: Health, Magic, Armour, Money Icons_7
+  - first:
+      213: 300360846554823987
+    second: Health, Magic, Armour, Money Icons_8
+  - first:
+      213: 1374246793092317912
+    second: Health, Magic, Armour, Money Icons_9
+  - first:
+      213: 8542348665553045054
+    second: Health, Magic, Armour, Money Icons_10
+  - first:
+      213: 4246545840437271456
+    second: Health, Magic, Armour, Money Icons_11
+  - first:
+      213: -2118246126874953924
+    second: Health, Magic, Armour, Money Icons_12
+  - first:
+      213: -7092745183163695709
+    second: Health, Magic, Armour, Money Icons_13
+  - first:
+      213: 4486822297194469205
+    second: Health, Magic, Armour, Money Icons_14
+  - first:
+      213: -5155343888543614209
+    second: Health, Magic, Armour, Money Icons_15
+  - first:
+      213: -4585119101933831882
+    second: Health, Magic, Armour, Money Icons_16
+  - first:
+      213: 1425188833509986016
+    second: Health, Magic, Armour, Money Icons_17
+  - first:
+      213: -8135722722694461072
+    second: Health, Magic, Armour, Money Icons_18
+  - first:
+      213: 2985331751829860308
+    second: Health, Magic, Armour, Money Icons_19
+  - first:
+      213: -6722601447586688465
+    second: Health, Magic, Armour, Money Icons_20
+  - first:
+      213: -6942438740923794148
+    second: Health, Magic, Armour, Money Icons_21
+  - first:
+      213: 5234101462518290730
+    second: Health, Magic, Armour, Money Icons_22
+  - first:
+      213: -8092435432656951655
+    second: Health, Magic, Armour, Money Icons_23
+  - first:
+      213: -5186388984092802618
+    second: Health, Magic, Armour, Money Icons_24
+  - first:
+      213: -5316692829034816317
+    second: Health, Magic, Armour, Money Icons_25
+  - first:
+      213: -7241475986177694927
+    second: Health, Magic, Armour, Money Icons_26
+  - first:
+      213: -7407431682449510838
+    second: Health, Magic, Armour, Money Icons_27
+  - first:
+      213: 299118778322817595
+    second: Health, Magic, Armour, Money Icons_28
+  - first:
+      213: 8515782087861953923
+    second: Health, Magic, Armour, Money Icons_29
+  - first:
+      213: -6852996769447062661
+    second: Health, Magic, Armour, Money Icons_30
+  - first:
+      213: -5523946184856346371
+    second: Health, Magic, Armour, Money Icons_31
+  - first:
+      213: 4833505032470961272
+    second: Health, Magic, Armour, Money Icons_32
+  - first:
+      213: 1187449298361364120
+    second: Health, Magic, Armour, Money Icons_33
+  - first:
+      213: 7577013061330539929
+    second: Health, Magic, Armour, Money Icons_34
+  - first:
+      213: -1308957624798012038
+    second: Health, Magic, Armour, Money Icons_35
+  - first:
+      213: -7905041772747566903
+    second: Health, Magic, Armour, Money Icons_36
+  - first:
+      213: 1589782132204880045
+    second: Health, Magic, Armour, Money Icons_37
+  - first:
+      213: 8641791879596992643
+    second: Health, Magic, Armour, Money Icons_38
+  - first:
+      213: -4259463556101051574
+    second: Health, Magic, Armour, Money Icons_39
+  - first:
+      213: -6820335726012073704
+    second: Health, Magic, Armour, Money Icons_40
+  - first:
+      213: -1170190667351061489
+    second: Health, Magic, Armour, Money Icons_41
+  - first:
+      213: 753756782660433250
+    second: Health, Magic, Armour, Money Icons_42
+  - first:
+      213: 3101688194831877462
+    second: Health, Magic, Armour, Money Icons_43
+  - first:
+      213: -1200287490239036134
+    second: Health, Magic, Armour, Money Icons_44
+  - first:
+      213: -3224837266668639766
+    second: Health, Magic, Armour, Money Icons_45
+  - first:
+      213: 3356002514893888160
+    second: Health, Magic, Armour, Money Icons_46
+  - first:
+      213: -2625426805308223985
+    second: Health, Magic, Armour, Money Icons_47
+  - first:
+      213: -2948793291016268426
+    second: Health, Magic, Armour, Money Icons_48
+  - first:
+      213: 1008513768083045233
+    second: Health, Magic, Armour, Money Icons_49
+  - first:
+      213: -4016372393729979272
+    second: Health, Magic, Armour, Money Icons_50
+  - first:
+      213: 1901518190694491878
+    second: Health, Magic, Armour, Money Icons_51
+  - first:
+      213: 4036792760348454574
+    second: Health, Magic, Armour, Money Icons_52
+  - first:
+      213: 8663422894898663754
+    second: Health, Magic, Armour, Money Icons_53
+  - first:
+      213: -7684505774988717682
+    second: Health, Magic, Armour, Money Icons_54
+  - first:
+      213: 6189390857036577418
+    second: Health, Magic, Armour, Money Icons_55
+  - first:
+      213: -2246967138755095163
+    second: Health, Magic, Armour, Money Icons_56
+  - first:
+      213: 4641011195072733171
+    second: Health, Magic, Armour, Money Icons_57
+  - first:
+      213: -6738932641437803611
+    second: Health, Magic, Armour, Money Icons_58
+  - first:
+      213: 9085840920069284662
+    second: Health, Magic, Armour, Money Icons_59
+  - first:
+      213: -6089611845037654169
+    second: Health, Magic, Armour, Money Icons_60
+  - first:
+      213: 4532477861332274477
+    second: Health, Magic, Armour, Money Icons_61
+  - first:
+      213: 3528173178286347063
+    second: Health, Magic, Armour, Money Icons_62
+  - first:
+      213: 4889480706161755983
+    second: Health, Magic, Armour, Money Icons_63
+  - first:
+      213: -6264885613082833590
+    second: Health, Magic, Armour, Money Icons_64
+  - first:
+      213: 8259153117962274147
+    second: Health, Magic, Armour, Money Icons_65
+  - first:
+      213: -4200560737258320183
+    second: Health, Magic, Armour, Money Icons_66
+  - first:
+      213: -3306036595046124499
+    second: Health, Magic, Armour, Money Icons_67
+  - first:
+      213: 8016844769458575400
+    second: Health, Magic, Armour, Money Icons_68
+  - first:
+      213: -7057272636118604118
+    second: Health, Magic, Armour, Money Icons_69
+  - first:
+      213: -7920025814063973078
+    second: Health, Magic, Armour, Money Icons_70
+  - first:
+      213: -5646837893023596428
+    second: Health, Magic, Armour, Money Icons_71
+  - first:
+      213: -2571060540248290518
+    second: Health, Magic, Armour, Money Icons_72
+  - first:
+      213: -8552756364531765209
+    second: Health, Magic, Armour, Money Icons_73
+  - first:
+      213: -2673099971519003631
+    second: Health, Magic, Armour, Money Icons_74
+  - first:
+      213: 8948665497782726376
+    second: Health, Magic, Armour, Money Icons_75
+  - first:
+      213: -1095705403841336130
+    second: Health, Magic, Armour, Money Icons_76
+  - first:
+      213: -5268560220476181485
+    second: Health, Magic, Armour, Money Icons_77
+  - first:
+      213: 9142216181597453761
+    second: Health, Magic, Armour, Money Icons_78
+  - first:
+      213: 6661727561263085410
+    second: Health, Magic, Armour, Money Icons_79
+  - first:
+      213: -4726930209216969665
+    second: Health, Magic, Armour, Money Icons_80
+  - first:
+      213: -312908168654884696
+    second: Health, Magic, Armour, Money Icons_81
+  - first:
+      213: 2130383614849889616
+    second: Health, Magic, Armour, Money Icons_82
+  - first:
+      213: 8479510625087628100
+    second: Health, Magic, Armour, Money Icons_83
+  - first:
+      213: -4283435441413427479
+    second: Health, Magic, Armour, Money Icons_84
+  - first:
+      213: 5297244725313283631
+    second: Health, Magic, Armour, Money Icons_85
+  - first:
+      213: -2998669653891013189
+    second: Health, Magic, Armour, Money Icons_86
+  - first:
+      213: 5595547486930833754
+    second: Health, Magic, Armour, Money Icons_87
+  - first:
+      213: -2657300616851009317
+    second: Health, Magic, Armour, Money Icons_88
+  - first:
+      213: -4437147549593120927
+    second: Health, Magic, Armour, Money Icons_89
+  - first:
+      213: -478918436298527598
+    second: Health, Magic, Armour, Money Icons_90
+  - first:
+      213: 3396326235276356376
+    second: Health, Magic, Armour, Money Icons_91
+  - first:
+      213: 4610701097398514611
+    second: Health, Magic, Armour, Money Icons_92
+  - first:
+      213: -5779774822290898662
+    second: Health, Magic, Armour, Money Icons_93
+  - first:
+      213: -886804426359117478
+    second: Health, Magic, Armour, Money Icons_94
+  - first:
+      213: 2451454962544571265
+    second: Health, Magic, Armour, Money Icons_95
+  - first:
+      213: -5596705382934687645
+    second: Health, Magic, Armour, Money Icons_96
+  - first:
+      213: -1432991184882424131
+    second: Health, Magic, Armour, Money Icons_97
+  - first:
+      213: -708430976021704478
+    second: Health, Magic, Armour, Money Icons_98
+  - first:
+      213: -1021383832389233751
+    second: Health, Magic, Armour, Money Icons_99
+  - first:
+      213: -2690960594150214224
+    second: Health, Magic, Armour, Money Icons_100
+  - first:
+      213: -5920085840413374368
+    second: Health, Magic, Armour, Money Icons_101
+  - first:
+      213: -7982789141834808789
+    second: Health, Magic, Armour, Money Icons_102
+  - first:
+      213: -6873541582955061432
+    second: Health, Magic, Armour, Money Icons_103
+  - first:
+      213: 6026913610983939530
+    second: Health, Magic, Armour, Money Icons_104
+  - first:
+      213: 8513248845855655060
+    second: Health, Magic, Armour, Money Icons_105
+  - first:
+      213: -8619564127610848951
+    second: Health, Magic, Armour, Money Icons_106
+  - first:
+      213: 2776303479141901820
+    second: Health, Magic, Armour, Money Icons_107
+  - first:
+      213: 2542981686863849117
+    second: Health, Magic, Armour, Money Icons_108
+  - first:
+      213: -3245125057463784364
+    second: Health, Magic, Armour, Money Icons_109
+  - first:
+      213: 1385622723889483422
+    second: Health, Magic, Armour, Money Icons_110
+  - first:
+      213: 5320724052794984181
+    second: Health, Magic, Armour, Money Icons_111
+  - first:
+      213: 5834248043347224827
+    second: Health, Magic, Armour, Money Icons_112
+  - first:
+      213: 6202428771216906290
+    second: Health, Magic, Armour, Money Icons_113
+  - first:
+      213: -7402683778049561322
+    second: Health, Magic, Armour, Money Icons_114
+  - first:
+      213: 5812739486187006570
+    second: Health, Magic, Armour, Money Icons_115
+  - first:
+      213: -5567874072041271269
+    second: Health, Magic, Armour, Money Icons_116
+  - first:
+      213: 3022922338653241023
+    second: Health, Magic, Armour, Money Icons_117
+  - first:
+      213: -3730022765326814920
+    second: Health, Magic, Armour, Money Icons_118
+  - first:
+      213: 3217462553502972798
+    second: Health, Magic, Armour, Money Icons_119
+  - first:
+      213: -5388567455288707512
+    second: Health, Magic, Armour, Money Icons_120
+  - first:
+      213: -2276461400011567230
+    second: Health, Magic, Armour, Money Icons_121
+  - first:
+      213: 7022307584615299515
+    second: Health, Magic, Armour, Money Icons_122
+  - first:
+      213: -419517213091870402
+    second: Health, Magic, Armour, Money Icons_123
+  - first:
+      213: 143098479593091712
+    second: Health, Magic, Armour, Money Icons_124
+  - first:
+      213: -8272857855098068499
+    second: Health, Magic, Armour, Money Icons_125
+  - first:
+      213: 3333519849366408921
+    second: Health, Magic, Armour, Money Icons_126
+  - first:
+      213: 3086586718668508483
+    second: Health, Magic, Armour, Money Icons_127
+  - first:
+      213: -8855797683803250239
+    second: Health, Magic, Armour, Money Icons_128
+  - first:
+      213: -1999863905860145244
+    second: Health, Magic, Armour, Money Icons_129
+  - first:
+      213: 2008166618909118924
+    second: Health, Magic, Armour, Money Icons_130
+  - first:
+      213: -8190296378490086119
+    second: Health, Magic, Armour, Money Icons_131
+  - first:
+      213: 8934676786534041353
+    second: Health, Magic, Armour, Money Icons_132
+  - first:
+      213: 1692535762927115064
+    second: Health, Magic, Armour, Money Icons_133
+  - first:
+      213: -6980007743604189669
+    second: Health, Magic, Armour, Money Icons_134
+  - first:
+      213: -5868412741618422114
+    second: Health, Magic, Armour, Money Icons_135
+  - first:
+      213: 2062090630718073858
+    second: Health, Magic, Armour, Money Icons_136
+  - first:
+      213: 1099894050883512830
+    second: Health, Magic, Armour, Money Icons_137
+  - first:
+      213: -4763320448284359008
+    second: Health, Magic, Armour, Money Icons_138
+  - first:
+      213: -5724940257767904041
+    second: Health, Magic, Armour, Money Icons_139
+  - first:
+      213: 2914097890908015015
+    second: Health, Magic, Armour, Money Icons_140
+  - first:
+      213: -6248569166985220295
+    second: Health, Magic, Armour, Money Icons_141
+  - first:
+      213: 3245721561452107186
+    second: Health, Magic, Armour, Money Icons_142
+  - first:
+      213: 3326576927218449900
+    second: Health, Magic, Armour, Money Icons_143
+  - first:
+      213: -8086316947047705297
+    second: Health, Magic, Armour, Money Icons_144
+  - first:
+      213: -3023595431071783828
+    second: Health, Magic, Armour, Money Icons_145
+  - first:
+      213: 697014629725236836
+    second: Health, Magic, Armour, Money Icons_146
+  - first:
+      213: -8615254733236901749
+    second: Health, Magic, Armour, Money Icons_147
+  - first:
+      213: -3494557916100586074
+    second: Health, Magic, Armour, Money Icons_148
+  - first:
+      213: -1611304101812172948
+    second: Health, Magic, Armour, Money Icons_149
+  - first:
+      213: 2226043864198528434
+    second: Health, Magic, Armour, Money Icons_150
+  - first:
+      213: 412653988025199897
+    second: Health, Magic, Armour, Money Icons_151
+  - first:
+      213: 7533695086016084778
+    second: Health, Magic, Armour, Money Icons_152
+  - first:
+      213: -5261441911181393150
+    second: Health, Magic, Armour, Money Icons_153
+  - first:
+      213: -5839614689993861620
+    second: Health, Magic, Armour, Money Icons_154
+  - first:
+      213: -7940522970884511012
+    second: Health, Magic, Armour, Money Icons_155
+  - first:
+      213: -2719490099881451750
+    second: Health, Magic, Armour, Money Icons_156
+  - first:
+      213: -1328548302381077000
+    second: Health, Magic, Armour, Money Icons_157
+  - first:
+      213: -7211507601611572868
+    second: Health, Magic, Armour, Money Icons_158
+  - first:
+      213: 6154581279641475202
+    second: Health, Magic, Armour, Money Icons_159
+  - first:
+      213: 7883102244474246501
+    second: Health, Magic, Armour, Money Icons_160
+  - first:
+      213: -7338053857787223991
+    second: Health, Magic, Armour, Money Icons_161
+  - first:
+      213: 2736263828776711820
+    second: Health, Magic, Armour, Money Icons_162
+  - first:
+      213: 7253767288490231132
+    second: Health, Magic, Armour, Money Icons_163
+  - first:
+      213: 190021462737739138
+    second: Health, Magic, Armour, Money Icons_164
+  - first:
+      213: 4768717960996616504
+    second: Health, Magic, Armour, Money Icons_165
+  - first:
+      213: -157557944688062697
+    second: Health, Magic, Armour, Money Icons_166
+  - first:
+      213: -4184273689338214723
+    second: Health, Magic, Armour, Money Icons_167
+  - first:
+      213: 5031419103324800904
+    second: Health, Magic, Armour, Money Icons_168
+  - first:
+      213: 3358895447619137174
+    second: Health, Magic, Armour, Money Icons_169
+  - first:
+      213: -7107865236626303794
+    second: Health, Magic, Armour, Money Icons_170
+  - first:
+      213: 7490966607715523681
+    second: Health, Magic, Armour, Money Icons_171
+  - first:
+      213: -4920345611555794355
+    second: Health, Magic, Armour, Money Icons_172
+  - first:
+      213: -3787277124468603886
+    second: Health, Magic, Armour, Money Icons_173
+  - first:
+      213: -5530631376153049387
+    second: Health, Magic, Armour, Money Icons_174
+  - first:
+      213: -339673608207227033
+    second: Health, Magic, Armour, Money Icons_175
+  - first:
+      213: -1558727528221712709
+    second: Health, Magic, Armour, Money Icons_176
+  - first:
+      213: 3210810743479993017
+    second: Health, Magic, Armour, Money Icons_177
+  - first:
+      213: -7720144866737401158
+    second: Health, Magic, Armour, Money Icons_178
+  - first:
+      213: -3252689377873653179
+    second: Health, Magic, Armour, Money Icons_179
+  - first:
+      213: 8318962731433492480
+    second: Health, Magic, Armour, Money Icons_180
+  - first:
+      213: -5948478713425993440
+    second: Health, Magic, Armour, Money Icons_181
+  - first:
+      213: -2448017771018811229
+    second: Health, Magic, Armour, Money Icons_182
+  - first:
+      213: 5535639335283698157
+    second: Health, Magic, Armour, Money Icons_183
+  - first:
+      213: -2919005860735542928
+    second: Health, Magic, Armour, Money Icons_184
+  - first:
+      213: -653416636298728520
+    second: Health, Magic, Armour, Money Icons_185
+  - first:
+      213: -4590061951691996985
+    second: Health, Magic, Armour, Money Icons_186
+  - first:
+      213: 6587124648102386113
+    second: Health, Magic, Armour, Money Icons_187
+  - first:
+      213: -784468277067643920
+    second: Health, Magic, Armour, Money Icons_188
+  - first:
+      213: 2654083303930301318
+    second: Health, Magic, Armour, Money Icons_189
+  - first:
+      213: 294852493523254139
+    second: Health, Magic, Armour, Money Icons_190
+  - first:
+      213: 2389780215897757960
+    second: Health, Magic, Armour, Money Icons_191
+  - first:
+      213: -5664388301158613272
+    second: Health, Magic, Armour, Money Icons_192
+  - first:
+      213: 4301486661316841460
+    second: Health, Magic, Armour, Money Icons_193
+  - first:
+      213: -2426987781048523572
+    second: Health, Magic, Armour, Money Icons_194
+  - first:
+      213: 9120940544036842749
+    second: Health, Magic, Armour, Money Icons_195
+  - first:
+      213: 1431116312471885864
+    second: Health, Magic, Armour, Money Icons_196
+  - first:
+      213: 5223277657271595568
+    second: Health, Magic, Armour, Money Icons_197
+  - first:
+      213: -6886579385723642165
+    second: Health, Magic, Armour, Money Icons_198
+  - first:
+      213: 918658411065180161
+    second: Health, Magic, Armour, Money Icons_199
+  - first:
+      213: 8590826926308293651
+    second: Health, Magic, Armour, Money Icons_200
+  - first:
+      213: -9025032315136913716
+    second: Health, Magic, Armour, Money Icons_201
+  - first:
+      213: -7497537693224426072
+    second: Health, Magic, Armour, Money Icons_202
+  - first:
+      213: -817963953998064562
+    second: Health, Magic, Armour, Money Icons_203
+  - first:
+      213: -8932359408372913190
+    second: Health, Magic, Armour, Money Icons_204
+  - first:
+      213: 4952326087435964696
+    second: Health, Magic, Armour, Money Icons_205
+  - first:
+      213: -6962027366021490452
+    second: Health, Magic, Armour, Money Icons_206
+  - first:
+      213: -4840598581994015852
+    second: Health, Magic, Armour, Money Icons_207
+  - first:
+      213: -6437263799590818856
+    second: Health, Magic, Armour, Money Icons_208
+  - first:
+      213: -5338033746026063596
+    second: Health, Magic, Armour, Money Icons_209
+  - first:
+      213: 6156053218916591222
+    second: Health, Magic, Armour, Money Icons_210
+  - first:
+      213: -1531072513822798149
+    second: Health, Magic, Armour, Money Icons_211
+  - first:
+      213: -3329609296582547758
+    second: Health, Magic, Armour, Money Icons_212
+  - first:
+      213: 7510297713793385865
+    second: Health, Magic, Armour, Money Icons_213
+  - first:
+      213: 3588429134049990177
+    second: Health, Magic, Armour, Money Icons_214
+  - first:
+      213: -4219235177507854184
+    second: Health, Magic, Armour, Money Icons_215
+  - first:
+      213: 8489955382094451955
+    second: Health, Magic, Armour, Money Icons_216
+  - first:
+      213: 4422257978185362002
+    second: Health, Magic, Armour, Money Icons_217
+  - first:
+      213: 1723514395796273872
+    second: Health, Magic, Armour, Money Icons_218
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 226
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 390d0dfd5da0733c0800000000000000
+      internalID: -4380020198895202157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 226
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28e6adf3d6092fc50800000000000000
+      internalID: 6697574394750463618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_2
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 226
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf11e8d2ae22bfcf0800000000000000
+      internalID: -217541767815360005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_3
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 226
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e63f99fed1cfa78d0800000000000000
+      internalID: -2847686608854322322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_4
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 226
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c61bc1dadb178e70800000000000000
+      internalID: 9117286597271426753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_5
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 225
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c85048dc5b62cce60800000000000000
+      internalID: 7983798801699964300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_6
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 225
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95eff3423d5672010800000000000000
+      internalID: 1164010986219241049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_7
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 225
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9a7dd3a3d6f9a960800000000000000
+      internalID: 7613888033894267548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_8
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 225
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33df55b39981b2400800000000000000
+      internalID: 300360846554823987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_9
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 225
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d2ccff5d2e421310800000000000000
+      internalID: 1374246793092317912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_10
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 225
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3642dd1ad48c8670800000000000000
+      internalID: 8542348665553045054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_11
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 225
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ab1da551f2ceea30800000000000000
+      internalID: 4246545840437271456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_12
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 225
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3775ccde5a7a92e0800000000000000
+      internalID: -2118246126874953924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_13
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 225
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ad3a2bb5d1819d90800000000000000
+      internalID: -7092745183163695709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_14
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 225
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 557149a6b15644e30800000000000000
+      internalID: 4486822297194469205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_15
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 209
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffa706c2c0a8478b0800000000000000
+      internalID: -5155343888543614209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_16
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 209
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 639306448726e50c0800000000000000
+      internalID: -4585119101933831882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_17
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 209
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ee473f61b947c310800000000000000
+      internalID: 1425188833509986016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_18
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 209
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07909b2e94b181f80800000000000000
+      internalID: -8135722722694461072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_19
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 209
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4df638c49670e6920800000000000000
+      internalID: 2985331751829860308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_20
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 208
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f22911ee99584b2a0800000000000000
+      internalID: -6722601447586688465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_21
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 208
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1db35c6fb087af90800000000000000
+      internalID: -6942438740923794148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_22
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 208
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2951c77c8343a840800000000000000
+      internalID: 5234101462518290730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_23
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 208
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 996a2bc79d4e1bf80800000000000000
+      internalID: -8092435432656951655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_24
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 208
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c1462892be3608b0800000000000000
+      internalID: -5186388984092802618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_25
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 208
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cc53818a005736b0800000000000000
+      internalID: -5316692829034816317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_26
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 208
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1336b5225fb118b90800000000000000
+      internalID: -7241475986177694927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_27
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 208
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4e6f9d8124833990800000000000000
+      internalID: -7407431682449510838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_28
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 208
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b32949fa1fea62400800000000000000
+      internalID: 299118778322817595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_29
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 208
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38565abb0b22e2670800000000000000
+      internalID: 8515782087861953923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7355363fb345e0a0800000000000000
+      internalID: -6852996769447062661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_31
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 192
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df0634546300753b0800000000000000
+      internalID: -5523946184856346371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_32
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87c9e70d73f041340800000000000000
+      internalID: 4833505032470961272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_33
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 192
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89ead9178daaa7010800000000000000
+      internalID: 1187449298361364120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_34
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9951a1b0c35f62960800000000000000
+      internalID: 7577013061330539929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_35
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 191
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7d10e3b9f5a5dde0800000000000000
+      internalID: -1308957624798012038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_36
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 191
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c0d1c0f366ab4290800000000000000
+      internalID: -7905041772747566903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_37
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 191
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da0c55c1d6a001610800000000000000
+      internalID: 1589782132204880045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_38
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 191
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 388eb36adefcde770800000000000000
+      internalID: 8641791879596992643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_39
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 191
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4befdc967853e4c0800000000000000
+      internalID: -4259463556101051574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_40
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 191
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 819f42afacc4951a0800000000000000
+      internalID: -6820335726012073704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_41
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 191
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0c0019b9c5a2cfe0800000000000000
+      internalID: -1170190667351061489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_42
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 191
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 265348ddcc1e57a00800000000000000
+      internalID: 753756782660433250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_43
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 191
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6550af0daf86b0b20800000000000000
+      internalID: 3101688194831877462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_44
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 191
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1505f313e8b75fe0800000000000000
+      internalID: -1200287490239036134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_45
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 178
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae926c587931f33d0800000000000000
+      internalID: -3224837266668639766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_46
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 178
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aa5195a18ae29e20800000000000000
+      internalID: 3356002514893888160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_47
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 178
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0e80dd0b3c909bd0800000000000000
+      internalID: -2625426805308223985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_48
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 178
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6759bec0028c317d0800000000000000
+      internalID: -2948793291016268426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_49
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 178
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17b3ea1cde5fefd00800000000000000
+      internalID: 1008513768083045233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_50
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 177
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87c0a0a669af248c0800000000000000
+      internalID: -4016372393729979272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_51
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 177
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e6e94248bc836a10800000000000000
+      internalID: 1901518190694491878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_52
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 177
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eae2070b0a1950830800000000000000
+      internalID: 4036792760348454574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_53
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 177
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a41db6dd839aa3870800000000000000
+      internalID: 8663422894898663754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_54
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 177
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e811c5f36b62b5590800000000000000
+      internalID: -7684505774988717682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_55
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 177
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8a37b1113225e550800000000000000
+      internalID: 6189390857036577418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_56
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 177
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 585d680da4b21d0e0800000000000000
+      internalID: -2246967138755095163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_57
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 177
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ffdbe0c71f286040800000000000000
+      internalID: 4641011195072733171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_58
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 177
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ab90dd87708a72a0800000000000000
+      internalID: -6738932641437803611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_59
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 177
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 633207e8d24671e70800000000000000
+      internalID: 9085840920069284662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_60
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 161
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76ff4848a4a5d7ba0800000000000000
+      internalID: -6089611845037654169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_61
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 161
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2d480dc99896ee30800000000000000
+      internalID: 4532477861332274477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_62
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 161
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73391d500d696f030800000000000000
+      internalID: 3528173178286347063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_63
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 161
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f47c5e2fbccead340800000000000000
+      internalID: 4889480706161755983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_64
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 161
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4d0eb94ab7ae09a0800000000000000
+      internalID: -6264885613082833590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_65
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 160
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36583bd70086e9270800000000000000
+      internalID: 8259153117962274147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_66
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 160
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cec346d34c94b5c0800000000000000
+      internalID: -4200560737258320183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_67
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 160
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2475d1ab399e12d0800000000000000
+      internalID: -3306036595046124499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_68
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 160
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 828d60fb7dd814f60800000000000000
+      internalID: 8016844769458575400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_69
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 160
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa6e011bde78f0e90800000000000000
+      internalID: -7057272636118604118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_70
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 160
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2dfac4fb7a661290800000000000000
+      internalID: -7920025814063973078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_71
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 160
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4700d12cad662a1b0800000000000000
+      internalID: -5646837893023596428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_72
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 160
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2b0a7a8f02c15cd0800000000000000
+      internalID: -2571060540248290518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_73
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 160
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7207f91a6618e4980800000000000000
+      internalID: -8552756364531765209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_74
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 160
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 114c0841dbd37ead0800000000000000
+      internalID: -2673099971519003631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_75
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ee2221bbdb003c70800000000000000
+      internalID: 8948665497782726376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_76
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 144
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebcaf819db54bc0f0800000000000000
+      internalID: -1095705403841336130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_77
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 144
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31473ccb46052e6b0800000000000000
+      internalID: -5268560220476181485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_78
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 144
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cdb1fbfd2dafde70800000000000000
+      internalID: 9142216181597453761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_79
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 144
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 267f38febe5337c50800000000000000
+      internalID: 6661727561263085410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_80
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 143
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f344f81e402966eb0800000000000000
+      internalID: -4726930209216969665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_81
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 143
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a0f100bda358abf0800000000000000
+      internalID: -312908168654884696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_82
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 143
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 055b0764c94a09d10800000000000000
+      internalID: 2130383614849889616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_83
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 143
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 443af75bcf54da570800000000000000
+      internalID: 8479510625087628100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_84
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 143
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eeeb30292e2e84c0800000000000000
+      internalID: -4283435441413427479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_85
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 143
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f262c9cf208938940800000000000000
+      internalID: 5297244725313283631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_86
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 143
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb5251166d59266d0800000000000000
+      internalID: -2998669653891013189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_87
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 143
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a51975afac067ad40800000000000000
+      internalID: 5595547486930833754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_88
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 143
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd05b2ffa2f5f1bd0800000000000000
+      internalID: -2657300616851009317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_89
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 143
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16fc18a00d51c62c0800000000000000
+      internalID: -4437147549593120927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_90
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 130
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29c6a08383a8a59f0800000000000000
+      internalID: -478918436298527598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_91
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 130
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81bacfa67bc222f20800000000000000
+      internalID: 3396326235276356376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_92
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 130
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b331f338308cff30800000000000000
+      internalID: 4610701097398514611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_93
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 130
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a11ca93fb6d1acfa0800000000000000
+      internalID: -5779774822290898662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_94
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 130
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a59ee9d921071b3f0800000000000000
+      internalID: -886804426359117478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_95
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 129
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1837651dc41550220800000000000000
+      internalID: 2451454962544571265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_96
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 129
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36059a95b128452b0800000000000000
+      internalID: -5596705382934687645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_97
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 129
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db621d21c1efc1ce0800000000000000
+      internalID: -1432991184882424131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_98
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 129
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e0d75ed7c52b26f0800000000000000
+      internalID: -708430976021704478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_99
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 129
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a3dc13e0d053d1f0800000000000000
+      internalID: -1021383832389233751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_100
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 129
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b53a11d899c7aad0800000000000000
+      internalID: -2690960594150214224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_101
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 129
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 068475a4b41a7dda0800000000000000
+      internalID: -5920085840413374368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_102
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 129
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b224714f19f673190800000000000000
+      internalID: -7982789141834808789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_103
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 129
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84f561f09564c90a0800000000000000
+      internalID: -6873541582955061432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_104
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 129
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acd1aaa4ff5e3a350800000000000000
+      internalID: 6026913610983939530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_105
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 113
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4940bbd58b2252670800000000000000
+      internalID: 8513248845855655060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_106
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 113
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9493e072818216880800000000000000
+      internalID: -8619564127610848951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_107
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 113
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf52fe60e49678620800000000000000
+      internalID: 2776303479141901820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_108
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 113
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d96e7d3fe5c7a4320800000000000000
+      internalID: 2542981686863849117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_109
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 113
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45ce62224fff6f2d0800000000000000
+      internalID: -3245125057463784364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_110
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 112
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9e442aa688ba3310800000000000000
+      internalID: 1385622723889483422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_111
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 112
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f6c8bae55207d940800000000000000
+      internalID: 5320724052794984181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_112
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 112
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf8aa3b2fa967f050800000000000000
+      internalID: 5834248043347224827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_113
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 112
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 238db050b14731650800000000000000
+      internalID: 6202428771216906290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_114
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 112
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61d2fc03352644990800000000000000
+      internalID: -7402683778049561322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_115
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 112
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6a2016f3cffaa050800000000000000
+      internalID: 5812739486187006570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_116
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 112
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b105fd50800fab2b0800000000000000
+      internalID: -5567874072041271269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_117
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 112
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbef403d9d393f920800000000000000
+      internalID: 3022922338653241023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_118
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 112
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8313394be0c4c3cc0800000000000000
+      internalID: -3730022765326814920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_119
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 112
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7b7aa34529b6ac20800000000000000
+      internalID: 3217462553502972798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_120
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84639430376f735b0800000000000000
+      internalID: -5388567455288707512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_121
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28f0c6bfa626860e0800000000000000
+      internalID: -2276461400011567230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_122
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb9b68cda8f347160800000000000000
+      internalID: 7022307584615299515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_123
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e394f7041539d2af0800000000000000
+      internalID: -419517213091870402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_124
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0827b0c1f436cf100800000000000000
+      internalID: 143098479593091712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_125
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 95
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de1649dbc97e03d80800000000000000
+      internalID: -8272857855098068499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_126
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 95
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dec23924aa034e20800000000000000
+      internalID: 3333519849366408921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_127
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 95
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34dcca66442c5da20800000000000000
+      internalID: 3086586718668508483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_128
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 95
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c12e263de2e91580800000000000000
+      internalID: -8855797683803250239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_129
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 95
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4afa4149f5e0f34e0800000000000000
+      internalID: -1999863905860145244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_130
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 95
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc110e176e07edb10800000000000000
+      internalID: 2008166618909118924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_131
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 95
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91d1eea76d8365e80800000000000000
+      internalID: -8190296378490086119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_132
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 95
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9074a4c03395efb70800000000000000
+      internalID: 8934676786534041353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_133
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 95
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83b5ae61f481d7710800000000000000
+      internalID: 1692535762927115064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_134
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 95
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b161ff850f7022f90800000000000000
+      internalID: -6980007743604189669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_135
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 82
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9e257424b53f8ea0800000000000000
+      internalID: -5868412741618422114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_136
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 82
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20cac92d0840e9c10800000000000000
+      internalID: 2062090630718073858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_137
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 82
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef92a71dfcb934f00800000000000000
+      internalID: 1099894050883512830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_138
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 82
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a608a81a4945edb0800000000000000
+      internalID: -4763320448284359008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_139
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 82
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dc2967ea2dec80b0800000000000000
+      internalID: -5724940257767904041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_140
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 81
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a9894c9794f07820800000000000000
+      internalID: 2914097890908015015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_141
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 81
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93f236fe27f9849a0800000000000000
+      internalID: -6248569166985220295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_142
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 81
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b5dd26409e1b0d20800000000000000
+      internalID: 3245721561452107186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_143
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 81
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cedbdd027106a2e20800000000000000
+      internalID: 3326576927218449900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_144
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 81
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f25100e6491a7cf80800000000000000
+      internalID: -8086316947047705297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_145
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 82
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c64e872a9f70a06d0800000000000000
+      internalID: -3023595431071783828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_146
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 82
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46ee500ec1b4ca900800000000000000
+      internalID: 697014629725236836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_147
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 81
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8869e73777707880800000000000000
+      internalID: -8615254733236901749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_148
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 81
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a59bcb1716d08fc0800000000000000
+      internalID: -3494557916100586074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_149
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 65
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c670b5ad47f73a9e0800000000000000
+      internalID: -1611304101812172948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_150
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 65
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bdbdf3b91f74ee10800000000000000
+      internalID: 2226043864198528434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_151
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 65
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91de363ad9a0ab500800000000000000
+      internalID: 412653988025199897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_152
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 65
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2b3818f3cf0d8860800000000000000
+      internalID: 7533695086016084778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_153
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 65
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2034ea5457a9bf6b0800000000000000
+      internalID: -5261441911181393150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_154
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 64
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0653c9016585fea0800000000000000
+      internalID: -5839614689993861620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_155
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 64
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cda699dbd689dc190800000000000000
+      internalID: -7940522970884511012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_156
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 64
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1fdf52a92e624ad0800000000000000
+      internalID: -2719490099881451750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_157
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 64
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fda0a1ab5c009de0800000000000000
+      internalID: -1328548302381077000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_158
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 64
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c79b9e66b049beb90800000000000000
+      internalID: -7211507601611572868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_159
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 65
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2889c42c017796550800000000000000
+      internalID: 6154581279641475202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_160
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 65
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 565d8f199b7666d60800000000000000
+      internalID: 7883102244474246501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_161
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 64
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94068ef15eef92a90800000000000000
+      internalID: -7338053857787223991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_162
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 64
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c867cf5747929f520800000000000000
+      internalID: 2736263828776711820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_163
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c550fc1baee8aa460800000000000000
+      internalID: 7253767288490231132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_164
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28dde2a738713a200800000000000000
+      internalID: 190021462737739138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_165
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8397a3348b3ed2240800000000000000
+      internalID: 4768717960996616504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_166
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71fc35352ed30ddf0800000000000000
+      internalID: -157557944688062697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_167
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db68bffaf397ee5c0800000000000000
+      internalID: -4184273689338214723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_168
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 47
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8870ac1540133d540800000000000000
+      internalID: 5031419103324800904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_169
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 47
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69ee3090d913d9e20800000000000000
+      internalID: 3358895447619137174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_170
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 47
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec49a83f93acb5d90800000000000000
+      internalID: -7107865236626303794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_171
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 47
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16c523dd07245f760800000000000000
+      internalID: 7490966607715523681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_172
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 47
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4290134cbb67bbb0800000000000000
+      internalID: -4920345611555794355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_173
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 214061a6583e07bc0800000000000000
+      internalID: -3787277124468603886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_174
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 33
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d684c0e0104f33b0800000000000000
+      internalID: -5530631376153049387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_175
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 767ab3b27ac394bf0800000000000000
+      internalID: -339673608207227033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_176
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 33
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbed8b252994e5ae0800000000000000
+      internalID: -1558727528221712709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_177
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 47
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b2022e0c571f8c20800000000000000
+      internalID: 3210810743479993017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_178
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 47
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab2df8395298cd490800000000000000
+      internalID: -7720144866737401158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_179
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 34
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 542972b8e302cd2d0800000000000000
+      internalID: -3252689377873653179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_180
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 34
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0008eca4784e27370800000000000000
+      internalID: 8318962731433492480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_181
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 34
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02165446022c27da0800000000000000
+      internalID: -5948478713425993440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_182
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 34
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a88492bec4e60ed0800000000000000
+      internalID: -2448017771018811229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_183
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 34
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de9a34875aa82dc40800000000000000
+      internalID: 5535639335283698157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_184
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 33
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 079139d92ab9d77d0800000000000000
+      internalID: -2919005860735542928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_185
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 33
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bb651ff7099ee6f0800000000000000
+      internalID: -653416636298728520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_186
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 33
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c0cc5069f2dc40c0800000000000000
+      internalID: -4590061951691996985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_187
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 33
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c9dc55a7fa2a6b50800000000000000
+      internalID: 6587124648102386113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_188
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 33
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f302df12420d15f0800000000000000
+      internalID: -784468277067643920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_189
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 33
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68b8f07f3b235d420800000000000000
+      internalID: 2654083303930301318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_190
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 33
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7b7799d7c6871400800000000000000
+      internalID: 294852493523254139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_191
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 17
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80997dbd1743a2120800000000000000
+      internalID: 2389780215897757960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_192
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 17
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eeff8fe9dc0461b0800000000000000
+      internalID: -5664388301158613272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_193
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 17
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ff0fd50453f1bb30800000000000000
+      internalID: 4301486661316841460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_194
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 17
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc4a36cc87b915ed0800000000000000
+      internalID: -2426987781048523572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_195
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 17
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfc26c89917149e70800000000000000
+      internalID: 9120940544036842749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_196
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 16
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 828572d24b85cd310800000000000000
+      internalID: 1431116312471885864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_197
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 16
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03278ecea5fcc7840800000000000000
+      internalID: 5223277657271595568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_198
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 16
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bce1a6c0984fd60a0800000000000000
+      internalID: -6886579385723642165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_199
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 16
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 100077525fabfbc00800000000000000
+      internalID: 918658411065180161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_200
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 16
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31c7775c29fb83770800000000000000
+      internalID: 8590826926308293651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_201
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccec7d11de4a0c280800000000000000
+      internalID: -9025032315136913716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_202
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 16
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a5a141113563f790800000000000000
+      internalID: -7497537693224426072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_203
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e441fda1e1206a4f0800000000000000
+      internalID: -817963953998064562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_204
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 16
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adb60d99172e90480800000000000000
+      internalID: -8932359408372913190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_205
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 16
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 811558586523ab440800000000000000
+      internalID: 4952326087435964696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_206
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 16
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce89dbb3ff8e16f90800000000000000
+      internalID: -6962027366021490452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_207
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 493bcfb7c3db2dcb0800000000000000
+      internalID: -4840598581994015852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_208
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8db68eb2eae3aa6a0800000000000000
+      internalID: -6437263799590818856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_209
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4199111179e7be5b0800000000000000
+      internalID: -5338033746026063596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_210
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6766ce359c1be6550800000000000000
+      internalID: 6156053218916591222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_211
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbe4a3029a980cae0800000000000000
+      internalID: -1531072513822798149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_212
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 0
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d6eb5c5cf9dac1d0800000000000000
+      internalID: -3329609296582547758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_213
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 0
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 985451cbaffe93860800000000000000
+      internalID: 7510297713793385865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_214
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 0
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12656bcf849acc130800000000000000
+      internalID: 3588429134049990177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_215
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 0
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 898efc4e5f34275c0800000000000000
+      internalID: -4219235177507854184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_216
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 0
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f4d7a4307162d570800000000000000
+      internalID: 8489955382094451955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_217
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 0
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25a20e673340f5d30800000000000000
+      internalID: 4422257978185362002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_218
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 0
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0da75be16372be710800000000000000
+      internalID: 1723514395796273872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Health, Magic, Armour, Money Icons_0: -4380020198895202157
+      Health, Magic, Armour, Money Icons_1: 6697574394750463618
+      Health, Magic, Armour, Money Icons_10: 8542348665553045054
+      Health, Magic, Armour, Money Icons_100: -2690960594150214224
+      Health, Magic, Armour, Money Icons_101: -5920085840413374368
+      Health, Magic, Armour, Money Icons_102: -7982789141834808789
+      Health, Magic, Armour, Money Icons_103: -6873541582955061432
+      Health, Magic, Armour, Money Icons_104: 6026913610983939530
+      Health, Magic, Armour, Money Icons_105: 8513248845855655060
+      Health, Magic, Armour, Money Icons_106: -8619564127610848951
+      Health, Magic, Armour, Money Icons_107: 2776303479141901820
+      Health, Magic, Armour, Money Icons_108: 2542981686863849117
+      Health, Magic, Armour, Money Icons_109: -3245125057463784364
+      Health, Magic, Armour, Money Icons_11: 4246545840437271456
+      Health, Magic, Armour, Money Icons_110: 1385622723889483422
+      Health, Magic, Armour, Money Icons_111: 5320724052794984181
+      Health, Magic, Armour, Money Icons_112: 5834248043347224827
+      Health, Magic, Armour, Money Icons_113: 6202428771216906290
+      Health, Magic, Armour, Money Icons_114: -7402683778049561322
+      Health, Magic, Armour, Money Icons_115: 5812739486187006570
+      Health, Magic, Armour, Money Icons_116: -5567874072041271269
+      Health, Magic, Armour, Money Icons_117: 3022922338653241023
+      Health, Magic, Armour, Money Icons_118: -3730022765326814920
+      Health, Magic, Armour, Money Icons_119: 3217462553502972798
+      Health, Magic, Armour, Money Icons_12: -2118246126874953924
+      Health, Magic, Armour, Money Icons_120: -5388567455288707512
+      Health, Magic, Armour, Money Icons_121: -2276461400011567230
+      Health, Magic, Armour, Money Icons_122: 7022307584615299515
+      Health, Magic, Armour, Money Icons_123: -419517213091870402
+      Health, Magic, Armour, Money Icons_124: 143098479593091712
+      Health, Magic, Armour, Money Icons_125: -8272857855098068499
+      Health, Magic, Armour, Money Icons_126: 3333519849366408921
+      Health, Magic, Armour, Money Icons_127: 3086586718668508483
+      Health, Magic, Armour, Money Icons_128: -8855797683803250239
+      Health, Magic, Armour, Money Icons_129: -1999863905860145244
+      Health, Magic, Armour, Money Icons_13: -7092745183163695709
+      Health, Magic, Armour, Money Icons_130: 2008166618909118924
+      Health, Magic, Armour, Money Icons_131: -8190296378490086119
+      Health, Magic, Armour, Money Icons_132: 8934676786534041353
+      Health, Magic, Armour, Money Icons_133: 1692535762927115064
+      Health, Magic, Armour, Money Icons_134: -6980007743604189669
+      Health, Magic, Armour, Money Icons_135: -5868412741618422114
+      Health, Magic, Armour, Money Icons_136: 2062090630718073858
+      Health, Magic, Armour, Money Icons_137: 1099894050883512830
+      Health, Magic, Armour, Money Icons_138: -4763320448284359008
+      Health, Magic, Armour, Money Icons_139: -5724940257767904041
+      Health, Magic, Armour, Money Icons_14: 4486822297194469205
+      Health, Magic, Armour, Money Icons_140: 2914097890908015015
+      Health, Magic, Armour, Money Icons_141: -6248569166985220295
+      Health, Magic, Armour, Money Icons_142: 3245721561452107186
+      Health, Magic, Armour, Money Icons_143: 3326576927218449900
+      Health, Magic, Armour, Money Icons_144: -8086316947047705297
+      Health, Magic, Armour, Money Icons_145: -3023595431071783828
+      Health, Magic, Armour, Money Icons_146: 697014629725236836
+      Health, Magic, Armour, Money Icons_147: -8615254733236901749
+      Health, Magic, Armour, Money Icons_148: -3494557916100586074
+      Health, Magic, Armour, Money Icons_149: -1611304101812172948
+      Health, Magic, Armour, Money Icons_15: -5155343888543614209
+      Health, Magic, Armour, Money Icons_150: 2226043864198528434
+      Health, Magic, Armour, Money Icons_151: 412653988025199897
+      Health, Magic, Armour, Money Icons_152: 7533695086016084778
+      Health, Magic, Armour, Money Icons_153: -5261441911181393150
+      Health, Magic, Armour, Money Icons_154: -5839614689993861620
+      Health, Magic, Armour, Money Icons_155: -7940522970884511012
+      Health, Magic, Armour, Money Icons_156: -2719490099881451750
+      Health, Magic, Armour, Money Icons_157: -1328548302381077000
+      Health, Magic, Armour, Money Icons_158: -7211507601611572868
+      Health, Magic, Armour, Money Icons_159: 6154581279641475202
+      Health, Magic, Armour, Money Icons_16: -4585119101933831882
+      Health, Magic, Armour, Money Icons_160: 7883102244474246501
+      Health, Magic, Armour, Money Icons_161: -7338053857787223991
+      Health, Magic, Armour, Money Icons_162: 2736263828776711820
+      Health, Magic, Armour, Money Icons_163: 7253767288490231132
+      Health, Magic, Armour, Money Icons_164: 190021462737739138
+      Health, Magic, Armour, Money Icons_165: 4768717960996616504
+      Health, Magic, Armour, Money Icons_166: -157557944688062697
+      Health, Magic, Armour, Money Icons_167: -4184273689338214723
+      Health, Magic, Armour, Money Icons_168: 5031419103324800904
+      Health, Magic, Armour, Money Icons_169: 3358895447619137174
+      Health, Magic, Armour, Money Icons_17: 1425188833509986016
+      Health, Magic, Armour, Money Icons_170: -7107865236626303794
+      Health, Magic, Armour, Money Icons_171: 7490966607715523681
+      Health, Magic, Armour, Money Icons_172: -4920345611555794355
+      Health, Magic, Armour, Money Icons_173: -3787277124468603886
+      Health, Magic, Armour, Money Icons_174: -5530631376153049387
+      Health, Magic, Armour, Money Icons_175: -339673608207227033
+      Health, Magic, Armour, Money Icons_176: -1558727528221712709
+      Health, Magic, Armour, Money Icons_177: 3210810743479993017
+      Health, Magic, Armour, Money Icons_178: -7720144866737401158
+      Health, Magic, Armour, Money Icons_179: -3252689377873653179
+      Health, Magic, Armour, Money Icons_18: -8135722722694461072
+      Health, Magic, Armour, Money Icons_180: 8318962731433492480
+      Health, Magic, Armour, Money Icons_181: -5948478713425993440
+      Health, Magic, Armour, Money Icons_182: -2448017771018811229
+      Health, Magic, Armour, Money Icons_183: 5535639335283698157
+      Health, Magic, Armour, Money Icons_184: -2919005860735542928
+      Health, Magic, Armour, Money Icons_185: -653416636298728520
+      Health, Magic, Armour, Money Icons_186: -4590061951691996985
+      Health, Magic, Armour, Money Icons_187: 6587124648102386113
+      Health, Magic, Armour, Money Icons_188: -784468277067643920
+      Health, Magic, Armour, Money Icons_189: 2654083303930301318
+      Health, Magic, Armour, Money Icons_19: 2985331751829860308
+      Health, Magic, Armour, Money Icons_190: 294852493523254139
+      Health, Magic, Armour, Money Icons_191: 2389780215897757960
+      Health, Magic, Armour, Money Icons_192: -5664388301158613272
+      Health, Magic, Armour, Money Icons_193: 4301486661316841460
+      Health, Magic, Armour, Money Icons_194: -2426987781048523572
+      Health, Magic, Armour, Money Icons_195: 9120940544036842749
+      Health, Magic, Armour, Money Icons_196: 1431116312471885864
+      Health, Magic, Armour, Money Icons_197: 5223277657271595568
+      Health, Magic, Armour, Money Icons_198: -6886579385723642165
+      Health, Magic, Armour, Money Icons_199: 918658411065180161
+      Health, Magic, Armour, Money Icons_2: -217541767815360005
+      Health, Magic, Armour, Money Icons_20: -6722601447586688465
+      Health, Magic, Armour, Money Icons_200: 8590826926308293651
+      Health, Magic, Armour, Money Icons_201: -9025032315136913716
+      Health, Magic, Armour, Money Icons_202: -7497537693224426072
+      Health, Magic, Armour, Money Icons_203: -817963953998064562
+      Health, Magic, Armour, Money Icons_204: -8932359408372913190
+      Health, Magic, Armour, Money Icons_205: 4952326087435964696
+      Health, Magic, Armour, Money Icons_206: -6962027366021490452
+      Health, Magic, Armour, Money Icons_207: -4840598581994015852
+      Health, Magic, Armour, Money Icons_208: -6437263799590818856
+      Health, Magic, Armour, Money Icons_209: -5338033746026063596
+      Health, Magic, Armour, Money Icons_21: -6942438740923794148
+      Health, Magic, Armour, Money Icons_210: 6156053218916591222
+      Health, Magic, Armour, Money Icons_211: -1531072513822798149
+      Health, Magic, Armour, Money Icons_212: -3329609296582547758
+      Health, Magic, Armour, Money Icons_213: 7510297713793385865
+      Health, Magic, Armour, Money Icons_214: 3588429134049990177
+      Health, Magic, Armour, Money Icons_215: -4219235177507854184
+      Health, Magic, Armour, Money Icons_216: 8489955382094451955
+      Health, Magic, Armour, Money Icons_217: 4422257978185362002
+      Health, Magic, Armour, Money Icons_218: 1723514395796273872
+      Health, Magic, Armour, Money Icons_22: 5234101462518290730
+      Health, Magic, Armour, Money Icons_23: -8092435432656951655
+      Health, Magic, Armour, Money Icons_24: -5186388984092802618
+      Health, Magic, Armour, Money Icons_25: -5316692829034816317
+      Health, Magic, Armour, Money Icons_26: -7241475986177694927
+      Health, Magic, Armour, Money Icons_27: -7407431682449510838
+      Health, Magic, Armour, Money Icons_28: 299118778322817595
+      Health, Magic, Armour, Money Icons_29: 8515782087861953923
+      Health, Magic, Armour, Money Icons_3: -2847686608854322322
+      Health, Magic, Armour, Money Icons_30: -6852996769447062661
+      Health, Magic, Armour, Money Icons_31: -5523946184856346371
+      Health, Magic, Armour, Money Icons_32: 4833505032470961272
+      Health, Magic, Armour, Money Icons_33: 1187449298361364120
+      Health, Magic, Armour, Money Icons_34: 7577013061330539929
+      Health, Magic, Armour, Money Icons_35: -1308957624798012038
+      Health, Magic, Armour, Money Icons_36: -7905041772747566903
+      Health, Magic, Armour, Money Icons_37: 1589782132204880045
+      Health, Magic, Armour, Money Icons_38: 8641791879596992643
+      Health, Magic, Armour, Money Icons_39: -4259463556101051574
+      Health, Magic, Armour, Money Icons_4: 9117286597271426753
+      Health, Magic, Armour, Money Icons_40: -6820335726012073704
+      Health, Magic, Armour, Money Icons_41: -1170190667351061489
+      Health, Magic, Armour, Money Icons_42: 753756782660433250
+      Health, Magic, Armour, Money Icons_43: 3101688194831877462
+      Health, Magic, Armour, Money Icons_44: -1200287490239036134
+      Health, Magic, Armour, Money Icons_45: -3224837266668639766
+      Health, Magic, Armour, Money Icons_46: 3356002514893888160
+      Health, Magic, Armour, Money Icons_47: -2625426805308223985
+      Health, Magic, Armour, Money Icons_48: -2948793291016268426
+      Health, Magic, Armour, Money Icons_49: 1008513768083045233
+      Health, Magic, Armour, Money Icons_5: 7983798801699964300
+      Health, Magic, Armour, Money Icons_50: -4016372393729979272
+      Health, Magic, Armour, Money Icons_51: 1901518190694491878
+      Health, Magic, Armour, Money Icons_52: 4036792760348454574
+      Health, Magic, Armour, Money Icons_53: 8663422894898663754
+      Health, Magic, Armour, Money Icons_54: -7684505774988717682
+      Health, Magic, Armour, Money Icons_55: 6189390857036577418
+      Health, Magic, Armour, Money Icons_56: -2246967138755095163
+      Health, Magic, Armour, Money Icons_57: 4641011195072733171
+      Health, Magic, Armour, Money Icons_58: -6738932641437803611
+      Health, Magic, Armour, Money Icons_59: 9085840920069284662
+      Health, Magic, Armour, Money Icons_6: 1164010986219241049
+      Health, Magic, Armour, Money Icons_60: -6089611845037654169
+      Health, Magic, Armour, Money Icons_61: 4532477861332274477
+      Health, Magic, Armour, Money Icons_62: 3528173178286347063
+      Health, Magic, Armour, Money Icons_63: 4889480706161755983
+      Health, Magic, Armour, Money Icons_64: -6264885613082833590
+      Health, Magic, Armour, Money Icons_65: 8259153117962274147
+      Health, Magic, Armour, Money Icons_66: -4200560737258320183
+      Health, Magic, Armour, Money Icons_67: -3306036595046124499
+      Health, Magic, Armour, Money Icons_68: 8016844769458575400
+      Health, Magic, Armour, Money Icons_69: -7057272636118604118
+      Health, Magic, Armour, Money Icons_7: 7613888033894267548
+      Health, Magic, Armour, Money Icons_70: -7920025814063973078
+      Health, Magic, Armour, Money Icons_71: -5646837893023596428
+      Health, Magic, Armour, Money Icons_72: -2571060540248290518
+      Health, Magic, Armour, Money Icons_73: -8552756364531765209
+      Health, Magic, Armour, Money Icons_74: -2673099971519003631
+      Health, Magic, Armour, Money Icons_75: 8948665497782726376
+      Health, Magic, Armour, Money Icons_76: -1095705403841336130
+      Health, Magic, Armour, Money Icons_77: -5268560220476181485
+      Health, Magic, Armour, Money Icons_78: 9142216181597453761
+      Health, Magic, Armour, Money Icons_79: 6661727561263085410
+      Health, Magic, Armour, Money Icons_8: 300360846554823987
+      Health, Magic, Armour, Money Icons_80: -4726930209216969665
+      Health, Magic, Armour, Money Icons_81: -312908168654884696
+      Health, Magic, Armour, Money Icons_82: 2130383614849889616
+      Health, Magic, Armour, Money Icons_83: 8479510625087628100
+      Health, Magic, Armour, Money Icons_84: -4283435441413427479
+      Health, Magic, Armour, Money Icons_85: 5297244725313283631
+      Health, Magic, Armour, Money Icons_86: -2998669653891013189
+      Health, Magic, Armour, Money Icons_87: 5595547486930833754
+      Health, Magic, Armour, Money Icons_88: -2657300616851009317
+      Health, Magic, Armour, Money Icons_89: -4437147549593120927
+      Health, Magic, Armour, Money Icons_9: 1374246793092317912
+      Health, Magic, Armour, Money Icons_90: -478918436298527598
+      Health, Magic, Armour, Money Icons_91: 3396326235276356376
+      Health, Magic, Armour, Money Icons_92: 4610701097398514611
+      Health, Magic, Armour, Money Icons_93: -5779774822290898662
+      Health, Magic, Armour, Money Icons_94: -886804426359117478
+      Health, Magic, Armour, Money Icons_95: 2451454962544571265
+      Health, Magic, Armour, Money Icons_96: -5596705382934687645
+      Health, Magic, Armour, Money Icons_97: -1432991184882424131
+      Health, Magic, Armour, Money Icons_98: -708430976021704478
+      Health, Magic, Armour, Money Icons_99: -1021383832389233751
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

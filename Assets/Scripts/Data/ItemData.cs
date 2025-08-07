@@ -11,6 +11,7 @@ public enum EItemCategory
     Potion,
     Consumable,
     Equipment,
+    Food,
 }
 
 [Serializable]

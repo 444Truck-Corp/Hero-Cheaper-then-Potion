@@ -30,6 +30,12 @@ public class GameManager : Singleton<GameManager>
 
         await Task.Delay(1000);
         UIManager.Instance.ToTransparent();
+
+        SaveManager.Instance.MySaveData.AcquireItem(120001);
+        SaveManager.Instance.MySaveData.AcquireItem(120003);
+        SaveManager.Instance.MySaveData.AcquireItem(120004);
+        SaveManager.Instance.MySaveData.AcquireItem(120005);
+        SaveManager.Instance.MySaveData.AcquireItem(120006);
     }
 
     #endregion

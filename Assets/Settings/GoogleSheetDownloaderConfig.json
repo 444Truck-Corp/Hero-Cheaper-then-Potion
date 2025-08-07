@@ -11,7 +11,7 @@
   },
   {
     "Gid": "658489092",
-    "Selected": false,
+    "Selected": true,
     "OutputFileName": "ClassData.json"
   },
   {
@@ -40,6 +40,11 @@
     "OutputFileName": "RanktoQuestData.json"
   },
   {
+    "Gid": "685569327",
+    "Selected": false,
+    "OutputFileName": "EquipmentData.json"
+  },
+  {
     "Gid": "1776160018",
     "Selected": false,
     "OutputFileName": "기획_RecipeData.json"
@@ -50,13 +55,8 @@
     "OutputFileName": "RecipeData.json"
   },
   {
-    "Gid": "685569327",
-    "Selected": false,
-    "OutputFileName": "EquipmentData.json"
-  },
-  {
     "Gid": "1738881584",
-    "Selected": true,
+    "Selected": false,
     "OutputFileName": "ItemData.json"
   }
 ]

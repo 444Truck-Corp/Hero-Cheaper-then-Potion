@@ -94,8 +94,8 @@ public class UIOverrideDayResult : UIBase
 
             if (isSuccess)
             {
-                questProfitSubtotal += questData.goldReward;
-                questMsg += $"성공!\t+{questData.goldReward} G, ";
+                questProfitSubtotal += questData.reward;
+                questMsg += $"성공!\t+{questData.reward} G, ";
                 questMsg += DistributeQuestRewards(questData.parsedDropItems);
             }
             else
@@ -129,7 +129,7 @@ public class UIOverrideDayResult : UIBase
         StatusData sum = new();
         foreach (var h in heros)
         {
-            sum += h.status;
+            sum += h.ResultStatus();
         }
         return sum;
     }
@@ -140,7 +140,6 @@ public class UIOverrideDayResult : UIBase
         prob += 0.25f * Mathf.Min(sum.STR / (float)req.STR, 1f);
         prob += 0.25f * Mathf.Min(sum.DEX / (float)req.DEX, 1f);
         prob += 0.25f * Mathf.Min(sum.INT / (float)req.INT, 1f);
-        prob += 0.25f * Mathf.Min(sum.HP / (float)req.HP, 1f);
         return prob;
     }
 
@@ -173,7 +172,7 @@ public class UIOverrideDayResult : UIBase
         foreach (var hero in heros)
         {
             hero.curHP = Mathf.Max(0, hero.curHP - damage);
-            string msg = $"{hero.name}의 HP: {hero.curHP}/{hero.status.HP} (-{damage})";
+            string msg = $"{hero.name}의 HP: {hero.curHP}/{hero.maxHP} (-{damage})";
             AddLine(msg, hero.curHP > 0 ? blueTxtColor : redTxtColor);
         }
     }
