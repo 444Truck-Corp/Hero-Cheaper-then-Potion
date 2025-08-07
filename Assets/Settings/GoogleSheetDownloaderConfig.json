@@ -31,13 +31,18 @@
   },
   {
     "Gid": "2027353182",
-    "Selected": false,
+    "Selected": true,
     "OutputFileName": "QuestData.json"
   },
   {
     "Gid": "2123639975",
     "Selected": false,
     "OutputFileName": "RanktoQuestData.json"
+  },
+  {
+    "Gid": "685569327",
+    "Selected": false,
+    "OutputFileName": "EquipmentData.json"
   },
   {
     "Gid": "1776160018",
@@ -50,13 +55,8 @@
     "OutputFileName": "RecipeData.json"
   },
   {
-    "Gid": "685569327",
-    "Selected": false,
-    "OutputFileName": "EquipmentData.json"
-  },
-  {
     "Gid": "1738881584",
-    "Selected": true,
+    "Selected": false,
     "OutputFileName": "ItemData.json"
   }
 ]

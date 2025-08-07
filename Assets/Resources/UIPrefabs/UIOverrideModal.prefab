@@ -1232,7 +1232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActiveInCreated: 1
   isDestroyAtClosed: 1
-  uiPosition: 0
+  uiPosition: 3
   titleText: {fileID: 722554633656177003}
   descriptionText: {fileID: 8512658536822412012}
   confirmButton: {fileID: 4912703820264830933}
