@@ -6,7 +6,7 @@ public class CharacterShop : TileMapCharacterCore
 
     protected override void OnClickOrder()
     {
-        UIManager.Show<UIPopupShop>(new List<int>() { 41, 42, 43, 44, 45, 46, 47, 48, 49, 50 });
+        UIManager.Show<UIPopupShop>(new List<int>() { 140041, 140042, 140043, 140044, 140045, 140046, 140047, 140048, 140049, 140050 });
         TileMapManager.Instance.OnDinerCharacterExited(this);
         base.OnClickOrder();
     }

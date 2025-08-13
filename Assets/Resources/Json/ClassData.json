@@ -5,11 +5,9 @@
     "rawBaseStr": "7",
     "rawBaseDex": "5",
     "rawBaseInt": "4",
-    "rawBaseHp": "4",
     "rawIncStr": "7",
     "rawIncDex": "5",
-    "rawIncInt": "4",
-    "rawIncHp": "4"
+    "rawIncInt": "4"
   },
   {
     "id": "100002",
@@ -17,11 +15,9 @@
     "rawBaseStr": "1+3d3",
     "rawBaseDex": "1+2d3",
     "rawBaseInt": "1+1d5",
-    "rawBaseHp": "1+1d5",
     "rawIncStr": "1+3d3",
     "rawIncDex": "1+2d3",
-    "rawIncInt": "1+1d5",
-    "rawIncHp": "1+1d5"
+    "rawIncInt": "1+1d5"
   },
   {
     "id": "100003",
@@ -29,11 +25,9 @@
     "rawBaseStr": "4",
     "rawBaseDex": "8",
     "rawBaseInt": "4",
-    "rawBaseHp": "4",
     "rawIncStr": "4",
     "rawIncDex": "8",
-    "rawIncInt": "4",
-    "rawIncHp": "4"
+    "rawIncInt": "4"
   },
   {
     "id": "100004",
@@ -41,11 +35,9 @@
     "rawBaseStr": "1+1d5",
     "rawBaseDex": "1+2d6",
     "rawBaseInt": "1+1d5",
-    "rawBaseHp": "1+1d5",
     "rawIncStr": "1+1d5",
     "rawIncDex": "1+2d6",
-    "rawIncInt": "1+1d5",
-    "rawIncHp": "1+1d5"
+    "rawIncInt": "1+1d5"
   },
   {
     "id": "100005",
@@ -53,11 +45,9 @@
     "rawBaseStr": "5",
     "rawBaseDex": "5",
     "rawBaseInt": "5",
-    "rawBaseHp": "5",
     "rawIncStr": "5",
     "rawIncDex": "5",
-    "rawIncInt": "5",
-    "rawIncHp": "5"
+    "rawIncInt": "5"
   },
   {
     "id": "100006",
@@ -65,11 +55,9 @@
     "rawBaseStr": "1+3d2",
     "rawBaseDex": "1+3d2",
     "rawBaseInt": "1+3d2",
-    "rawBaseHp": "1+3d2",
     "rawIncStr": "1+3d2",
     "rawIncDex": "1+3d2",
-    "rawIncInt": "1+3d2",
-    "rawIncHp": "1+3d2"
+    "rawIncInt": "1+3d2"
   },
   {
     "id": "100007",
@@ -77,11 +65,9 @@
     "rawBaseStr": "8",
     "rawBaseDex": "4",
     "rawBaseInt": "4",
-    "rawBaseHp": "4",
     "rawIncStr": "8",
     "rawIncDex": "4",
-    "rawIncInt": "4",
-    "rawIncHp": "4"
+    "rawIncInt": "4"
   },
   {
     "id": "100008",
@@ -89,11 +75,9 @@
     "rawBaseStr": "1+2d6",
     "rawBaseDex": "1+1d5",
     "rawBaseInt": "1+1d5",
-    "rawBaseHp": "1+1d5",
     "rawIncStr": "1+2d6",
     "rawIncDex": "1+1d5",
-    "rawIncInt": "1+1d5",
-    "rawIncHp": "1+1d5"
+    "rawIncInt": "1+1d5"
   },
   {
     "id": "100009",
@@ -101,11 +85,9 @@
     "rawBaseStr": "4",
     "rawBaseDex": "4",
     "rawBaseInt": "4",
-    "rawBaseHp": "8",
     "rawIncStr": "4",
     "rawIncDex": "4",
-    "rawIncInt": "4",
-    "rawIncHp": "8"
+    "rawIncInt": "4"
   },
   {
     "id": "100010",
@@ -113,11 +95,9 @@
     "rawBaseStr": "1+1d5",
     "rawBaseDex": "1+1d5",
     "rawBaseInt": "1+1d5",
-    "rawBaseHp": "1+2d6",
     "rawIncStr": "1+1d5",
     "rawIncDex": "1+1d5",
-    "rawIncInt": "1+1d5",
-    "rawIncHp": "1+2d6"
+    "rawIncInt": "1+1d5"
   },
   {
     "id": "100011",
@@ -125,11 +105,9 @@
     "rawBaseStr": "4",
     "rawBaseDex": "4",
     "rawBaseInt": "8",
-    "rawBaseHp": "4",
     "rawIncStr": "4",
     "rawIncDex": "4",
-    "rawIncInt": "8",
-    "rawIncHp": "4"
+    "rawIncInt": "8"
   },
   {
     "id": "100012",
@@ -137,11 +115,9 @@
     "rawBaseStr": "1+1d5",
     "rawBaseDex": "1+1d5",
     "rawBaseInt": "1+2d6",
-    "rawBaseHp": "1+1d5",
     "rawIncStr": "1+1d5",
     "rawIncDex": "1+1d5",
-    "rawIncInt": "1+2d6",
-    "rawIncHp": "1+1d5"
+    "rawIncInt": "1+2d6"
   },
   {
     "id": "100013",
@@ -149,11 +125,9 @@
     "rawBaseStr": "5",
     "rawBaseDex": "7",
     "rawBaseInt": "4",
-    "rawBaseHp": "4",
     "rawIncStr": "5",
     "rawIncDex": "7",
-    "rawIncInt": "4",
-    "rawIncHp": "4"
+    "rawIncInt": "4"
   },
   {
     "id": "100014",
@@ -161,11 +135,9 @@
     "rawBaseStr": "1+2d3",
     "rawBaseDex": "1+3d3",
     "rawBaseInt": "1+1d5",
-    "rawBaseHp": "1+1d5",
     "rawIncStr": "1+2d3",
     "rawIncDex": "1+3d3",
-    "rawIncInt": "1+1d5",
-    "rawIncHp": "1+1d5"
+    "rawIncInt": "1+1d5"
   },
   {
     "id": "100015",
@@ -173,11 +145,9 @@
     "rawBaseStr": "4",
     "rawBaseDex": "4",
     "rawBaseInt": "7",
-    "rawBaseHp": "5",
     "rawIncStr": "4",
     "rawIncDex": "4",
-    "rawIncInt": "7",
-    "rawIncHp": "5"
+    "rawIncInt": "7"
   },
   {
     "id": "100016",
@@ -185,11 +155,9 @@
     "rawBaseStr": "1+1d5",
     "rawBaseDex": "1+1d5",
     "rawBaseInt": "1+3d3",
-    "rawBaseHp": "1+2d3",
     "rawIncStr": "1+1d5",
     "rawIncDex": "1+1d5",
-    "rawIncInt": "1+3d3",
-    "rawIncHp": "1+2d3"
+    "rawIncInt": "1+3d3"
   },
   {
     "id": "100017",
@@ -197,11 +165,9 @@
     "rawBaseStr": "4",
     "rawBaseDex": "4",
     "rawBaseInt": "5",
-    "rawBaseHp": "7",
     "rawIncStr": "4",
     "rawIncDex": "4",
-    "rawIncInt": "5",
-    "rawIncHp": "7"
+    "rawIncInt": "5"
   },
   {
     "id": "100018",
@@ -209,11 +175,9 @@
     "rawBaseStr": "1+1d5",
     "rawBaseDex": "1+1d5",
     "rawBaseInt": "1+2d3",
-    "rawBaseHp": "1+3d3",
     "rawIncStr": "1+1d5",
     "rawIncDex": "1+1d5",
-    "rawIncInt": "1+2d3",
-    "rawIncHp": "1+3d3"
+    "rawIncInt": "1+2d3"
   },
   {
     "id": "100019",
@@ -221,11 +185,9 @@
     "rawBaseStr": "1+1d5",
     "rawBaseDex": "1+1d5",
     "rawBaseInt": "2+3d3",
-    "rawBaseHp": "1+1d5",
     "rawIncStr": "1+1d5",
     "rawIncDex": "1+1d5",
-    "rawIncInt": "2+3d3",
-    "rawIncHp": "1+1d5"
+    "rawIncInt": "2+3d3"
   },
   {
     "id": "100020",
@@ -233,11 +195,9 @@
     "rawBaseStr": "1+1d5",
     "rawBaseDex": "1+1d5",
     "rawBaseInt": "3+2d4",
-    "rawBaseHp": "1+1d5",
     "rawIncStr": "1+1d5",
     "rawIncDex": "1+1d5",
-    "rawIncInt": "3+2d4",
-    "rawIncHp": "1+1d5"
+    "rawIncInt": "3+2d4"
   },
   {
     "id": "100021",
@@ -245,11 +205,9 @@
     "rawBaseStr": "1+1d5",
     "rawBaseDex": "2+3d3",
     "rawBaseInt": "1+1d5",
-    "rawBaseHp": "1+1d5",
     "rawIncStr": "1+1d5",
     "rawIncDex": "2+3d3",
-    "rawIncInt": "1+1d5",
-    "rawIncHp": "1+1d5"
+    "rawIncInt": "1+1d5"
   },
   {
     "id": "100022",
@@ -257,11 +215,9 @@
     "rawBaseStr": "1+1d5",
     "rawBaseDex": "3+2d4",
     "rawBaseInt": "1+1d5",
-    "rawBaseHp": "1+1d5",
     "rawIncStr": "1+1d5",
     "rawIncDex": "3+2d4",
-    "rawIncInt": "1+1d5",
-    "rawIncHp": "1+1d5"
+    "rawIncInt": "1+1d5"
   },
   {
     "id": "100023",
@@ -269,11 +225,9 @@
     "rawBaseStr": "2+3d3",
     "rawBaseDex": "1+1d5",
     "rawBaseInt": "1+1d5",
-    "rawBaseHp": "1+1d5",
     "rawIncStr": "2+3d3",
     "rawIncDex": "1+1d5",
-    "rawIncInt": "1+1d5",
-    "rawIncHp": "1+1d5"
+    "rawIncInt": "1+1d5"
   },
   {
     "id": "100024",
@@ -281,11 +235,9 @@
     "rawBaseStr": "3+2d4",
     "rawBaseDex": "1+1d5",
     "rawBaseInt": "1+1d5",
-    "rawBaseHp": "1+1d5",
     "rawIncStr": "3+2d4",
     "rawIncDex": "1+1d5",
-    "rawIncInt": "1+1d5",
-    "rawIncHp": "1+1d5"
+    "rawIncInt": "1+1d5"
   },
   {
     "id": "100025",
@@ -293,11 +245,9 @@
     "rawBaseStr": "2+1d5",
     "rawBaseDex": "2+1d5",
     "rawBaseInt": "2+1d5",
-    "rawBaseHp": "2+1d5",
     "rawIncStr": "2+1d5",
     "rawIncDex": "2+1d5",
-    "rawIncInt": "2+1d5",
-    "rawIncHp": "2+1d5"
+    "rawIncInt": "2+1d5"
   },
   {
     "id": "100026",
@@ -305,11 +255,9 @@
     "rawBaseStr": "1+1d5",
     "rawBaseDex": "1+1d5",
     "rawBaseInt": "1+1d5",
-    "rawBaseHp": "2+3d3",
     "rawIncStr": "1+1d5",
     "rawIncDex": "1+1d5",
-    "rawIncInt": "1+1d5",
-    "rawIncHp": "2+3d3"
+    "rawIncInt": "1+1d5"
   },
   {
     "id": "100027",
@@ -317,10 +265,8 @@
     "rawBaseStr": "1+1d5",
     "rawBaseDex": "1+1d5",
     "rawBaseInt": "1+1d5",
-    "rawBaseHp": "3+2d4",
     "rawIncStr": "1+1d5",
     "rawIncDex": "1+1d5",
-    "rawIncInt": "1+1d5",
-    "rawIncHp": "3+2d4"
+    "rawIncInt": "1+1d5"
   }
 ]
