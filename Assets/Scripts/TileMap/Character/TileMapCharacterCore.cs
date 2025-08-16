@@ -21,6 +21,12 @@ public class TileMapCharacterCore : Poolable
     public Vector2Int Position => _movement.Position;
     public GuildLocationEventType TargetType { get; protected set; }
 
+    public EventLocation TargetLocation
+    {
+        get => _movement.TargetLocation;
+        set => SetTargetLocation(value);
+    }
+
     public virtual void Initialize(string textureName)
     {
         _movement.Initialize(textureName, TargetType, _canAutoFinding);
@@ -35,7 +41,6 @@ public class TileMapCharacterCore : Poolable
 
     public void SetTargetTilePosition(Vector2Int position)
     {
-        _movement.ReleaseLocation();
         _movement.SetTargetTilePosition(position);
     }
 
@@ -57,7 +62,7 @@ public class TileMapCharacterCore : Poolable
 
     protected virtual void OnFailed()
     {
-        TileMapManager.Instance.OnDinerCharacterExited(this);
+        TileMapManager.Instance.OnCharacterExit(this);
     }
 
     protected virtual void OnClickOrder()

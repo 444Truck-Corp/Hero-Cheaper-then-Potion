@@ -127,7 +127,7 @@ public class TileMapEventController : MonoBehaviour
             case TileMapEventType.Diner:
                 TileMapManager.Instance.OnDinerEntered();
                 break;
-            case TileMapEventType.Quest: 
+            case TileMapEventType.Quest:
                 TileMapManager.Instance.OnQuestEntered();
                 break;
             case TileMapEventType.Shop:
