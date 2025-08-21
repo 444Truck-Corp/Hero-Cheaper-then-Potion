@@ -14,6 +14,15 @@ public class AStar
 
     public List<Node> Find(Vector2Int start, Vector2Int end)
     {
+
+        if (tiles == null)
+        {
+            Debug.LogError($"[AStar] Find 호출 시 tiles가 NULL! start={start}, end={end}");
+            return new List<Node>();
+        }
+        Debug.Log($"[AStar] Find start={start}, end={end}, tiles 크기={tiles.GetLength(0)}x{tiles.GetLength(1)}");
+        
+        
         Node startNode = new(false, start.x, start.y);
         Node endNode = new(false, end.x, end.y);
 
@@ -75,6 +84,17 @@ public class AStar
 
     private List<Node> GetNeighbors(Node currentNode)
     {
+        if (currentNode == null)
+        {
+            Debug.LogError("[AStar] GetNeighbors: currentNode is NULL!");
+            return new List<Node>();
+        }
+        if (tiles == null)
+        {
+            Debug.LogError($"[AStar] GetNeighbors: tiles가 NULL! currentNode=({currentNode.X},{currentNode.Y})");
+            return new List<Node>();
+        }
+
         List<Node> neighbors = new();
 
         foreach (var direction in Direction.VECTORS)
