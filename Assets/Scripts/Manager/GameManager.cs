@@ -31,11 +31,15 @@ public class GameManager : Singleton<GameManager>
         await Task.Delay(1000);
         UIManager.Instance.ToTransparent();
 
+        //TODO : REMOVE
         SaveManager.Instance.MySaveData.AcquireItem(120001);
         SaveManager.Instance.MySaveData.AcquireItem(120003);
         SaveManager.Instance.MySaveData.AcquireItem(120004);
         SaveManager.Instance.MySaveData.AcquireItem(120005);
         SaveManager.Instance.MySaveData.AcquireItem(120006);
+        SaveManager.Instance.MySaveData.AcquireItem(140001);
+        SaveManager.Instance.MySaveData.AcquireItem(140001);
+        SaveManager.Instance.MySaveData.AcquireItem(140002);
     }
 
     #endregion

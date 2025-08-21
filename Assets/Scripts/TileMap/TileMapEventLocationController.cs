@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TileMapEventLocationController
@@ -10,6 +11,9 @@ public class TileMapEventLocationController
 
     public void Initialize(List<EventLocation> locations)
     {
+        _locations.Clear();
+        _usingLocation.Clear();
+
         foreach (EventLocation location in locations)
         {
             if (!_locations.TryGetValue(location.EventType, out List<EventLocation> list))
@@ -24,37 +28,42 @@ public class TileMapEventLocationController
 
     public void Clear()
     {
+        _usingLocation.Clear();
     }
-
-    private readonly List<EventLocation> candidates = new();
 
     public EventLocation GetEmptyEventLocationByType(GuildLocationEventType type)
     {
-        candidates.Clear();
-        foreach (GuildLocationEventType key in _locations.Keys)
+        var possibleLocations = new List<EventLocation>();
+
+        foreach (var kvp in _locations)
         {
-            if (type.HasFlag(key))
+            if ((kvp.Key & type) != 0 && kvp.Value.Count > 0)
             {
-                var locations = _locations[key];
-                if (locations != null && locations.Count > 0)
-                {
-                    candidates.AddRange(locations);
-                }
+                possibleLocations.AddRange(kvp.Value);
             }
         }
 
-        if (candidates.Count > 0)
-        {
-            int index = Random.Range(0, candidates.Count);
-            EventLocation chosen = candidates[index];
+        var availableLocations = possibleLocations.Where(loc => !_usingLocation.Contains(loc)).ToList();
 
-            // 해당 EventLocation이 속해 있는 key에서 제거
-            foreach (GuildLocationEventType key in _locations.Keys)
+        if (availableLocations.Count > 0)
+        {
+            EventLocation chosen;
+            if (type == GuildLocationEventType.Waiting)
             {
-                if (type.HasFlag(key) && _locations[key].Remove(chosen))
+                availableLocations.Sort((a, b) =>
                 {
-                    break;
-                }
+                    if (a is WaitingLocation wa && b is WaitingLocation wb)
+                    {
+                        return wa.Index.CompareTo(wb.Index);
+                    }
+                    return 0;
+                });
+                chosen = availableLocations[0];
+            }
+            else
+            {
+                int index = Random.Range(0, availableLocations.Count);
+                chosen = availableLocations[index];
             }
 
             _usingLocation.Add(chosen);
@@ -66,21 +75,9 @@ public class TileMapEventLocationController
 
     public void ReturnLocation(EventLocation location)
     {
-        _usingLocation.Remove(location);
-        _locations[location.EventType].Add(location);
-    }
-
-    private void DebugLocations()
-    {
-        string str = "";
-        foreach (var location in _locations)
+        if (location != null)
         {
-            var list = location.Value;
-            foreach(var element in list)
-            {
-                str += $"{element.EventType} = {list.Count}개,\n";
-            }
+            _usingLocation.Remove(location);
         }
-        Debug.Log(str);
     }
 }

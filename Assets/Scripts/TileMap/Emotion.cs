@@ -6,7 +6,7 @@ public class Emotion : MonoButton
 {
     private const string PATH = "";
 
-    [SerializeField] private SpriteRenderer _iconSpriteRenderer;
+    [SerializeField] private Image _icon;
     [SerializeField] private Image _progress;
 
     private float _originTime;
@@ -22,7 +22,7 @@ public class Emotion : MonoButton
         {
             return;
         }
-        _iconSpriteRenderer.sprite = sprite;
+        _icon.sprite = sprite;
     }
 
     public void SetTimer(float time, Action action)

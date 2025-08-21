@@ -15,7 +15,8 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private Vector3 _targetStepPosition;
     [SerializeField] private Action _onMoveComplete;
     [SerializeField] private string _texturePath;
-    [SerializeField] private EventLocation _targetLocation;
+    [field: SerializeField]
+    public EventLocation TargetLocation { get; private set; }
     [SerializeField] private GuildLocationEventType _targetType;
 
     private readonly Queue<Vector2Int> _moveQueue = new();
@@ -93,7 +94,7 @@ public class CharacterMovement : MonoBehaviour
         Animator.SetPlaying(false);
         _onMoveComplete?.Invoke();
         _waitTime = UnityEngine.Random.Range(0f, 3f);
-        _direction = _targetLocation != null ? _targetLocation.Direction : _direction;
+        _direction = TargetLocation != null ? TargetLocation.Direction : _direction;
     }
 
     public void FindNewTarget()
@@ -102,9 +103,9 @@ public class CharacterMovement : MonoBehaviour
         if (newTarget != null)
         {
             ReleaseLocation();
-            _targetLocation = newTarget;
-            int x = (int)_targetLocation.transform.localPosition.x;
-            int y = -(int)_targetLocation.transform.localPosition.y;
+            TargetLocation = newTarget;
+            int x = (int)TargetLocation.transform.localPosition.x;
+            int y = -(int)TargetLocation.transform.localPosition.y;
             Vector2Int goal = new(x, y);
             TileMapManager.Instance.GetRoute(Position, goal, _moveQueue);
         }
@@ -122,10 +123,10 @@ public class CharacterMovement : MonoBehaviour
 
     public void ReleaseLocation()
     {
-        if (_targetLocation != null)
+        if (TargetLocation != null)
         {
-            TileMapManager.Instance.ReturnLocation(_targetLocation);
-            _targetLocation = null;
+            TileMapManager.Instance.ReturnLocation(TargetLocation);
+            TargetLocation = null;
         }
     }
 
@@ -138,6 +139,6 @@ public class CharacterMovement : MonoBehaviour
     public void SetLocation(EventLocation location)
     {
         ReleaseLocation();
-        _targetLocation = location;
+        TargetLocation = location;
     }
 }

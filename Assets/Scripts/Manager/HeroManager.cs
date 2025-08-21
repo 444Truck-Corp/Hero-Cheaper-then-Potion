@@ -49,7 +49,6 @@ public class HeroManager : Singleton<HeroManager>
             maxHP = lvList[1].hp,
             curHP = lvList[1].hp,
             level = 1,
-            exp = 0,
             state = EHeroState.FREE,
         };
         
@@ -66,7 +65,6 @@ public class HeroManager : Singleton<HeroManager>
             $"Name: {newHero.name}\n" +
             $"Class: {newHero.classData.className}\n" + // 필드명: className
             $"Level: {newHero.level}\n" +
-            $"EXP: {newHero.exp}\n" +
             $"Status:\n" +
             $" - STR: {newHero.status.STR}\n" +
             $" - DEX: {newHero.status.DEX}\n" +

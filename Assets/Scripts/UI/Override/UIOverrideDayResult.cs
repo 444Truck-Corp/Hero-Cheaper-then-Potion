@@ -172,7 +172,8 @@ public class UIOverrideDayResult : UIBase
         foreach (var hero in heros)
         {
             hero.curHP = Mathf.Max(0, hero.curHP - damage);
-            string msg = $"{hero.name}의 HP: {hero.curHP}/{hero.maxHP} (-{damage})";
+            string hpBar = Utils.BuildHpBar(hero);
+            string msg = $"{hero.name}의 HP: {hpBar}";
             AddLine(msg, hero.curHP > 0 ? blueTxtColor : redTxtColor);
         }
     }
