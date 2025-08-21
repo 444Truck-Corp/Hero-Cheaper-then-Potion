@@ -207,7 +207,7 @@ public class UIPopupHeroDetail : UIBase
         strTxt.text = curHeroData.status.STR.ToString();
         dexTxt.text = curHeroData.status.DEX.ToString();
         intTxt.text = curHeroData.status.INT.ToString();
-        Utils.BuildHpBar(curHeroData);
+        hpTxt.text = Utils.BuildHpBar(curHeroData);
 
         if (curHeroData.equipStatus.STR == 0) strEquipTxt.gameObject.SetActive(false);
         else
