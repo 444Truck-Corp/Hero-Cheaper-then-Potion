@@ -39,7 +39,7 @@ public static class Utils
         return new string(filledHp, filled) + new string(blankHp, hpSlot - filled);
     }
 
-    public static void RefreshHorizontalRow(Transform parentHLG, TMP_Text changedText)
+    public static void RefreshHorizontalRow(Transform parentHLG, TextMeshProUGUI changedText)
     {
         changedText.ForceMeshUpdate();
         LayoutRebuilder.ForceRebuildLayoutImmediate(changedText.rectTransform);

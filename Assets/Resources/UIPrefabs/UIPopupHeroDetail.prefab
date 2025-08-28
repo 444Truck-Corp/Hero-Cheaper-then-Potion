@@ -290,7 +290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1819295228200712630
 RectTransform:
   m_ObjectHideFlags: 0
@@ -308,7 +308,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 131.22, y: -20}
-  m_SizeDelta: {x: 0, y: 40}
+  m_SizeDelta: {x: 41.61, y: 40}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &7665754752434483011
 CanvasRenderer:
@@ -1685,7 +1685,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9002947340313525088
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1703,7 +1703,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 173.23, y: -20}
-  m_SizeDelta: {x: 0, y: 40}
+  m_SizeDelta: {x: 32.01, y: 40}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &2898193567979625385
 CanvasRenderer:
@@ -2997,7 +2997,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7240587787864947226
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3015,7 +3015,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 131.22, y: -20}
-  m_SizeDelta: {x: 0, y: 40}
+  m_SizeDelta: {x: 41.61, y: 40}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &7358446023386219667
 CanvasRenderer:
@@ -3607,7 +3607,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8352183604196261260
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3625,7 +3625,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 131.22, y: -20}
-  m_SizeDelta: {x: 0, y: 40}
+  m_SizeDelta: {x: 41.61, y: 40}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &4023690044700398428
 CanvasRenderer:
@@ -4052,7 +4052,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 79.61, y: -20}
-  m_SizeDelta: {x: 0, y: 40}
+  m_SizeDelta: {x: 9.61, y: 40}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &377940444055715638
 CanvasRenderer:
@@ -4414,7 +4414,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 79.61, y: -20}
-  m_SizeDelta: {x: 0, y: 40}
+  m_SizeDelta: {x: 9.61, y: 40}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &7671213514819979824
 CanvasRenderer:
@@ -7595,14 +7595,8 @@ MonoBehaviour:
   lvPriceTxt: {fileID: 1931592488307122059}
   slideValueTxt: {fileID: 1023546163467269057}
   strTxt: {fileID: 8596579725853030992}
-  strEquipTxt: {fileID: 6048800039408021400}
-  strPotionTxt: {fileID: 6420523315233066720}
   dexTxt: {fileID: 7913845598657532411}
-  dexEquipTxt: {fileID: 8663085930493643449}
-  dexPotionTxt: {fileID: 2779621823839107227}
   intTxt: {fileID: 1737476736535756464}
-  intEquipTxt: {fileID: 5489109483410155050}
-  intPotionTxt: {fileID: 6433678973710910660}
   hpTxt: {fileID: 2822716736810261086}
   equipImages:
   - {fileID: 2632617880344711574}
@@ -7718,7 +7712,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1448949068124363172
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7736,7 +7730,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 173.23, y: -20}
-  m_SizeDelta: {x: 0, y: 40}
+  m_SizeDelta: {x: 32.01, y: 40}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &635450910768046803
 CanvasRenderer:
@@ -8023,7 +8017,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7811349452040339874
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8041,7 +8035,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 173.23, y: -20}
-  m_SizeDelta: {x: 0, y: 40}
+  m_SizeDelta: {x: 32.01, y: 40}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &4122559578037369397
 CanvasRenderer:

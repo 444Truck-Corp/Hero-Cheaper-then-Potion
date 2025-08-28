@@ -25,14 +25,8 @@ public class UIPopupHeroDetail : UIBase
 
     [Header("Hero Status")]
     [SerializeField] private TextMeshProUGUI strTxt;
-    [SerializeField] private TextMeshProUGUI strEquipTxt;
-    [SerializeField] private TextMeshProUGUI strPotionTxt;
     [SerializeField] private TextMeshProUGUI dexTxt;
-    [SerializeField] private TextMeshProUGUI dexEquipTxt;
-    [SerializeField] private TextMeshProUGUI dexPotionTxt;
     [SerializeField] private TextMeshProUGUI intTxt;
-    [SerializeField] private TextMeshProUGUI intEquipTxt;
-    [SerializeField] private TextMeshProUGUI intPotionTxt;
     [SerializeField] private TextMeshProUGUI hpTxt;
     
     [Header("Equips")]
@@ -48,11 +42,15 @@ public class UIPopupHeroDetail : UIBase
     [SerializeField] private ToggleGroup potionToggleGroup;
     [SerializeField] private GameObject potionTogglePrefab;
     [SerializeField] private List<SlotPotion> potionToggles;
-    private int selectedPotionIdx = -1;
+    private SlotPotion selectedPotion;
+
+    private const string COL_BASE = "#DACC00";
+    private const string COL_EQUIP = "#2FDA00";
+    private const string COL_POTION = "#00D8FF";
 
     public override void Opened(object[] param)
     {
-        HeroData curHero = param.Length > 0 && param[0] is HeroData heroData ? heroData : null;
+        if (param.Length == 0 || param[0] is not HeroData curHero || curHero == null) return;
         curHeroData = curHero;
 
         standImg.sprite = ResourceManager.Instance.LoadAsset<Sprite>(ResourceManager.standDir, curHero.classData.id.ToString());
@@ -60,15 +58,18 @@ public class UIPopupHeroDetail : UIBase
         nameTxt.text = curHero.name;
         classTxt.text = curHero.classData.className.ToString();
 
-        ResetLvSldr();
         lvSlider.onValueChanged.RemoveAllListeners();
+        ResetLvSldr();
         lvSlider.onValueChanged.AddListener(OnExpValueChanged);
 
         SetStatus();
 
         equippedItem = curHero.equipList;
-        for (int i  = 0; i < equippedItem.Length; i++)
+        int n = Mathf.Min(equipImages.Length, defaultEquips.Length);
+        for (int i  = 0; i < n; i++)
         {
+            if (equippedItem.Length <= i || equipImages[i] == null) continue;
+
             if (equippedItem[i] == 0)
             {
                 equipImages[i].sprite = defaultEquips[i];
@@ -76,16 +77,24 @@ public class UIPopupHeroDetail : UIBase
             }
             else
             {
-                EquipmentData equipData = SaveManager.Instance.MySaveData.ownedEquips[equippedItem[i]];
-                equipImages[i].sprite = ResourceManager.Instance.LoadAsset<Sprite>(ResourceManager.textureDir, equipData.icon);
-                equipImages[i].color = Color.white;
+                if (SaveManager.Instance.MySaveData.ownedEquips.TryGetValue(equippedItem[i], out var equipData))
+                {
+                    equipImages[i].sprite = ResourceManager.Instance.LoadAsset<Sprite>(ResourceManager.textureDir, equipData.icon);
+                    equipImages[i].color = Color.white;
+                }
+                else
+                {
+                    equipImages[i].sprite = defaultEquips[i];
+                    equipImages[i].color = defaultColor;
+                }
             }
         }
 
-        foreach (var item in SaveManager.Instance.MySaveData.items)
+        ClearPotionUI();
+        foreach (var kv in SaveManager.Instance.MySaveData.items)
         {
-            int itemIdx = item.Key;
-            ItemData itemData = ItemManager.Instance.ItemList[itemIdx];
+            int itemId = kv.Key;
+            ItemData itemData = ItemManager.Instance.ItemList[itemId];
             if (itemData == null || itemData.category != EItemCategory.Potion) continue;
 
             SlotPotion slot = Instantiate(potionTogglePrefab, potionToggleGroup.transform).GetComponent<SlotPotion>();
@@ -96,33 +105,34 @@ public class UIPopupHeroDetail : UIBase
             slot.toggle.isOn = false;
             slot.toggle.onValueChanged.AddListener(isOn =>
             {
-                if (isOn) selectedPotionIdx = slot.slotNum;
-                else selectedPotionIdx = -1;
-                Debug.Log(selectedPotionIdx);
+                if (isOn) selectedPotion = slot;
+                else selectedPotion = null;
             });
         }
     }
 
     public override void Closed(object[] param)
     {
-        foreach (Transform item in potionToggleGroup.transform)
-            Destroy(item.gameObject);
+        ClearPotionUI();
     }
 
-    private void OnExpValueChanged(float value)
+    private void OnExpValueChanged(float _)
     {
-        curPrice = 0;
-        for (int i = curHeroData.level; i < incLv; i++)
+        int curLv = curHeroData.level;
+        int targetLv = Mathf.Clamp(incLv, curLv, maxLv);
+        int price = 0;
+        for (int i = curLv; i < targetLv; i++)
         {
-            if (i >= maxLv) break;
-            curPrice += HeroManager.Instance.lvList[i].characExp;
+            price += HeroManager.Instance.lvList[i].characExp;
         }
+        curPrice = price;
         lvPriceTxt.text = $"{curPrice} G";
-        slideValueTxt.text = $"+ {incLv - curHeroData.level}Lv";
+        slideValueTxt.text = $"+ {targetLv - curLv}Lv";
     }
 
     public void OnExpBtn()
     {
+        if (incLv <= curHeroData.level) return;
         if (curPrice <= SaveManager.Instance.MySaveData.gold)
         {
             SaveManager.Instance.SetSaveData(nameof(SaveData.gold), SaveManager.Instance.MySaveData.gold - curPrice);
@@ -132,19 +142,24 @@ public class UIPopupHeroDetail : UIBase
         }
         else
         {
-            //TODO : 보유 금액 부족 알림.
+            // 부족 알림 처리
         }
     }
 
     public void OnEquipBtn(int type)
     {
+        if (type < 0 || type >= equippedItem.Length) return;
+
         //장착중인 아이템이 있다면 장착해제
         if (equippedItem[type] != 0)
         {
             curHeroData.Equip(equippedItem[type]);
             equippedItem[type] = 0;
-            equipImages[type].sprite = defaultEquips[type];
-            equipImages[type].color = defaultColor;
+            if (type < equipImages.Length)
+            {
+                equipImages[type].sprite = defaultEquips[type];
+                equipImages[type].color = defaultColor;
+            }
             SetStatus();
             return;
         }
@@ -157,144 +172,103 @@ public class UIPopupHeroDetail : UIBase
     public void OnPotionTabToggle(bool isOpened)
     {
         potionTabToggle.interactable = false;
-        Vector3 nextPos = potionTab.position;
-        nextPos.x += isOpened ? -300 : 300;
-        potionTab.DOMove(nextPos, 1f)
-            .OnComplete(() => potionTabToggle.interactable = true);
+        var rt = potionTab as RectTransform;
+        if (rt == null) return;
+        Vector2 next = rt.anchoredPosition;
+        next.x += isOpened ? -300f : 300f;
+        rt.DOAnchorPos(next, 1f).OnComplete(() => potionTabToggle.interactable = true);
     }
 
     public void OnUsePotionBtn()
     {
-        if (selectedPotionIdx < 0 || selectedPotionIdx >= potionToggles.Count) return;
-        int potionId = potionToggles[selectedPotionIdx].ItemData.id;
-        if (potionId == 0) return; // 선택된 포션이 없는 경우.
+        if (selectedPotion == null) return;
+        int potionId = selectedPotion.ItemData.id;
+        if (!SaveManager.Instance.MySaveData.items.TryGetValue(potionId, out int count) || count <= 0) return;
 
-        if (SaveManager.Instance.MySaveData.items.TryGetValue(potionId, out int count) && count > 0)
+        curHeroData.UsePotion(selectedPotion.ItemData);
+        SetStatus();
+
+        if (count - 1 == 0)
         {
-            SlotPotion curPotion = potionToggles[selectedPotionIdx];
-            curHeroData.UsePotion(curPotion.ItemData);
-            SetStatus();
-
-            if (count - 1 == 0)
-            {
-                potionToggles.Remove(curPotion);
-                Destroy(curPotion.gameObject);
-                selectedPotionIdx = -1;
-            }
-            else
-            {
-                curPotion.SetPotionCount(count - 1);
-            }
+            Destroy(selectedPotion.gameObject);
+            potionToggles.Remove(selectedPotion);
+            selectedPotion = null;
         }
         else
         {
-            //TODO : 포션 사용 불가 알림.
+            selectedPotion.SetPotionCount(count - 1);
         }
     }
 
     private void ResetLvSldr()
     {
-        lvTxt.text = curHeroData.level.ToString();
-        lvSlider.minValue = curHeroData.level;
-        lvSlider.value = 0;
+        int curLv = curHeroData.level;
+        lvTxt.text = curLv.ToString();
+
+        lvSlider.wholeNumbers = true;
+        lvSlider.minValue = curLv;
+        lvSlider.maxValue = maxLv;
+        lvSlider.value = curLv;
+        lvSlider.interactable = curLv < maxLv;
+
         curPrice = 0;
-        lvPriceTxt.text = $"{curPrice} G";
-        slideValueTxt.text = $"+ {incLv - curHeroData.level}Lv";
+        lvPriceTxt.text = "0 G";
+        slideValueTxt.text = "+ 0Lv";
     }
 
     private void SetStatus()
     {
-        strTxt.text = curHeroData.status.STR.ToString();
-        dexTxt.text = curHeroData.status.DEX.ToString();
-        intTxt.text = curHeroData.status.INT.ToString();
         hpTxt.text = Utils.BuildHpBar(curHeroData);
 
-        if (curHeroData.equipStatus.STR == 0) strEquipTxt.gameObject.SetActive(false);
-        else
-        {
-            strEquipTxt.gameObject.SetActive(true);
-            if (curHeroData.equipStatus.STR > 0)
-                strEquipTxt.text = $"(+{curHeroData.equipStatus.STR})";
-            else if (curHeroData.equipStatus.STR < 0)
-                strEquipTxt.text = $"({curHeroData.equipStatus.STR})";
+        strTxt.text = BuildStatLine(curHeroData.status.STR, curHeroData.equipStatus.STR, curHeroData.potionStatus.STR);
+        Utils.RefreshHorizontalRow(strTxt.transform.parent, strTxt);
+        dexTxt.text = BuildStatLine(curHeroData.status.DEX, curHeroData.equipStatus.DEX, curHeroData.potionStatus.DEX);
+        Utils.RefreshHorizontalRow(dexTxt.transform.parent, dexTxt);
+        intTxt.text = BuildStatLine(curHeroData.status.INT, curHeroData.equipStatus.INT, curHeroData.potionStatus.INT);
+        Utils.RefreshHorizontalRow(intTxt.transform.parent, intTxt);
+    }
 
-            Utils.RefreshHorizontalRow(strEquipTxt.transform.parent, strEquipTxt);
-        }
-        if (curHeroData.equipStatus.DEX == 0) dexEquipTxt.gameObject.SetActive(false);
-        else
-        {
-            dexEquipTxt.gameObject.SetActive(true);
-            if (curHeroData.equipStatus.DEX > 0)
-                dexEquipTxt.text = $"(+{curHeroData.equipStatus.DEX})";
-            else if (curHeroData.equipStatus.DEX < 0)
-                dexEquipTxt.text = $"({curHeroData.equipStatus.DEX})";
+    private string BuildStatLine(int baseVal, int equipVal, int potionVal)
+    {
+        int total = baseVal + equipVal + potionVal;
 
-            Utils.RefreshHorizontalRow(dexEquipTxt.transform.parent, dexEquipTxt);
-        }
-        if (curHeroData.equipStatus.INT == 0) intEquipTxt.gameObject.SetActive(false);
-        else
-        {
-            intEquipTxt.gameObject.SetActive(true);
-            if (curHeroData.equipStatus.INT > 0)
-                intEquipTxt.text = $"(+{curHeroData.equipStatus.INT})";
-            else if (curHeroData.equipStatus.INT < 0)
-                intEquipTxt.text = $"({curHeroData.equipStatus.INT})";
+        string basePart = $"<color={COL_BASE}>{baseVal}</color>";
+        if (equipVal == 0 && potionVal == 0) return $"{total}";
 
-            Utils.RefreshHorizontalRow(intEquipTxt.transform.parent, intEquipTxt);
-        }
+        string equipPart = equipVal != 0 ? $" + <color={COL_EQUIP}>{equipVal}</color>" : "";
+        string potionPart = potionVal != 0 ? $" + <color={COL_POTION}>{potionVal}</color>" : "";
 
-        if (curHeroData.potionStatus.STR == 0) strPotionTxt.gameObject.SetActive(false);
-        else
-        {
-            strPotionTxt.gameObject.SetActive(true);
-            if (curHeroData.potionStatus.STR > 0)
-                strPotionTxt.text = $"(+{curHeroData.potionStatus.STR})";
-            else if (curHeroData.potionStatus.STR < 0)
-                strPotionTxt.text = $"({curHeroData.potionStatus.STR})";
-            Utils.RefreshHorizontalRow(strPotionTxt.transform.parent, strPotionTxt);
-        }
-        if (curHeroData.potionStatus.DEX == 0) dexPotionTxt.gameObject.SetActive(false);
-        else
-        {
-            dexPotionTxt.gameObject.SetActive(true);
-            if (curHeroData.potionStatus.DEX > 0)
-                dexPotionTxt.text = $"(+{curHeroData.potionStatus.DEX})";
-            else if (curHeroData.potionStatus.DEX < 0)
-                dexPotionTxt.text = $"({curHeroData.potionStatus.DEX})";
-            Utils.RefreshHorizontalRow(dexPotionTxt.transform.parent, dexPotionTxt);
-        }
-        if (curHeroData.potionStatus.INT == 0) intPotionTxt.gameObject.SetActive(false);
-        else
-        {
-            intPotionTxt.gameObject.SetActive(true);
-            if (curHeroData.potionStatus.INT > 0)
-                intPotionTxt.text = $"(+{curHeroData.potionStatus.INT})";
-            else if (curHeroData.potionStatus.INT < 0)
-                intPotionTxt.text = $"({curHeroData.potionStatus.INT})";
-            Utils.RefreshHorizontalRow(intPotionTxt.transform.parent, intPotionTxt);
-        }
+        return $"{total} ({basePart}{equipPart}{potionPart})";
     }
 
     private void SetEquipOnSlot(int equipId)
     {
         UIManager.Hide<UIOverrideEquip>();
-        
+
         int type = (int)lastChosenEquipType;
-        if (equipId != 0)
+        if (type < 0 || type >= equipImages.Length) return;
+
+        if (equipId != 0 && SaveManager.Instance.MySaveData.ownedEquips.TryGetValue(equipId, out var equipData))
         {
-            EquipmentData equipData = SaveManager.Instance.MySaveData.ownedEquips[equipId];
-            Debug.Log(curHeroData.equipList[0]);
             equipImages[type].sprite = ResourceManager.Instance.LoadAsset<Sprite>(ResourceManager.textureDir, equipData.icon);
             equipImages[type].color = Color.white;
-
             curHeroData.Equip(equipId);
+            if (type < equippedItem.Length) equippedItem[type] = equipId;
         }
         else
         {
             equipImages[type].sprite = defaultEquips[type];
             equipImages[type].color = defaultColor;
+            if (type < equippedItem.Length) equippedItem[type] = 0;
         }
 
         SetStatus();
+    }
+
+    private void ClearPotionUI()
+    {
+        selectedPotion = null;
+        foreach (Transform t in potionToggleGroup.transform) Destroy(t.gameObject);
+        potionToggles.Clear();
     }
 }
