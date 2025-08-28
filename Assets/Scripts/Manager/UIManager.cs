@@ -118,6 +118,23 @@ public class UIManager : Singleton<UIManager>
     {
         Instance.uiList.Remove(ui);
     }
+
+    public static void HideAllUI()
+    {
+        foreach (var ui in Instance.uiList.ToList())
+        {
+            ui.closed?.Invoke(null);
+            if (ui.isDestroyAtClosed)
+            {
+                Instance.uiList.Remove(ui);
+                Destroy(ui.gameObject);
+            }
+            else
+            {
+                ui.gameObject.SetActive(false);
+            }
+        }
+    }
     #endregion
 
     #region fades

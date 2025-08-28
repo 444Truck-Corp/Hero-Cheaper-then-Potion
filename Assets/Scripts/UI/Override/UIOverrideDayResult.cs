@@ -22,7 +22,7 @@ public class UIOverrideDayResult : UIBase
     {
         SaveManager.Instance.MySaveData.time = 0; // 시간 초기화
         SaveManager.Instance.MySaveData.foodProfits = new(); // 음식 판매 수익 초기화
-        SetActive<UIOverrideDayResult>(false);
+        UIManager.HideAllUI();
     }
 
     private void ProcessDayTransition()
