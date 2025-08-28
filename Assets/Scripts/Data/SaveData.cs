@@ -26,7 +26,7 @@ public class SaveData
     #endregion
 
     #region inventory
-    public List<int> ownedRecipeFoodId = new();
+    public List<int> ownedRecipeId = new();
     public int equipNum = 1;
     public Dictionary<int, EquipmentData> ownedEquips = new(); //장비획득id, 장비데이터
     public Dictionary<int, int> items = new(); //id, 수량.

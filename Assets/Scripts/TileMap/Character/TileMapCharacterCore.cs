@@ -12,14 +12,14 @@ public enum TileMapCharacterType
 [RequireComponent(typeof(SpriteRenderer))]
 public class TileMapCharacterCore : Poolable
 {
-    public TileMapCharacterType CharacterType { get; protected set; }
     protected bool _canAutoFinding;
 
     [SerializeField] protected Emotion _emotion;
     [SerializeField] protected CharacterMovement _movement;
 
     public Vector2Int Position => _movement.Position;
-    public GuildLocationEventType TargetType { get; protected set; }
+    public virtual TileMapCharacterType CharacterType { get; protected set; }
+    public virtual GuildLocationEventType TargetType { get; protected set; }
 
     public EventLocation TargetLocation
     {

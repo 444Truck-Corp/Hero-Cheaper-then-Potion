@@ -1,7 +1,7 @@
 public class CharacterHero : TileMapCharacterCore
 {
-    public new TileMapCharacterType CharacterType = TileMapCharacterType.Hero;
-    public new GuildLocationEventType TargetType =
+    public override TileMapCharacterType CharacterType => TileMapCharacterType.Hero;
+    public override GuildLocationEventType TargetType =>
         GuildLocationEventType.QuestBoard |
         GuildLocationEventType.Food |
         GuildLocationEventType.Chair;

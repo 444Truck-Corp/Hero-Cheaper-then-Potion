@@ -2,7 +2,8 @@ using System.Collections.Generic;
 
 public class CharacterShop : TileMapCharacterCore
 {
-    public new GuildLocationEventType TargetType = GuildLocationEventType.Shop;
+    public override TileMapCharacterType CharacterType => TileMapCharacterType.Shop;
+    public override GuildLocationEventType TargetType => GuildLocationEventType.Shop;
 
     protected override void OnClickOrder()
     {

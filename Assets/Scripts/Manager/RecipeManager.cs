@@ -1,8 +1,11 @@
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using UnityEngine;
 
 public class RecipeManager : Singleton<RecipeManager>
 {
+    public ReadOnlyDictionary<int, RecipeData> Recipes => new(_recipes);
+
     private readonly Dictionary<int, RecipeData> _recipes = new();
 
     protected override void Awake()
@@ -44,7 +47,7 @@ public class RecipeManager : Singleton<RecipeManager>
     public int GetRandomOwnedRecipeId()
     {
         //int rank = SaveManager.Instance.MySaveData.rank;
-        int count = SaveManager.Instance.MySaveData.ownedRecipeFoodId.Count;
+        int count = SaveManager.Instance.MySaveData.ownedRecipeId.Count;
 
         // 보유 레시피가 없을 때
         if (count == 0)
@@ -52,13 +55,17 @@ public class RecipeManager : Singleton<RecipeManager>
             return -1;
         }
         int index = Random.Range(0, count);
-        int recipeId = SaveManager.Instance.MySaveData.ownedRecipeFoodId[index];
+        int recipeId = SaveManager.Instance.MySaveData.ownedRecipeId[index];
         return recipeId;
     }
 
     public bool TryCook(int recipeId)
     {
         if (!_recipes.TryGetValue(recipeId, out RecipeData recipe)) return false;
+
+        // 레시피가 없다면 바로 완료
+        if (recipe.ingredientList == null || recipe.ingredientList.Count == 0) return true;
+
         // 개수 확인
         foreach (RecipeIngredient ingredient in recipe.ingredientList)
         {

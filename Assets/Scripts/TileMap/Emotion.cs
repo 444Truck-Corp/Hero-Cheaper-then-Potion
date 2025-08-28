@@ -15,6 +15,15 @@ public class Emotion : MonoButton
     private Color _originColor = Color.green;
     private Color _color = Color.red;
 
+    public void SetIcon(Sprite sprite)
+    {
+        if (sprite == null)
+        {
+            return;
+        }
+        _icon.sprite = sprite;
+    }
+
     public void SetIcon(string path)
     {
         var sprite = Resources.Load<Sprite>(PATH + path);

@@ -3,15 +3,13 @@ using UnityEngine;
 
 public class PoolManager : Singleton<PoolManager>
 {
-    private readonly Dictionary<string, Stack<GameObject>> pools = new Dictionary<string, Stack<GameObject>>();
-    private readonly Dictionary<string, GameObject> prefabs = new Dictionary<string, GameObject>();
-    private readonly Dictionary<int, GameObject> aliveItems = new Dictionary<int, GameObject>();
-    private int poolId = 0;
+    private readonly Dictionary<string, Stack<GameObject>> _pools = new();
+    private readonly Dictionary<string, GameObject> _prefabs = new();
 
     public T Get<T>(GameObject prefab, Transform parent, Vector3 position = default) where T : Poolable
     {
         string text = prefab.GetHashCode().ToString();
-        prefabs[text] = prefab;
+        _prefabs[text] = prefab;
         return Get<T>(text, parent, position);
     }
 
@@ -22,7 +20,7 @@ public class PoolManager : Singleton<PoolManager>
     {
         GameObject gameObject = null;
         // 경로의 풀에서 객체 획득
-        if (pools.TryGetValue(path, out Stack<GameObject> stack) && stack.Count > 0)
+        if (_pools.TryGetValue(path, out Stack<GameObject> stack) && stack.Count > 0)
         {
             gameObject = stack.Pop();
         }
@@ -35,7 +33,6 @@ public class PoolManager : Singleton<PoolManager>
         {
             T component = gameObject.GetComponent<T>();
             SetReady(gameObject, component, parent, position);
-            aliveItems.Add(component.PoolID, component.gameObject);
             return component;
         }
         Debug.LogError($"프리팹이 없습니다 : {path}");
@@ -59,27 +56,25 @@ public class PoolManager : Singleton<PoolManager>
             GetStack(item.ResourcePath).Push(item.gameObject);
             item.gameObject.SetActive(false);
         }
-        aliveItems.Remove(item.PoolID);
     }
 
     public void Clear()
     {
-        foreach (Stack<GameObject> stack in pools.Values)
+        foreach (Stack<GameObject> stack in _pools.Values)
         {
             stack.Clear();
         }
-        pools.Clear();
-        prefabs.Clear();
-        aliveItems.Clear();
+        _pools.Clear();
+        _prefabs.Clear();
     }
 
     private GameObject CreateObject(string path)
     {
         // path 경로의 프리팹 캐싱
-        if (!prefabs.TryGetValue(path, out GameObject gameObject) || gameObject == null)
+        if (!_prefabs.TryGetValue(path, out GameObject gameObject) || gameObject == null)
         {
             gameObject = Resources.Load<GameObject>(path);
-            prefabs[path] = gameObject;
+            _prefabs[path] = gameObject;
         }
         if (gameObject == null) return null;
 
@@ -102,7 +97,6 @@ public class PoolManager : Singleton<PoolManager>
         itemObject.transform.localScale = Vector3.one;
         itemObject.SetActive(true);
 
-        item.PoolID = poolId++;
         item.Pool = this;
     }
 
@@ -112,10 +106,10 @@ public class PoolManager : Singleton<PoolManager>
     /// </summary>
     private Stack<GameObject> GetStack(string path)
     {
-        if (!pools.TryGetValue(path, out Stack<GameObject> stack))
+        if (!_pools.TryGetValue(path, out Stack<GameObject> stack))
         {
             stack = new Stack<GameObject>();
-            pools[path] = stack;
+            _pools[path] = stack;
         }
         return stack;
     }

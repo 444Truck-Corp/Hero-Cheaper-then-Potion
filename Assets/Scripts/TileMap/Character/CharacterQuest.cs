@@ -1,6 +1,7 @@
 public class CharacterQuest : TileMapCharacterCore
 {
-            public new GuildLocationEventType TargetType = GuildLocationEventType.Food;
+    public override TileMapCharacterType CharacterType => TileMapCharacterType.Quest;
+    public override GuildLocationEventType TargetType => GuildLocationEventType.Food;
 
     private const string QuestIconPath = "";
     private int _questId;
@@ -24,7 +25,7 @@ public class CharacterQuest : TileMapCharacterCore
         //QuestData questData = QuestManager.Instance.GetQuestDataById(_questId);
         //SaveManager.Instance.MySaveData.exp += questData.reward;
         //SaveManager.Instance.SetSaveData(nameof(SaveData.exp), SaveManager.Instance.MySaveData.exp);
-                TileMapManager.Instance.OnCharacterExit(this);
+        TileMapManager.Instance.OnCharacterExit(this);
         base.OnClickOrder();
     }
 }

@@ -14,12 +14,12 @@ public class TileMapManager : Singleton<TileMapManager>
     private readonly AStar _astar = new();
     private readonly TileMapEventLocationController _controller = new();
     private readonly Dictionary<int, CharacterHero> _heroes = new();
-    private readonly Dictionary<int, TileMapCharacterCore> _npcs = new();
     private readonly Queue<TileMapCharacterCore> _waitingCharacters = new();
+    
+    private Dictionary<TileMapCharacterType, (string prefabName, string textureName)> _characterSpawnData;
 
     [SerializeField] private Transform _heroParent;
     [SerializeField] private TileMapData _wallTileMap;
-    [SerializeField] private CharacterShop _shopCharacter;
 
     public bool[,] Tiles => _wallTileMap.Tiles;
 
@@ -30,24 +30,15 @@ public class TileMapManager : Singleton<TileMapManager>
 
         _astar.SetTiles(_wallTileMap.Tiles);
 
-        // 이벤트 위치 설정
         List<EventLocation> eventLocations = FindObjectsByType<EventLocation>(FindObjectsSortMode.None).ToList();
         _controller.Initialize(eventLocations);
-
-        // 캐릭터 초기화
-        foreach (var hero in _heroes)
+        
+        _characterSpawnData = new Dictionary<TileMapCharacterType, (string, string)>
         {
-            hero.Value.Clear();
-        }
-
-        foreach (var npc in _npcs)
-        {
-            npc.Value.Clear();
-        }
-    }
-
-    private void FixedUpdate()
-    {
+            { TileMapCharacterType.Shop, (ShopPrefabName, "도적1") },
+            { TileMapCharacterType.Diner, (DinerPrefabName, "도적2") },
+            { TileMapCharacterType.Quest, (QuestPrefabName, "도적2") }
+        };
     }
 
     public EventLocation GetEventLocation(GuildLocationEventType type)
@@ -110,30 +101,54 @@ public class TileMapManager : Singleton<TileMapManager>
         _astar.EnqueueRouteMovementValue(start, end, route);
     }
 
-    public void OnShopEntered()
+    private void HandleCharacterEntry(TileMapCharacterCore character)
     {
-        _shopCharacter = CreateTileMapCharacter<CharacterShop>(ShopPrefabName, "도적1");
-        var location = GetEventLocation(_shopCharacter.TargetType);
+        var location = GetEventLocation(character.TargetType);
 
         if (location == null)
         {
-            _waitingCharacters.Enqueue(_shopCharacter);
+            _waitingCharacters.Enqueue(character);
             location = GetEventLocation(GuildLocationEventType.Waiting);
             if (location == null)
             {
-                PoolManager.Instance.Return(_shopCharacter);
+                PoolManager.Instance.Return(character);
                 return;
             }
-            _shopCharacter.SetTargetTilePosition(location.TilePosition);
-            _shopCharacter.SetTargetLocation(location);
-            _shopCharacter.SetMoveCommand(null);
+            character.SetTargetTilePosition(location.TilePosition);
+            character.SetTargetLocation(location);
+            character.SetMoveCommand(null);
         }
         else
         {
-            _shopCharacter.SetTargetTilePosition(location.TilePosition);
-            _shopCharacter.SetTargetLocation(location);
-            _shopCharacter.SetMoveCommand(_shopCharacter.SetOrder);
+            character.SetTargetTilePosition(location.TilePosition);
+            character.SetTargetLocation(location);
+            character.SetMoveCommand(character.SetOrder);
         }
+    }
+
+    public void CreateAndEnterCharacter<T>(TileMapCharacterType type) where T : TileMapCharacterCore
+    {
+        var (prefabName, textureName) = _characterSpawnData[type];
+        var character = CreateTileMapCharacter<T>(prefabName, textureName);
+        HandleCharacterEntry(character);
+    }
+
+    public void OnCharacterExit(TileMapCharacterCore character)
+    {
+        var locationToRelease = character.TargetLocation;
+        
+        character.SetTargetTilePosition(_controller.Entrance.TilePosition);
+
+        Action onExitComplete = () =>
+        {
+            if (locationToRelease != null)
+            {
+                _controller.ReturnLocation(locationToRelease);
+            }
+            PoolManager.Instance.Return(character);
+        };
+
+        character.SetMoveCommand(onExitComplete);
     }
 
     #region Hero
@@ -156,7 +171,6 @@ public class TileMapManager : Singleton<TileMapManager>
 
     private void CreateTileMapHeroCharacter(HeroData heroData)
     {
-        // 일부 캐릭터 스프라이트가 없는 관계로 궁사2로 통일
         _heroes[heroData.id] = CreateTileMapCharacter<CharacterHero>(HeroPrefabName, "궁사2");
     }
 
@@ -190,51 +204,6 @@ public class TileMapManager : Singleton<TileMapManager>
         OnHeroEntered(heroData);
     }
 
-    public void OnDinerEntered()
-    {
-        var dinerCharacter = CreateTileMapCharacter<CharacterDiner>(DinerPrefabName, "도적2");
-        var location = GetEventLocation(dinerCharacter.TargetType);
-
-        if (location == null)
-        {
-            _waitingCharacters.Enqueue(dinerCharacter);
-            location = GetEventLocation(GuildLocationEventType.Waiting);
-            if (location == null)
-            {
-                PoolManager.Instance.Return(dinerCharacter);
-                return;
-            }
-            dinerCharacter.SetTargetTilePosition(location.TilePosition);
-            dinerCharacter.SetTargetLocation(location);
-            dinerCharacter.SetMoveCommand(null);
-        }
-        else
-        {
-            dinerCharacter.SetTargetTilePosition(location.TilePosition);
-            dinerCharacter.SetTargetLocation(location);
-            dinerCharacter.SetMoveCommand(dinerCharacter.SetOrder);
-        }
-    }
-
-    // TODO: 풀매니저에 돌려놓을 때 자료형에 주의해야 함
-    public void OnCharacterExit(TileMapCharacterCore character)
-    {
-        var locationToRelease = character.TargetLocation;
-        
-        character.SetTargetTilePosition(_controller.Entrance.TilePosition);
-
-        Action onExitComplete = () =>
-        {
-            if (locationToRelease != null)
-            {
-                _controller.ReturnLocation(locationToRelease);
-            }
-            PoolManager.Instance.Return(character);
-        };
-
-        character.SetMoveCommand(onExitComplete);
-    }
-
     public void OnHeroExit(HeroData heroData)
     {
         if (!_heroes.TryGetValue(heroData.id, out var hero)) return;
@@ -243,42 +212,15 @@ public class TileMapManager : Singleton<TileMapManager>
         
         hero.SetTargetTilePosition(_controller.Entrance.TilePosition);
 
-        Action onExitComplete = () =>
+
+        hero.SetMoveCommand(() =>
         {
             if (locationToRelease != null)
             {
                 _controller.ReturnLocation(locationToRelease);
             }
             PoolManager.Instance.Return(hero);
-        };
-
-        hero.SetMoveCommand(onExitComplete);
-    }
-
-    public void OnQuestEntered()
-    {
-        var questCharacter = CreateTileMapCharacter<CharacterQuest>(QuestPrefabName, "도적2");
-        var location = GetEventLocation(questCharacter.TargetType);
-
-        if (location == null)
-        {
-            _waitingCharacters.Enqueue(questCharacter);
-            location = GetEventLocation(GuildLocationEventType.Waiting);
-            if (location == null)
-            {
-                PoolManager.Instance.Return(questCharacter);
-                return;
-            }
-            questCharacter.SetTargetTilePosition(location.TilePosition);
-            questCharacter.SetTargetLocation(location);
-            questCharacter.SetMoveCommand(null);
-        }
-        else
-        {
-            questCharacter.SetTargetTilePosition(location.TilePosition);
-            questCharacter.SetTargetLocation(location);
-            questCharacter.SetMoveCommand(questCharacter.SetOrder);
-        }
+        });
     }
     #endregion
 }

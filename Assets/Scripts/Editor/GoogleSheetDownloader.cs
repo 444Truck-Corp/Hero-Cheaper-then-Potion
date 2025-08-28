@@ -54,7 +54,7 @@ public class GoogleSheetDownloader : EditorWindow
         }
     }
 
-    [MenuItem("Tools/GoogleSheetDownloader")]
+    [MenuItem("Tools/Google Sheet Downloader")]
     public static void ShowWindow()
     {
         GetWindow<GoogleSheetDownloader>("GoogleSheetDownloader");

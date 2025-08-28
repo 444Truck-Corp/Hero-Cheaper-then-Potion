@@ -54,7 +54,6 @@ public class UIPopupShop : UIBase
         foreach (var (id, slotItem) in _cartItems)
         {
             save.AcquireItem(id, slotItem.Amount);
-            //Debug.Log($"{ItemManager.Instance.ItemList[id].name}을 {slotItem.Amount}개 구입 -> {SaveManager.Instance.MySaveData.items[id]}");
         }
         foreach (var id in _cartItems.Keys.ToList())
         {

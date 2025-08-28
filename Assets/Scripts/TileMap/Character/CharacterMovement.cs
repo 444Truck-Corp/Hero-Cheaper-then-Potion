@@ -15,8 +15,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private Vector3 _targetStepPosition;
     [SerializeField] private Action _onMoveComplete;
     [SerializeField] private string _texturePath;
-    [field: SerializeField]
-    public EventLocation TargetLocation { get; private set; }
+    [SerializeField] public EventLocation TargetLocation { get; private set; }
     [SerializeField] private GuildLocationEventType _targetType;
 
     private readonly Queue<Vector2Int> _moveQueue = new();

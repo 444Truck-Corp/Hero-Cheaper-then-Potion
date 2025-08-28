@@ -1,68 +1,68 @@
 [
   {
     "id": "130001",
-    "itemId": "51",
+    "itemId": "140051",
     "name": "요리0",
     "rawIngredients": ""
   },
   {
     "id": "130002",
-    "itemId": "52",
+    "itemId": "140052",
     "name": "요리1",
-    "rawIngredients": "11:10, 21:5, 41:1"
+    "rawIngredients": "140011:10, 140021:5, 140041:1"
   },
   {
     "id": "130003",
-    "itemId": "53",
+    "itemId": "140053",
     "name": "요리2",
-    "rawIngredients": "12:10, 22:5, 32:1"
+    "rawIngredients": "140012:10, 140022:5, 140032:1"
   },
   {
     "id": "130004",
-    "itemId": "54",
+    "itemId": "140054",
     "name": "요리3",
-    "rawIngredients": "13:20, 22:10, 43:1"
+    "rawIngredients": "140013:20, 140022:10, 140043:1"
   },
   {
     "id": "130005",
-    "itemId": "55",
+    "itemId": "140055",
     "name": "요리4",
-    "rawIngredients": "14:20, 24:10, 34:1"
+    "rawIngredients": "140014:20, 140024:10, 140034:1"
   },
   {
     "id": "130006",
-    "itemId": "56",
+    "itemId": "140056",
     "name": "요리5",
-    "rawIngredients": "15:30, 25:15, 45:1"
+    "rawIngredients": "140015:30, 140025:15, 140045:1"
   },
   {
     "id": "130007",
-    "itemId": "57",
+    "itemId": "140057",
     "name": "요리6",
-    "rawIngredients": "16:30, 26:15, 36:1"
+    "rawIngredients": "140016:30, 140026:15, 140036:1"
   },
   {
     "id": "130008",
-    "itemId": "58",
+    "itemId": "140058",
     "name": "요리7",
-    "rawIngredients": "17:40, 27:20, 47:1"
+    "rawIngredients": "140017:40, 140027:20, 140047:1"
   },
   {
     "id": "130009",
-    "itemId": "59",
+    "itemId": "140059",
     "name": "요리8",
-    "rawIngredients": "18:40, 28:20, 38:1"
+    "rawIngredients": "140018:40, 140028:20, 140038:1"
   },
   {
     "id": "130010",
-    "itemId": "60",
+    "itemId": "140060",
     "name": "요리9",
-    "rawIngredients": "19:50, 29:25, 49:1"
+    "rawIngredients": "140019:50, 140029:25, 140049:1"
   },
   {
     "id": "130011",
-    "itemId": "61",
+    "itemId": "140061",
     "name": "요리10",
-    "rawIngredients": "20:50, 30:25, 40:1"
+    "rawIngredients": "140020:50, 140030:25, 140040:1"
   }
 ]

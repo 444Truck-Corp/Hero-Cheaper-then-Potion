@@ -11,11 +11,12 @@ public enum TileMapEventType
 
 public class TileMapEventController : MonoBehaviour
 {
+    private const float hourDivision = 6;
     // 게임 내 한 시간 (7.5s)
     private static readonly float oneHourTime = SaveData.maxTime / 24;
-    // 게임 내 10분 (1.25s), 10분의 개수를 계산하기 위한 역수(0.8f)
-    private static readonly float tenMinutesTimeDivider = 1 / (oneHourTime / 6);
-    private static readonly float maxEnterTime = SaveData.maxTime - 20.0f;
+    // 게임 내 10분(1.25s)의 개수를 계산하기 위한 역수(0.8f)
+    private static readonly float minutesTimeDivider = 1 / (oneHourTime / hourDivision);
+    private static readonly float maxEnterTime = SaveData.maxTime * 0.85f;
 
     private int _lastUpdatedDay = int.MaxValue;
     private int _lastUpdatedTenMinutes;
@@ -38,7 +39,7 @@ public class TileMapEventController : MonoBehaviour
         }
 
         // 게임 내 10분마다 이벤트를 진행
-        int currentTenMinutesCount = (int)(_time * tenMinutesTimeDivider);
+        int currentTenMinutesCount = (int)(_time * minutesTimeDivider);
         if (currentTenMinutesCount > _lastUpdatedTenMinutes)
         {
             // 이벤트 큐 처리
@@ -106,7 +107,7 @@ public class TileMapEventController : MonoBehaviour
     private int GetRandomTenMinutesCount(float minTime, float maxTime)
     {
         float time = Random.Range(minTime, maxTime);
-        return (int)(time * tenMinutesTimeDivider);
+        return (int)(time * minutesTimeDivider);
     }
 
     private void AddEvent(int time, TileMapEventType type)
@@ -125,13 +126,13 @@ public class TileMapEventController : MonoBehaviour
         switch (type)
         {
             case TileMapEventType.Diner:
-                TileMapManager.Instance.OnDinerEntered();
+                TileMapManager.Instance.CreateAndEnterCharacter<CharacterDiner>(TileMapCharacterType.Diner);
                 break;
             case TileMapEventType.Quest:
-                TileMapManager.Instance.OnQuestEntered();
+                TileMapManager.Instance.CreateAndEnterCharacter<CharacterQuest>(TileMapCharacterType.Quest);
                 break;
             case TileMapEventType.Shop:
-                TileMapManager.Instance.OnShopEntered();
+                TileMapManager.Instance.CreateAndEnterCharacter<CharacterShop>(TileMapCharacterType.Shop);
                 break;
         }
     }
