@@ -129,10 +129,10 @@ TextureImporter:
       name: "\uD45C\uC900\uC804\uC2E0_0"
       rect:
         serializedVersion: 2
-        x: 270
-        y: 625
-        width: 1566
-        height: 2705
+        x: 253
+        y: 782
+        width: 1500
+        height: 2340
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

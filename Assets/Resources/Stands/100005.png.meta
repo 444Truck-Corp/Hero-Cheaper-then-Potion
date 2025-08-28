@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 70113da35e43a504fa71bbe0a884f591
+guid: e661c07b1e6f15f449511903db0f55e3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2701272435505640833
-    second: "\uD45C\uC900\uC804\uC2E0_0"
+      213: 8096980701925462909
+    second: 100005 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,14 +126,14 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\uD45C\uC900\uC804\uC2E0_0"
+      name: 100005 1_0
       rect:
         serializedVersion: 2
-        x: 93
-        y: 100
-        width: 1387
-        height: 2640
-      alignment: 0
+        x: 142
+        y: 135
+        width: 1858
+        height: 3366
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f7ac1282807238ad0800000000000000
-      internalID: -2701272435505640833
+      spriteID: d73d57b7c014e5070800000000000000
+      internalID: 8096980701925462909
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c372d14243b664d419aa46d969743133
+    spriteID: a9415901a7a8bfc4bbcdae802e43357f
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\uD45C\uC900\uC804\uC2E0_0": -2701272435505640833
+      100005 1_0: 8096980701925462909
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

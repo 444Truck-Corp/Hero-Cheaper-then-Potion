@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\uD45C\uC900\uC804\uC2E0_0"
+      name: 100019
       rect:
         serializedVersion: 2
         x: 411
         y: 593
-        width: 1373
-        height: 2871
+        width: 1510
+        height: 2721
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\uD45C\uC900\uC804\uC2E0_0": -2701272435505640833
+      100019: -2701272435505640833
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
