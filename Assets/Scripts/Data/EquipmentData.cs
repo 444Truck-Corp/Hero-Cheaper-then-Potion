@@ -22,8 +22,7 @@ public class EquipmentData : ItemData
 
     public StatusData SetStatus()
     {
-        string trimmed = stats.Trim('[', ']');
-        string[] tokens = trimmed.Split(',');
+        string[] tokens = stats.Split(',');
 
         // 필요한 값만 int로 변환
         int str = tokens.Length > 0 ? int.Parse(tokens[0]) : 0;
