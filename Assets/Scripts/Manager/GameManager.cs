@@ -12,6 +12,8 @@ public enum EEnding
 
 public class GameManager : Singleton<GameManager>
 {
+    public EEnding Ending { get; set; }
+
     #region Unity Life Cycles
     private void Start()
     {

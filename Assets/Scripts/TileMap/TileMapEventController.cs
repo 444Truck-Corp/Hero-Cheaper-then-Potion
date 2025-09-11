@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum TileMapEventType
 {
@@ -11,6 +12,7 @@ public enum TileMapEventType
 
 public class TileMapEventController : MonoBehaviour
 {
+    private const int BOSS_QUEST_ID = 110061;
     private const float hourDivision = 6;
     // 게임 내 한 시간 (7.5s)
     private static readonly float oneHourTime = SaveData.maxTime / 24;
@@ -25,12 +27,70 @@ public class TileMapEventController : MonoBehaviour
     // 10분마다 발생할 이벤트
     private readonly SortedDictionary<int, Queue<TileMapEventType>> _eventQueueDictionary = new();
 
+    private void GameConditionCheck_Bankrupt()
+    {
+        // 파산 엔딩
+        if (SaveManager.Instance.MySaveData.gold <= 0)
+        {
+            GameManager.Instance.Ending = EEnding.Bankrupt;
+            SceneManager.LoadScene("EndScene");
+        }
+    }
+
+    private void GameConditionCheck_Boss()
+    {
+        if (SaveManager.Instance.MySaveData.day == 0)
+        {
+            var heroes = SaveManager.Instance.MySaveData.ownedHeroes.Values.ToList();
+            var sum = SumHeroStatus(heroes);
+
+            var quest = QuestManager.Instance.GetQuestDataById(BOSS_QUEST_ID);
+            float successProb = CalculateSuccessProbability(sum, quest.needSpecs);
+            bool isSuccess = Random.value < successProb;
+
+            if (isSuccess)
+            {
+                GameManager.Instance.Ending = EEnding.Win;
+            }
+            else
+            {
+                GameManager.Instance.Ending = EEnding.Lose;
+            }
+            SceneManager.LoadScene("EndScene");
+        }
+    }
+
+    // UIOverrideDayResult에서 발췌
+
+    private float CalculateSuccessProbability(StatusData sum, StatusData req)
+    {
+        float prob = 0;
+        prob += 0.25f * Mathf.Min(sum.STR / (float)req.STR, 1f);
+        prob += 0.25f * Mathf.Min(sum.DEX / (float)req.DEX, 1f);
+        prob += 0.25f * Mathf.Min(sum.INT / (float)req.INT, 1f);
+        return prob;
+    }
+
+    private StatusData SumHeroStatus(List<HeroData> heros)
+    {
+        StatusData sum = new();
+        foreach (var h in heros)
+        {
+            sum += h.ResultStatus();
+        }
+        return sum;
+    }
+
+    // -------------------------------------------------------------
+
     private void FixedUpdate()
     {
         // 날짜 변경 감지
         if (_lastUpdatedDay > SaveManager.Instance.MySaveData.day)
         {
             Debug.Log($"날짜 변경 {_lastUpdatedDay} => {SaveManager.Instance.MySaveData.day}");
+            GameConditionCheck_Bankrupt();
+            GameConditionCheck_Boss();
             InitializeDailyEvent();
             ReturnHeroes();
             _lastUpdatedDay = SaveManager.Instance.MySaveData.day;
@@ -53,7 +113,7 @@ public class TileMapEventController : MonoBehaviour
             }
             _lastUpdatedTenMinutes = currentTenMinutesCount;
         }
-        _time += Time.fixedDeltaTime;
+        _time = SaveManager.Instance.MySaveData.time;
     }
 
     private void InitializeDailyEvent()
