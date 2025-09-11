@@ -3,8 +3,8 @@ using UnityEngine;
 public class CharacterDiner : TileMapCharacterCore
 {
     public override TileMapCharacterType CharacterType => TileMapCharacterType.Diner;
-    public override GuildLocationEventType TargetType => 
-        GuildLocationEventType.Food | 
+    public override GuildLocationEventType TargetType =>
+        GuildLocationEventType.Food |
         GuildLocationEventType.Chair;
 
     private int _recipeId;
@@ -50,7 +50,7 @@ public class CharacterDiner : TileMapCharacterCore
         int exp = SaveManager.Instance.MySaveData.exp += 1;
         SaveManager.Instance.SetSaveData(nameof(SaveManager.Instance.MySaveData.exp), exp);
 
-                TileMapManager.Instance.OnCharacterExit(this);
+        TileMapManager.Instance.OnCharacterExit(this);
         base.OnClickOrder();
     }
 }

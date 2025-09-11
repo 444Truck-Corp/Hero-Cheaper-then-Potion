@@ -62,6 +62,7 @@ public class TileMapCharacterCore : Poolable
 
     protected virtual void OnFailed()
     {
+        _emotion.CancleTimer();
         TileMapManager.Instance.OnCharacterExit(this);
     }
 
