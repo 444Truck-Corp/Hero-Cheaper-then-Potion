@@ -11,52 +11,58 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] private AudioSource sfxSource;
 
     [SerializeField] private AudioClip[] bgmClips;
-    [SerializeField] protected AudioClip[] sfxClips;
-
-    private Slider volumeSlider;
+    [SerializeField] private AudioClip[] sfxClips;
 
     private int lastPlayedIndex = -1;
 
+    private readonly string bgmVolumeKey = "BGMVolume";
+    private readonly string sfxVolumeKey = "SFXVolume";
+
+    private const string MainSceneName = "MainScene";
+
     private void Start()
     {
-        SetVolume();
+        float bgmVol = PlayerPrefs.GetFloat(bgmVolumeKey, 0.6f);
+        float sfxVol = PlayerPrefs.GetFloat(sfxVolumeKey, 0.6f);
+        SetVolume(bgmVol, true);
+        SetVolume(sfxVol, false);
 
-        if (bgmClips.Length > 0)
+        if (SceneManager.GetActiveScene().name == MainSceneName)
+        {
+            PlayRandomBGM();
+            StartCoroutine(LoopRandomBGM());
+        }
+        else if (bgmClips.Length > 0)
         {
             PlayBGM(0);
         }
-        StartCoroutine(WaitForMainSceneAndPlayBGM());
     }
 
-    private IEnumerator WaitForMainSceneAndPlayBGM()
+    private IEnumerator LoopRandomBGM()
     {
         WaitForSeconds wait = new(0.5f);
-
-        yield return new WaitUntil(() => SceneManager.GetActiveScene().name == "MainScene");
-        PlayRandomBGM();
-
         while (true)
         {
             if (!bgmSource.isPlaying)
-            {
                 PlayRandomBGM();
-            }
             yield return wait;
         }
     }
 
-    public void SetVolume()
+    public void SetVolume(float volume, bool isBGM)
     {
-        float volume = (volumeSlider == null) ? 1f : volumeSlider.value;
-        volume = Mathf.Clamp(volume, 0.0001f, 1f);
-        myMixer.SetFloat("Master", Mathf.Log10(volume) * 20);
-    }
-
-    public void RegisterSlider(Slider slider)
-    {
-        volumeSlider = slider;
-        volumeSlider.onValueChanged.AddListener(delegate { SetVolume(); });
-        volumeSlider.value = 1.0f;
+        if (isBGM)
+        {
+            PlayerPrefs.SetFloat(bgmVolumeKey, volume);
+            volume = Mathf.Clamp(volume, 0.0001f, 1f);
+            myMixer.SetFloat("BGM", Mathf.Log10(volume) * 20);
+        }
+        else
+        {
+            PlayerPrefs.SetFloat(sfxVolumeKey, volume);
+            volume = Mathf.Clamp(volume, 0.0001f, 1f);
+            myMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
+        }
     }
 
     public void PlayBGM(int clipIndex)
@@ -74,19 +80,25 @@ public class AudioManager : Singleton<AudioManager>
 
     private void PlayRandomBGM()
     {
-        if (bgmClips.Length == 0) return;
+        int len = bgmClips?.Length ?? 0;
+        if (len == 0) return;
 
-        int randomIndex;
-
-        do
+        int next = 0;
+        if (len == 1)
         {
-            randomIndex = UnityEngine.Random.Range(1, 5);
-        } while (randomIndex == lastPlayedIndex);
+            next = 0;
+        }
+        else
+        {
+            do { next = Random.Range(0, len); }
+            while (next == lastPlayedIndex);
+        }
 
-        bgmSource.clip = bgmClips[randomIndex];
+        bgmSource.loop = false;
+        bgmSource.clip = bgmClips[next];
         bgmSource.Play();
 
-        lastPlayedIndex = randomIndex;
+        lastPlayedIndex = next;
     }
 
     public void PlaySFX(int clipIndex)
