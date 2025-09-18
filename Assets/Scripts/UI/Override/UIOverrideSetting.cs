@@ -136,6 +136,16 @@ public class UIOverrideSetting : UIBase
 
     }
 
+    public void OnSaveClicked()
+    {
+        UIManager.Show<UIPopupLoad>(true);
+    }
+
+    public void OnLoadClicked()
+    {
+        UIManager.Show<UIPopupLoad>(false);
+    }
+
     private void BackToMenu()
     {
         SaveManager.Instance.SaveSlot(0);

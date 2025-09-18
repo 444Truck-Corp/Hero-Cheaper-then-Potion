@@ -10,14 +10,23 @@ public class UIPopupLoad : UIBase
 
     public override void Opened(object[] param)
     {
+        bool isSaveSlot = param .Length > 0 && param[0] is bool b && b;
+
         for (int i = 0; i < saveSlots.Length; i++)
         {
             saveSlots[i].SetSlotData(null);
             saveBtns[i] = saveSlots[i].GetComponent<Button>();
-            saveBtns[i].interactable = false;
+            saveBtns[i].interactable = isSaveSlot;
+
+            saveBtns[i].onClick.RemoveAllListeners();
+            int idx = i;
+            if (isSaveSlot)
+                saveBtns[i].onClick.AddListener(() => OnSaveClicked(idx));
+            else
+                saveBtns[i].onClick.AddListener(() => OnLoadClicked(idx));
         }
 
-        LoadPrevData();
+        LoadSlotData();
     }
 
     #region Main Methods
@@ -26,7 +35,30 @@ public class UIPopupLoad : UIBase
         UIManager.Hide<UIPopupLoad>();
     }
 
-    public void OnSlotClicked(int slotNum)
+    private void OnSaveClicked(int slotNum)
+    {
+        switch (slotNum)
+        {
+            case 0:
+                SaveManager.Instance.SaveSlot(ESaveSlot.Auto);
+                break;
+            case 1:
+                SaveManager.Instance.SaveSlot(ESaveSlot.Slot1);
+                break;
+            case 2:
+                SaveManager.Instance.SaveSlot(ESaveSlot.Slot2);
+                break;
+            case 3:
+                SaveManager.Instance.SaveSlot(ESaveSlot.Slot3);
+                break;
+            default:
+                Debug.LogError($"잘못된 슬롯 번호: {slotNum}");
+                break;
+        }
+        LoadSlotData();
+    }
+
+    private void OnLoadClicked(int slotNum)
     {
         switch (slotNum)
         {
@@ -52,7 +84,7 @@ public class UIPopupLoad : UIBase
     #endregion
 
     #region Sub Methods
-    private void LoadPrevData()
+    private void LoadSlotData()
     {
         string dir = Path.Combine(Application.persistentDataPath, "Save");
         string[] files = Directory.GetFiles(dir, "*.json");
