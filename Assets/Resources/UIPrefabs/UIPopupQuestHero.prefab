@@ -831,7 +831,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 430, y: 100}
+  m_CellSize: {x: 430, y: 150}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -1154,7 +1154,7 @@ MonoBehaviour:
   isDestroyAtClosed: 1
   uiPosition: 2
   listParent: {fileID: 2620255109372354020}
-  slotPrefab: {fileID: 2759166941528039947, guid: dd9f670ea0fda3348acef5c725fef0fe, type: 3}
+  slotPrefab: {fileID: 2759166941528039947, guid: 4ee7398ab322adb46977cf588ff5356f, type: 3}
 --- !u!1 &7828378854818060017
 GameObject:
   m_ObjectHideFlags: 0
