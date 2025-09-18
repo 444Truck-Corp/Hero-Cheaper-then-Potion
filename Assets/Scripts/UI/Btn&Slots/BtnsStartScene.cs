@@ -10,7 +10,7 @@ public class BtnsStartScene : MonoBehaviour
 
     public void OnLoadBtnClicked()
     {
-        UIManager.Show<UIPopupLoad>();
+        UIManager.Show<UIPopupLoad>(false);
     }
 
     public void OnQuitBtnClicked()

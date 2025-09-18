@@ -175,6 +175,11 @@ public class UIOverrideDayResult : UIBase
             string hpBar = Utils.BuildHpBar(hero);
             string msg = $"{hero.name}의 HP: {hpBar}";
             AddLine(msg, hero.curHP > 0 ? blueTxtColor : redTxtColor);
+
+            if (hero.curHP == 0)
+            {
+                SaveManager.Instance.MySaveData.ownedHeroes.Remove(hero.id);
+            }
         }
     }
 
