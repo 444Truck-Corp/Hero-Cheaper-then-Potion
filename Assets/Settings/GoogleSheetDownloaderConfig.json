@@ -5,6 +5,11 @@
     "OutputFileName": "규칙.json"
   },
   {
+    "Gid": "227387119",
+    "Selected": false,
+    "OutputFileName": "Config.json"
+  },
+  {
     "Gid": "1759952678",
     "Selected": false,
     "OutputFileName": "기획_ClassData.json"
@@ -31,7 +36,7 @@
   },
   {
     "Gid": "2027353182",
-    "Selected": false,
+    "Selected": true,
     "OutputFileName": "QuestData.json"
   },
   {
@@ -41,7 +46,7 @@
   },
   {
     "Gid": "685569327",
-    "Selected": false,
+    "Selected": true,
     "OutputFileName": "EquipmentData.json"
   },
   {
@@ -56,7 +61,12 @@
   },
   {
     "Gid": "1738881584",
-    "Selected": false,
+    "Selected": true,
     "OutputFileName": "ItemData.json"
+  },
+  {
+    "Gid": "1242634319",
+    "Selected": false,
+    "OutputFileName": "기획_ItemData.json"
   }
 ]
