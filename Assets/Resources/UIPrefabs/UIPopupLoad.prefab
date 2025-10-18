@@ -6280,7 +6280,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2519153600737850343}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5503252806477497271}
+        m_TargetAssemblyTypeName: UIPopupLoad, Assembly-CSharp
+        m_MethodName: OnSlotClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &7133889006716883661
 Animator:
   serializedVersion: 7
@@ -7002,7 +7014,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1028992206686453094}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5503252806477497271}
+        m_TargetAssemblyTypeName: UIPopupLoad, Assembly-CSharp
+        m_MethodName: OnSlotClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &2469213843123108363
 Animator:
   serializedVersion: 7
@@ -7408,7 +7432,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 565079363295513579}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5503252806477497271}
+        m_TargetAssemblyTypeName: UIPopupLoad, Assembly-CSharp
+        m_MethodName: OnSlotClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &765893185155285031
 Animator:
   serializedVersion: 7
@@ -7846,7 +7882,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8118461060250804872}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5503252806477497271}
+        m_TargetAssemblyTypeName: UIPopupLoad, Assembly-CSharp
+        m_MethodName: OnSlotClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &2516311442197765723
 Animator:
   serializedVersion: 7
