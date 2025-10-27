@@ -1168,7 +1168,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _heroParent: {fileID: 1335800587}
   _wallTileMap: {fileID: 1335800588}
-  _shopCharacter: {fileID: 0}
 --- !u!4 &1575859493
 Transform:
   m_ObjectHideFlags: 0

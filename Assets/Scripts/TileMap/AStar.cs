@@ -7,6 +7,14 @@ public class AStar
     private readonly List<Node> openList = new();
     private readonly HashSet<Node> closedList = new();
 
+    public static readonly Vector2Int[] VECTORS =
+    {
+        Vector2Int.up,
+        Vector2Int.left,
+        Vector2Int.down,
+        Vector2Int.right
+    };
+
     public void SetTiles(bool[,] tiles)
     {
         this.tiles = tiles;
@@ -14,7 +22,11 @@ public class AStar
 
     public List<Node> Find(Vector2Int start, Vector2Int end)
     {
-        if (tiles == null) return new List<Node>();
+        if (tiles == null)
+        {
+            Debug.LogError("[AStar.Find] tiles값이 없습니다.");
+            return new List<Node>();
+        }
 
         Node startNode = new(false, start.x, start.y);
         Node endNode = new(false, end.x, end.y);
@@ -81,7 +93,7 @@ public class AStar
 
         List<Node> neighbors = new();
 
-        foreach (var direction in Direction.VECTORS)
+        foreach (var direction in VECTORS)
         {
             int x = currentNode.X + direction.x;
             int y = currentNode.Y + direction.y;

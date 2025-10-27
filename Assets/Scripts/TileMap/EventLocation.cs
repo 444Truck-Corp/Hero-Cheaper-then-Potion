@@ -1,20 +1,23 @@
 using UnityEngine;
 
-[System.Flags]
-public enum GuildLocationEventType
+namespace HeroPotion
 {
-    None = 0,
-    Entrance = 1,
-    QuestBoard = 2,
-    Chair = 4,
-    Food = 8,
-    Shop = 16,
-    Waiting = 32
-}
+    [System.Flags]
+    public enum GuildLocationEventType
+    {
+        None = 0,
+        Entrance = 1,
+        QuestBoard = 2,
+        Chair = 4,
+        Food = 8,
+        Shop = 16,
+        Waiting = 32
+    }
 
-public class EventLocation : MonoBehaviour
-{
-    public Direction Direction;
-    public GuildLocationEventType EventType;
-    public Vector2Int TilePosition => new((int)transform.localPosition.x, -(int)transform.localPosition.y);
+    public class EventLocation : MonoBehaviour
+    {
+        public int Direction;
+        public GuildLocationEventType EventType;
+        public Vector2Int TilePosition => new((int)transform.localPosition.x, -(int)transform.localPosition.y);
+    }
 }

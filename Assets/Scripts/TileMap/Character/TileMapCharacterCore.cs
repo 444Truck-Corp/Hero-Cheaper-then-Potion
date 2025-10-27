@@ -1,73 +1,76 @@
 using System;
 using UnityEngine;
 
-public enum TileMapCharacterType
+namespace HeroPotion
 {
-    Hero,
-    Diner,
-    Quest,
-    Shop,
-}
-
-[RequireComponent(typeof(SpriteRenderer))]
-public class TileMapCharacterCore : Poolable
-{
-    protected bool _canAutoFinding;
-
-    [SerializeField] protected Emotion _emotion;
-    [SerializeField] protected CharacterMovement _movement;
-
-    public Vector2Int Position => _movement.Position;
-    public virtual TileMapCharacterType CharacterType { get; protected set; }
-    public virtual GuildLocationEventType TargetType { get; protected set; }
-
-    public EventLocation TargetLocation
+    public enum TileMapCharacterType
     {
-        get => _movement.TargetLocation;
-        set => SetTargetLocation(value);
+        Hero,
+        Diner,
+        Quest,
+        Shop,
     }
 
-    public virtual void Initialize(string textureName)
+    [RequireComponent(typeof(SpriteRenderer))]
+    public class TileMapCharacterCore : Poolable
     {
-        _movement.Initialize(textureName, TargetType, _canAutoFinding);
-        Clear();
-    }
+        protected bool _canAutoFinding;
 
-    public void Clear()
-    {
-        _movement.Clear();
-        _emotion.Clear();
-    }
+        [SerializeField] protected Emotion _emotion;
+        [SerializeField] protected CharacterMovement _movement;
 
-    public void SetTargetTilePosition(Vector2Int position)
-    {
-        _movement.SetTargetTilePosition(position);
-    }
+        public Vector2Int Position => _movement.Position;
+        public virtual TileMapCharacterType CharacterType { get; protected set; }
+        public virtual GuildLocationEventType TargetType { get; protected set; }
 
-    public void SetTargetLocation(EventLocation location)
-    {
-        _movement.SetLocation(location);
-    }
+        public EventLocation TargetLocation
+        {
+            get => _movement.TargetLocation;
+            set => SetTargetLocation(value);
+        }
 
-    public void SetMoveCommand(Action onMoveComplete = null)
-    {
-        _movement.SetMoveCommand(onMoveComplete);
-    }
+        public virtual void Initialize(string textureName)
+        {
+            _movement.Initialize(textureName, TargetType, _canAutoFinding);
+            Clear();
+        }
 
-    public virtual void SetOrder()
-    {
-        _emotion.SetTimer(10.0f, OnFailed);
-        _emotion.SetLeftClickEvent(OnClickOrder);
-    }
+        public void Clear()
+        {
+            _movement.Clear();
+            _emotion.Clear();
+        }
 
-    protected virtual void OnFailed()
-    {
-        _emotion.CancleTimer();
-        TileMapManager.Instance.OnCharacterExit(this);
-    }
+        public void SetTargetTilePosition(Vector2Int position)
+        {
+            _movement.SetTargetTilePosition(position);
+        }
 
-    protected virtual void OnClickOrder()
-    {
-        _emotion.Clear();
-    }
+        public void SetTargetLocation(EventLocation location)
+        {
+            _movement.SetLocation(location);
+        }
+
+        public void SetMoveCommand(Action onMoveComplete = null)
+        {
+            _movement.SetMoveCommand(onMoveComplete);
+        }
+
+        public virtual void SetOrder()
+        {
+            _emotion.SetTimer(10.0f, OnFailed);
+            _emotion.SetLeftClickEvent(OnClickOrder);
+        }
+
+        protected virtual void OnFailed()
+        {
+            _emotion.CancleTimer();
+            TileMapManager.Instance.OnCharacterExit(this);
+        }
+
+        protected virtual void OnClickOrder()
+        {
+            _emotion.Clear();
+        }
+    } 
 }

@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 
 public enum EHeroState
 {
@@ -105,9 +104,9 @@ public class HeroData
                 if (curHP > maxHP) curHP = maxHP;
 
                 //테스트 코드 : 삭제필요.
-                potionStatus.STR += 1; 
-                potionStatus.DEX += 1; 
-                potionStatus.INT += 1; 
+                potionStatus.STR += 1;
+                potionStatus.DEX += 1;
+                potionStatus.INT += 1;
                 break;
             case 140002:
                 curHP += 20;
@@ -139,7 +138,7 @@ public class HeroData
                 break;
             case 140009:
                 curHP += maxHP / 2; //체력 50% 회복
-                if (curHP > maxHP) curHP = maxHP; 
+                if (curHP > maxHP) curHP = maxHP;
                 break;
             case 140010:
                 curHP = maxHP; // 최대 체력 회복

@@ -1,4 +1,7 @@
-public class WaitingLocation : EventLocation
+namespace HeroPotion
 {
-    public int Index;
+    public class WaitingLocation : EventLocation
+    {
+        public int Index;
+    }
 }

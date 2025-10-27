@@ -1,13 +1,16 @@
-public class CharacterHero : TileMapCharacterCore
+namespace HeroPotion
 {
-    public override TileMapCharacterType CharacterType => TileMapCharacterType.Hero;
-    public override GuildLocationEventType TargetType =>
-        GuildLocationEventType.QuestBoard |
-        GuildLocationEventType.Food |
-        GuildLocationEventType.Chair;
-
-    public override void Initialize(string textureName)
+    public class CharacterHero : TileMapCharacterCore
     {
-        _movement.Initialize(textureName, TargetType, true);
+        public override TileMapCharacterType CharacterType => TileMapCharacterType.Hero;
+        public override GuildLocationEventType TargetType =>
+            GuildLocationEventType.QuestBoard |
+            GuildLocationEventType.Food |
+            GuildLocationEventType.Chair;
+
+        public override void Initialize(string textureName)
+        {
+            _movement.Initialize(textureName, TargetType, true);
+        }
     }
 }

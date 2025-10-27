@@ -1,3 +1,4 @@
+using HeroPotion;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -49,7 +50,7 @@ public class HeroManager : Singleton<HeroManager>
             level = 1,
             state = EHeroState.FREE,
         };
-        
+
         SaveManager.Instance.SetSaveData(nameof(SaveManager.Instance.MySaveData.heroNum), hero.id + 1);
 
         return hero;
