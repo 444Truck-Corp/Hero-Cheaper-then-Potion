@@ -94,10 +94,10 @@ public class TileMapEventController : MonoBehaviour
             InitializeDailyEvent();
             ReturnHeroes();
             _lastUpdatedDay = SaveManager.Instance.MySaveData.day;
-            _time = 0.0f;
             _lastUpdatedTenMinutes = 0;
         }
 
+        _time = SaveManager.Instance.MySaveData.time;
         // 게임 내 10분마다 이벤트를 진행
         int currentTenMinutesCount = (int)(_time * minutesTimeDivider);
         if (currentTenMinutesCount > _lastUpdatedTenMinutes)
@@ -113,7 +113,6 @@ public class TileMapEventController : MonoBehaviour
             }
             _lastUpdatedTenMinutes = currentTenMinutesCount;
         }
-        _time = SaveManager.Instance.MySaveData.time;
     }
 
     private void InitializeDailyEvent()

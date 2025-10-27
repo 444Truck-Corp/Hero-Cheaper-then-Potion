@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 
 public class HeroManager : Singleton<HeroManager>
 {
@@ -20,7 +19,6 @@ public class HeroManager : Singleton<HeroManager>
         classList = DataManager.Instance.GetObjList<ClassData>(nameof(ClassData));
         nameList = DataManager.Instance.GetObjList<string>(nameData);
         lvList = DataManager.Instance.GetObjList<LvData>(nameof(LvData));
-        Debug.Log(1);
     }
 
     #region Main Methods

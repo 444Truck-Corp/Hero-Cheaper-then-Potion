@@ -9,7 +9,7 @@ public class UIMainClock : MonoBehaviour
     [SerializeField] private Image clockFill;
 
     private Coroutine updateTimeCoroutine;
-    
+
     private int day;
     private float time;
     private float lastSavedTime = -1f;
@@ -60,13 +60,16 @@ public class UIMainClock : MonoBehaviour
 
         // 하루 종료
         yield return StartCoroutine(NextDayRoutine());
+
         updateTimeCoroutine = StartCoroutine(UpdateTime());
     }
 
     private IEnumerator NextDayRoutine()
     {
         day--;
+        time = 0.0f;
         SaveManager.Instance.SetSaveData(nameof(day), day);
+        SaveManager.Instance.SetSaveData(nameof(time), time);
         UIManager.Show<UIOverrideDayResult>();
 
         yield return new WaitUntil(() => !UIManager.IsActive<UIOverrideDayResult>());
