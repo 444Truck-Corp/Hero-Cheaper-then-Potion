@@ -28,6 +28,7 @@ namespace HeroPotion
         public bool HasCommands => _moveQueue.Count > 0;
 
         public Vector2Int Position => new((int)_targetStepPosition.x, (int)-_targetStepPosition.y);
+
         private const string PATH = "Textures/CharacterSheet/";
 
         private void FixedUpdate()
@@ -37,7 +38,7 @@ namespace HeroPotion
 
         public void Initialize(string textureName, GuildLocationEventType targetType, bool autoFinding)
         {
-            _texturePath = PATH + (string.IsNullOrEmpty(textureName) ? "궁사2" : textureName);
+            _texturePath = PATH + (string.IsNullOrEmpty(textureName) ? "100001" : textureName);
             Animator = new CustomAnimator(_texturePath, 9, true, true);
             _targetType = targetType;
             CanAutoFind = autoFinding;

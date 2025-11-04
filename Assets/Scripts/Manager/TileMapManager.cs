@@ -35,9 +35,9 @@ namespace HeroPotion
         _controller.Initialize(eventLocations);
             _characterSpawnData = new Dictionary<TileMapCharacterType, (string, string)>
             {
-                { TileMapCharacterType.Shop, (ShopPrefabName, "도적1") },
-                { TileMapCharacterType.Diner, (DinerPrefabName, "도적2") },
-                { TileMapCharacterType.Quest, (QuestPrefabName, "도적2") }
+                { TileMapCharacterType.Shop, (ShopPrefabName, "100026") },
+                { TileMapCharacterType.Diner, (DinerPrefabName, "100025") },
+                { TileMapCharacterType.Quest, (QuestPrefabName, "100024") }
             };
         }
 
@@ -175,7 +175,7 @@ namespace HeroPotion
 
         private void CreateTileMapHeroCharacter(HeroData heroData)
         {
-            _heroes[heroData.id] = CreateTileMapCharacter<CharacterHero>(HeroPrefabName, "궁사2");
+            _heroes[heroData.id] = CreateTileMapCharacter<CharacterHero>(HeroPrefabName, heroData.classData.id.ToString());
         }
 
         public void OnQuestStart(IEnumerable<HeroData> heroDatas, QuestData quest)

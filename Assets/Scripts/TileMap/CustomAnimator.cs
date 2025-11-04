@@ -17,6 +17,8 @@ namespace HeroPotion
         [SerializeField] private Action _onEndAnimation;
         [SerializeField] private Sprite[] _sprites;
 
+        private const string DEFAULT_PATH = "Textures/CharacterSheet/100001";
+
         public CustomAnimator(string path, int framePerSecond, bool isDirectional, bool isLooping, Action onEndAnimation = null)
         {
             _isLooping = isLooping;
@@ -28,6 +30,7 @@ namespace HeroPotion
             if (_sprites == null || _sprites.Length == 0)
             {
                 Debug.LogError($"[CustomAnimator] 경로를 찾을 수 없습니다! : {path}");
+                _sprites = Resources.LoadAll<Sprite>(DEFAULT_PATH);
                 return;
             }
             _maxFrame = isDirectional ? (_sprites.Length >> 2) : _sprites.Length;
