@@ -70,16 +70,6 @@
     "rawIncInt": "1d9"
   },
   {
-    "id": "100008",
-    "className": "대장장이2",
-    "rawBaseStr": "1d13",
-    "rawBaseDex": "1d5",
-    "rawBaseInt": "1d11",
-    "rawIncStr": "1d13",
-    "rawIncDex": "1d5",
-    "rawIncInt": "1d11"
-  },
-  {
     "id": "100009",
     "className": "도적1",
     "rawBaseStr": "1d8",
@@ -110,16 +100,6 @@
     "rawIncInt": "1d14"
   },
   {
-    "id": "100012",
-    "className": "마법사2",
-    "rawBaseStr": "1d5",
-    "rawBaseDex": "1d9",
-    "rawBaseInt": "1d15",
-    "rawIncStr": "1d5",
-    "rawIncDex": "1d9",
-    "rawIncInt": "1d15"
-  },
-  {
     "id": "100013",
     "className": "무투가1",
     "rawBaseStr": "2d5",
@@ -130,16 +110,6 @@
     "rawIncInt": "1d7"
   },
   {
-    "id": "100014",
-    "className": "무투가2",
-    "rawBaseStr": "2d5",
-    "rawBaseDex": "1d9",
-    "rawBaseInt": "1d9",
-    "rawIncStr": "2d5",
-    "rawIncDex": "1d9",
-    "rawIncInt": "1d9"
-  },
-  {
     "id": "100015",
     "className": "성직자1",
     "rawBaseStr": "1d6",
@@ -148,16 +118,6 @@
     "rawIncStr": "1d6",
     "rawIncDex": "1d10",
     "rawIncInt": "1d13"
-  },
-  {
-    "id": "100016",
-    "className": "성직자2",
-    "rawBaseStr": "2d2",
-    "rawBaseDex": "1d12",
-    "rawBaseInt": "1d12",
-    "rawIncStr": "2d2",
-    "rawIncDex": "1d12",
-    "rawIncInt": "1d12"
   },
   {
     "id": "100017",
@@ -210,16 +170,6 @@
     "rawIncInt": "1d10"
   },
   {
-    "id": "100022",
-    "className": "재봉사2",
-    "rawBaseStr": "1d5",
-    "rawBaseDex": "1d14",
-    "rawBaseInt": "1d10",
-    "rawIncStr": "1d5",
-    "rawIncDex": "1d14",
-    "rawIncInt": "1d10"
-  },
-  {
     "id": "100023",
     "className": "전사1",
     "rawBaseStr": "1d14",
@@ -258,15 +208,5 @@
     "rawIncStr": "1d9",
     "rawIncDex": "1d13",
     "rawIncInt": "1d7"
-  },
-  {
-    "id": "100027",
-    "className": "총사2",
-    "rawBaseStr": "1d7",
-    "rawBaseDex": "1d13",
-    "rawBaseInt": "1d9",
-    "rawIncStr": "1d7",
-    "rawIncDex": "1d13",
-    "rawIncInt": "1d9"
   }
 ]
