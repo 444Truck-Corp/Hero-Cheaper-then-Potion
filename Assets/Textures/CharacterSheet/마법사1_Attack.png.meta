@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: 9f3db4e75c7294345bc36395e1713b95
+guid: 81cffc9472f3380479ae8a71975b2b50
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -103683451602972191
-    second: "\uB9C8\uBC95\uC0AC2_Attack_0"
+      213: -6244393729584356895
+    second: "\uB9C8\uBC95\uC0AC1_Attack_0"
   - first:
-      213: 6208916158779563521
-    second: "\uB9C8\uBC95\uC0AC2_Attack_1"
+      213: 5946150992078077882
+    second: "\uB9C8\uBC95\uC0AC1_Attack_1"
   - first:
-      213: 988847587450557346
-    second: "\uB9C8\uBC95\uC0AC2_Attack_2"
+      213: 8199857087023459581
+    second: "\uB9C8\uBC95\uC0AC1_Attack_2"
   - first:
-      213: 8768772018062973167
-    second: "\uB9C8\uBC95\uC0AC2_Attack_3"
+      213: -2997875650980716601
+    second: "\uB9C8\uBC95\uC0AC1_Attack_3"
   - first:
-      213: -6334161576045632637
-    second: "\uB9C8\uBC95\uC0AC2_Attack_4"
+      213: 51195276714222539
+    second: "\uB9C8\uBC95\uC0AC1_Attack_4"
   - first:
-      213: -6917835821813402340
-    second: "\uB9C8\uBC95\uC0AC2_Attack_5"
+      213: -6234971131778634728
+    second: "\uB9C8\uBC95\uC0AC1_Attack_5"
   - first:
-      213: 7743697963563894405
-    second: "\uB9C8\uBC95\uC0AC2_Attack_6"
+      213: -633093302602374623
+    second: "\uB9C8\uBC95\uC0AC1_Attack_6"
   - first:
-      213: 2527372115661586993
-    second: "\uB9C8\uBC95\uC0AC2_Attack_7"
+      213: 3788622116536958135
+    second: "\uB9C8\uBC95\uC0AC1_Attack_7"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -117,11 +117,37 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\uB9C8\uBC95\uC0AC2_Attack_0"
+      name: "\uB9C8\uBC95\uC0AC1_Attack_0"
       rect:
         serializedVersion: 2
         x: 0
@@ -136,14 +162,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad1d12c639a836b4498a269c07a1a79d
-      internalID: 736469045
+      spriteID: 1bc0594ddaec7eb488a0e3c59c2597e7
+      internalID: -1495498767
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uB9C8\uBC95\uC0AC2_Attack_1"
+      name: "\uB9C8\uBC95\uC0AC1_Attack_1"
       rect:
         serializedVersion: 2
         x: 192
@@ -158,14 +184,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2630b6073011f340a7ea2d7edb389d3
-      internalID: -1753179056
+      spriteID: 351b4cbb44f761d48bc409d868f04e73
+      internalID: 860192165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uB9C8\uBC95\uC0AC2_Attack_2"
+      name: "\uB9C8\uBC95\uC0AC1_Attack_2"
       rect:
         serializedVersion: 2
         x: 384
@@ -180,14 +206,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d4ede6dfa03ff345a9f52e4a58b6204
-      internalID: -931293780
+      spriteID: e2b531a9a446f1f43b6f2f272b6c908e
+      internalID: -2014366111
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uB9C8\uBC95\uC0AC2_Attack_3"
+      name: "\uB9C8\uBC95\uC0AC1_Attack_3"
       rect:
         serializedVersion: 2
         x: 576
@@ -202,14 +228,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8232ed91853517842be1cd6b12245c16
-      internalID: 2008689947
+      spriteID: 2d33d9fd7c2f07b43b0d1911fc0e61d4
+      internalID: 1394369469
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uB9C8\uBC95\uC0AC2_Attack_4"
+      name: "\uB9C8\uBC95\uC0AC1_Attack_4"
       rect:
         serializedVersion: 2
         x: 768
@@ -224,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c56c76b0e842d645b8aec7a5d63490b
-      internalID: -1059112915
+      spriteID: bfb48394b7eb7d241bd9e58cc8ed2eef
+      internalID: 2037141773
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uB9C8\uBC95\uC0AC2_Attack_5"
+      name: "\uB9C8\uBC95\uC0AC1_Attack_5"
       rect:
         serializedVersion: 2
         x: 960
@@ -246,14 +272,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa96d5c7c4ed8e0478c945beee89e833
-      internalID: -1031924941
+      spriteID: ffeedd99d2988624582d2df433b88cb2
+      internalID: 1219968468
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uB9C8\uBC95\uC0AC2_Attack_6"
+      name: "\uB9C8\uBC95\uC0AC1_Attack_6"
       rect:
         serializedVersion: 2
         x: 1152
@@ -268,14 +294,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5e84f74f8f32c74d98298abe9ec2450
-      internalID: 183134553
+      spriteID: f940b356b159f4b4cac58703874a9691
+      internalID: 26331660
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uB9C8\uBC95\uC0AC2_Attack_7"
+      name: "\uB9C8\uBC95\uC0AC1_Attack_7"
       rect:
         serializedVersion: 2
         x: 1344
@@ -290,8 +316,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce28526d7aba9a147be194926f836615
-      internalID: 808376190
+      spriteID: 727b20e30dd5e334f9977d28181e73c0
+      internalID: -1299092623
       vertices: []
       indices: 
       edges: []
@@ -310,14 +336,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\uB9C8\uBC95\uC0AC2_Attack_0": 736469045
-      "\uB9C8\uBC95\uC0AC2_Attack_1": -1753179056
-      "\uB9C8\uBC95\uC0AC2_Attack_2": -931293780
-      "\uB9C8\uBC95\uC0AC2_Attack_3": 2008689947
-      "\uB9C8\uBC95\uC0AC2_Attack_4": -1059112915
-      "\uB9C8\uBC95\uC0AC2_Attack_5": -1031924941
-      "\uB9C8\uBC95\uC0AC2_Attack_6": 183134553
-      "\uB9C8\uBC95\uC0AC2_Attack_7": 808376190
+      "\uB9C8\uBC95\uC0AC1_Attack_0": -1495498767
+      "\uB9C8\uBC95\uC0AC1_Attack_1": 860192165
+      "\uB9C8\uBC95\uC0AC1_Attack_2": -2014366111
+      "\uB9C8\uBC95\uC0AC1_Attack_3": 1394369469
+      "\uB9C8\uBC95\uC0AC1_Attack_4": 2037141773
+      "\uB9C8\uBC95\uC0AC1_Attack_5": 1219968468
+      "\uB9C8\uBC95\uC0AC1_Attack_6": 26331660
+      "\uB9C8\uBC95\uC0AC1_Attack_7": -1299092623
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
