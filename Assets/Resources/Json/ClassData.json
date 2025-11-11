@@ -80,16 +80,6 @@
     "rawIncInt": "1d9"
   },
   {
-    "id": "100010",
-    "className": "도적2",
-    "rawBaseStr": "1d10",
-    "rawBaseDex": "1d12",
-    "rawBaseInt": "1d7",
-    "rawIncStr": "1d10",
-    "rawIncDex": "1d12",
-    "rawIncInt": "1d7"
-  },
-  {
     "id": "100011",
     "className": "마법사1",
     "rawBaseStr": "1d5",
