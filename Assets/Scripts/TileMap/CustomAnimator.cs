@@ -31,7 +31,6 @@ namespace HeroPotion
             {
                 Debug.LogError($"[CustomAnimator] 경로를 찾을 수 없습니다! : {path}");
                 _sprites = Resources.LoadAll<Sprite>(DEFAULT_PATH);
-                return;
             }
             _maxFrame = isDirectional ? (_sprites.Length >> 2) : _sprites.Length;
         }

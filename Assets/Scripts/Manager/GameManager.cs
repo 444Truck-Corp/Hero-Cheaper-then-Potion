@@ -1,27 +1,24 @@
-//TODO : 수정 필요할듯
+// TODO : 수정 필요
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum EEnding
+public enum EndingType
 {
     Bankrupt,
     Lose,
-    Win
+    Win,
 }
 
 public class GameManager : Singleton<GameManager>
 {
-    public EEnding Ending { get; set; }
+    public EndingType Ending { get; set; }
 
-    #region Unity Life Cycles
     private void Start()
     {
         InitManagers();
     }
-    #endregion
 
-    #region Main Methods
     public async void StartGame()
     {
         UIManager.Instance.ToBlack();
@@ -33,7 +30,7 @@ public class GameManager : Singleton<GameManager>
         await Task.Delay(1000);
         UIManager.Instance.ToTransparent();
 
-        //TODO : REMOVE
+        // TODO : REMOVE
         SaveManager.Instance.MySaveData.AcquireItem(120001);
         SaveManager.Instance.MySaveData.AcquireItem(120002);
         SaveManager.Instance.MySaveData.AcquireItem(120003);
@@ -44,14 +41,10 @@ public class GameManager : Singleton<GameManager>
         SaveManager.Instance.MySaveData.AcquireItem(140002);
     }
 
-    #endregion
-
-    #region Sub Methods
     private void InitManagers()
     {
         ResourceManager.Instance.Init();
         DataManager.Instance.Init();
         SaveManager.Instance.Init();
     }
-    #endregion
 }

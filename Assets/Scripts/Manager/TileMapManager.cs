@@ -23,8 +23,6 @@ namespace HeroPotion
         [SerializeField] private Transform _heroParent;
         [SerializeField] private TileMapData _wallTileMap;
 
-        public bool[,] Tiles => _wallTileMap.Tiles;
-
         protected override void Awake()
         {
             isDestroyOnLoad = true;

@@ -4,12 +4,14 @@ using System.Linq;
 
 public class HeroManager : Singleton<HeroManager>
 {
-    private const string nameData = "NameData";
+    public int MaxExp => LevelList.Sum(data => data.characExp);
 
-    private List<string> nameList;
-    public List<ClassData> classList { get; private set; }
-    public List<LvData> lvList { get; private set; }
-    public int MaxExp => lvList.Sum(data => data.characExp);
+    private const string NAME_DATA = "NameData";
+
+    public List<ClassData> ClassList { get; private set; }
+    public List<LvData> LevelList { get; private set; }
+
+    private List<string> _nameList;
 
     protected override void Awake()
     {
@@ -17,9 +19,9 @@ public class HeroManager : Singleton<HeroManager>
         base.Awake();
 
         // 직업 데이터 캐싱
-        classList = DataManager.Instance.GetObjList<ClassData>(nameof(ClassData));
-        nameList = DataManager.Instance.GetObjList<string>(nameData);
-        lvList = DataManager.Instance.GetObjList<LvData>(nameof(LvData));
+        ClassList = DataManager.Instance.GetObjList<ClassData>(nameof(ClassData));
+        _nameList = DataManager.Instance.GetObjList<string>(NAME_DATA);
+        LevelList = DataManager.Instance.GetObjList<LvData>(nameof(LvData));
     }
 
     #region Main Methods
@@ -36,8 +38,8 @@ public class HeroManager : Singleton<HeroManager>
     #region Sub Methods 
     private HeroData CreateNewHero()
     {
-        string name = nameList[UnityEngine.Random.Range(0, nameList.Count)];
-        ClassData classData = classList[UnityEngine.Random.Range(0, classList.Count)];
+        string name = _nameList[UnityEngine.Random.Range(0, _nameList.Count)];
+        ClassData classData = ClassList[UnityEngine.Random.Range(0, ClassList.Count)];
 
         HeroData hero = new()
         {
@@ -45,8 +47,8 @@ public class HeroManager : Singleton<HeroManager>
             name = name,
             classData = classData,
             status = classData.SetBaseStat(),
-            maxHP = lvList[1].hp,
-            curHP = lvList[1].hp,
+            maxHP = LevelList[1].hp,
+            curHP = LevelList[1].hp,
             level = 1,
             state = EHeroState.FREE,
         };

@@ -45,7 +45,7 @@ public class HeroData
     public void GetLevel(int value)
     {
         level += value;
-        maxHP = HeroManager.Instance.lvList[level].hp;
+        maxHP = HeroManager.Instance.LevelList[level].hp;
         curHP = maxHP;
 
         for (int i = 0; i < value; i++)

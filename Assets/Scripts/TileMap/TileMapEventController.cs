@@ -12,51 +12,44 @@ namespace HeroPotion
         Quest, // 퀘스트 의뢰자
     }
 
-    public class TileMapEventController : MonoBehaviour
+    public abstract class GameConditionChecker
     {
-        private const int BOSS_QUEST_ID = 110061;
-        private const float hourDivision = 6;
-        // 게임 내 한 시간 (7.5s)
-        private static readonly float oneHourTime = SaveData.maxTime / 24;
-        // 게임 내 10분(1.25s)의 개수를 계산하기 위한 역수(0.8f)
-        private static readonly float minutesTimeDivider = 1 / (oneHourTime / hourDivision);
-        private static readonly float maxEnterTime = SaveData.maxTime * 0.85f;
+        public abstract void CheckAndExecute();
+    }
 
-        private int _lastUpdatedDay = int.MaxValue;
-        private int _lastUpdatedTenMinutes;
-        private float _time;
-
-        // 10분마다 발생할 이벤트
-        private readonly SortedDictionary<int, Queue<TileMapEventType>> _eventQueueDictionary = new();
-
-        private void GameConditionCheck_Bankrupt()
+    public class BankruptChecker : GameConditionChecker
+    {
+        public override void CheckAndExecute()
         {
-            // 파산 엔딩
-            if (SaveManager.Instance.MySaveData.gold <= 0)
+            if (SaveManager.Instance.MySaveData.gold < 0)
             {
-                GameManager.Instance.Ending = EEnding.Bankrupt;
+                GameManager.Instance.Ending = EndingType.Bankrupt;
                 SceneManager.LoadScene("EndScene");
             }
         }
+    }
 
-        private void GameConditionCheck_Boss()
+    public class GameConditionCheck_Boss : GameConditionChecker
+    {
+        private const int BOSS_QUEST_ID = 110061;
+
+        public override void CheckAndExecute()
         {
             if (SaveManager.Instance.MySaveData.day == 0)
             {
                 var heroes = SaveManager.Instance.MySaveData.ownedHeroes.Values.ToList();
                 var sum = SumHeroStatus(heroes);
 
-                var quest = QuestManager.Instance.GetQuestDataById(BOSS_QUEST_ID);
+                QuestData quest = QuestManager.Instance.GetQuestDataById(BOSS_QUEST_ID);
                 float successProb = CalculateSuccessProbability(sum, quest.needSpecs);
-                bool isSuccess = Random.value < successProb;
 
-                if (isSuccess)
+                if (Random.value < successProb)
                 {
-                    GameManager.Instance.Ending = EEnding.Win;
+                    GameManager.Instance.Ending = EndingType.Win;
                 }
                 else
                 {
-                    GameManager.Instance.Ending = EEnding.Lose;
+                    GameManager.Instance.Ending = EndingType.Lose;
                 }
                 SceneManager.LoadScene("EndScene");
             }
@@ -76,14 +69,36 @@ namespace HeroPotion
         private StatusData SumHeroStatus(List<HeroData> heros)
         {
             StatusData sum = new();
-            foreach (var h in heros)
+            foreach (HeroData hero in heros)
             {
-                sum += h.ResultStatus();
+                sum += hero.ResultStatus();
             }
             return sum;
         }
 
         // -------------------------------------------------------------
+    }
+
+    public class TileMapEventController : MonoBehaviour
+    {
+        private const float HOUR_DIVISION = 6;
+        // 게임 내 한 시간 (7.5s)
+        private const float HOUR_TIME = SaveData.maxTime / 24;
+        // 게임 내 10분(1.25s)의 개수를 계산하기 위한 역수(0.8f)
+        private const float MINUTES_TIME_DIVIDER = 1 / (HOUR_TIME / HOUR_DIVISION);
+        private const float MAX_ENTER_TIME = SaveData.maxTime * 0.85f;
+
+        private readonly List<GameConditionChecker> _gameConditionCheckers = new()
+        {
+            new BankruptChecker(),
+            new GameConditionCheck_Boss(),
+        };
+        // 10분마다 발생할 이벤트
+        private readonly SortedDictionary<int, Queue<TileMapEventType>> _eventQueueDictionary = new();
+
+        private int _lastUpdatedDay = int.MaxValue;
+        private int _lastUpdatedTenMinutes;
+        private float _time;
 
         private void FixedUpdate()
         {
@@ -91,8 +106,7 @@ namespace HeroPotion
             if (_lastUpdatedDay > SaveManager.Instance.MySaveData.day)
             {
                 Debug.Log($"날짜 변경 {_lastUpdatedDay} => {SaveManager.Instance.MySaveData.day}");
-                GameConditionCheck_Bankrupt();
-                GameConditionCheck_Boss();
+                _gameConditionCheckers.ForEach(checker => checker.CheckAndExecute());
                 InitializeDailyEvent();
                 ReturnHeroes();
                 _lastUpdatedDay = SaveManager.Instance.MySaveData.day;
@@ -101,7 +115,7 @@ namespace HeroPotion
 
             _time = SaveManager.Instance.MySaveData.time;
             // 게임 내 10분마다 이벤트를 진행
-            int currentTenMinutesCount = (int)(_time * minutesTimeDivider);
+            int currentTenMinutesCount = (int)(_time * MINUTES_TIME_DIVIDER);
             if (currentTenMinutesCount > _lastUpdatedTenMinutes)
             {
                 // 이벤트 큐 처리
@@ -127,7 +141,7 @@ namespace HeroPotion
             }
 
             // 상점 방문 이벤트 추가
-            int randomTenMinutesCount = GetRandomTenMinutesCount(oneHourTime * 18, maxEnterTime);
+            int randomTenMinutesCount = GetRandomTenMinutesCount(HOUR_TIME * 18, MAX_ENTER_TIME);
             debugString += $"상인 방문 시간: {randomTenMinutesCount / 6:D2}시 {randomTenMinutesCount % 6 * 10:D2}분\n";
             AddEvent(randomTenMinutesCount, TileMapEventType.Shop);
 
@@ -135,7 +149,7 @@ namespace HeroPotion
             debugString += $"식사 방문 예정 인원: {count}명\n";
             while (count-- > 0)
             {
-                randomTenMinutesCount = GetRandomTenMinutesCount(0.0f, maxEnterTime);
+                randomTenMinutesCount = GetRandomTenMinutesCount(0.0f, MAX_ENTER_TIME);
                 AddEvent(randomTenMinutesCount, TileMapEventType.Diner);
                 debugString += $"{randomTenMinutesCount / 6:D2}시 {randomTenMinutesCount % 6 * 10:D2}분\n";
             }
@@ -144,7 +158,7 @@ namespace HeroPotion
             debugString += $"퀘스트 의뢰자 방문 예정 인원: {count}명\n";
             while (count-- > 0)
             {
-                randomTenMinutesCount = GetRandomTenMinutesCount(0.0f, maxEnterTime);
+                randomTenMinutesCount = GetRandomTenMinutesCount(0.0f, MAX_ENTER_TIME);
                 AddEvent(randomTenMinutesCount, TileMapEventType.Quest);
                 debugString += $"{randomTenMinutesCount / 6:D2}시 {randomTenMinutesCount % 6 * 10:D2}분\n";
             }
@@ -168,7 +182,7 @@ namespace HeroPotion
         private int GetRandomTenMinutesCount(float minTime, float maxTime)
         {
             float time = Random.Range(minTime, maxTime);
-            return (int)(time * minutesTimeDivider);
+            return (int)(time * MINUTES_TIME_DIVIDER);
         }
 
         private void AddEvent(int time, TileMapEventType type)

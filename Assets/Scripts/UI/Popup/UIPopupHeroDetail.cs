@@ -123,7 +123,7 @@ public class UIPopupHeroDetail : UIBase
         int price = 0;
         for (int i = curLv; i < targetLv; i++)
         {
-            price += HeroManager.Instance.lvList[i].characExp;
+            price += HeroManager.Instance.LevelList[i].characExp;
         }
         curPrice = price;
         lvPriceTxt.text = $"{curPrice} G";

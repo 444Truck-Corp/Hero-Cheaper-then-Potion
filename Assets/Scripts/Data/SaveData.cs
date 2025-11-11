@@ -6,7 +6,7 @@ public class SaveData
 {
     #region common
     public long lastSaveTime = 0;
-    public int day = 100;
+    public int day = 21; // <- 100
     public float time = 0; // 0은 0시, 3분은 24시 (저장 단위 : 초)
     public const float maxTime = 60;
     #endregion

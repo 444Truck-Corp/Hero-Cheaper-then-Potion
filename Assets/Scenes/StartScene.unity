@@ -2283,13 +2283,11 @@ MonoBehaviour:
   bgmSource: {fileID: 1949745003}
   sfxSource: {fileID: 1949745004}
   bgmClips:
-  - {fileID: 8300000, guid: 1b378fe5bd8bd1a4fa246341364b5077, type: 3}
-  - {fileID: 8300000, guid: 71c95ba3463f6124999d92a6baac2410, type: 3}
-  - {fileID: 8300000, guid: ddfef0f7e96de4f42af2db670a89b4c0, type: 3}
-  - {fileID: 8300000, guid: d13803679883ebe4b8fc4840cc977df8, type: 3}
-  - {fileID: 8300000, guid: 318cb91e8a8fb0646845b06943beeab9, type: 3}
-  - {fileID: 8300000, guid: f2c63dfd147eaad47a62238ea88c6e6f, type: 3}
-  - {fileID: 8300000, guid: 017004c08dc72694791eed9512f3909c, type: 3}
+  - {fileID: 8300000, guid: 68d6de26a4a825e4b9255e857c4a91ec, type: 3}
+  - {fileID: 8300000, guid: acba05287aae9324aa41d4e1c192220f, type: 3}
+  - {fileID: 8300000, guid: 66305bf4372119b47af743e8e3d5447c, type: 3}
+  - {fileID: 8300000, guid: a259130d95ed54a45a20a437d9f31bf0, type: 3}
+  - {fileID: 8300000, guid: d8d17765a05bfe64798f6ddb9894ccca, type: 3}
   sfxClips:
   - {fileID: 8300000, guid: 2c61021ade66a8e4081471a58624d25e, type: 3}
   - {fileID: 8300000, guid: b80e803781c6b024f9bf56a4174ab1bf, type: 3}
