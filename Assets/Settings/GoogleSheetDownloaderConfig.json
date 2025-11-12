@@ -5,6 +5,11 @@
     "OutputFileName": "규칙.json"
   },
   {
+    "Gid": "1719273509",
+    "Selected": false,
+    "OutputFileName": "Tutorial.json"
+  },
+  {
     "Gid": "227387119",
     "Selected": false,
     "OutputFileName": "Config.json"
@@ -16,8 +21,13 @@
   },
   {
     "Gid": "658489092",
-    "Selected": false,
+    "Selected": true,
     "OutputFileName": "ClassData.json"
+  },
+  {
+    "Gid": "1458162599",
+    "Selected": false,
+    "OutputFileName": "Copy of ClassData.json"
   },
   {
     "Gid": "87811400",
@@ -60,13 +70,13 @@
     "OutputFileName": "RecipeData.json"
   },
   {
-    "Gid": "1738881584",
-    "Selected": true,
-    "OutputFileName": "ItemData.json"
-  },
-  {
     "Gid": "1242634319",
     "Selected": false,
     "OutputFileName": "기획_ItemData.json"
+  },
+  {
+    "Gid": "1738881584",
+    "Selected": true,
+    "OutputFileName": "ItemData.json"
   }
 ]
